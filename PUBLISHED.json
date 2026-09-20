@@ -1,4 +1,22 @@
 {
+  "Syllabus.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "syllabus",
+    "document_id": "1APv5_2nRSzHJ2iCqAQXVfurNNGRgzjEcTrvsNK3EcFE",
+    "document_name": "_Syllabus",
+    "modified_time": "2026-09-17T05:46:32.296Z",
+    "published_at": "2026-09-20T20:49:29Z",
+    "source": "drive"
+  },
+  "lectures/L01/L01 slides.pdf": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "slides-l01",
+    "document_id": "1-7E3PGexklfP500d03SN3IMhGyubvjmp19WG9FUXGIw",
+    "document_name": "Lecture deck - L01",
+    "modified_time": "2026-09-20T14:52:10.110Z",
+    "published_at": "2026-09-20T20:49:27Z",
+    "source": "drive"
+  },
   "projects/P01/P01 Handout.md": {
     "agent": "arian@agent.vibeclass",
     "canvas_page": "p01-prompt-to-web-app-lovable + p01-prompt-to-web-app-purple",
