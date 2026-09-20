@@ -1,4 +1,4 @@
-# Project 2 setup guide (experimental)
+# Project 2 setup guide
 
 This document provides instructions to set up your environment for CSE490's in-class projects, starting with Project 2\. 
 

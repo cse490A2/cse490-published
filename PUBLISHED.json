@@ -68,18 +68,18 @@
     "agent": "arian@agent.vibeclass",
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
-    "document_name": "P02 Handout FORK",
-    "modified_time": "2026-09-17T05:26:09.088Z",
-    "published_at": "2026-09-20T20:52:05Z",
+    "document_name": "P02 Handout",
+    "modified_time": "2026-09-20T21:21:14.157Z",
+    "published_at": "2026-09-20T21:22:04Z",
     "source": "drive"
   },
   "projects/P02/Setup.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
-    "document_name": "_P02 experimental Prereq Instructions",
-    "modified_time": "2026-09-16T17:40:19.213Z",
-    "published_at": "2026-09-20T20:52:05Z",
+    "document_name": "P02 Prereq Instructions",
+    "modified_time": "2026-09-20T21:21:56.714Z",
+    "published_at": "2026-09-20T21:22:03Z",
     "source": "drive"
   }
 }
