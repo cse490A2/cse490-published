@@ -1,0 +1,34 @@
+{
+  "projects/P01/P01 Handout.md": {
+    "agent": "arian@agent.vibeclass",
+    "canvas_page": "p01-prompt-to-web-app-lovable + p01-prompt-to-web-app-purple",
+    "canvas_updated": "2026-09-16T22:04:25Z",
+    "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
+    "published_at": "2026-09-20T20:47:21Z",
+    "source": "canvas"
+  },
+  "projects/P01/SUBMISSION.md": {
+    "agent": "arian@agent.vibeclass",
+    "canvas_page": "file p01-pack.zip (152815422)",
+    "canvas_updated": "",
+    "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
+    "published_at": "2026-09-20T20:47:21Z",
+    "source": "canvas"
+  },
+  "projects/P01/Setup.md": {
+    "agent": "arian@agent.vibeclass",
+    "canvas_page": "p01-setup-2",
+    "canvas_updated": "2026-09-20T05:34:27Z",
+    "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
+    "published_at": "2026-09-20T20:47:21Z",
+    "source": "canvas"
+  },
+  "projects/P01/p01-pack.zip": {
+    "agent": "arian@agent.vibeclass",
+    "canvas_page": "file 152815422",
+    "canvas_updated": "",
+    "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
+    "published_at": "2026-09-20T20:47:21Z",
+    "source": "canvas"
+  }
+}
