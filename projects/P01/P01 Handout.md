@@ -33,7 +33,7 @@ Prerequisites: Sign into UW Purple using your UW credentials. Steps: [P01: Setup
 
 You have 40 minutes. Use UW Purple and come up with a cool mobile phone web app. It runs inside UW, so your prompts and your app stay private. Ask Purple if you need ideas. Iterate until it does what you want. Annotate at least once: screenshot the region you want changed and send it to Purple with the change you want.
 
-If you'd rather have the app published for you, use the Lovable tab of this handout instead.
+If you'd rather have the app published for you, use the Lovable section of this handout instead.
 
 ### Turnin
 
