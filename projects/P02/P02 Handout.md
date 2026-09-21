@@ -1,7 +1,7 @@
 # Project 2: Insert Prompt to Play
 
 **Due: Tuesday 11:59 pm**  
-Prerequisites: Follow the [prereq instructions](https://docs.google.com/document/d/13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E/edit) to set up your AI workspace. We will be using [Visual Studio Code](https://code.visualstudio.com) (VS Code) as our IDE for this course and [LiteLLM as our model gateway](https://www.litellm.ai).
+Prerequisites: Follow the [prereq instructions](Setup.md) to set up your AI workspace. We will be using [Visual Studio Code](https://code.visualstudio.com) (VS Code) as our IDE for this course and [LiteLLM as our model gateway](https://www.litellm.ai).
 
 Which of the course's models can build a working program from one spec, and what does it take to fix the ones that can't? That's the project. The spec is an arcade game in a single HTML file, so you judge every answer the same way: open it in a browser and play.
 
@@ -9,7 +9,7 @@ Everyone starts with the same spec: Breakout doubles. It's Breakout with a twist
 
 ## Instructions
 
-1. Open your project folder in VS Code. Also open the LiteLLM extension. Refer to the [prereq instructions](https://docs.google.com/document/d/13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E/edit).  
+1. Open your project folder in VS Code. Also open the LiteLLM extension. Refer to the [prereq instructions](Setup.md).  
 2. Write your prompt in PROMPT.md. It already holds the Breakout doubles prompt. Fill in its Theme section: the colours, the teammate's name, and the words on the end screens. Keep the teammate's 3-pixel speed cap and the centre line; that is where the game breaks. If you are stuck, talk to a model on LiteLLM\!  
 3. Once PROMPT.md is finished, send it to each model from the model selection menu below the prompt box. Sometimes, VS Code will suggest a file to attach to the prompt. Since we're evaluating every model against the same prompt, make sure that no other file is being fed into the model. Once a model is finished, start a new chat and switch to a different model under LiteLLM Bedrock. Save each created game as \<GAME\_NAME\>\_\<MODEL\_NAME\>.html.  
 4. With every model response, document the model type, how long it took, and the number of turns/steps it took in SCORECARD.md.  
