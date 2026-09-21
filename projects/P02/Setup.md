@@ -48,7 +48,7 @@ Make a free GitHub account at [github.com](https://github.com) if you do not hav
 
 ### 6\. Project files
 
-Inside your project folder, create two empty files: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
 
 ### 7\. Chat log
 
@@ -100,7 +100,7 @@ Make a free GitHub account at [github.com](https://github.com) if you do not hav
 
 ### 6\. Project files
 
-Inside your project folder, create two empty files: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
 
 ### 7\. Chat log
 
@@ -154,7 +154,7 @@ Make a free GitHub account at [github.com](https://github.com) if you do not hav
 
 ### 6\. Project files
 
-Inside your project folder, create two empty files: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
 
 ### 7\. Chat log
 

@@ -69,8 +69,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-21T05:10:06.458Z",
-    "published_at": "2026-09-21T05:24:51Z",
+    "modified_time": "2026-09-21T05:25:28.383Z",
+    "published_at": "2026-09-21T05:26:12Z",
     "source": "drive"
   },
   "projects/P02/P02-starter.zip": {
@@ -79,7 +79,7 @@
       "projects/P02/starter/PROMPT.md",
       "projects/P02/starter/SCORECARD.md"
     ],
-    "published_at": "2026-09-21T05:24:53Z",
+    "published_at": "2026-09-21T05:26:13Z",
     "source": "derived"
   },
   "projects/P02/Setup.md": {
@@ -87,8 +87,8 @@
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
     "document_name": "P02 Prereq Instructions",
-    "modified_time": "2026-09-20T21:21:55.741Z",
-    "published_at": "2026-09-21T05:10:41Z",
+    "modified_time": "2026-09-21T05:25:20.937Z",
+    "published_at": "2026-09-21T05:26:11Z",
     "source": "drive"
   },
   "projects/P02/starter/PROMPT.md": {
