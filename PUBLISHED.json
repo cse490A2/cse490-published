@@ -61,8 +61,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-21T05:25:27.403Z",
-    "published_at": "2026-09-21T05:29:10Z",
+    "modified_time": "2026-09-21T05:56:38.221Z",
+    "published_at": "2026-09-21T05:57:16Z",
     "source": "drive"
   },
   "projects/P02/P02-starter.zip": {
@@ -71,7 +71,7 @@
       "projects/P02/starter/PROMPT.md",
       "projects/P02/starter/SCORECARD.md"
     ],
-    "published_at": "2026-09-21T05:26:13Z",
+    "published_at": "2026-09-21T05:57:17Z",
     "source": "derived"
   },
   "projects/P02/Setup.md": {
@@ -97,8 +97,8 @@
     "artifact_id": "starter:P02 starter SCORECARD.md",
     "document_id": "1FUggeBjbztagSfmA8WBpMiY99ObYlBWY",
     "document_name": "P02 starter SCORECARD.md",
-    "modified_time": "2026-09-21T05:23:41.511Z",
-    "published_at": "2026-09-21T05:24:53Z",
+    "modified_time": "2026-09-21T05:57:10.050Z",
+    "published_at": "2026-09-21T05:57:17Z",
     "source": "drive"
   }
 }

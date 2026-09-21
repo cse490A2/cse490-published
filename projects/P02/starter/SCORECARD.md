@@ -6,6 +6,7 @@ Copy the block between the two rules once per model, and fill it in as you go.
 Keep the field names exactly as they are. Write your answer after the colon.
 
 - Model: the model's name exactly as the picker shows it.
+- Prompt file: PROMPT.md, or PROMPT2.md for a game from your own spec.
 - Game file: the exact name of the file you saved for this model.
 - Time to answer: seconds, as a number.
 - Turns: how many prompts you sent this model, as a whole number.
@@ -16,6 +17,7 @@ Keep the field names exactly as they are. Write your answer after the colon.
 
 ## Model: 
 
+Prompt file: PROMPT.md
 Game file: 
 Time to answer: 
 Turns: 

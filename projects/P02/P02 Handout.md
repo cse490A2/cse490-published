@@ -38,7 +38,7 @@ By Tuesday 11:59 pm, on the Project 2 assignment in Canvas:
 
 ## Grading
 
-A model will autograde your submission. It checks that each step was properly followed: the Breakout doubles prompt in PROMPT.md, one game file per model you ran, a SCORECARD.md block for each of them, and the extra prompts for any model that failed. If you made it awesome, it checks the same for PROMPT2.md and its games. Every check is pass or fail. It does not judge code style, prompt wording, how good the game is, or how many tries it took.
+A model will autograde your submission. It checks that each step was properly followed: the Breakout doubles prompt in PROMPT.md, one game file per model you ran, at least 3 models, a SCORECARD.md block for each of them, and the extra prompts for any model that failed. If you made it awesome, it checks the same for PROMPT2.md and its games. Every check is pass or fail. It does not judge code style, prompt wording, how good the game is, or how many tries it took.
 
 ## Reference
 
