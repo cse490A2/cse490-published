@@ -29,9 +29,12 @@ Some examples of arcade games:
 
 ## Turnin
 
-By Tuesday 11:59 pm:
+By Tuesday 11:59 pm, on the Project 2 assignment in Canvas:
 
-* Submit the repository link on the Project 2 assignment in Canvas.
+* Upload PROMPT.md and SCORECARD.md.  
+* Upload every game file you saved, one per model.  
+* If you made it awesome, upload PROMPT2.md and its game files too.  
+* Submit as Upload: all of the files together, in one submission. Leave .env out.
 
 ## Grading
 
