@@ -11,14 +11,14 @@ Everyone starts with the same spec: Breakout doubles. It's Breakout with a twist
 
 1. Open your project folder in VS Code. Also open the LiteLLM extension. Refer to the [prereq instructions](Setup.md).  
 2. Write your prompt in PROMPT.md. It already holds the Breakout doubles prompt. Fill in its Theme section: the colours, the teammate's name, and the words on the end screens. Keep the teammate's 3-pixel speed cap and the centre line; that is where the game breaks. If you are stuck, talk to a model on LiteLLM\!  
-3. Once PROMPT.md is finished, send it to each model from the model selection menu below the prompt box. Sometimes, VS Code will suggest a file to attach to the prompt. Since we're evaluating every model against the same prompt, make sure that no other file is being fed into the model. Once a model is finished, start a new chat and switch to a different model under LiteLLM Bedrock. Save each created game as \<GAME\_NAME\>\_\<MODEL\_NAME\>.html.  
+3. Once PROMPT.md is finished, send it to each model from the model selection menu below the prompt box. Sometimes, VS Code will suggest a file to attach to the prompt. Since we're evaluating every model against the same prompt, make sure that no other file is being fed into the model. Once a model is finished, start a new chat and switch to a different model under CSE 490\. Save each created game as \<GAME\_NAME\>\_\<MODEL\_NAME\>.html.  
 4. With every model response, document the model type, how long it took, and the number of turns/steps it took in SCORECARD.md.  
 5. Now spend about 1 minute playing each created game, watching the right half. They can be played by opening the file in your browser. Continue filling out SCORECARD.md, documenting whether the game is playable, likes, dislikes, and what surprised you. Most of these models should be able to decently one-shot the output\!  
 6. However, there may be a model that fails. In this case, use the same model that failed and continue prompting until you're satisfied with its output. Change the ask, not the code. Document the additional prompts in SCORECARD.md.
 
 ## Make it awesome
 
-This part is optional. Write a spec of your own that blends two arcade games: Pong played on Frogger's road, Galaga with Mappy's trampolines, whatever you can picture. Put it in PROMPT2.md, in the shape of the Breakout doubles prompt: the constraints, the rules, one or two examples, and the output format. Then repeat steps 3 to 6 with it: every model, a game file per model named after your game, a SCORECARD.md line for each, and extra prompting for the one that failed.
+This part is optional. Write a spec of your own that blends two arcade games: Pong played on Frogger's road, Galaga with Mappy's trampolines, whatever you can picture. Put it in PROMPT2.md, in the shape of the Breakout doubles prompt: the constraints, the rules, one or two examples, and the output format. Then repeat steps 3 to 6 with it: every model, a game file per model named after your game, a SCORECARD.md block for each with Prompt file set to PROMPT2.md, and extra prompting for the one that failed.
 
 Some examples of arcade games:
 
@@ -38,7 +38,7 @@ By Tuesday 11:59 pm, on the Project 2 assignment in Canvas:
 
 ## Grading
 
-A model will autograde your submission. It checks that each step was properly followed: the Breakout doubles prompt in PROMPT.md, one game file per model you ran, at least 3 models, a SCORECARD.md block for each of them, and the extra prompts for any model that failed. If you made it awesome, it checks the same for PROMPT2.md and its games. Every check is pass or fail. It does not judge code style, prompt wording, how good the game is, or how many tries it took.
+Your submission is autograded. It checks that each step was properly followed: the Breakout doubles prompt in PROMPT.md, one game file per model you ran, at least 3 models, a SCORECARD.md block for each of them, and the extra prompts for any model that failed. If you made it awesome, it checks the same for PROMPT2.md and its games. Every check is pass or fail. It does not judge code style, prompt wording, how good the game is, or how many tries it took.
 
 ## Reference
 

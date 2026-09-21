@@ -40,21 +40,17 @@ Point it at the course gateway. Open the Command Palette (Cmd+Shift+P). Run "Pre
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). The model picker at the bottom of the chat box shows qwen-3.6 alone at this point: the gateway lists the rest of your models only through the chat log, which step 7 sets up. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. If you see fewer than three, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
-Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. That is what lets Publish to GitHub work during the build.
+Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. VS Code's chat may ask you to sign in, and projects from week 3 on keep their code on GitHub.
 
 ### 6\. Project files
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. You save your game files here during the build.
 
-### 7\. Chat log
-
-On a yes, your chats with the course AI are saved to \_chatlog.md in this folder and turned in with it. Nothing else to do. In VS Code the chat's server is then named CSE 490 log, and its picker shows every model your key can use. On a no, you turn in a transcript yourself, and the picker keeps showing qwen-3.6 alone. The yes and the no are answers to the setup wizard; without the wizard there is no log.
-
-### 8\. Model gateway
+### 7\. Model gateway
 
 Prove the key works. In a terminal in your project folder:  
 curl \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
@@ -92,21 +88,17 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box shows qwen-3.6 alone at this point: the gateway lists the rest of your models only through the chat log, which step 7 sets up. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. If you see fewer than three, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
-Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. That is what lets Publish to GitHub work during the build.
+Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. VS Code's chat may ask you to sign in, and projects from week 3 on keep their code on GitHub.
 
 ### 6\. Project files
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. You save your game files here during the build.
 
-### 7\. Chat log
-
-On a yes, your chats with the course AI are saved to \_chatlog.md in this folder and turned in with it. Nothing else to do. In VS Code the chat's server is then named CSE 490 log, and its picker shows every model your key can use. On a no, you turn in a transcript yourself, and the picker keeps showing qwen-3.6 alone. The yes and the no are answers to the setup wizard; without the wizard there is no log.
-
-### 8\. Model gateway
+### 7\. Model gateway
 
 Prove the key works. In PowerShell in your project folder:  
 curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
@@ -146,21 +138,17 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box shows qwen-3.6 alone at this point: the gateway lists the rest of your models only through the chat log, which step 7 sets up. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. If you see fewer than three, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
-Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. That is what lets Publish to GitHub work during the build.
+Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. VS Code's chat may ask you to sign in, and projects from week 3 on keep their code on GitHub.
 
 ### 6\. Project files
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. Your game folders are created during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. You save your game files here during the build.
 
-### 7\. Chat log
-
-On a yes, your chats with the course AI are saved to \_chatlog.md in this folder and turned in with it. Nothing else to do. In VS Code the chat's server is then named CSE 490 log, and its picker shows every model your key can use. On a no, you turn in a transcript yourself, and the picker keeps showing qwen-3.6 alone. The yes and the no are answers to the setup wizard; without the wizard there is no log.
-
-### 8\. Model gateway
+### 7\. Model gateway
 
 Prove the key works. In a terminal in your project folder:  
 curl \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
