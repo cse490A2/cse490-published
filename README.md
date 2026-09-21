@@ -4,7 +4,7 @@ Published course materials. Each file here is a frozen export of a finished docu
 
 | Path | What it is |
 |---|---|
-| `Syllabus.md` | The syllabus. |
+| `Syllabus.md` | The syllabus, once approved. |
 | `lectures/LNN/` | Lecture slides as PDF. |
 | `projects/PNN/` | The project handout, its setup guide, and its submission template. |
 | `PUBLISHED.json` | Where each file came from and when it was published. |
