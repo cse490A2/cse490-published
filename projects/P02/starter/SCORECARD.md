@@ -2,7 +2,7 @@
 
 Template: p02-scorecard-v1
 
-Copy the block between the two rules once per model, and fill it in as you go.
+The three course models each have a block below; fill them in as you go. Copy a block for any extra model, and for each game from your own spec.
 Keep the field names exactly as they are. Write your answer after the colon.
 
 - Model: the model's name exactly as the picker shows it.
@@ -15,7 +15,41 @@ Keep the field names exactly as they are. Write your answer after the colon.
 
 ---
 
-## Model: 
+## Model: external/haiku-4-5-20251001
+
+Prompt file: PROMPT.md
+Game file: 
+Time to answer: 
+Turns: 
+Playable: 
+Liked: 
+Disliked: 
+Surprised me: 
+
+Extra prompts:
+
+1. 
+
+---
+
+## Model: external/kimi-k3
+
+Prompt file: PROMPT.md
+Game file: 
+Time to answer: 
+Turns: 
+Playable: 
+Liked: 
+Disliked: 
+Surprised me: 
+
+Extra prompts:
+
+1. 
+
+---
+
+## Model: external/deepseek.v3.2
 
 Prompt file: PROMPT.md
 Game file: 

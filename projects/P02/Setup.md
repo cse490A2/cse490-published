@@ -40,7 +40,7 @@ Point it at the course gateway. Open the Command Palette (Cmd+Shift+P). Run "Pre
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. If you see fewer than three, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. The three you will use are external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2. If any of them is missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
@@ -54,7 +54,7 @@ Download the [starter files](https://github.com/cse490A2/cse490-published/raw/ma
 
 Prove the key works. In a terminal in your project folder:  
 curl \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
-Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
+Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## Windows
 
@@ -88,7 +88,7 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. If you see fewer than three, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. The three you will use are external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2. If any of them is missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
@@ -102,7 +102,7 @@ Download the [starter files](https://github.com/cse490A2/cse490-published/raw/ma
 
 Prove the key works. In PowerShell in your project folder:  
 curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
-Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
+Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## Linux
 
@@ -138,7 +138,7 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. If you see fewer than three, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. The three you will use are external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2. If any of them is missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
@@ -152,4 +152,4 @@ Download the [starter files](https://github.com/cse490A2/cse490-published/raw/ma
 
 Prove the key works. In a terminal in your project folder:  
 curl \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
-Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.  
+Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.  
