@@ -26,11 +26,12 @@
   },
   "projects/P01/P01 Handout.md": {
     "agent": "arian@agent.vibeclass",
-    "canvas_page": "p01-prompt-to-web-app-lovable + p01-prompt-to-web-app-purple",
-    "canvas_updated": "2026-09-16T22:04:25Z",
-    "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
-    "published_at": "2026-09-20T20:47:21Z",
-    "source": "canvas"
+    "artifact_id": "project-student-p01",
+    "document_id": "1UlveuNGfPSXEEYQHWbAkljYpEMSVNnz3pLBkegDNuTs",
+    "document_name": "P01 Handout",
+    "modified_time": "2026-09-23T21:22:56.082Z",
+    "published_at": "2026-09-23T21:25:32Z",
+    "source": "drive"
   },
   "projects/P01/SUBMISSION.md": {
     "agent": "arian@agent.vibeclass",
