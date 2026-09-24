@@ -48,7 +48,7 @@ Make a free GitHub account at [github.com](https://github.com) if you do not hav
 
 ### 6\. Project files
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. You save your game files here during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md, SCORECARD.md, and a chat log. You save your game files here during the build. Open the folder in VS Code. When it asks whether to allow automatic tasks in this folder, click Allow; that switches the chat log on. From then on, every chat you have with the course models in this folder is saved to \_chatlog.md, next to your other files, where you can read it any time. The log stays on your computer. Nobody on the course staff sees it unless you upload it yourself, and it never includes your API key. To stop the log, delete \_chatlog.py from the folder.
 
 ### 7\. Model gateway
 
@@ -71,11 +71,17 @@ Download and install git from [git-scm.com](https://git-scm.com/downloads). The 
 git config \--global user.name "Your Name"  
 git config \--global user.email "you@example.com"
 
-### 3\. VS Code
+### 3\. Python
+
+Download Python from [python.org/downloads](https://www.python.org/downloads/) and run the installer. Tick "Add python.exe to PATH", then choose Install Now. Then, from a fresh PowerShell window, check it:  
+py \--version  
+A version number means it worked. The chat log in step 7 runs on Python.
+
+### 4\. VS Code
 
 Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Run the installer. The defaults are fine. Then check again.
 
-### 4\. AI chat in VS Code
+### 5\. AI chat in VS Code
 
 Install the extension. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install.  
 Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
@@ -90,15 +96,15 @@ Replace \<your key here\> with your given API key. Switch agent mode off; this w
 "chat.agent.enabled": false  
 Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The course's models do not appear in the model picker until you add them. Click the model picker at the bottom of the chat box, then "Manage Models...", then "Add Models", then "LiteLLM". Choose the CSE 490 server if it is offered. If it asks you for a server instead, give the base URL and your API key and keep every other answer at its default. Tick external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2, then confirm. Those three now sit in the model picker; pick one before you send a message. If any of them is missing from the list, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
-### 5\. GitHub
+### 6\. GitHub
 
 Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. VS Code's chat may ask you to sign in, and projects from week 3 on keep their code on GitHub.
 
-### 6\. Project files
+### 7\. Project files
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. You save your game files here during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md, SCORECARD.md, and a chat log. You save your game files here during the build. Open the folder in VS Code. When it asks whether to allow automatic tasks in this folder, click Allow; that switches the chat log on. From then on, every chat you have with the course models in this folder is saved to \_chatlog.md, next to your other files, where you can read it any time. The log stays on your computer. Nobody on the course staff sees it unless you upload it yourself, and it never includes your API key. To stop the log, delete \_chatlog.py from the folder.
 
-### 7\. Model gateway
+### 8\. Model gateway
 
 Prove the key works. In PowerShell in your project folder:  
 curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
@@ -146,7 +152,7 @@ Make a free GitHub account at [github.com](https://github.com) if you do not hav
 
 ### 6\. Project files
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md and SCORECARD.md. You save your game files here during the build.
+Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md, SCORECARD.md, and a chat log. You save your game files here during the build. Open the folder in VS Code. When it asks whether to allow automatic tasks in this folder, click Allow; that switches the chat log on. From then on, every chat you have with the course models in this folder is saved to \_chatlog.md, next to your other files, where you can read it any time. The log stays on your computer. Nobody on the course staff sees it unless you upload it yourself, and it never includes your API key. To stop the log, delete \_chatlog.py from the folder.
 
 ### 7\. Model gateway
 
