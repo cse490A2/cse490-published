@@ -9,9 +9,9 @@ Everyone starts with the same spec: Breakout doubles. It's Breakout with a twist
 
 ## Instructions
 
-1. Open your project folder in VS Code. Also open the LiteLLM extension. Refer to the [prereq instructions](Setup.md).  
+1. Open the P02-starter folder in VS Code and open the chat panel. Its artifacts folder is where the games go, and its logs folder keeps your chat log. Refer to the [prereq instructions](Setup.md).  
 2. Write your prompt in PROMPT.md. It already holds the Breakout doubles prompt. Fill in its Theme section: the colours, the teammate's name, and the words on the end screens. Keep the teammate's 3-pixel speed cap and the centre line; that is where the game breaks. If you are stuck, talk to a model on LiteLLM\!  
-3. Once PROMPT.md is finished, send it to each of the three course models from the model selection menu below the prompt box: external/haiku-4-5-20251001, external/GLM5, and external/deepseek.v3.2. They are three different companies' models, all served through Bedrock, and they don't behave the same. Sometimes, VS Code will suggest a file to attach to the prompt. Since we're evaluating every model against the same prompt, make sure that no other file is being fed into the model. Once a model is finished, start a new chat and switch to the next model under CSE 490\. Save each created game as \<GAME\_NAME\>\_\<MODEL\_NAME\>.html.  
+3. Once PROMPT.md is finished, send it to each of the three course models from the model selection menu below the prompt box: external/haiku-4-5-20251001, external/GLM5, and external/deepseek.v3.2. They are three different companies' models, all served through Bedrock, and they don't behave the same. Sometimes, VS Code will suggest a file to attach to the prompt. Since we're evaluating every model against the same prompt, make sure that no other file is being fed into the model. Once a model is finished, start a new chat and switch to the next model under CSE 490\. Save each created game in the artifacts folder as \<Game\>\_\<model\>.html: the game name, one underscore, the model's short name, for example artifacts/BreakoutDoubles\_kimi-k3.html.  
 4. With every model response, start its block in SCORECARD.md: the model and the game file. The course gateway records your prompts, timing, and turns on its own.  
 5. Now spend about 1 minute playing each created game, watching the right half. They can be played by opening the file in your browser. Continue filling out SCORECARD.md, documenting whether the game is playable, likes, dislikes, and what surprised you. At least one of the three usually gets it first try, and at least one usually doesn't.  
 6. However, there may be a model that fails. In this case, use the same model that failed and continue prompting until you're satisfied with its output. Change the ask, not the code.
@@ -31,10 +31,10 @@ Some examples of arcade games:
 
 By Tuesday 11:59 pm, on the Project 2 assignment in Canvas:
 
-* Upload PROMPT.md and SCORECARD.md.  
-* Upload every game file you saved, one per model.  
-* If you made it awesome, upload PROMPT2.md and its game files too.  
-* Submit as Upload: all of the files together, in one submission. Leave .env out.
+* In VS Code, open the Command Palette and run CSE 490: Package for turn-in. It checks your folder and writes P02-submission.zip next to PROMPT.md.  
+* Upload P02-submission.zip. It holds your prompts, the scorecard, every game, and your chat log; .env is left out.  
+* If you made it awesome, PROMPT2.md and its games are in the zip already.  
+* Submit as Upload: the one zip.
 
 ## Grading
 

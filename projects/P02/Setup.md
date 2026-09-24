@@ -8,9 +8,9 @@ This document provides instructions to set up your environment for CSE490's in-c
 
 ## Mac
 
-### 1\. Course key
+### 1\. Project folder
 
-Create a folder for the project. Inside it, create a file named .env. Inside, paste these two lines:  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
 LITELLM\_BASE\_URL=https://litellm-test.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
@@ -29,7 +29,7 @@ Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Op
 
 ### 4\. AI chat in VS Code
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Cmd+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course chat log extension, cse490-chatlog.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-chatlog.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6\.  
+Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Cmd+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6 and packages your turn-in.  
 Point it at the course gateway. Open the Command Palette (Cmd+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
@@ -46,9 +46,9 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+C
 
 Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. VS Code's chat may ask you to sign in, and projects from week 3 on keep their code on GitHub.
 
-### 6\. Project files
+### 6\. Open the project
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md, SCORECARD.md, and \_chatlog.json, the chat log's switch. You save your game files here during the build. Open the folder in VS Code. The chat log extension from step 4 sees \_chatlog.json and, from then on, saves every chat you have with the course models in this folder to \_chatlog.md, next to your other files, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you upload it yourself, and it never includes your API key. To stop the log, delete \_chatlog.json from the folder.
+In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 4 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 7\. Model gateway
 
@@ -58,9 +58,9 @@ Replace \<your key\> with your API key. A working key returns a list of models t
 
 ## Windows
 
-### 1\. Course key
+### 1\. Project folder
 
-Create a folder for the project. Inside it, create a file named .env. Inside, paste these two lines:  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
 LITELLM\_BASE\_URL=https://litellm-test.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
@@ -77,7 +77,7 @@ Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Ru
 
 ### 4\. AI chat in VS Code
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course chat log extension, cse490-chatlog.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-chatlog.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6\.  
+Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6 and packages your turn-in.  
 Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
@@ -94,9 +94,9 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+A
 
 Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. VS Code's chat may ask you to sign in, and projects from week 3 on keep their code on GitHub.
 
-### 6\. Project files
+### 6\. Open the project
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md, SCORECARD.md, and \_chatlog.json, the chat log's switch. You save your game files here during the build. Open the folder in VS Code. The chat log extension from step 4 sees \_chatlog.json and, from then on, saves every chat you have with the course models in this folder to \_chatlog.md, next to your other files, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you upload it yourself, and it never includes your API key. To stop the log, delete \_chatlog.json from the folder.
+In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 4 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 7\. Model gateway
 
@@ -106,9 +106,9 @@ Replace \<your key\> with your API key. A working key returns a list of models t
 
 ## Linux
 
-### 1\. Course key
+### 1\. Project folder
 
-Create a folder for the project. Inside it, create a file named .env. Inside, paste these two lines:  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
 LITELLM\_BASE\_URL=https://litellm-test.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
@@ -127,7 +127,7 @@ Get the package for your distribution from [the VS Code download page](https://c
 
 ### 4\. AI chat in VS Code
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course chat log extension, cse490-chatlog.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-chatlog.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6\.  
+Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6 and packages your turn-in.  
 Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
@@ -144,9 +144,9 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+A
 
 Make a free GitHub account at [github.com](https://github.com) if you do not have one, and verify the email it sends you. Then, in VS Code, open the Accounts menu (the person icon at the bottom left) and sign in with GitHub. VS Code's chat may ask you to sign in, and projects from week 3 on keep their code on GitHub.
 
-### 6\. Project files
+### 6\. Open the project
 
-Download the [starter files](https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip) and unzip them into your project folder: PROMPT.md, SCORECARD.md, and \_chatlog.json, the chat log's switch. You save your game files here during the build. Open the folder in VS Code. The chat log extension from step 4 sees \_chatlog.json and, from then on, saves every chat you have with the course models in this folder to \_chatlog.md, next to your other files, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you upload it yourself, and it never includes your API key. To stop the log, delete \_chatlog.json from the folder.
+In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 4 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 7\. Model gateway
 
