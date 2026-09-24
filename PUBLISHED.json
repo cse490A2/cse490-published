@@ -62,20 +62,18 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-24T23:03:43.825Z",
-    "published_at": "2026-09-24T23:05:44Z",
+    "modified_time": "2026-09-24T23:22:31.171Z",
+    "published_at": "2026-09-24T23:23:58Z",
     "source": "drive"
   },
   "projects/P02/P02-starter.zip": {
     "agent": "arian@agent.vibeclass",
     "derived_from": [
-      "projects/P02/starter/.vscode/tasks.json",
       "projects/P02/starter/PROMPT.md",
       "projects/P02/starter/SCORECARD.md",
-      "projects/P02/starter/_chatlog.json",
-      "projects/P02/starter/_chatlog.py"
+      "projects/P02/starter/_chatlog.json"
     ],
-    "published_at": "2026-09-24T23:03:58Z",
+    "published_at": "2026-09-24T23:24:01Z",
     "source": "derived"
   },
   "projects/P02/Setup.md": {
@@ -83,8 +81,8 @@
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
     "document_name": "P02 Prereq Instructions",
-    "modified_time": "2026-09-24T23:04:11.132Z",
-    "published_at": "2026-09-24T23:04:19Z",
+    "modified_time": "2026-09-24T23:23:46.432Z",
+    "published_at": "2026-09-24T23:23:55Z",
     "source": "drive"
   },
   "projects/P02/starter/.vscode/tasks.json": {
@@ -110,8 +108,8 @@
     "artifact_id": "starter:P02 starter SCORECARD.md",
     "document_id": "1FUggeBjbztagSfmA8WBpMiY99ObYlBWY",
     "document_name": "P02 starter SCORECARD.md",
-    "modified_time": "2026-09-22T18:17:31.946Z",
-    "published_at": "2026-09-22T18:18:24Z",
+    "modified_time": "2026-09-24T23:22:10.453Z",
+    "published_at": "2026-09-24T23:24:01Z",
     "source": "drive"
   },
   "projects/P02/starter/_chatlog.json": {
@@ -119,8 +117,8 @@
     "artifact_id": "starter:P02 starter _chatlog.json",
     "document_id": "1cx4b-xLQlD0ewGWuKk5MAJE3WfAPgB29",
     "document_name": "P02 starter _chatlog.json",
-    "modified_time": "2026-09-24T22:50:05.617Z",
-    "published_at": "2026-09-24T22:52:11Z",
+    "modified_time": "2026-09-24T23:23:01.993Z",
+    "published_at": "2026-09-24T23:24:01Z",
     "source": "drive"
   },
   "projects/P02/starter/_chatlog.py": {

@@ -1,1 +1,1 @@
-{"project": "p02", "port": 4402, "inlets": {"files": {"readers": ["vscode-chat"]}}}
+{"project": "p02", "port": 4402, "inlets": {"files": {"readers": ["vscode-chat", "claude-code"]}}}
