@@ -40,7 +40,7 @@ Point it at the course gateway. Open the Command Palette (Cmd+Shift+P). Run "Pre
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. The three you will use are external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2. If any of them is missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). The course's models do not appear in the model picker until you add them. Click the model picker at the bottom of the chat box, then "Manage Models...", then "Add Models", then "LiteLLM". Choose the CSE 490 server if it is offered. If it asks you for a server instead, give the base URL and your API key and keep every other answer at its default. Tick external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2, then confirm. Those three now sit in the model picker; pick one before you send a message. If any of them is missing from the list, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
@@ -88,7 +88,7 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. The three you will use are external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2. If any of them is missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The course's models do not appear in the model picker until you add them. Click the model picker at the bottom of the chat box, then "Manage Models...", then "Add Models", then "LiteLLM". Choose the CSE 490 server if it is offered. If it asks you for a server instead, give the base URL and your API key and keep every other answer at its default. Tick external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2, then confirm. Those three now sit in the model picker; pick one before you send a message. If any of them is missing from the list, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
@@ -138,7 +138,7 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 \]  
 Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
 "chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The model picker at the bottom of the chat box lists the course's models under CSE 490\. The three you will use are external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2. If any of them is missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
+Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). The course's models do not appear in the model picker until you add them. Click the model picker at the bottom of the chat box, then "Manage Models...", then "Add Models", then "LiteLLM". Choose the CSE 490 server if it is offered. If it asks you for a server instead, give the base URL and your API key and keep every other answer at its default. Tick external/haiku-4-5-20251001, external/kimi-k3, and external/deepseek.v3.2, then confirm. Those three now sit in the model picker; pick one before you send a message. If any of them is missing from the list, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.
 
 ### 5\. GitHub
 
