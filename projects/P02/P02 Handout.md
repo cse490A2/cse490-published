@@ -18,7 +18,7 @@ Everyone starts with the same spec: Breakout doubles. It's Breakout with a twist
 
 ## Make it awesome
 
-This part is optional and worth 5 extra points. Write a spec of your own that blends two arcade games: Pong played on Frogger's road, Galaga with Mappy's trampolines, whatever you can picture. Put it in PROMPT2.md, in the shape of the Breakout doubles prompt: the constraints, the rules, one or two examples, and the output format. Then repeat steps 3 to 6 with it: the same three models, a game file per model named after your game, a SCORECARD.md block for each with Prompt file set to PROMPT2.md, and extra prompting for the one that failed.
+This part is optional and worth 5 extra points. Write a spec of your own that blends two arcade games: Pong played on Frogger's road, Galaga with Mappy's trampolines, whatever you can picture. Put it in PROMPT2.md, in the shape of the Breakout doubles prompt: a theme, the rules, the technical constraints, the expected behaviour, and the output format. Then repeat steps 3 to 6 with it: the same three models, a game file per model named after your game, a SCORECARD.md block for each with Prompt file set to PROMPT2.md, and extra prompting for the one that failed.
 
 Some examples of arcade games:
 
@@ -42,5 +42,4 @@ Your submission is autograded. It checks that each step was properly followed: t
 
 ## Reference
 
-The Breakout doubles prompt, to start from:  
-Write a Breakout doubles game I can play in my browser with a computer teammate. Constraints: one complete HTML file with the CSS and JavaScript inline. No external libraries, fonts, images, or network requests. A 480 by 320 canvas. Two paddles side by side along the bottom: mine on the left half, moved with the left and right arrow keys and never crossing the centre line; the computer's on the right half, which moves toward the ball on its own by at most 3 pixels per frame and never crosses the centre line either. One ball. Six rows of ten bricks. The ball bounces off the walls, both paddles, and the bricks, and a brick disappears when it is hit. The score is shared and drawn on the canvas. When the ball falls below the paddles the game shows GAME OVER; when every brick is gone it shows YOU WIN; pressing Space restarts. Use requestAnimationFrame for the game loop. No alert or prompt dialogs. Keep it under 150 lines. Examples: the ball starts resting on my paddle and launches upward when Space is pressed. When the ball comes down on the right half, the computer paddle slides under it; if the ball is moving sideways faster than the paddle can, the computer misses and the ball is lost. Output format: reply with the HTML file in one code block and nothing else.  
+The Breakout doubles prompt is PROMPT.md in the starter files. It has five sections: Theme, Rules, Technical constraints, Expected behaviour, and Output format. You fill in Theme and leave the rest as written.  
