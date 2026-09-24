@@ -1,1 +1,1 @@
-{"project": "p02", "port": 4402, "inlets": {"files": {"readers": ["vscode-chat", "claude-code"]}}}
+{"project": "p02", "port": 4402, "turnin_name": "the Project 2 assignment", "turnin_url": "https://canvas.uw.edu/courses/1916846/modules/items/27298274", "inlets": {"files": {"readers": ["vscode-chat", "claude-code"]}}}
