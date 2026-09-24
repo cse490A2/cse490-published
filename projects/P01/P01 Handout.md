@@ -11,7 +11,8 @@ If you'd rather keep your work inside UW, use the Purple tab of this handout ins
 
 A few examples:  
 [https://sensory-synth.lovable.app](https://sensory-synth.lovable.app)  
-[https://fairy-chat-coach.lovable.app](https://fairy-chat-coach.lovable.app)
+[https://fairy-chat-coach.lovable.app](https://fairy-chat-coach.lovable.app)  
+[https://dogear-books.lovable.app](https://dogear-books.lovable.app)
 
 ## Turnin
 
