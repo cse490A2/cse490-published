@@ -10,7 +10,8 @@ You have 40 minutes. Use [Lovable](https://lovable.dev) and come up with a cool 
 If you'd rather keep your work inside UW, use the Purple tab of this handout instead.
 
 A few examples:  
-[https://sensory-synth.lovable.app](https://sensory-synth.lovable.app)
+[https://sensory-synth.lovable.app](https://sensory-synth.lovable.app)  
+[https://fairy-chat-coach.lovable.app](https://fairy-chat-coach.lovable.app)
 
 ## Turnin
 
