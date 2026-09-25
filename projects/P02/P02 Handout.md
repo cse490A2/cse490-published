@@ -11,7 +11,7 @@ Compare the output of different models under the same prompt spec. You will firs
 2. Write your prompt in PROMPT.md. It already holds the Breakout doubles prompt. Fill in its Theme section: the colors, the teammate's name, and the words on the end screens. Keep the teammate's 3-pixel speed cap and the centre line; that is where the game breaks.  
 3. Once PROMPT.md is finished, send it to each of the three course models from the model selection menu below the prompt box: external/zai.glm-5, external/haiku-4-5-20251001, and internal/Qwen3.6-35B-A3B. They are three different companies' models, all served through the course gateway, and they don't behave the same. Sometimes, VS Code will suggest a file to attach to the prompt. Since we're evaluating every model against the same prompt, make sure that no other file is being fed into the model. Once a model is finished, start a new chat and switch to the next model under CSE 490\. Save each created game in the artifacts folder as \<Game\>\_\<model\>.html: the game name, one underscore, the model's short name, for example artifacts/BreakoutDoubles\_glm-5.html.  
 4. For each model, document your observations inside SCORECARD.md. Write a few brief sentences explaining what you liked, disliked, and what surprised you.  Here’s an example of a filled out [SCORECARD.md](https://github.com/cse490A2/cse490-published/blob/main/projects/P02/examples/SCORECARD.md)  
-5. Now try playing each created game, watching the right half. They can be played by opening the file in your browser. Continue filling out SCORECARD.md, documenting whether the game is playable, likes, dislikes, and what surprised you. At least one of the three usually gets it first try, and at least one usually doesn't.  
+5. Now try playing each created game, watching the right half. Play them from VS Code: run CSE 490: Play this game from the Command Palette and pick the file, and it opens beside the editor. A browser tab works too. Continue filling out SCORECARD.md, documenting whether the game is playable, likes, dislikes, and what surprised you. At least one of the three usually gets it first try, and at least one usually doesn't.  
 6. There may be a model that fails. In this case, use the same model that failed and continue prompting until you're satisfied with its output. Change the prompt, not the code.
 
 ## Make it awesome
@@ -44,4 +44,18 @@ Your submission is autograded. It checks that each step was properly followed: t
 
 ## Reference
 
-The Breakout doubles prompt is PROMPT.md in the starter files. It has five sections: Theme, Rules, Technical constraints, Expected behaviour, and Output format. You fill in Theme and leave the rest as written.
+The Breakout doubles prompt is PROMPT.md in the starter files. It has five sections: Theme, Rules, Technical constraints, Expected behaviour, and Output format. You fill in Theme and leave the rest as written.  
+\#\# The timer
+
+Your project folder keeps a timer, so the course can see how long each project takes. It is not graded. The course extension writes it; you do nothing.
+
+A minute counts when any of these holds:
+
+\* VS Code is focused and you touched something in the last 5 minutes: typing, moving the cursor, scrolling, switching files, saving.  
+\* A game opened with CSE 490: Play this game is the active tab.  
+\* A model is answering you.  
+\* It falls between two chat turns or saves less than 15 minutes apart.
+
+A minute does not count when VS Code is closed, asleep, or behind another app. It also does not count when VS Code sits focused with nothing touched for more than 5 minutes and no chat turn or save within 15 minutes on either side. Walking away with VS Code in front costs at most 5 minutes. Closing the lid costs nothing. Playing in a browser tab counts only when a chat turn or a save falls within 15 minutes of it, which is why the play command exists.
+
+The numbers land in logs/\_timeline.json and go in the zip with everything else: minutes active, minutes from first open to turn-in, and each break with its cause.
