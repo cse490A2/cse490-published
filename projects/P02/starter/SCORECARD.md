@@ -12,6 +12,17 @@ Keep the field names exactly as they are. Write your answer after the colon. The
 
 ---
 
+## Model: external/zai.glm-5
+
+Prompt file: PROMPT.md
+Game file: 
+Playable: 
+Liked: 
+Disliked: 
+Surprised me: 
+
+---
+
 ## Model: external/haiku-4-5-20251001
 
 Prompt file: PROMPT.md
@@ -23,18 +34,7 @@ Surprised me:
 
 ---
 
-## Model: external/kimi-k3
-
-Prompt file: PROMPT.md
-Game file: 
-Playable: 
-Liked: 
-Disliked: 
-Surprised me: 
-
----
-
-## Model: external/deepseek.v3.2
+## Model: internal/Qwen3.6-35B-A3B
 
 Prompt file: PROMPT.md
 Game file: 

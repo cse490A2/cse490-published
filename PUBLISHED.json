@@ -62,8 +62,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-24T23:33:25.815Z",
-    "published_at": "2026-09-24T23:37:22Z",
+    "modified_time": "2026-09-25T00:22:01.411Z",
+    "published_at": "2026-09-25T00:22:51Z",
     "source": "drive"
   },
   "projects/P02/P02-starter.zip": {
@@ -74,7 +74,7 @@
       "projects/P02/starter/artifacts/README.md",
       "projects/P02/starter/logs/_chatlog.json"
     ],
-    "published_at": "2026-09-24T23:45:17Z",
+    "published_at": "2026-09-25T00:22:54Z",
     "source": "derived"
   },
   "projects/P02/Setup.md": {
@@ -82,8 +82,8 @@
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
     "document_name": "P02 Prereq Instructions",
-    "modified_time": "2026-09-25T00:14:27.668Z",
-    "published_at": "2026-09-25T00:14:48Z",
+    "modified_time": "2026-09-25T00:22:30.400Z",
+    "published_at": "2026-09-25T00:22:47Z",
     "source": "drive"
   },
   "projects/P02/starter/.vscode/tasks.json": {
@@ -109,8 +109,8 @@
     "artifact_id": "starter:P02 starter SCORECARD.md",
     "document_id": "1FUggeBjbztagSfmA8WBpMiY99ObYlBWY",
     "document_name": "P02 starter SCORECARD.md",
-    "modified_time": "2026-09-24T23:22:10.453Z",
-    "published_at": "2026-09-24T23:24:01Z",
+    "modified_time": "2026-09-25T00:22:04.124Z",
+    "published_at": "2026-09-25T00:22:54Z",
     "source": "drive"
   },
   "projects/P02/starter/_chatlog.json": {
