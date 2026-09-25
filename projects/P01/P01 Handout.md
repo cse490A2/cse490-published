@@ -19,8 +19,8 @@ A few examples:
 Submit on the Project 1 assignment in Canvas using the Text Entry submission type.
 
 1. The published link to your app, on the first line of the text box.  
-2. Every message you sent Lovable, in order, as numbered paragraphs (1. 2\. 3.) below the link.  
-3. One PNG or JPG screenshot of the annotation tool in use, inserted below the last message with the text box's image button.
+2. Every message you sent Lovable, in order, as numbered paragraphs (1. 2\. 3.)  
+3. A PNG or JPG screenshot of the annotation tool used. Here an example.
 
 # Purple
 
