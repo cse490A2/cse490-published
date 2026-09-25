@@ -44,8 +44,9 @@ Your submission is autograded. It checks that each step was properly followed: t
 
 ## Reference
 
-The Breakout doubles prompt is PROMPT.md in the starter files. It has five sections: Theme, Rules, Technical constraints, Expected behaviour, and Output format. You fill in Theme and leave the rest as written.  
-\#\# The timer
+The Breakout doubles prompt is PROMPT.md in the starter files. It has five sections: Theme, Rules, Technical constraints, Expected behaviour, and Output format. You fill in Theme and leave the rest as written.
+
+## The timer
 
 Your project folder keeps a timer, so the course can see how long each project takes. It is not graded. The course extension writes it; you do nothing.
 
