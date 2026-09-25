@@ -62,8 +62,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-25T01:07:01.386Z",
-    "published_at": "2026-09-25T01:07:40Z",
+    "modified_time": "2026-09-25T01:51:03.909Z",
+    "published_at": "2026-09-25T01:52:13Z",
     "source": "drive"
   },
   "projects/P02/P02-starter.zip": {
@@ -84,6 +84,15 @@
     "document_name": "P02 Prereq Instructions",
     "modified_time": "2026-09-25T00:46:49.212Z",
     "published_at": "2026-09-25T01:07:36Z",
+    "source": "drive"
+  },
+  "projects/P02/examples/SCORECARD.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P02 example SCORECARD.md",
+    "document_id": "1aAuBWvTZQRhHhZXJ1J1itEiBCUqOKqH0",
+    "document_name": "P02 example SCORECARD.md",
+    "modified_time": "2026-09-25T01:51:19.569Z",
+    "published_at": "2026-09-25T01:52:17Z",
     "source": "drive"
   },
   "projects/P02/starter/.vscode/tasks.json": {
