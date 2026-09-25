@@ -1,1 +1,45 @@
-{"project": "p02", "port": 4402, "turnin_name": "the Project 2 assignment", "turnin_url": "https://canvas.uw.edu/courses/1916846/modules/items/27298274", "inlets": {"files": {"readers": ["vscode-chat", "claude-code"]}}}
+{
+ "project": "p02",
+ "port": 4402,
+ "turnin_name": "the Project 2 assignment",
+ "turnin_url": "https://canvas.uw.edu/courses/1916846/modules/items/27298274",
+ "inlets": {
+  "files": {
+   "readers": [
+    "vscode-chat",
+    "claude-code"
+   ]
+  }
+ },
+ "turnin": {
+  "nonempty_fields": {
+   "PROMPT.md": [
+    "Colours:",
+    "Teammate's name:",
+    "Win screen words:",
+    "Lose screen words:"
+   ]
+  },
+  "template_line": {
+   "SCORECARD.md": "Template: p02-scorecard-v2"
+  },
+  "blocks": {
+   "file": "SCORECARD.md",
+   "heading": "## Model:",
+   "must_include": [
+    "zai.glm-5",
+    "haiku-4-5",
+    "Qwen3.6"
+   ],
+   "fields": [
+    "Game file:",
+    "Playable:",
+    "Liked:",
+    "Disliked:",
+    "Surprised me:"
+   ],
+   "file_field": "Game file:",
+   "files_dir": "artifacts"
+  }
+ }
+}

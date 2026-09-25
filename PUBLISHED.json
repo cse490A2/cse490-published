@@ -62,8 +62,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-25T01:51:03.909Z",
-    "published_at": "2026-09-25T01:52:13Z",
+    "modified_time": "2026-09-25T02:15:47.518Z",
+    "published_at": "2026-09-25T02:29:50Z",
     "source": "drive"
   },
   "projects/P02/P02-starter.zip": {
@@ -74,7 +74,7 @@
       "projects/P02/starter/artifacts/README.md",
       "projects/P02/starter/logs/_chatlog.json"
     ],
-    "published_at": "2026-09-25T00:30:44Z",
+    "published_at": "2026-09-25T02:29:55Z",
     "source": "derived"
   },
   "projects/P02/Setup.md": {
@@ -154,8 +154,8 @@
     "artifact_id": "starter:P02 starter logs/_chatlog.json",
     "document_id": "1h2bG1xoZeh0XBEs5PJUxslWlcE1-z1NU",
     "document_name": "P02 starter logs/_chatlog.json",
-    "modified_time": "2026-09-24T23:45:00.203Z",
-    "published_at": "2026-09-24T23:45:17Z",
+    "modified_time": "2026-09-25T02:27:54.776Z",
+    "published_at": "2026-09-25T02:29:55Z",
     "source": "drive"
   }
 }
