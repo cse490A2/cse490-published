@@ -7,7 +7,7 @@ This document provides instructions to set up your environment for CSE490's in-c
 ### 1\. Project folder
 
 Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://litellm-test.cs.washington.edu  
+LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
 
@@ -22,7 +22,7 @@ Point it at the course gateway. Open the Command Palette (Cmd+Shift+P). Run "Pre
 "litellm-vscode-chat.servers": \[  
     {  
         "label": "CSE 490",  
-        "baseUrl": "https://litellm-test.cs.washington.edu",  
+        "baseUrl": "https://llmproxy.cs.washington.edu",  
         "auth": { "apiKey": "\<your key here\>" }  
     }  
 \]  
@@ -37,7 +37,7 @@ In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save
 ### 5\. Model gateway
 
 Prove the key works. In a terminal in your project folder:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
+curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
 Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## Windows
@@ -45,7 +45,7 @@ Replace \<your key\> with your API key. A working key returns a list of models t
 ### 1\. Project folder
 
 Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://litellm-test.cs.washington.edu  
+LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
 
@@ -60,7 +60,7 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 "litellm-vscode-chat.servers": \[  
     {  
         "label": "CSE 490",  
-        "baseUrl": "https://litellm-test.cs.washington.edu",  
+        "baseUrl": "https://llmproxy.cs.washington.edu",  
         "auth": { "apiKey": "\<your key here\>" }  
     }  
 \]  
@@ -75,7 +75,7 @@ In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save
 ### 5\. Model gateway
 
 Prove the key works. In PowerShell in your project folder:  
-curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
+curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
 Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## Linux
@@ -83,7 +83,7 @@ Replace \<your key\> with your API key. A working key returns a list of models t
 ### 1\. Project folder
 
 Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://litellm-test.cs.washington.edu  
+LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
 
@@ -98,7 +98,7 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Pr
 "litellm-vscode-chat.servers": \[  
     {  
         "label": "CSE 490",  
-        "baseUrl": "https://litellm-test.cs.washington.edu",  
+        "baseUrl": "https://llmproxy.cs.washington.edu",  
         "auth": { "apiKey": "\<your key here\>" }  
     }  
 \]  
@@ -113,5 +113,5 @@ In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save
 ### 5\. Model gateway
 
 Prove the key works. In a terminal in your project folder:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://litellm-test.cs.washington.edu/v1/models  
+curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
 Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.  
