@@ -5,22 +5,22 @@ Prerequisites: Follow the [prereq instructions](Setup.md) to set up your AI work
 
 Which of the course's models can build a working program from one spec, and what does it take to fix the ones that can't? That's the project. The spec is an arcade game in a single HTML file, so you judge every answer the same way: open it in a browser and play.
 
-Everyone starts with the same spec: Breakout doubles. It's Breakout with a twist no model has seen before: your paddle on the left half, a computer teammate's paddle on the right half that chases the ball on its own but only so fast, so it can miss. You write the prompt once, send it to each model, save each reply as a game file, and play it. Some will work first try. Most of the failures will be quiet: a teammate that never moves, or one that cheats. You fix one by changing the ask, not the code. Then, if you want to make it awesome, write a spec of your own: a blend of two arcade games.
+Everyone starts with the same spec: Breakout doubles. It's Breakout with a twist no model has seen before: your paddle on the left half, a computer teammate's paddle on the right half that chases the ball on its own but only so fast, so it can miss. You write the prompt once, send it to each model, save each reply as a game file, and play it. Some will work on the first try. Most of the failures will be quiet: a teammate that never moves, or one that cheats. You fix one by changing the prompt, not the code. Then, if you want to make it awesome, write a spec of your own: a blend of two arcade games.
 
 ## Instructions
 
 1. Open the P02-starter folder in VS Code and open the chat panel. Its artifacts folder is where the games go, and its logs folder keeps your chat log. Refer to the [prereq instructions](Setup.md).  
-2. Write your prompt in PROMPT.md. It already holds the Breakout doubles prompt. Fill in its Theme section: the colours, the teammate's name, and the words on the end screens. Keep the teammate's 3-pixel speed cap and the centre line; that is where the game breaks. If you are stuck, talk to a model on LiteLLM\!  
+2. Write your prompt in PROMPT.md. It already holds the Breakout doubles prompt. Fill in its Theme section: the colours, the teammate's name, and the words on the end screens. Keep the teammate's 3-pixel speed cap and the centre line; that is where the game breaks.  
 3. Once PROMPT.md is finished, send it to each of the three course models from the model selection menu below the prompt box: external/zai.glm-5, external/haiku-4-5-20251001, and internal/Qwen3.6-35B-A3B. They are three different companies' models, all served through the course gateway, and they don't behave the same. Sometimes, VS Code will suggest a file to attach to the prompt. Since we're evaluating every model against the same prompt, make sure that no other file is being fed into the model. Once a model is finished, start a new chat and switch to the next model under CSE 490\. Save each created game in the artifacts folder as \<Game\>\_\<model\>.html: the game name, one underscore, the model's short name, for example artifacts/BreakoutDoubles\_glm-5.html.  
-4. With every model response, start its block in SCORECARD.md: the model and the game file. The course gateway records your prompts, timing, and turns on its own.  
-5. Now spend about 1 minute playing each created game, watching the right half. They can be played by opening the file in your browser. Continue filling out SCORECARD.md, documenting whether the game is playable, likes, dislikes, and what surprised you. At least one of the three usually gets it first try, and at least one usually doesn't.  
-6. However, there may be a model that fails. In this case, use the same model that failed and continue prompting until you're satisfied with its output. Change the ask, not the code.
+4. For each model, fill in its block in SCORECARD.md: write the model's name as the picker shows it and the file name you saved its game under. The course gateway records your prompts, timing, and turns on its own.  
+5. Now try playing each created game, watching the right half. They can be played by opening the file in your browser. Continue filling out SCORECARD.md, documenting whether the game is playable, likes, dislikes, and what surprised you. At least one of the three usually gets it first try, and at least one usually doesn't.  
+6. There may be a model that fails. In this case, use the same model that failed and continue prompting until you're satisfied with its output. Change the prompt, not the code.
 
 ## Make it awesome
 
 This part is optional and worth 5 extra points. Write a spec of your own that blends two arcade games: Pong played on Frogger's road, Galaga with Mappy's trampolines, whatever you can picture. Put it in PROMPT2.md, in the shape of the Breakout doubles prompt: a theme, the rules, the technical constraints, the expected behaviour, and the output format. Then repeat steps 3 to 6 with it: the same three models, a game file per model named after your game, a SCORECARD.md block for each with Prompt file set to PROMPT2.md.
 
-Some examples of arcade games:
+Some examples of arcade games; Wikipedia's [list of arcade video games](https://en.wikipedia.org/wiki/List_of_arcade_video_games) has hundreds more:
 
 * [Pong](https://en.wikipedia.org/wiki/Pong)  
 * [Frogger](https://en.wikipedia.org/wiki/Frogger)  

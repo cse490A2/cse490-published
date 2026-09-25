@@ -11,7 +11,7 @@
       "due_source": "course doc",
       "module_id": 3948227,
       "name": "P02: Insert Prompt to Play",
-      "published": false,
+      "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11743630"
     }
   },
@@ -62,8 +62,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-25T00:22:01.411Z",
-    "published_at": "2026-09-25T00:22:51Z",
+    "modified_time": "2026-09-25T01:07:01.386Z",
+    "published_at": "2026-09-25T01:07:40Z",
     "source": "drive"
   },
   "projects/P02/P02-starter.zip": {
@@ -82,8 +82,8 @@
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
     "document_name": "P02 Prereq Instructions",
-    "modified_time": "2026-09-25T00:22:30.400Z",
-    "published_at": "2026-09-25T00:22:47Z",
+    "modified_time": "2026-09-25T00:46:49.212Z",
+    "published_at": "2026-09-25T01:07:36Z",
     "source": "drive"
   },
   "projects/P02/starter/.vscode/tasks.json": {

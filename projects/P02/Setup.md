@@ -1,10 +1,6 @@
 # Project 2 setup guide
 
-This document provides instructions to set up your environment for CSE490's in-class projects, starting with Project 2\. 
-
-1. Mac  
-2. Windows  
-3. Linux
+This document provides instructions to set up your environment for CSE490's in-class projects, starting with Project 2\.  See below for Mac, Windows, and Linux instructions (choose based on your machine/OS type).
 
 ## Mac
 
