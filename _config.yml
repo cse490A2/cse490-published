@@ -1,0 +1,24 @@
+# GitHub Pages renders this repo as the course site. Every Markdown file the
+# publisher writes becomes a page; starter files, zips, PDFs and images are
+# served as they are. Theme: just-the-docs (sidebar navigation from front matter).
+title: CSE 490 A2 Vibe Coding
+description: Published course materials, Autumn 2026
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+# Jekyll skips files and folders whose names start with an underscore; the
+# starter sets carry some (_chatlog.json). Keep every one of them.
+include:
+  - "*/_*"
+exclude:
+  - PUBLISHED.json
+  - README.md
+search_enabled: true
+heading_anchors: true
+back_to_top: true
+back_to_top_text: Back to top
+footer_content: "Published from the course drive. Nothing here is edited by hand."

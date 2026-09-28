@@ -1,3 +1,10 @@
+---
+title: "P01 setup"
+parent: "P01: Prompt to Web App"
+grand_parent: "Projects"
+nav_order: 1
+---
+
 # Project 1: Setup
 
 You will need to set up Lovable or Purple UW for this project. Choose one below:

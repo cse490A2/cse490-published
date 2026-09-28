@@ -1,3 +1,10 @@
+---
+title: "P01: Prompt to Web App"
+parent: "Projects"
+nav_order: 1
+has_children: true
+---
+
 # Lovable
 
 Assignment: Create a mobile web app using Lovable or Purple (UW). Choose one:  

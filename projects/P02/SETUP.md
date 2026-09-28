@@ -1,3 +1,10 @@
+---
+title: "P02 setup"
+parent: "Project 2: Insert Prompt to Play"
+grand_parent: "Projects"
+nav_order: 1
+---
+
 # Project 2 setup guide
 
 This document provides instructions to set up your environment for CSE490's in-class projects, starting with Project 2\.  See below for Mac, Windows, and Linux instructions (choose based on your machine/OS type).

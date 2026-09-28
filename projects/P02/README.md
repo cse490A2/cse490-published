@@ -1,3 +1,10 @@
+---
+title: "Project 2: Insert Prompt to Play"
+parent: "Projects"
+nav_order: 2
+has_children: true
+---
+
 # Project 2: Insert Prompt to Play
 
 **Due: Tuesday 11:59 pm**  
