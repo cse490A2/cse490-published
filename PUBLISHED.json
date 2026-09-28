@@ -2,7 +2,7 @@
   "_canvas": {
     "L01": {
       "module_id": 3927113,
-      "slides_url": "https://github.com/cse490A2/cse490-published/blob/main/lectures/L01/L01%20slides.pdf"
+      "slides_url": "https://github.com/cse490A2/cse490-published/blob/main/lectures/L01/slides.pdf"
     },
     "P01": {
       "assignment_id": 11686232,
@@ -16,7 +16,7 @@
     },
     "P02": {
       "assignment_id": 11743630,
-      "desc_fp": "b9a0951188901977",
+      "desc_fp": "4578a68de4f0e8c2",
       "due_at": "2026-10-14T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3948227,
@@ -30,8 +30,8 @@
     "artifact_id": "slides-l01",
     "document_id": "1-7E3PGexklfP500d03SN3IMhGyubvjmp19WG9FUXGIw",
     "document_name": "Lecture deck - L01",
-    "modified_time": "2026-09-20T14:52:10.110Z",
-    "published_at": "2026-09-20T21:12:17Z",
+    "modified_time": "2026-09-26T02:24:38.655Z",
+    "published_at": "2026-09-28T22:48:36Z",
     "source": "drive"
   },
   "projects/P01/README.md": {
@@ -90,8 +90,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-25T17:28:17.512Z",
-    "published_at": "2026-09-25T17:28:37Z",
+    "modified_time": "2026-09-28T22:23:40.203Z",
+    "published_at": "2026-09-28T22:48:19Z",
     "source": "drive"
   },
   "projects/P02/SETUP.md": {
@@ -99,8 +99,8 @@
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
     "document_name": "P02 Prereq Instructions",
-    "modified_time": "2026-09-25T23:20:13.930Z",
-    "published_at": "2026-09-25T23:20:36Z",
+    "modified_time": "2026-09-28T22:32:01.826Z",
+    "published_at": "2026-09-28T22:48:14Z",
     "source": "drive"
   },
   "projects/P02/examples/SCORECARD.md": {

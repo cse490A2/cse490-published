@@ -13,11 +13,11 @@ Replace \<your key here\> with your given API key (it starts with sk).
 
 ### 2\. VS Code
 
-Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Open the downloaded file. Drag Visual Studio Code into Applications. Open it once so macOS trusts it, then check again.
+Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Open the downloaded file. Drag Visual Studio Code into Applications. Open it once so macOS trusts it. VS Code is installed when it opens to its welcome page.
 
 ### 3\. AI chat in VS Code
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Cmd+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6 and packages your turn-in.  
+Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Cmd+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
 Point it at the course gateway. Open the Command Palette (Cmd+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
@@ -32,7 +32,7 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+C
 
 ### 4\. Open the project
 
-In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 4 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 5\. Model gateway
 
@@ -51,11 +51,11 @@ Replace \<your key here\> with your given API key (it starts with sk).
 
 ### 2\. VS Code
 
-Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Run the installer. The defaults are fine. Then check again.
+Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Run the installer. The defaults are fine. VS Code is installed when it opens to its welcome page.
 
 ### 3\. AI chat in VS Code
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6 and packages your turn-in.  
+Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
 Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
@@ -70,7 +70,7 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+A
 
 ### 4\. Open the project
 
-In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 4 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 5\. Model gateway
 
@@ -89,11 +89,11 @@ Replace \<your key here\> with your given API key (it starts with sk).
 
 ### 2\. VS Code
 
-Get the package for your distribution from [the VS Code download page](https://code.visualstudio.com/download) (.deb for Ubuntu). Install it, then check again.
+Get the package for your distribution from [the VS Code download page](https://code.visualstudio.com/download) (.deb for Ubuntu). Install it. VS Code is installed when it opens to its welcome page.
 
 ### 3\. AI chat in VS Code
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 6 and packages your turn-in.  
+Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for "LiteLLM VSCode Chat" by vivswan and click Install. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
 Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
@@ -108,7 +108,7 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+A
 
 ### 4\. Open the project
 
-In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 4 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 5\. Model gateway
 
