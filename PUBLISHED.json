@@ -25,7 +25,7 @@
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11743630"
     }
   },
-  "lectures/L01/L01 slides.pdf": {
+  "lectures/L01/slides.pdf": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "slides-l01",
     "document_id": "1-7E3PGexklfP500d03SN3IMhGyubvjmp19WG9FUXGIw",
@@ -34,7 +34,7 @@
     "published_at": "2026-09-20T21:12:17Z",
     "source": "drive"
   },
-  "projects/P01/P01 Handout.md": {
+  "projects/P01/README.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "project-student-p01",
     "document_id": "1UlveuNGfPSXEEYQHWbAkljYpEMSVNnz3pLBkegDNuTs",
@@ -43,18 +43,18 @@
     "published_at": "2026-09-28T22:11:30Z",
     "source": "drive"
   },
-  "projects/P01/SUBMISSION.md": {
+  "projects/P01/SETUP.md": {
     "agent": "arian@agent.vibeclass",
-    "canvas_page": "file p01-pack.zip (152815422)",
-    "canvas_updated": "",
+    "canvas_page": "p01-setup-2",
+    "canvas_updated": "2026-09-20T05:34:27Z",
     "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
     "published_at": "2026-09-20T20:47:21Z",
     "source": "canvas"
   },
-  "projects/P01/Setup.md": {
+  "projects/P01/SUBMISSION.md": {
     "agent": "arian@agent.vibeclass",
-    "canvas_page": "p01-setup-2",
-    "canvas_updated": "2026-09-20T05:34:27Z",
+    "canvas_page": "file p01-pack.zip (152815422)",
+    "canvas_updated": "",
     "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
     "published_at": "2026-09-20T20:47:21Z",
     "source": "canvas"
@@ -77,7 +77,7 @@
     "published_at": "2026-09-28T21:47:17Z",
     "source": "drive"
   },
-  "projects/P01/p01-pack.zip": {
+  "projects/P01/starter.zip": {
     "agent": "arian@agent.vibeclass",
     "canvas_page": "file 152815422",
     "canvas_updated": "",
@@ -85,7 +85,7 @@
     "published_at": "2026-09-20T20:47:21Z",
     "source": "canvas"
   },
-  "projects/P02/P02 Handout.md": {
+  "projects/P02/README.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
@@ -94,18 +94,7 @@
     "published_at": "2026-09-25T17:28:37Z",
     "source": "drive"
   },
-  "projects/P02/P02-starter.zip": {
-    "agent": "arian@agent.vibeclass",
-    "derived_from": [
-      "projects/P02/starter/PROMPT.md",
-      "projects/P02/starter/SCORECARD.md",
-      "projects/P02/starter/artifacts/README.md",
-      "projects/P02/starter/logs/_chatlog.json"
-    ],
-    "published_at": "2026-09-25T03:49:20Z",
-    "source": "derived"
-  },
-  "projects/P02/Setup.md": {
+  "projects/P02/SETUP.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
@@ -122,6 +111,17 @@
     "modified_time": "2026-09-25T03:48:56.236Z",
     "published_at": "2026-09-25T03:49:21Z",
     "source": "drive"
+  },
+  "projects/P02/starter.zip": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P02/starter/PROMPT.md",
+      "projects/P02/starter/SCORECARD.md",
+      "projects/P02/starter/artifacts/README.md",
+      "projects/P02/starter/logs/_chatlog.json"
+    ],
+    "published_at": "2026-09-25T03:49:20Z",
+    "source": "derived"
   },
   "projects/P02/starter/.vscode/tasks.json": {
     "agent": "arian@agent.vibeclass",
