@@ -6,7 +6,7 @@ This document provides instructions to set up your environment for CSE490's in-c
 
 ### 1\. Project folder
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
 LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
@@ -32,7 +32,7 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+C
 
 ### 4\. Open the project
 
-In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+In VS Code, choose File, then Open Folder, and pick the starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 5\. Model gateway
 
@@ -44,7 +44,7 @@ Replace \<your key\> with your API key. A working key returns a list of models t
 
 ### 1\. Project folder
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
 LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
@@ -70,7 +70,7 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+A
 
 ### 4\. Open the project
 
-In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+In VS Code, choose File, then Open Folder, and pick the starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 5\. Model gateway
 
@@ -82,7 +82,7 @@ Replace \<your key\> with your API key. A working key returns a list of models t
 
 ### 1\. Project folder
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/P02-starter.zip and unzip them. The unpacked folder, P02-starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named .env. Inside, paste these two lines:  
 LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
 Replace \<your key here\> with your given API key (it starts with sk).
@@ -108,7 +108,7 @@ Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+A
 
 ### 4\. Open the project
 
-In VS Code, choose File, then Open Folder, and pick the P02-starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+In VS Code, choose File, then Open Folder, and pick the starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
 
 ### 5\. Model gateway
 
