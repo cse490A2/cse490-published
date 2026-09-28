@@ -3,6 +3,7 @@ title: "P01: Prompt to Web App"
 parent: "Projects"
 nav_order: 1
 has_children: true
+permalink: "/projects/P01/"
 ---
 
 # Lovable

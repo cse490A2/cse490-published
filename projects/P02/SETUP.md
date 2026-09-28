@@ -3,6 +3,7 @@ title: "P02 setup"
 parent: "P02: Insert Prompt to Play"
 grand_parent: "Projects"
 nav_order: 1
+permalink: "/projects/P02/setup/"
 ---
 
 # Project 2 setup guide

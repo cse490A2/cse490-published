@@ -3,6 +3,7 @@ title: "P02: Insert Prompt to Play"
 parent: "Projects"
 nav_order: 2
 has_children: true
+permalink: "/projects/P02/"
 ---
 
 # Project 2: Insert Prompt to Play
