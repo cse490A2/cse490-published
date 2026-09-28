@@ -4,6 +4,16 @@
       "module_id": 3927113,
       "slides_url": "https://github.com/cse490A2/cse490-published/blob/main/lectures/L01/L01%20slides.pdf"
     },
+    "P01": {
+      "assignment_id": 11686232,
+      "desc_fp": "39b4431970d2841e",
+      "due_at": "2026-10-07T06:59:00Z",
+      "due_source": "course doc",
+      "module_id": 3927113,
+      "name": "P01: Lovable",
+      "published": true,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11686232"
+    },
     "P02": {
       "assignment_id": 11743630,
       "desc_fp": "b9a0951188901977",
@@ -29,8 +39,8 @@
     "artifact_id": "project-student-p01",
     "document_id": "1UlveuNGfPSXEEYQHWbAkljYpEMSVNnz3pLBkegDNuTs",
     "document_name": "P01 Handout",
-    "modified_time": "2026-09-25T02:27:20.745Z",
-    "published_at": "2026-09-25T19:16:39Z",
+    "modified_time": "2026-09-28T21:35:10.369Z",
+    "published_at": "2026-09-28T21:41:24Z",
     "source": "drive"
   },
   "projects/P01/SUBMISSION.md": {
@@ -48,6 +58,15 @@
     "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
     "published_at": "2026-09-20T20:47:21Z",
     "source": "canvas"
+  },
+  "projects/P01/examples/submission-example.html": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P01 example submission-example.html",
+    "document_id": "1YgqDkx0tYT0h7KBHMysnf89rDUdVZJgu",
+    "document_name": "P01 example submission-example.html",
+    "modified_time": "2026-09-28T21:37:59.441Z",
+    "published_at": "2026-09-28T21:41:27Z",
+    "source": "drive"
   },
   "projects/P01/p01-pack.zip": {
     "agent": "arian@agent.vibeclass",

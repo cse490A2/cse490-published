@@ -6,7 +6,7 @@ Project 01: Prompt to Web App
 
 Prerequisites: Create a Lovable account, then use the given code to upgrade to Pro.
 
-You have 40 minutes. Use [Lovable](https://lovable.dev) and come up with a cool mobile phone web app. Ask Lovable if you need ideas. Start in Chat mode. Tell Lovable your idea and have it ask you questions and draft a plan before you let it build. Your first build prompt is your specification. Iterate until it does what you want. You'll turn in every message you send, in order, so keep the chat. Use the annotation tool at least once: in the preview toolbar, select the part you want changed, or draw on it, and describe the change.  
+You have 40 minutes. Use [Lovable](https://lovable.dev) and come up with a cool mobile phone web app. Ask Lovable if you need ideas. Start in Chat mode. Tell Lovable your idea and have it ask you questions and draft a plan before you let it build. Your first build prompt is your specification. Iterate until it does what you want. You'll turn in every message you send, in order, so keep the chat. Use the annotation tool at least once: in the preview toolbar, select the part you want changed, or draw on it, and describe the change. More information about using annotation tools can be found [here](https://docs.lovable.dev/features/preview-toolbar).  
 If you'd rather keep your work inside UW, use the Purple tab of this handout instead.
 
 A few examples:  
@@ -16,11 +16,13 @@ A few examples:
 
 ## Turnin
 
-Submit on the Project 1 assignment in Canvas using the Text Entry submission type.
+Submit on the Project 1 assignment in Canvas using the Text Entry submission type:
 
 1. The published link to your app, on the first line of the text box.  
-2. Every message you sent Lovable, in order, as numbered paragraphs (1. 2\. 3.)  
-3. A PNG or JPG screenshot of the annotation tool used. Here an example.
+2. Every message you sent Lovable, in order, as numbered paragraphs (1. 2\. 3.) after the link. Only include your prompts and not model responses.   
+3. A PNG or JPG screenshot of the annotation tool used after your prompt inputs.
+
+[Here’s a submission example.](examples/submission-example.html)
 
 # Purple
 
@@ -38,5 +40,5 @@ Submit on the Project 1 assignment in Canvas using the File Upload submission ty
 
 1. The html file Purple wrote.  
 2. Every message you sent Purple, in order, as numbered lines (1. 2\. 3.) in one plain text file named prompts.txt.  
-3. Each screenshot you sent Purple, as its own PNG or JPG file, named screenshot-1.png, screenshot-2.png, and so on. No zip.
+3. Each screenshot you sent Purple, as its own PNG or JPG file, named screenshot-1.png, screenshot-2.png, and so on. No zip is required.
 
