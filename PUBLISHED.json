@@ -51,14 +51,6 @@
     "published_at": "2026-09-20T20:47:21Z",
     "source": "canvas"
   },
-  "projects/P01/SUBMISSION.md": {
-    "agent": "arian@agent.vibeclass",
-    "canvas_page": "file p01-pack.zip (152815422)",
-    "canvas_updated": "",
-    "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
-    "published_at": "2026-09-20T20:47:21Z",
-    "source": "canvas"
-  },
   "projects/P01/examples/submission-example-screenshot.png": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "example:P01 example submission-example-screenshot.png",
@@ -76,14 +68,6 @@
     "modified_time": "2026-09-28T21:46:55.289Z",
     "published_at": "2026-09-28T21:47:17Z",
     "source": "drive"
-  },
-  "projects/P01/starter.zip": {
-    "agent": "arian@agent.vibeclass",
-    "canvas_page": "file 152815422",
-    "canvas_updated": "",
-    "note": "P01 is the one backward step: Canvas held the correct version on 2026-09-20, so the repo copies it. Later P01 changes go drive -> repo like every other project.",
-    "published_at": "2026-09-20T20:47:21Z",
-    "source": "canvas"
   },
   "projects/P02/README.md": {
     "agent": "arian@agent.vibeclass",
