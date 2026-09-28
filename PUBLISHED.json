@@ -59,13 +59,22 @@
     "published_at": "2026-09-20T20:47:21Z",
     "source": "canvas"
   },
+  "projects/P01/examples/submission-example-screenshot.png": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P01 example submission-example-screenshot.png",
+    "document_id": "1ysq_2dNU1-b-BBeUJ2HtQuJCWa1M8HYZ",
+    "document_name": "P01 example submission-example-screenshot.png",
+    "modified_time": "2026-09-28T21:46:57.314Z",
+    "published_at": "2026-09-28T21:47:16Z",
+    "source": "drive"
+  },
   "projects/P01/examples/submission-example.html": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "example:P01 example submission-example.html",
     "document_id": "1YgqDkx0tYT0h7KBHMysnf89rDUdVZJgu",
     "document_name": "P01 example submission-example.html",
-    "modified_time": "2026-09-28T21:37:59.441Z",
-    "published_at": "2026-09-28T21:41:27Z",
+    "modified_time": "2026-09-28T21:46:55.289Z",
+    "published_at": "2026-09-28T21:47:17Z",
     "source": "drive"
   },
   "projects/P01/p01-pack.zip": {
