@@ -22,7 +22,7 @@ Submit on the Project 1 assignment in Canvas using the Text Entry submission typ
 2. Every message you sent Lovable, in order, as numbered paragraphs (1. 2\. 3.) after the link. Only include your prompts and not model responses.   
 3. A PNG or JPG screenshot of the annotation tool used after your prompt inputs.
 
-[Here’s a submission example.](examples/submission-example.html)
+[Here’s a submission example.](https://cse490a2.github.io/cse490-published/projects/P01/examples/submission-example.html)
 
 # Purple
 
