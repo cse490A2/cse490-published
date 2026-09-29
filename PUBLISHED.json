@@ -23,6 +23,16 @@
       "name": "P02: Insert Prompt to Play",
       "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11743630"
+    },
+    "P03": {
+      "assignment_id": 11669941,
+      "desc_fp": "106a63c50a56ad5b",
+      "due_at": "2026-10-21T06:59:00Z",
+      "due_source": "course doc",
+      "module_id": 3920931,
+      "name": "P03: The Agent Harness",
+      "published": false,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11669941"
     }
   },
   "lectures/L01/slides.pdf": {
