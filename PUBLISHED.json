@@ -197,5 +197,132 @@
     "modified_time": "2026-09-29T08:36:11.054Z",
     "published_at": "2026-09-29T08:36:43Z",
     "source": "drive"
+  },
+  "projects/P03/starter.zip": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P03/starter/.gitignore",
+      "projects/P03/starter/AGENTS.md",
+      "projects/P03/starter/CLAUDE.md",
+      "projects/P03/starter/harness.py",
+      "projects/P03/starter/harness_testbench.md",
+      "projects/P03/starter/hello_world.py",
+      "projects/P03/starter/inventory.py",
+      "projects/P03/starter/logs/_chatlog.json",
+      "projects/P03/starter/scores.csv",
+      "projects/P03/starter/stats.py",
+      "projects/P03/starter/test_utils.py",
+      "projects/P03/starter/utils.py"
+    ],
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "derived"
+  },
+  "projects/P03/starter/.gitignore": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter .gitignore",
+    "document_id": "1sG9mB_5tzqWvdzQSjGWCDjkY2scvknzp",
+    "document_name": "P03 starter .gitignore",
+    "modified_time": "2026-09-29T08:51:45.788Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/AGENTS.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter AGENTS.md",
+    "document_id": "161pYEddq4O24XxCTARmuZAsK1S3dONvF",
+    "document_name": "P03 starter AGENTS.md",
+    "modified_time": "2026-09-29T08:51:41.977Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/CLAUDE.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter CLAUDE.md",
+    "document_id": "10z5F7RuuAzzcwPODZ3tJzeAisb9YndAy",
+    "document_name": "P03 starter CLAUDE.md",
+    "modified_time": "2026-09-29T08:51:44.323Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/harness.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter harness.py",
+    "document_id": "1OAiAdo72ot_t1a3PUGax1wxzd24rdfir",
+    "document_name": "P03 starter harness.py",
+    "modified_time": "2026-09-29T08:51:21.936Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/harness_testbench.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter harness_testbench.md",
+    "document_id": "11FpNOMe6cG-o0r-ZXvhC9UbQ6ys3CeHq",
+    "document_name": "P03 starter harness_testbench.md",
+    "modified_time": "2026-09-29T08:51:25.075Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/hello_world.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter hello_world.py",
+    "document_id": "1vzg5eyqONUHPRUEUYaNvCwsrUQUkziXh",
+    "document_name": "P03 starter hello_world.py",
+    "modified_time": "2026-09-29T08:51:23.506Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/inventory.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter inventory.py",
+    "document_id": "1rwPiHPK8OwEmxCnTjT7BTeForzwOeGEE",
+    "document_name": "P03 starter inventory.py",
+    "modified_time": "2026-09-29T08:51:40.350Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/logs/_chatlog.json": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter logs/_chatlog.json",
+    "document_id": "1IHg2jfOuH2YqH6AjFvt_tRfqcsRCU2FT",
+    "document_name": "P03 starter logs/_chatlog.json",
+    "modified_time": "2026-09-29T08:51:47.208Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/scores.csv": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter scores.csv",
+    "document_id": "1qu2yurd6k0gA9UqovXcFk4y_8AjkR9um",
+    "document_name": "P03 starter scores.csv",
+    "modified_time": "2026-09-29T08:51:27.963Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/stats.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter stats.py",
+    "document_id": "1L1uY7piLpav4pZQEPoEp1amanYpG-fV9",
+    "document_name": "P03 starter stats.py",
+    "modified_time": "2026-09-29T08:51:26.447Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/test_utils.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter test_utils.py",
+    "document_id": "1sIxaDkvvRAuRZe7XZ4ap455YBuR61290",
+    "document_name": "P03 starter test_utils.py",
+    "modified_time": "2026-09-29T08:51:38.588Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/utils.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter utils.py",
+    "document_id": "14WD7cIjXc2jKNZHvOIN_SOaEhK3YZOmI",
+    "document_name": "P03 starter utils.py",
+    "modified_time": "2026-09-29T08:51:29.644Z",
+    "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
   }
 }
