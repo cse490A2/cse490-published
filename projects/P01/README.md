@@ -8,7 +8,7 @@ permalink: "/projects/P01/"
 
 # Project 01: Prompt to Web App
 
-Create a mobile web app using Lovable, a prompt-to-app AI tool. If you are concerned about privacy, use Purple (UW) instead. 
+Create a mobile web app using Lovable, a prompt-to-app AI tool. If you are concerned about privacy, use Purple (UW) instead. **Follow either the Lovable instructions OR Purple instructions, not both\!**
 
 # Lovable
 
