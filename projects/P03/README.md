@@ -2,7 +2,7 @@
 title: "P03: The Agent Harness"
 parent: "Projects"
 nav_order: 3
-has_children: false
+has_children: true
 permalink: "/projects/P03/"
 ---
 
