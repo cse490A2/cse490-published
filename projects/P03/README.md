@@ -22,19 +22,19 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
    1. *"Define a JSON schema for tool calls: an object with a required command field whose only allowed value is read\_file and a required path string. Make the harness validate every model reply against this schema. If a reply is not valid JSON or does not match the schema, send the model a message saying so."*  
 5. Your harness can now recognize a read\_file request, but does nothing with it. Prompt LiteLLM Chat to generate code for the harness to act on a read\_file request:  
    1.  *"When the model's reply is a valid read\_file command, open that path, add the file's contents to the context as a message from the harness, and call the model again. Keep looping until the model replies with plain text. Do not add any other command yet."*  
-6. If your agent can read hello\_world.py, then it may have noticed a bug in the program. Add write\_file and execute\_file into your harness, then have it fix the file and execute the code.   
+6. If your agent can read hello\_world.py, then it may have noticed a bug in the program. Add write\_file and execute\_file into your harness, then have it fix the file and execute the code. **IMPORTANT:** the addition of these tools will make your harness more capable and **dangerous**\! When adding these tools, prompt LiteLLM Chat to include guardrails by confirming with the user before executing a write or execute command.  
 7. Open harness\_testbench.md and use your custom harness to address each mini-task. 
 
 ## Turnin
 
 By Tuesday 11:59 pm:
 
-* In VS Code, open the Command Palette and run CSE 490: Package for turn-in.   
+* In VS Code, open the Command Palette (Cmd+Shift+P on Mac or Ctrl+Shift+P on Windows) and run CSE 490: Package for turn-in.   
 * Upload P03-submission.zip and submit. 
 
 ## Grading
 
-The course's automated grader reads your submission and checks that each step was properly followed. Every check is pass or fail. It does not judge code style, prompt wording, or how many tries it took.
+The course's automated grader reads your submission and checks that each step was properly followed. VS Code records your chats with the course models in logs/. To start over, delete `_chatlog.jsonl` and `_chatlog.md` there. Every check is pass or fail. It does not judge code style, prompt wording, or how many tries it took. If you would like to delete 
 
 ## Reference
 

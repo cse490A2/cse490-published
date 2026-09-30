@@ -26,7 +26,7 @@
     },
     "P03": {
       "assignment_id": 11669941,
-      "desc_fp": "88080a49bd7c2001",
+      "desc_fp": "82b8bcbe53a16cdc",
       "due_at": "2026-10-21T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3920931,
@@ -185,8 +185,8 @@
     "artifact_id": "project-student-p03",
     "document_id": "1PF0s6_ehema_qPvKTijQqY-7eMKvUokxEVZLTYnUXHU",
     "document_name": "P03 Handout",
-    "modified_time": "2026-09-29T08:27:57.223Z",
-    "published_at": "2026-09-29T08:36:44Z",
+    "modified_time": "2026-09-29T21:58:43.502Z",
+    "published_at": "2026-09-30T19:03:16Z",
     "source": "drive"
   },
   "projects/P03/SETUP.md": {
