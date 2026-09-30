@@ -6,14 +6,13 @@ has_children: true
 permalink: "/projects/P01/"
 ---
 
-# Project 01: Prompt to Web App
-
-Create a mobile web app using Lovable, a prompt-to-app AI tool. If you are concerned about privacy, use Purple (UW) instead. **Follow either the Lovable instructions OR Purple instructions, not both\!**
-
-# Lovable
+# P01 Handout
 
 Project 01: Prompt to Web App  
-**Due: Tuesday 11:59 pm**
+**Due: Tuesday 11:59 pm**  
+Create a mobile web app using Lovable, a prompt-to-app AI tool. If you are concerned about privacy, use Purple (UW) instead. **Follow either the Lovable instructions OR Purple instructions, not both\!**
+
+Lovable
 
 Prerequisites: Create a Lovable account, then use the given code to upgrade to Pro.
 
@@ -35,10 +34,7 @@ Submit on the Project 1 assignment in Canvas using the Text Entry submission typ
 
 [Here’s a submission example.](https://cse490a2.github.io/cse490-published/projects/P01/examples/submission-example.html)
 
-# Purple
-
-Project 01: Prompt to Web App  
-**Due: Tuesday 11:59 pm**
+Purple
 
 Prerequisites: Sign into UW Purple using your UW credentials. 
 

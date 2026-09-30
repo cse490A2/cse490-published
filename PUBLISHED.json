@@ -6,11 +6,11 @@
     },
     "P01": {
       "assignment_id": 11686232,
-      "desc_fp": "55419476e2f5aad4",
+      "desc_fp": "1ba11d7a5b4d012f",
       "due_at": "2026-10-07T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3927113,
-      "name": "P01: Prompt to Web App",
+      "name": "P01: P01 Handout",
       "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11686232"
     },
@@ -49,8 +49,8 @@
     "artifact_id": "project-student-p01",
     "document_id": "1UlveuNGfPSXEEYQHWbAkljYpEMSVNnz3pLBkegDNuTs",
     "document_name": "P01 Handout",
-    "modified_time": "2026-09-29T19:04:22.816Z",
-    "published_at": "2026-09-29T19:05:12Z",
+    "modified_time": "2026-09-29T22:00:38.478Z",
+    "published_at": "2026-09-30T19:01:37Z",
     "source": "drive"
   },
   "projects/P01/SETUP.md": {
