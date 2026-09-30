@@ -12,7 +12,7 @@ Project 01: Prompt to Web App
 **Due: Tuesday 11:59 pm**  
 Create a mobile web app using Lovable, a prompt-to-app AI tool. If you are concerned about privacy, use Purple (UW) instead. **Follow either the Lovable instructions OR Purple instructions, not both\!**
 
-Lovable
+## Lovable
 
 Prerequisites: Create a Lovable account, then use the given code to upgrade to Pro.
 
@@ -24,7 +24,7 @@ A few examples:
 [https://fairy-chat-coach.lovable.app](https://fairy-chat-coach.lovable.app)  
 [https://dogear-books.lovable.app](https://dogear-books.lovable.app)
 
-## Turnin
+### Turnin
 
 Submit on the Project 1 assignment in Canvas using the Text Entry submission type:
 
@@ -34,14 +34,14 @@ Submit on the Project 1 assignment in Canvas using the Text Entry submission typ
 
 [Here’s a submission example.](https://cse490a2.github.io/cse490-published/projects/P01/examples/submission-example.html)
 
-Purple
+## Purple
 
 Prerequisites: Sign into UW Purple using your UW credentials. 
 
 You have 40 minutes. Use UW Purple and come up with a cool mobile phone web app. It runs inside UW, so your prompts and your app stay private. Ask Purple if you need ideas. Purple has no plan mode, so make one. Before you ask for code, ask Purple to draft a plan and to ask you questions about what you want. Then tell it to build. Iterate until it does what you want. You'll turn in every message you send, in order, so keep the chat. Annotate at least once: screenshot the region you want changed and send it to Purple with the change you want.   
 If you'd rather have the app published for you, use the Lovable section of this handout instead.
 
-## Turnin
+### Turnin
 
 Submit on the Project 1 assignment in Canvas using the File Upload submission type. Upload everything below as separate files in one submission.
 
