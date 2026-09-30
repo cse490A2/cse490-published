@@ -16,7 +16,7 @@
     },
     "P02": {
       "assignment_id": 11743630,
-      "desc_fp": "2656512885d43e7a",
+      "desc_fp": "707d667d57722da9",
       "due_at": "2026-10-14T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3948227,
@@ -84,8 +84,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-28T23:01:12.960Z",
-    "published_at": "2026-09-29T08:14:18Z",
+    "modified_time": "2026-09-29T21:25:14.405Z",
+    "published_at": "2026-09-30T19:02:24Z",
     "source": "drive"
   },
   "projects/P02/SETUP.md": {

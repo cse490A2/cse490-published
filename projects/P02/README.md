@@ -39,9 +39,9 @@ Some examples of arcade games (a longer list can be found [here](https://en.wiki
 
 ## Turnin
 
-By Tuesday 11:59 pm, on the Project 2 assignment in Canvas:
+By Tuesday 11:59 pm:
 
-* In VS Code, open the Command Palette and run CSE 490: Package for turn-in. It checks your folder and writes P02-submission.zip next to PROMPT.md. If the palette shows no CSE 490 entry, the course extension from the prereq instructions is not installed; install it and run this again. ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/handout-2.png)  
+* In VS Code, open the Command Palette and run CSE 490: Package for turn-in. It checks your folder and writes P02-submission.zip next to PROMPT.md. If the palette shows no CSE 490 entry, the course extension from the prereq instructions is not installed; install it and run this again.   
 * Upload P02-submission.zip. It holds your prompts, the scorecard, every game, and your chat log; .env is left out.  
 * If you made it awesome, PROMPT2.md and its games are in the zip already.  
 * Submit as Upload: the one zip.
