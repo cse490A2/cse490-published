@@ -35,8 +35,8 @@ Use Purple
 
 1.  Open <https://purple.uw.edu/> and sign in using your UW credentials.
 2.  On the top left, you can select the model you want to use. For this assignment, any model is fine; just say which one you used.
-3.  Because Purple is not optimized for web app development, you should specify what you’re building. Start your prompt with ‘Create a mobile web app…’.
-4.  Purple then opens an interactive code viewer. From there, switch to mobile view by clicking the phone icon. When you are finished, download the file by clicking the download button.
+3.  Because Purple is not optimized for web app development, you should specify what you’re building. Start your prompt with ‘Create a web app…’.
+4.  Purple then opens an interactive code viewer. When you are finished, download the file by clicking the download button.
 5.  You can track your context window through the percentage on the top right corner.
 
 ![](images/setup-image3.png)
