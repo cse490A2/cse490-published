@@ -6,147 +6,198 @@ nav_order: 1
 permalink: "/projects/P02/setup/"
 ---
 
-# Project 2 setup guide
+# **Project 2 setup guide**
 
-This document provides instructions to set up your environment for CSE490's in-class projects, starting with Project 2\.  See below for Mac, Windows, and Linux instructions (choose based on your machine/OS type).
+This document provides instructions to set up your environment for CSE490’s in-class projects. If you would like to follow an interactive guide instead, try out [the wizard](https://canvas.uw.edu/courses/1916846/pages/course-setup-the-wizard).
 
-## Mac
+## **Downloading the Wizard**
 
-### 1\. Project folder
+Requires Python 3.9+  
+Download the Wizard, currently found in the Drive folder.
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named exactly .env: any text editor will do, or, once the folder is open in VS Code, right-click the folder name in the Explorer and choose New File. Paste these two lines into it:  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
-Replace \<your key here\> with your given API key (it starts with sk).
+### **Mac**
 
-### 2\. VS Code
+Double-click the zip in Downloads to get the wizard folder. Then, in Terminal:  
+`cd ~/Downloads/wizard`  
+`python3 wizard.py`
 
-Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Open the downloaded file. Drag Visual Studio Code into Applications. Open it once so macOS trusts it. VS Code is installed when it opens to its welcome page.
+### **Windows**
 
-### 3\. AI chat in VS Code
+Right-click the zip in Downloads, choose "Extract All", open the wizard folder it makes, and double-click SETUP-WINDOWS.bat. If the blue "Windows protected your PC" box appears: "More info", then "Run anyway".
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Cmd+Shift+X. Search for LiteLLM and install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
+## **Mac**
+
+### **1\. Course key**
+
+Create a folder for the project. Inside it, create a file named .env.  
+Inside, paste these two lines:  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
+Replace \<your key here\> with your given API key (it starts with sk).  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
+
+### **2\. VS Code**
+
+Open [code.visualstudio.com](https://code.visualstudio.com) and click the Download button.  
+Open the downloaded file. Drag Visual Studio Code into Applications.  
+Open Visual Studio Code from Applications so macOS trusts it. VS Code is installed when it opens to its welcome page.
+
+### **3\. AI chat in VS Code**
+
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
-Point it at the course gateway. Open the Command Palette (Cmd+Shift+P) and run "Preferences: Open User Settings (JSON)". Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
-{  
-  "litellm-vscode-chat.servers": \[  
-    {  
-      "label": "CSE 490",  
-      "baseUrl": "https://llmproxy.cs.washington.edu",  
-      "auth": { "apiKey": "\<your key here\>" },  
-      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
-        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
-    }  
-  \],  
-  "chat.agent.enabled": false  
-}  
-Replace \<your key here\> with your given API key. The "models" lines turn off Qwen's thinking mode: with it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned." The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself; if your chat box has no Ask/Agent switch, the line does nothing and is fine to keep. Save the file.  
+Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
+`{`  
+  `"litellm-vscode-chat.servers": [`  
+    `{`  
+      `"label": "CSE 490",`  
+      `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+      `"auth": { "apiKey": "<your key here>" },`  
+      `"models": { "parameters": { "internal/Qwen3.6-35B-A3B": {`  
+        `"extra_body": { "chat_template_kwargs": { "enable_thinking": false } } } } }`  
+    `}`  
+  `],`  
+  `"chat.agent.enabled": false`  
+`}`  
+Replace \<your key here\> with your API key. Save the file.  
+The "models" lines turn off Qwen's thinking mode. With it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned."  
+The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
 The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
-Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png) ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Under CSE 490, pick one of external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png)
 
-### 4\. Open the project
+### **4\. Course extension**
 
-In VS Code, choose File, then Open Folder, and pick the starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
 
-### 5\. Model gateway
+### **5\. Project files**
 
-Prove the key works. Open a terminal inside VS Code (menu Terminal, then New Terminal; it opens in your project folder) and run:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)  
-Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log.
 
-## Windows
+### **6\. Model gateway**
 
-### 1\. Project folder
+Prove the key works. In a terminal in your project folder:  
+`curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
+`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
+Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named exactly .env: any text editor will do, or, once the folder is open in VS Code, right-click the folder name in the Explorer and choose New File. Paste these two lines into it:  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-6.png)  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
-Replace \<your key here\> with your given API key (it starts with sk).
+## **Windows**
 
-### 2\. VS Code
+### **1\. Course key**
 
-Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Run the installer. The defaults are fine. VS Code is installed when it opens to its welcome page.
+Create a folder for the project. Inside it, create a file named .env.  
+Inside, paste these two lines:  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
+Replace \<your key here\> with your given API key (it starts with sk).  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
-### 3\. AI chat in VS Code
+### **2\. VS Code**
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for LiteLLM and install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-7.png)  
-Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P) and run "Preferences: Open User Settings (JSON)". Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
-{  
-  "litellm-vscode-chat.servers": \[  
-    {  
-      "label": "CSE 490",  
-      "baseUrl": "https://llmproxy.cs.washington.edu",  
-      "auth": { "apiKey": "\<your key here\>" },  
-      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
-        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
-    }  
-  \],  
-  "chat.agent.enabled": false  
-}  
-Replace \<your key here\> with your given API key. The "models" lines turn off Qwen's thinking mode: with it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned." The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself; if your chat box has no Ask/Agent switch, the line does nothing and is fine to keep. Save the file.  
+Open [code.visualstudio.com](https://code.visualstudio.com) and click the Download button.  
+Open the downloaded file. The defaults are fine.  
+Open Visual Studio Code from the Start menu. VS Code is installed when it opens to its welcome page.
+
+### **3\. AI chat in VS Code**
+
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
+Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
+`{`  
+  `"litellm-vscode-chat.servers": [`  
+    `{`  
+      `"label": "CSE 490",`  
+      `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+      `"auth": { "apiKey": "<your key here>" },`  
+      `"models": { "parameters": { "internal/Qwen3.6-35B-A3B": {`  
+        `"extra_body": { "chat_template_kwargs": { "enable_thinking": false } } } } }`  
+    `}`  
+  `],`  
+  `"chat.agent.enabled": false`  
+`}`  
+Replace \<your key here\> with your API key. Save the file.  
+The "models" lines turn off Qwen's thinking mode. With it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned."  
+The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
 The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
-Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-8.png) ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-9.png)
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Under CSE 490, pick one of external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png)
 
-### 4\. Open the project
+### **4\. Course extension**
 
-In VS Code, choose File, then Open Folder, and pick the starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
 
-### 5\. Model gateway
+### **5\. Project files**
 
-Prove the key works. Open a terminal inside VS Code (menu Terminal, then New Terminal; it opens in your project folder) and run:  
-curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-10.png)  
-Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log.
 
-## Linux
+### **6\. Model gateway**
 
-### 1\. Project folder
+Prove the key works. In PowerShell in your project folder:  
+`curl.exe -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
+`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
+Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week. It holds PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log. Inside it, create a file named exactly .env: any text editor will do, or, once the folder is open in VS Code, right-click the folder name in the Explorer and choose New File. Paste these two lines into it:  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-11.png)  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
-Replace \<your key here\> with your given API key (it starts with sk).
+## **Linux**
 
-### 2\. VS Code
+### **1\. Course key**
 
-Get the package for your distribution from [the VS Code download page](https://code.visualstudio.com/download) (.deb for Ubuntu). Install it. VS Code is installed when it opens to its welcome page.
+Create a folder for the project. Inside it, create a file named .env.  
+Inside, paste these two lines:  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
+Replace \<your key here\> with your given API key (it starts with sk).  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
-### 3\. AI chat in VS Code
+### **2\. VS Code**
 
-Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for LiteLLM and install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-12.png)  
-Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P) and run "Preferences: Open User Settings (JSON)". Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
-{  
-  "litellm-vscode-chat.servers": \[  
-    {  
-      "label": "CSE 490",  
-      "baseUrl": "https://llmproxy.cs.washington.edu",  
-      "auth": { "apiKey": "\<your key here\>" },  
-      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
-        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
-    }  
-  \],  
-  "chat.agent.enabled": false  
-}  
-Replace \<your key here\> with your given API key. The "models" lines turn off Qwen's thinking mode: with it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned." The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself; if your chat box has no Ask/Agent switch, the line does nothing and is fine to keep. Save the file.  
+Open [the VS Code download page](https://code.visualstudio.com/download). Get the package for your distribution: .deb for Ubuntu.  
+Install the package you downloaded. On Ubuntu, open it, or run apt on it in a terminal.  
+Open Visual Studio Code. It is installed when it opens to its welcome page.
+
+### **3\. AI chat in VS Code**
+
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
+Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
+`{`  
+  `"litellm-vscode-chat.servers": [`  
+    `{`  
+      `"label": "CSE 490",`  
+      `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+      `"auth": { "apiKey": "<your key here>" },`  
+      `"models": { "parameters": { "internal/Qwen3.6-35B-A3B": {`  
+        `"extra_body": { "chat_template_kwargs": { "enable_thinking": false } } } } }`  
+    `}`  
+  `],`  
+  `"chat.agent.enabled": false`  
+`}`  
+Replace \<your key here\> with your API key. Save the file.  
+The "models" lines turn off Qwen's thinking mode. With it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned."  
+The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
 The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
-Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-13.png) ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-14.png)
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Under CSE 490, pick one of external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png)
 
-### 4\. Open the project
+### **4\. Course extension**
 
-In VS Code, choose File, then Open Folder, and pick the starter folder. Save every game the models write into its artifacts folder, named the way artifacts/README.md says: the game name, one underscore, the model's short name, then .html. The course extension from step 3 sees logs/\_chatlog.json and, from then on, saves every chat you have with the course models in this folder to logs/\_chatlog.md, where you can read it any time. The status bar shows "Chat log" with the number of turns saved. The log stays on your computer. Nobody on the course staff sees it unless you turn it in, and it never includes your API key. To stop the log, delete logs/\_chatlog.json.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
 
-### 5\. Model gateway
+### **5\. Project files**
 
-Prove the key works. Open a terminal inside VS Code (menu Terminal, then New Terminal; it opens in your project folder) and run:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-15.png)  
-Replace \<your key\> with your API key. A working key returns a list of models that includes the three course models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P02/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: PROMPT.md, SCORECARD.md, an artifacts folder for the games the models write, and a logs folder for your chat log.
+
+### **6\. Model gateway**
+
+Prove the key works. In a terminal in your project folder:  
+`curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
+`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
+Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
