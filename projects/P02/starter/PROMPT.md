@@ -1,11 +1,11 @@
 Write a Breakout doubles game I can play in my browser with a computer teammate.
 
 ## Theme
-Colours:
+Colors:
 Teammate's name:
 Win screen words:
 Lose screen words:
-Use the colours for the page, paddles, bricks and text. Draw the teammate's
+Use the colors for the page, paddles, bricks and text. Draw the teammate's
 name under its paddle. Show the win and lose words on the end screens; if a
 field is empty use YOU WIN and GAME OVER.
 

@@ -84,8 +84,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-09-29T21:25:14.405Z",
-    "published_at": "2026-09-30T19:02:24Z",
+    "modified_time": "2026-10-02T14:18:09.463Z",
+    "published_at": "2026-10-04T17:06:08Z",
     "source": "drive"
   },
   "projects/P02/SETUP.md": {
@@ -114,25 +114,16 @@
       "projects/P02/starter/artifacts/README.md",
       "projects/P02/starter/logs/_chatlog.json"
     ],
-    "published_at": "2026-09-25T03:49:20Z",
+    "published_at": "2026-10-04T17:06:20Z",
     "source": "derived"
-  },
-  "projects/P02/starter/.vscode/tasks.json": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P02 starter .vscode/tasks.json",
-    "document_id": "1_2-a6PRIRwty-TDq7AD5F3wC34foFOeE",
-    "document_name": "P02 starter .vscode/tasks.json",
-    "modified_time": "2026-09-24T22:50:07.501Z",
-    "published_at": "2026-09-24T22:52:11Z",
-    "source": "drive"
   },
   "projects/P02/starter/PROMPT.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "starter:P02 starter PROMPT.md",
     "document_id": "1KZgzzv9Oef9ZGGyWyset-rj3nCuMOMSg",
     "document_name": "P02 starter PROMPT.md",
-    "modified_time": "2026-09-24T23:02:21.050Z",
-    "published_at": "2026-09-24T23:03:58Z",
+    "modified_time": "2026-10-04T17:05:08.310Z",
+    "published_at": "2026-10-04T17:06:14Z",
     "source": "drive"
   },
   "projects/P02/starter/SCORECARD.md": {
@@ -142,24 +133,6 @@
     "document_name": "P02 starter SCORECARD.md",
     "modified_time": "2026-09-25T03:48:54.514Z",
     "published_at": "2026-09-25T03:49:20Z",
-    "source": "drive"
-  },
-  "projects/P02/starter/_chatlog.json": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P02 starter _chatlog.json",
-    "document_id": "1cx4b-xLQlD0ewGWuKk5MAJE3WfAPgB29",
-    "document_name": "P02 starter _chatlog.json",
-    "modified_time": "2026-09-24T23:23:01.993Z",
-    "published_at": "2026-09-24T23:24:01Z",
-    "source": "drive"
-  },
-  "projects/P02/starter/_chatlog.py": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P02 starter _chatlog.py",
-    "document_id": "15FDD0U69A9MeB-MTL6VInOML7WuiJxdP",
-    "document_name": "P02 starter _chatlog.py",
-    "modified_time": "2026-09-24T22:50:03.841Z",
-    "published_at": "2026-09-24T22:52:11Z",
     "source": "drive"
   },
   "projects/P02/starter/artifacts/README.md": {
