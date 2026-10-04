@@ -16,12 +16,12 @@
     },
     "P02": {
       "assignment_id": 11743630,
-      "desc_fp": "e0cee896179aa08d",
+      "desc_fp": "c6bec51571440f94",
       "due_at": "2026-10-14T06:59:00Z",
       "due_source": "course doc",
-      "module_id": 3948227,
+      "module_id": 3977788,
       "name": "P02: Insert Prompt to Play",
-      "published": true,
+      "published": false,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11743630"
     },
     "P03": {
