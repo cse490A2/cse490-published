@@ -28,17 +28,22 @@ Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Op
 
 Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Cmd+Shift+X. Search for LiteLLM and install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
-Point it at the course gateway. Open the Command Palette (Cmd+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
-"litellm-vscode-chat.servers": \[  
+Point it at the course gateway. Open the Command Palette (Cmd+Shift+P) and run "Preferences: Open User Settings (JSON)". Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
+{  
+  "litellm-vscode-chat.servers": \[  
     {  
-        "label": "CSE 490",  
-        "baseUrl": "https://llmproxy.cs.washington.edu",  
-        "auth": { "apiKey": "\<your key here\>" }  
+      "label": "CSE 490",  
+      "baseUrl": "https://llmproxy.cs.washington.edu",  
+      "auth": { "apiKey": "\<your key here\>" },  
+      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
+        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
     }  
-\]  
-Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
-"chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
+  \],  
+  "chat.agent.enabled": false  
+}  
+Replace \<your key here\> with your given API key. The "models" lines turn off Qwen's thinking mode: with it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned." The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself; if your chat box has no Ask/Agent switch, the line does nothing and is fine to keep. Save the file.  
+The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
+Open the chat panel (the speech-bubble icon at the top, or Ctrl+Cmd+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png) ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
 
 ### 4\. Open the project
@@ -70,17 +75,22 @@ Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Ru
 
 Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for LiteLLM and install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-7.png)  
-Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
-"litellm-vscode-chat.servers": \[  
+Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P) and run "Preferences: Open User Settings (JSON)". Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
+{  
+  "litellm-vscode-chat.servers": \[  
     {  
-        "label": "CSE 490",  
-        "baseUrl": "https://llmproxy.cs.washington.edu",  
-        "auth": { "apiKey": "\<your key here\>" }  
+      "label": "CSE 490",  
+      "baseUrl": "https://llmproxy.cs.washington.edu",  
+      "auth": { "apiKey": "\<your key here\>" },  
+      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
+        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
     }  
-\]  
-Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
-"chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
+  \],  
+  "chat.agent.enabled": false  
+}  
+Replace \<your key here\> with your given API key. The "models" lines turn off Qwen's thinking mode: with it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned." The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself; if your chat box has no Ask/Agent switch, the line does nothing and is fine to keep. Save the file.  
+The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
+Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-8.png) ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-9.png)
 
 ### 4\. Open the project
@@ -112,17 +122,22 @@ Get the package for your distribution from [the VS Code download page](https://c
 
 Install two extensions. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X. Search for LiteLLM and install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan. Then download the course extension, CSE 490 Course Tools, as cse490-tools.vsix from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix. Back in the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. That extension keeps the chat log described in step 4 and packages your turn-in.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-12.png)  
-Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
-"litellm-vscode-chat.servers": \[  
+Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P) and run "Preferences: Open User Settings (JSON)". Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
+{  
+  "litellm-vscode-chat.servers": \[  
     {  
-        "label": "CSE 490",  
-        "baseUrl": "https://llmproxy.cs.washington.edu",  
-        "auth": { "apiKey": "\<your key here\>" }  
+      "label": "CSE 490",  
+      "baseUrl": "https://llmproxy.cs.washington.edu",  
+      "auth": { "apiKey": "\<your key here\>" },  
+      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
+        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
     }  
-\]  
-Replace \<your key here\> with your given API key. Switch agent mode off; this week the AI answers in chat and you save every file yourself. Add this line beside the entry above:  
-"chat.agent.enabled": false  
-Save the file. Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
+  \],  
+  "chat.agent.enabled": false  
+}  
+Replace \<your key here\> with your given API key. The "models" lines turn off Qwen's thinking mode: with it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned." The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself; if your chat box has no Ask/Agent switch, the line does nothing and is fine to keep. Save the file.  
+The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
+Open the chat panel (the speech-bubble icon at the top, or Ctrl+Alt+I). Click the model picker at the bottom of the chat box; it reads Auto until you choose. Under CSE 490 you should see external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. Pick one before you send a message. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If any of them is still missing, tell the course staff. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-13.png) ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-14.png)
 
 ### 4\. Open the project

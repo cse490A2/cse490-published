@@ -84,8 +84,8 @@
     "artifact_id": "project-student-p02",
     "document_id": "17tN4RvkeKqLhDXDzzMJVTN9skP7V4yf7isrAvqApqL8",
     "document_name": "P02 Handout",
-    "modified_time": "2026-10-02T14:18:09.463Z",
-    "published_at": "2026-10-04T17:06:08Z",
+    "modified_time": "2026-10-04T18:16:27.151Z",
+    "published_at": "2026-10-04T18:20:13Z",
     "source": "drive"
   },
   "projects/P02/SETUP.md": {
@@ -93,8 +93,8 @@
     "artifact_id": "project-prereq-p02",
     "document_id": "13HUU_3FkvK76XbxmOTt2jruxwGweO20ZMTDe5FBrF7E",
     "document_name": "P02 Prereq Instructions",
-    "modified_time": "2026-09-29T04:27:01.342Z",
-    "published_at": "2026-09-29T08:14:15Z",
+    "modified_time": "2026-10-04T18:02:24.192Z",
+    "published_at": "2026-10-04T18:20:08Z",
     "source": "drive"
   },
   "projects/P02/examples/SCORECARD.md": {
@@ -114,7 +114,7 @@
       "projects/P02/starter/artifacts/README.md",
       "projects/P02/starter/logs/_chatlog.json"
     ],
-    "published_at": "2026-10-04T17:06:20Z",
+    "published_at": "2026-10-04T18:20:20Z",
     "source": "derived"
   },
   "projects/P02/starter/PROMPT.md": {
@@ -122,8 +122,8 @@
     "artifact_id": "starter:P02 starter PROMPT.md",
     "document_id": "1KZgzzv9Oef9ZGGyWyset-rj3nCuMOMSg",
     "document_name": "P02 starter PROMPT.md",
-    "modified_time": "2026-10-04T17:05:08.310Z",
-    "published_at": "2026-10-04T17:06:14Z",
+    "modified_time": "2026-10-04T17:47:41.232Z",
+    "published_at": "2026-10-04T18:20:17Z",
     "source": "drive"
   },
   "projects/P02/starter/SCORECARD.md": {
@@ -149,8 +149,8 @@
     "artifact_id": "starter:P02 starter logs/_chatlog.json",
     "document_id": "1h2bG1xoZeh0XBEs5PJUxslWlcE1-z1NU",
     "document_name": "P02 starter logs/_chatlog.json",
-    "modified_time": "2026-09-25T02:27:54.776Z",
-    "published_at": "2026-09-25T02:29:55Z",
+    "modified_time": "2026-10-04T17:47:45.198Z",
+    "published_at": "2026-10-04T18:20:17Z",
     "source": "drive"
   },
   "projects/P03/README.md": {
