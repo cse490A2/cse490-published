@@ -297,5 +297,50 @@
     "modified_time": "2026-09-29T08:51:29.644Z",
     "published_at": "2026-09-29T08:52:39Z",
     "source": "drive"
+  },
+  "projects/P04/examples/AGENTS.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P04 example AGENTS.md",
+    "document_id": "18OdVPcFtQRfExGVi1cZG6Z7FEXX60axF",
+    "document_name": "P04 example AGENTS.md",
+    "modified_time": "2026-10-06T06:45:43.521Z",
+    "published_at": "2026-10-06T06:47:02Z",
+    "source": "drive"
+  },
+  "projects/P04/examples/SKILL.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P04 example SKILL.md",
+    "document_id": "1xRzGOuMApVu47DV7o_UK9I99gkRYZm4h",
+    "document_name": "P04 example SKILL.md",
+    "modified_time": "2026-10-06T06:45:45.132Z",
+    "published_at": "2026-10-06T06:47:02Z",
+    "source": "drive"
+  },
+  "projects/P04/examples/memory.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P04 example memory.md",
+    "document_id": "1sk-39Xmo69u7FXp3sTmqhf3v2zqE_um-",
+    "document_name": "P04 example memory.md",
+    "modified_time": "2026-10-06T06:45:46.882Z",
+    "published_at": "2026-10-06T06:47:03Z",
+    "source": "drive"
+  },
+  "projects/P04/examples/shopping-list-SKILL.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P04 example shopping-list-SKILL.md",
+    "document_id": "1pbP0u0fXTzmKh5W9f-BNe7KP8Jzdsu8j",
+    "document_name": "P04 example shopping-list-SKILL.md",
+    "modified_time": "2026-10-06T06:45:48.767Z",
+    "published_at": "2026-10-06T06:47:03Z",
+    "source": "drive"
+  },
+  "projects/P04/examples/transcript.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "example:P04 example transcript.md",
+    "document_id": "1Vt3sp-uTpwOdyueAboj0mmE1tQv2hBR7",
+    "document_name": "P04 example transcript.md",
+    "modified_time": "2026-10-06T06:45:50.339Z",
+    "published_at": "2026-10-06T06:47:03Z",
+    "source": "drive"
   }
 }
