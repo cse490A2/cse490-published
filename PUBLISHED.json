@@ -298,6 +298,24 @@
     "published_at": "2026-09-29T08:52:39Z",
     "source": "drive"
   },
+  "projects/P04/SETUP.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-prereq-p04",
+    "document_id": "1TWIdR3e6AoNpjrkphQzCycH-6R-na-X06HrzSfD4I_k",
+    "document_name": "P04 Prereq Instructions",
+    "modified_time": "2026-10-06T07:08:42.546Z",
+    "published_at": "2026-10-06T07:12:11Z",
+    "source": "drive"
+  },
+  "projects/P04/SUBMISSION.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-template-p04",
+    "document_id": "1d7K1UKWm_lFMTJRJ1DYY7PsLWL7HV54qKBOvB6i63uE",
+    "document_name": "P04 Submission",
+    "modified_time": "2026-10-06T07:08:54.889Z",
+    "published_at": "2026-10-06T07:12:12Z",
+    "source": "drive"
+  },
   "projects/P04/examples/AGENTS.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "example:P04 example AGENTS.md",
