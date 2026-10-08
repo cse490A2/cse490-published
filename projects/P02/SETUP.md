@@ -44,6 +44,7 @@ Inside, paste these two lines:
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
 ### **3\. VS Code**
@@ -56,6 +57,7 @@ Open Visual Studio Code from Applications so macOS trusts it. VS Code is install
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
 Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
@@ -76,11 +78,13 @@ The "models" lines turn off Qwen's thinking mode. With it on, the gateway times 
 The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
 The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Under CSE 490, pick one of external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message. I can't see the picker from here, so this part has no check. The last step, Model gateway, proves your key can reach all three.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png)
 
 ### **5\. Course extension**
 
 Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
 
 ### **6\. Project files**
@@ -91,7 +95,8 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 
 Prove the key works. In a terminal in your project folder:  
 `curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
-`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
+   
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)  
 Replace \<your key\> with your API key. A working key returns a list of models with the three course models on it: external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## **Windows**
@@ -109,6 +114,7 @@ Inside, paste these two lines:
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
 ### **3\. VS Code**
@@ -121,6 +127,7 @@ Open Visual Studio Code from the Start menu. VS Code is installed when it opens 
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
@@ -141,11 +148,13 @@ The "models" lines turn off Qwen's thinking mode. With it on, the gateway times 
 The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
 The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Under CSE 490, pick one of external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message. I can't see the picker from here, so this part has no check. The last step, Model gateway, proves your key can reach all three.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png)
 
 ### **5\. Course extension**
 
 Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
 
 ### **6\. Project files**
@@ -156,7 +165,8 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 
 Prove the key works. In PowerShell in your project folder:  
 `curl.exe -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
-`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
+   
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)  
 Replace \<your key\> with your API key. A working key returns a list of models with the three course models on it: external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## **Linux**
@@ -174,6 +184,7 @@ Inside, paste these two lines:
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
 ### **3\. VS Code**
@@ -186,6 +197,7 @@ Open Visual Studio Code. It is installed when it opens to its welcome page.
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
@@ -206,11 +218,13 @@ The "models" lines turn off Qwen's thinking mode. With it on, the gateway times 
 The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
 The LiteLLM extension can also take the server through a form: if it opens its Dashboard, choose "Add your first server" and give the same label, base URL and key. The Qwen lines still go in the settings file.  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Under CSE 490, pick one of external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. If they are not listed, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the three. If the picker asks you to sign in to GitHub first, sign in; the course key still pays for every message. I can't see the picker from here, so this part has no check. The last step, Model gateway, proves your key can reach all three.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-3.png)
 
 ### **5\. Course extension**
 
 Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-4.png)
 
 ### **6\. Project files**
@@ -221,5 +235,6 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 
 Prove the key works. In a terminal in your project folder:  
 `curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
-`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
+   
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)  
 Replace \<your key\> with your API key. A working key returns a list of models with the three course models on it: external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.

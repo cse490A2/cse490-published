@@ -46,6 +46,7 @@ with your key in place of \<your key here\> (it starts with sk). If the file is 
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
 Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Add this entry inside the outer braces:  
@@ -60,6 +61,7 @@ Replace \<your key here\> with your API key. Save the file.
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 "chat.agent.enabled": false  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
 ### **4\. Harness check**
@@ -88,6 +90,7 @@ with your key in place of \<your key here\> (it starts with sk). If the file is 
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Add this entry inside the outer braces:  
@@ -102,6 +105,7 @@ Replace \<your key here\> with your API key. Save the file.
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 "chat.agent.enabled": false  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
 ### **4\. Harness check**
@@ -130,6 +134,7 @@ with your key in place of \<your key here\> (it starts with sk). If the file is 
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Add this entry inside the outer braces:  
@@ -144,6 +149,7 @@ Replace \<your key here\> with your API key. Save the file.
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 "chat.agent.enabled": false  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+   
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
 ### **4\. Harness check**
