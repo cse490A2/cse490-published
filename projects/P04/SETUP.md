@@ -37,10 +37,10 @@ The folder holds harness.py and hello\_world.py from Project 3\. If harness.py i
 
 ### **2\. Course key**
 
-Your Project 3 folder already holds .env with your course key. Open it and check that it still has these two lines:  
+Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
-with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly .env, and paste the two lines in.
+with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
 ### **3\. AI chat in VS Code**
 
@@ -69,7 +69,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
 Run:  
 `python3 harness.py`  
-It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means .env is wrong (the Course key step puts it right).  
+It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
 Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
 Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
 
@@ -81,10 +81,10 @@ The folder holds harness.py and hello\_world.py from Project 3\. If harness.py i
 
 ### **2\. Course key**
 
-Your Project 3 folder already holds .env with your course key. Open it and check that it still has these two lines:  
+Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
-with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly .env, and paste the two lines in.
+with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
 ### **3\. AI chat in VS Code**
 
@@ -113,7 +113,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
 Run:  
 `python harness.py`  
-It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means .env is wrong (the Course key step puts it right).  
+It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
 Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
 Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
 
@@ -125,10 +125,10 @@ The folder holds harness.py and hello\_world.py from Project 3\. If harness.py i
 
 ### **2\. Course key**
 
-Your Project 3 folder already holds .env with your course key. Open it and check that it still has these two lines:  
+Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
-with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly .env, and paste the two lines in.
+with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
 ### **3\. AI chat in VS Code**
 
@@ -157,6 +157,6 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
 Run:  
 `python3 harness.py`  
-It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means .env is wrong (the Course key step puts it right).  
+It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
 Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
 Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
