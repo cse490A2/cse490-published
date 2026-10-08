@@ -8,12 +8,12 @@ permalink: "/projects/P03/setup/"
 
 # **Project 3 setup guide**
 
-This document provides instructions to set up your environment for CSE490’s in-class projects. If you would like to follow an interactive guide instead, try out [the wizard](https://canvas.uw.edu/courses/1916846/pages/course-setup-the-wizard).
+This document sets up your computer for CSE490’s in-class projects. There are two ways to do it, and they end in the same place. Pick one.
 
-## **Downloading the Wizard**
+## **Option 1: the wizard (recommended)**
 
-Requires Python 3.9+  
-Download the Wizard, currently found in the Drive folder.
+A small program that walks you through each step, with a picture of where to click, and checks each one on your computer. Download it once; every week it fetches that week’s project by itself. Requires Python 3.9+.  
+Download [wizard-cse490.zip](https://github.com/cse490A2/cse490-published/releases/download/wizard/wizard-cse490.zip). It lands in your Downloads folder.
 
 ### **Mac**
 
@@ -24,6 +24,10 @@ python3 wizard.py
 ### **Windows**
 
 Right-click the zip in Downloads, choose "Extract All", open the wizard folder it makes, and double-click SETUP-WINDOWS.bat. If the blue "Windows protected your PC" box appears: "More info", then "Run anyway".
+
+## **Option 2: by hand**
+
+Read the section for your computer below (Mac, Windows or Linux) and do each step yourself. The steps are the same ones the wizard walks.
 
 ## **Mac**
 
@@ -37,16 +41,22 @@ Replace \<your key here\> with your given API key (it starts with sk).
 
 ### **2\. Python 3.9+**
 
-Install the current Python from [the Python download page](https://python.org/downloads). Run the installer. Then check again from a fresh terminal window.
+Open [the Python download page](https://www.python.org/downloads/) and click the Download Python button.  
+Open the downloaded file. Click Continue through the installer, then Install.
 
 ### **3\. VS Code**
 
-Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Open the downloaded file. Drag Visual Studio Code into Applications. Open it once so macOS trusts it, then check again.
+Open [code.visualstudio.com](https://code.visualstudio.com) and click the Download button.  
+Open the downloaded file. Drag Visual Studio Code into Applications.  
+Open Visual Studio Code from Applications so macOS trusts it. VS Code is installed when it opens to its welcome page.
 
 ### **4\. AI chat in VS Code**
 
-Install the extension. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X (Cmd+Shift+X on a Mac). Search for "LiteLLM VSCode Chat" by vivswan and click Install.  
-Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P; Cmd+Shift+P on a Mac). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
+Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
         "label": "CSE 490",  
@@ -54,10 +64,11 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P; Cmd+Shif
         "auth": { "apiKey": "\<your key here\>" }  
     }  
 \]  
-Replace \<your key here\> with your given API key.  
-Switch agent mode off – this week the AI answers in chat and you type every change yourself. Add this line beside the entry above:  
+Replace \<your key here\> with your API key. Save the file.  
+This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 "chat.agent.enabled": false  
-Save the file, then check again.
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
 ### **5\. Course extension**
 
@@ -85,16 +96,22 @@ Replace \<your key here\> with your given API key (it starts with sk).
 
 ### **2\. Python 3.9+**
 
-Install the current Python from [the Python download page](https://python.org/downloads). In the installer, check the "Add python.exe to PATH" box. Then check again from a fresh terminal window.
+Open [the Python download page](https://www.python.org/downloads/) and click the Download Python button.  
+Open the downloaded file. Check the "Add python.exe to PATH" box at the bottom, then click Install Now.
 
 ### **3\. VS Code**
 
-Download VS Code from [code.visualstudio.com](https://code.visualstudio.com). Run the installer. The defaults are fine. Then check again.
+Open [code.visualstudio.com](https://code.visualstudio.com) and click the Download button.  
+Open the downloaded file. The defaults are fine.  
+Open Visual Studio Code from the Start menu. VS Code is installed when it opens to its welcome page.
 
 ### **4\. AI chat in VS Code**
 
-Install the extension. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X (Cmd+Shift+X on a Mac). Search for "LiteLLM VSCode Chat" by vivswan and click Install.  
-Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P; Cmd+Shift+P on a Mac). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
+Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
         "label": "CSE 490",  
@@ -102,10 +119,11 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P; Cmd+Shif
         "auth": { "apiKey": "\<your key here\>" }  
     }  
 \]  
-Replace \<your key here\> with your given API key.  
-Switch agent mode off – this week the AI answers in chat and you type every change yourself. Add this line beside the entry above:  
+Replace \<your key here\> with your API key. Save the file.  
+This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 "chat.agent.enabled": false  
-Save the file, then check again.
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
 ### **5\. Course extension**
 
@@ -133,16 +151,22 @@ Replace \<your key here\> with your given API key (it starts with sk).
 
 ### **2\. Python 3.9+**
 
-On Debian or Ubuntu: sudo apt install python3. Then check again.
+On Debian or Ubuntu, run this in a terminal:  
+sudo apt install python3
 
 ### **3\. VS Code**
 
-Get the package for your distribution from [the VS Code download page](https://code.visualstudio.com/download) (.deb for Ubuntu). Install it, then check again.
+Open [the VS Code download page](https://code.visualstudio.com/download). Get the package for your distribution: .deb for Ubuntu.  
+Install the package you downloaded. On Ubuntu, open it, or run apt on it in a terminal.  
+Open Visual Studio Code. It is installed when it opens to its welcome page.
 
 ### **4\. AI chat in VS Code**
 
-Install the extension. In VS Code, open the Extensions panel: the four-squares icon on the left, or Ctrl+Shift+X (Cmd+Shift+X on a Mac). Search for "LiteLLM VSCode Chat" by vivswan and click Install.  
-Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P; Cmd+Shift+P on a Mac). Run "Preferences: Open User Settings (JSON)". Add this entry inside the outer braces:  
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
+Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Add this entry inside the outer braces:  
 "litellm-vscode-chat.servers": \[  
     {  
         "label": "CSE 490",  
@@ -150,10 +174,11 @@ Point it at the course gateway. Open the Command Palette (Ctrl+Shift+P; Cmd+Shif
         "auth": { "apiKey": "\<your key here\>" }  
     }  
 \]  
-Replace \<your key here\> with your given API key.  
-Switch agent mode off – this week the AI answers in chat and you type every change yourself. Add this line beside the entry above:  
+Replace \<your key here\> with your API key. Save the file.  
+This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 "chat.agent.enabled": false  
-Save the file, then check again.
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
 ### **5\. Course extension**
 

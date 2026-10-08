@@ -6,120 +6,151 @@ nav_order: 1
 permalink: "/projects/P04/setup/"
 ---
 
-\# \*\*Project 4 setup guide\*\*
+# **Project 4 setup guide**
 
-This week's setup is small. Project 4 continues in the Project 3 workspace, with the same harness, the same key and the same LiteLLM VSCode Chat extension. Nothing new is installed. If you ran \[the wizard\](https://canvas.uw.edu/courses/1916846/pages/course-setup-the-wizard) for Project 3, or followed the \[Project 3 setup guide\](../P03/SETUP.md) by hand, everything below is already in place.
+This document sets up your computer for CSE490’s in-class projects. There are two ways to do it, and they end in the same place. Pick one.
 
-\#\# \*\*What you already have\*\*
+## **Option 1: the wizard (recommended)**
 
-From the Project 3 setup, you need these things in place:
+A small program that walks you through each step, with a picture of where to click, and checks each one on your computer. Download it once; every week it fetches that week’s project by itself. Requires Python 3.9+.  
+Download [wizard-cse490.zip](https://github.com/cse490A2/cse490-published/releases/download/wizard/wizard-cse490.zip). It lands in your Downloads folder.
 
-\* Your Project 3 project folder, with the \`harness.py\` you finished in Project 3\.  
-\* The \`.env\` file in that folder, still holding your course key and the gateway address.  
-\* The \`read\_file\` and \`write\_file\` tools your harness got in Project 3; the memory step writes \`memory.md\` with them.  
-\* The chat extension, open in VS Code and pointed at the CSE 490 server.
+### **Mac**
 
-If any is missing, the matching step of the Project 3 setup guide puts it back. The sections below say which step.
+Double-click the zip in Downloads to get the wizard folder. Then, in Terminal:  
+cd \~/Downloads/wizard  
+python3 wizard.py
 
-\#\# \*\*Mac\*\*
+### **Windows**
 
-\#\#\# \*\*1\\. Project folder\*\*
+Right-click the zip in Downloads, choose "Extract All", open the wizard folder it makes, and double-click SETUP-WINDOWS.bat. If the blue "Windows protected your PC" box appears: "More info", then "Run anyway".
 
-Open your Project 3 project folder in VS Code: the folder that holds \`harness.py\`. The \`AGENTS.md\` you got with the Project 3 starter is already there; this week you rewrite it. The new \`skills/\` folder goes beside it in the same folder. If the folder is gone, "Project files" in the Project 3 setup guide gives you the starter again; your own harness changes come from your Project 3 submission.
+## **Option 2: by hand**
 
-\#\#\# \*\*2\\. Course key\*\*
+Read the section for your computer below (Mac, Windows or Linux) and do each step yourself. The steps are the same ones the wizard walks.
 
-Open \`.env\` in that folder. It holds these two lines from the Project 3 setup:
+## **Mac**
 
-\`\`\`  
+### **1\. Project 3 folder**
+
+The folder holds harness.py and hello\_world.py from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py and hello\_world.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
+
+### **2\. Course key**
+
+Your Project 3 folder already holds .env with your course key. Open it and check that it still has these two lines:  
 LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
-\`\`\`
+with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly .env, and paste the two lines in.
 
-If the file is missing or the key line is empty, follow "Course key" in the Project 3 setup guide.
+### **3\. AI chat in VS Code**
 
-\#\#\# \*\*3\\. AI chat in VS Code\*\*
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
+Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Add this entry inside the outer braces:  
+"litellm-vscode-chat.servers": \[  
+    {  
+        "label": "CSE 490",  
+        "baseUrl": "https://llmproxy.cs.washington.edu",  
+        "auth": { "apiKey": "\<your key here\>" }  
+    }  
+\]  
+Replace \<your key here\> with your API key. Save the file.  
+This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
+"chat.agent.enabled": false  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box and pick a course model under CSE 490\. If the CSE 490 server is not listed, follow "AI chat in VS Code" in the Project 3 setup guide. Keep the Project 3 setting that switches agent mode off (\`"chat.agent.enabled": false\`): the chat answers in text and you type every change into \`harness.py\` yourself, as the handout's prompts expect.
+### **4\. Harness check**
 
-\#\#\# \*\*4\\. Harness check\*\*
-
-Prove the harness runs and holds a conversation. In a terminal in your project folder:
-
-\`\`\`  
+In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+Run:  
 python3 harness.py  
-\`\`\`
+It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means .env is wrong (the Course key step puts it right).  
+Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
+Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
 
-Type a first message that gives it a fact, such as my name is Sam, and press Enter. Then ask what is my name? and press Enter. A reply that uses the name means the harness runs and holds a conversation, and the key and the gateway work. A reply that does not know the name means the harness is not keeping the context between turns; go back to the chatbot loop in the Reference of the \[Project 3 handout\](../P03/README.md). Then ask it to read \`hello\_world.py\`. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
+## **Windows**
 
-If the harness stops before the model answers, prove the key on its own with "Model gateway" in the Project 3 setup guide (the curl command). A list of models means the key and address are right and the fault is in \`harness.py\`; an "invalid key" error means \`.env\` is wrong; redo step 2\. No response at all means a network problem; if it keeps happening, tell the course staff.
+### **1\. Project 3 folder**
 
-\#\# \*\*Windows\*\*
+The folder holds harness.py and hello\_world.py from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py and hello\_world.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
 
-\#\#\# \*\*1\\. Project folder\*\*
+### **2\. Course key**
 
-Open your Project 3 project folder in VS Code: the folder that holds \`harness.py\`. The \`AGENTS.md\` you got with the Project 3 starter is already there; this week you rewrite it. The new \`skills/\` folder goes beside it in the same folder. If the folder is gone, "Project files" in the Project 3 setup guide gives you the starter again; your own harness changes come from your Project 3 submission.
-
-\#\#\# \*\*2\\. Course key\*\*
-
-Open \`.env\` in that folder. It holds these two lines from the Project 3 setup:
-
-\`\`\`  
+Your Project 3 folder already holds .env with your course key. Open it and check that it still has these two lines:  
 LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
-\`\`\`
+with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly .env, and paste the two lines in.
 
-If the file is missing or the key line is empty, follow "Course key" in the Project 3 setup guide.
+### **3\. AI chat in VS Code**
 
-\#\#\# \*\*3\\. AI chat in VS Code\*\*
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
+Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Add this entry inside the outer braces:  
+"litellm-vscode-chat.servers": \[  
+    {  
+        "label": "CSE 490",  
+        "baseUrl": "https://llmproxy.cs.washington.edu",  
+        "auth": { "apiKey": "\<your key here\>" }  
+    }  
+\]  
+Replace \<your key here\> with your API key. Save the file.  
+This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
+"chat.agent.enabled": false  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box and pick a course model under CSE 490\. If the CSE 490 server is not listed, follow "AI chat in VS Code" in the Project 3 setup guide. Keep the Project 3 setting that switches agent mode off (\`"chat.agent.enabled": false\`): the chat answers in text and you type every change into \`harness.py\` yourself, as the handout's prompts expect.
+### **4\. Harness check**
 
-\#\#\# \*\*4\\. Harness check\*\*
-
-Prove the harness runs and holds a conversation. In PowerShell in your project folder:
-
-\`\`\`  
+In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+Run:  
 python harness.py  
-\`\`\`
+It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means .env is wrong (the Course key step puts it right).  
+Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
+Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
 
-Type a first message that gives it a fact, such as my name is Sam, and press Enter. Then ask what is my name? and press Enter. A reply that uses the name means the harness runs and holds a conversation, and the key and the gateway work. A reply that does not know the name means the harness is not keeping the context between turns; go back to the chatbot loop in the Reference of the \[Project 3 handout\](../P03/README.md). Then ask it to read \`hello\_world.py\`. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
+## **Linux**
 
-If the harness stops before the model answers, prove the key on its own with "Model gateway" in the Project 3 setup guide (the curl.exe command). A list of models means the key and address are right and the fault is in \`harness.py\`; an "invalid key" error means \`.env\` is wrong; redo step 2\. No response at all means a network problem; if it keeps happening, tell the course staff.
+### **1\. Project 3 folder**
 
-\#\# \*\*Linux\*\*
+The folder holds harness.py and hello\_world.py from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py and hello\_world.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
 
-\#\#\# \*\*1\\. Project folder\*\*
+### **2\. Course key**
 
-Open your Project 3 project folder in VS Code: the folder that holds \`harness.py\`. The \`AGENTS.md\` you got with the Project 3 starter is already there; this week you rewrite it. The new \`skills/\` folder goes beside it in the same folder. If the folder is gone, "Project files" in the Project 3 setup guide gives you the starter again; your own harness changes come from your Project 3 submission.
-
-\#\#\# \*\*2\\. Course key\*\*
-
-Open \`.env\` in that folder. It holds these two lines from the Project 3 setup:
-
-\`\`\`  
+Your Project 3 folder already holds .env with your course key. Open it and check that it still has these two lines:  
 LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
 LITELLM\_API\_KEY=\<your key here\>  
-\`\`\`
+with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly .env, and paste the two lines in.
 
-If the file is missing or the key line is empty, follow "Course key" in the Project 3 setup guide.
+### **3\. AI chat in VS Code**
 
-\#\#\# \*\*3\\. AI chat in VS Code\*\*
+In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
+Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+Add this entry inside the outer braces:  
+"litellm-vscode-chat.servers": \[  
+    {  
+        "label": "CSE 490",  
+        "baseUrl": "https://llmproxy.cs.washington.edu",  
+        "auth": { "apiKey": "\<your key here\>" }  
+    }  
+\]  
+Replace \<your key here\> with your API key. Save the file.  
+This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
+"chat.agent.enabled": false  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box and pick a course model under CSE 490\. If the CSE 490 server is not listed, follow "AI chat in VS Code" in the Project 3 setup guide. Keep the Project 3 setting that switches agent mode off (\`"chat.agent.enabled": false\`): the chat answers in text and you type every change into \`harness.py\` yourself, as the handout's prompts expect.
+### **4\. Harness check**
 
-\#\#\# \*\*4\\. Harness check\*\*
-
-Prove the harness runs and holds a conversation. In a terminal in your project folder:
-
-\`\`\`  
+In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+Run:  
 python3 harness.py  
-\`\`\`
-
-Type a first message that gives it a fact, such as my name is Sam, and press Enter. Then ask what is my name? and press Enter. A reply that uses the name means the harness runs and holds a conversation, and the key and the gateway work. A reply that does not know the name means the harness is not keeping the context between turns; go back to the chatbot loop in the Reference of the \[Project 3 handout\](../P03/README.md). Then ask it to read \`hello\_world.py\`. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
-
-If the harness stops before the model answers, prove the key on its own with "Model gateway" in the Project 3 setup guide (the curl command). A list of models means the key and address are right and the fault is in \`harness.py\`; an "invalid key" error means \`.env\` is wrong; redo step 2\. No response at all means a network problem; if it keeps happening, tell the course staff.
-
-\#\# \*\*Claude Code, for the last step only\*\*
-
-The last step of the handout copies your finished skill into \`.claude/skills/\` and runs it in Claude Code. Claude Code is not part of this week's setup. If you already have it, the \[Claude Code skills docs\](https://code.claude.com/docs/en/skills) say what the folder needs. Everything before that step runs in your own harness and the chat extension.  
+It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means .env is wrong (the Course key step puts it right).  
+Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
+Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
