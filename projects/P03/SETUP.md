@@ -18,8 +18,8 @@ Download [wizard-cse490.zip](https://github.com/cse490A2/cse490-published/releas
 ### **Mac**
 
 Double-click the zip in Downloads to get the wizard folder. Then, in Terminal:  
-cd \~/Downloads/wizard  
-python3 wizard.py
+`cd ~/Downloads/wizard`  
+`python3 wizard.py`
 
 ### **Windows**
 
@@ -35,8 +35,8 @@ Read the section for your computer below (Mac, Windows or Linux) and do each ste
 
 Create a folder for the project. Inside it, create a file named .env.  
 Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).
 
 ### **2\. Python 3.9+**
@@ -57,16 +57,16 @@ Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswa
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
 Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Add this entry inside the outer braces:  
-"litellm-vscode-chat.servers": \[  
-    {  
-        "label": "CSE 490",  
-        "baseUrl": "https://llmproxy.cs.washington.edu",  
-        "auth": { "apiKey": "\<your key here\>" }  
-    }  
-\]  
+`"litellm-vscode-chat.servers": [`  
+    `{`  
+        `"label": "CSE 490",`  
+        `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+        `"auth": { "apiKey": "<your key here>" }`  
+    `}`  
+`]`  
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
-"chat.agent.enabled": false  
+`"chat.agent.enabled": false`  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
@@ -81,7 +81,7 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 ### **7\. Model gateway**
 
 Prove the key works. In a terminal in your project folder:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
+`curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
 Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## **Windows**
@@ -90,8 +90,8 @@ Replace \<your key\> with your API key. A working key returns a list of models. 
 
 Create a folder for the project. Inside it, create a file named .env.  
 Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).
 
 ### **2\. Python 3.9+**
@@ -112,16 +112,16 @@ Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswa
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Add this entry inside the outer braces:  
-"litellm-vscode-chat.servers": \[  
-    {  
-        "label": "CSE 490",  
-        "baseUrl": "https://llmproxy.cs.washington.edu",  
-        "auth": { "apiKey": "\<your key here\>" }  
-    }  
-\]  
+`"litellm-vscode-chat.servers": [`  
+    `{`  
+        `"label": "CSE 490",`  
+        `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+        `"auth": { "apiKey": "<your key here>" }`  
+    `}`  
+`]`  
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
-"chat.agent.enabled": false  
+`"chat.agent.enabled": false`  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
@@ -136,7 +136,7 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 ### **7\. Model gateway**
 
 Prove the key works. In PowerShell in your project folder:  
-curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
+`curl.exe -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
 Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## **Linux**
@@ -145,14 +145,14 @@ Replace \<your key\> with your API key. A working key returns a list of models. 
 
 Create a folder for the project. Inside it, create a file named .env.  
 Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).
 
 ### **2\. Python 3.9+**
 
 On Debian or Ubuntu, run this in a terminal:  
-sudo apt install python3
+`sudo apt install python3`
 
 ### **3\. VS Code**
 
@@ -167,16 +167,16 @@ Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswa
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Add this entry inside the outer braces:  
-"litellm-vscode-chat.servers": \[  
-    {  
-        "label": "CSE 490",  
-        "baseUrl": "https://llmproxy.cs.washington.edu",  
-        "auth": { "apiKey": "\<your key here\>" }  
-    }  
-\]  
+`"litellm-vscode-chat.servers": [`  
+    `{`  
+        `"label": "CSE 490",`  
+        `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+        `"auth": { "apiKey": "<your key here>" }`  
+    `}`  
+`]`  
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
-"chat.agent.enabled": false  
+`"chat.agent.enabled": false`  
 Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
@@ -191,5 +191,5 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 ### **7\. Model gateway**
 
 Prove the key works. In a terminal in your project folder:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
+`curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
 Replace \<your key\> with your API key. A working key returns a list of models. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
