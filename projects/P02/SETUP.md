@@ -18,8 +18,8 @@ Download [wizard-cse490.zip](https://github.com/cse490A2/cse490-published/releas
 ### **Mac**
 
 Double-click the zip in Downloads to get the wizard folder. Then, in Terminal:  
-cd \~/Downloads/wizard  
-python3 wizard.py
+`cd ~/Downloads/wizard`  
+`python3 wizard.py`
 
 ### **Windows**
 
@@ -41,8 +41,8 @@ Open Visual Studio Code from Applications so macOS trusts it. VS Code is install
 
 Create a folder for the project. Inside it, create a file named .env.  
 Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
@@ -59,18 +59,18 @@ Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswa
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
 Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
-{  
-  "litellm-vscode-chat.servers": \[  
-    {  
-      "label": "CSE 490",  
-      "baseUrl": "https://llmproxy.cs.washington.edu",  
-      "auth": { "apiKey": "\<your key here\>" },  
-      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
-        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
-    }  
-  \],  
-  "chat.agent.enabled": false  
-}  
+`{`  
+  `"litellm-vscode-chat.servers": [`  
+    `{`  
+      `"label": "CSE 490",`  
+      `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+      `"auth": { "apiKey": "<your key here>" },`  
+      `"models": { "parameters": { "internal/Qwen3.6-35B-A3B": {`  
+        `"extra_body": { "chat_template_kwargs": { "enable_thinking": false } } } } }`  
+    `}`  
+  `],`  
+  `"chat.agent.enabled": false`  
+`}`  
 Replace \<your key here\> with your API key. Save the file.  
 The "models" lines turn off Qwen's thinking mode. With it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned."  
 The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
@@ -90,8 +90,8 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 ### **7\. Model gateway**
 
 Prove the key works. In a terminal in your project folder:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)  
+`curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
+`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
 Replace \<your key\> with your API key. A working key returns a list of models with the three course models on it: external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## **Windows**
@@ -106,8 +106,8 @@ Open Visual Studio Code from the Start menu. VS Code is installed when it opens 
 
 Create a folder for the project. Inside it, create a file named .env.  
 Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
@@ -124,18 +124,18 @@ Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswa
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
-{  
-  "litellm-vscode-chat.servers": \[  
-    {  
-      "label": "CSE 490",  
-      "baseUrl": "https://llmproxy.cs.washington.edu",  
-      "auth": { "apiKey": "\<your key here\>" },  
-      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
-        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
-    }  
-  \],  
-  "chat.agent.enabled": false  
-}  
+`{`  
+  `"litellm-vscode-chat.servers": [`  
+    `{`  
+      `"label": "CSE 490",`  
+      `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+      `"auth": { "apiKey": "<your key here>" },`  
+      `"models": { "parameters": { "internal/Qwen3.6-35B-A3B": {`  
+        `"extra_body": { "chat_template_kwargs": { "enable_thinking": false } } } } }`  
+    `}`  
+  `],`  
+  `"chat.agent.enabled": false`  
+`}`  
 Replace \<your key here\> with your API key. Save the file.  
 The "models" lines turn off Qwen's thinking mode. With it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned."  
 The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
@@ -155,8 +155,8 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 ### **7\. Model gateway**
 
 Prove the key works. In PowerShell in your project folder:  
-curl.exe \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)  
+`curl.exe -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
+`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
 Replace \<your key\> with your API key. A working key returns a list of models with the three course models on it: external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
 
 ## **Linux**
@@ -171,8 +171,8 @@ Open Visual Studio Code. It is installed when it opens to its welcome page.
 
 Create a folder for the project. Inside it, create a file named .env.  
 Inside, paste these two lines:  
-LITELLM\_BASE\_URL=https://llmproxy.cs.washington.edu  
-LITELLM\_API\_KEY=\<your key here\>  
+`LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
+`LITELLM_API_KEY=<your key here>`  
 Replace \<your key here\> with your given API key (it starts with sk).  
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-1.png)
 
@@ -189,18 +189,18 @@ Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswa
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-2.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
 Your settings file should look like this. If it already has other settings, keep them and add these two entries inside the same { }, separated by commas:  
-{  
-  "litellm-vscode-chat.servers": \[  
-    {  
-      "label": "CSE 490",  
-      "baseUrl": "https://llmproxy.cs.washington.edu",  
-      "auth": { "apiKey": "\<your key here\>" },  
-      "models": { "parameters": { "internal/Qwen3.6-35B-A3B": {  
-        "extra\_body": { "chat\_template\_kwargs": { "enable\_thinking": false } } } } }  
-    }  
-  \],  
-  "chat.agent.enabled": false  
-}  
+`{`  
+  `"litellm-vscode-chat.servers": [`  
+    `{`  
+      `"label": "CSE 490",`  
+      `"baseUrl": "https://llmproxy.cs.washington.edu",`  
+      `"auth": { "apiKey": "<your key here>" },`  
+      `"models": { "parameters": { "internal/Qwen3.6-35B-A3B": {`  
+        `"extra_body": { "chat_template_kwargs": { "enable_thinking": false } } } } }`  
+    `}`  
+  `],`  
+  `"chat.agent.enabled": false`  
+`}`  
 Replace \<your key here\> with your API key. Save the file.  
 The "models" lines turn off Qwen's thinking mode. With it on, the gateway times out before Qwen answers and the chat says "Sorry, no response was returned."  
 The last line keeps the chat in Ask mode, so the AI answers in chat and you save every file yourself. If your chat box has no Ask/Agent switch, the line does nothing and is fine to keep.  
@@ -220,6 +220,6 @@ Download the starter files from https://github.com/cse490A2/cse490-published/raw
 ### **7\. Model gateway**
 
 Prove the key works. In a terminal in your project folder:  
-curl \-s \-H "Authorization: Bearer \<your key\>" https://llmproxy.cs.washington.edu/v1/models  
-![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)  
+`curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
+`![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P02/images/setup-5.png)`  
 Replace \<your key\> with your API key. A working key returns a list of models with the three course models on it: external/zai.glm-5, external/haiku-4-5-20251001 and internal/Qwen3.6-35B-A3B. An "invalid key" error means a typo. No response at all means a network problem; if it keeps happening, tell the course staff.
