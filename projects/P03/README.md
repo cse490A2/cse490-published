@@ -10,7 +10,7 @@ permalink: "/projects/P03/"
 
 **Due: Tuesday 11:59 pm**  
 Prerequisites: run the course setup wizard from the Prerequisites module in Canvas, or follow the [setup guide](SETUP.md) to do the same steps by hand.  
-A model is an input-output machine: text in, text out. Everything an AI tool does beyond that lives in the harness: the program that feeds the model its task, runs the tools it asks for, and stops it when it's done. This week, you will write that harness. To help understand the mechanics of a harness, you'll use AI as a text-only tool rather than a full agent. This project will loosely follow the week's reading, [Let's write a harness](https://posts.oztamir.com/lets-write-a-harness-or-harness-engineering-101/).
+A model is an input-output machine: text in, text out. Everything an AI tool does beyond that lives in the harness: the program that feeds the model its task, runs the tools it asks for, and stops it when it's done. This week, you will write that harness. To help understand the mechanics of a harness, you'll use AI as a text-only tool rather than a full agent. The editor's agent mode is out of bounds this week. You are building that, and the industrial one arrives next week. Fixing hello\_world.py or the testbench files by hand is out of bounds too. Every fix goes through your agent. This project will loosely follow the week's reading, [Let's write a harness](https://posts.oztamir.com/lets-write-a-harness-or-harness-engineering-101/).
 
 ## Instructions
 
