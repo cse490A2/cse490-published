@@ -158,8 +158,8 @@
     "artifact_id": "project-student-p03",
     "document_id": "1PF0s6_ehema_qPvKTijQqY-7eMKvUokxEVZLTYnUXHU",
     "document_name": "P03 Handout",
-    "modified_time": "2026-10-10T19:12:12.588Z",
-    "published_at": "2026-10-10T19:13:32Z",
+    "modified_time": "2026-10-12T21:09:56.429Z",
+    "published_at": "2026-10-12T21:11:00Z",
     "source": "drive"
   },
   "projects/P03/SETUP.md": {
@@ -187,7 +187,7 @@
       "projects/P03/starter/test_utils.py",
       "projects/P03/starter/utils.py"
     ],
-    "published_at": "2026-09-29T08:52:39Z",
+    "published_at": "2026-10-12T21:11:20Z",
     "source": "derived"
   },
   "projects/P03/starter/.gitignore": {
@@ -204,8 +204,8 @@
     "artifact_id": "starter:P03 starter AGENTS.md",
     "document_id": "161pYEddq4O24XxCTARmuZAsK1S3dONvF",
     "document_name": "P03 starter AGENTS.md",
-    "modified_time": "2026-09-29T08:51:41.977Z",
-    "published_at": "2026-09-29T08:52:39Z",
+    "modified_time": "2026-10-12T21:10:10.515Z",
+    "published_at": "2026-10-12T21:11:13Z",
     "source": "drive"
   },
   "projects/P03/starter/CLAUDE.md": {

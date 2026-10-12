@@ -14,8 +14,8 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
 
 ## Instructions
 
-1. In VS Code, open the VS Code LiteLLM chat window and `harness.py.` Your key and gateway address should already be populated in the .env file from setup.  
-2. Prompt AI to convert the referenced harness pseudo code into python code. Once written, run the harness code. Try prompting it to run hello\_world.py.  
+1. In VS Code, open the VS Code LiteLLM chat window and `harness.py.` Your key and gateway address should already be populated in the .env file from setup. Off campus, connect the UW VPN (Husky OnNet) first: the gateway refuses every other connection.  
+2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to https://llmproxy.cs.washington.edu/v1/chat/completions with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list); external/haiku-4-5-20251001 is a good first choice, and internal/Qwen3.6-35B-A3B costs nothing. Once written, run the harness code and ask it to run hello\_world.py. It can only answer in text, so expect it to say it cannot run anything, or to guess at the output. That gap is what the next steps close.  
 3. The model in your custom harness currently can't touch your files; it can only reply with text. Whenever the model needs to touch a file, it asks its harness. We will use JSON as the mutual communication language between the model and your harness, like {"command": "read\_file", "path": "..."}. Prompt LiteLLM to implement this:   
    1. *"Now add the capability to issue tool calls, starting with 'read\_file'. Do this by specifying a json object for each of these commands, and instruct the model to return a call to one of them when it wants to execute that command. Don't yet execute the command, just let me test that the model properly formats the command."*  
 4. Verify the code generated. Ask your custom harness again to read hello\_world.py, and the model should output a JSON-formatted read\_file call. It should also respond with plain text when not passing the tool request. Use the suggested prompt if either fails:  
@@ -34,7 +34,7 @@ By Tuesday 11:59 pm:
 
 ## Grading
 
-The course's automated grader reads your submission and checks that each step was properly followed. VS Code records your chats with the course models in logs/. To start over, delete `_chatlog.jsonl` and `_chatlog.md` there. Every check is pass or fail. It does not judge code style, prompt wording, or how many tries it took. If you would like to delete 
+The course's automated grader reads your submission and checks that each step was properly followed. VS Code records your chats with the course models in logs/: \_chatlog.jsonl is the record, \_chatlog.md the readable view, and \_chatlog.json the switch. To start over, delete \_chatlog.jsonl and \_chatlog.md; deleting \_chatlog.json turns the recording off instead, and the grader needs it on. Every check is pass or fail. It does not judge code style, prompt wording, or how many tries it took. If you would like to delete a chat from the record, delete the two record files and redo the steps; the grader reads only what is in logs/ at turn-in. 
 
 ## Reference
 
