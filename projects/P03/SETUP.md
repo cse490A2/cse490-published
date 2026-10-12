@@ -68,7 +68,7 @@ Add this entry inside the outer braces:
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 `"chat.agent.enabled": false`  
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose, and the course models are not on its first screen: type the model's name in the search box at the top of the picker, haiku for example, and pick the entry marked CSE 490\. If nothing appears, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the models.  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
@@ -78,7 +78,8 @@ Download the course extension, cse490-tools.vsix, from https://github.com/cse490
 
 ### **6\. Project files**
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.  
+Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
 ### **7\. Model gateway**
 
@@ -125,7 +126,7 @@ Add this entry inside the outer braces:
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 `"chat.agent.enabled": false`  
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose, and the course models are not on its first screen: type the model's name in the search box at the top of the picker, haiku for example, and pick the entry marked CSE 490\. If nothing appears, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the models.  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
@@ -135,7 +136,8 @@ Download the course extension, cse490-tools.vsix, from https://github.com/cse490
 
 ### **6\. Project files**
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.  
+Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
 ### **7\. Model gateway**
 
@@ -182,7 +184,7 @@ Add this entry inside the outer braces:
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 `"chat.agent.enabled": false`  
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose. Pick a model under CSE 490\.  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose, and the course models are not on its first screen: type the model's name in the search box at the top of the picker, haiku for example, and pick the entry marked CSE 490\. If nothing appears, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the models.  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-2.png)
 
@@ -192,7 +194,8 @@ Download the course extension, cse490-tools.vsix, from https://github.com/cse490
 
 ### **6\. Project files**
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.  
+Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
 ### **7\. Model gateway**
 
