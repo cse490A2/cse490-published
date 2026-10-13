@@ -9,9 +9,10 @@ so an agent can read the result.
 
 The target is the number to beat. The baseline detector does not reach it.
 """
-import json, sys
+import json, os, sys
 
 TARGET = 54        # of 60: the number to beat
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # detector.py lives beside this file, however python was started
 
 
 def main():

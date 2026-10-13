@@ -316,15 +316,6 @@
     "published_at": "2026-10-13T01:06:45Z",
     "source": "drive"
   },
-  "projects/P04/examples/AGENTS.md": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "example:P04 example AGENTS.md",
-    "document_id": "18OdVPcFtQRfExGVi1cZG6Z7FEXX60axF",
-    "document_name": "P04 example AGENTS.md",
-    "modified_time": "2026-10-06T06:45:43.521Z",
-    "published_at": "2026-10-06T06:47:02Z",
-    "source": "drive"
-  },
   "projects/P04/examples/HARNESS.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "example:P04 example HARNESS.md",
@@ -332,33 +323,6 @@
     "document_name": "P04 example HARNESS.md",
     "modified_time": "2026-10-12T23:26:08.463Z",
     "published_at": "2026-10-13T01:07:01Z",
-    "source": "drive"
-  },
-  "projects/P04/examples/SKILL.md": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "example:P04 example SKILL.md",
-    "document_id": "1xRzGOuMApVu47DV7o_UK9I99gkRYZm4h",
-    "document_name": "P04 example SKILL.md",
-    "modified_time": "2026-10-06T06:45:45.132Z",
-    "published_at": "2026-10-06T06:47:02Z",
-    "source": "drive"
-  },
-  "projects/P04/examples/memory.md": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "example:P04 example memory.md",
-    "document_id": "1sk-39Xmo69u7FXp3sTmqhf3v2zqE_um-",
-    "document_name": "P04 example memory.md",
-    "modified_time": "2026-10-06T06:45:46.882Z",
-    "published_at": "2026-10-06T06:47:03Z",
-    "source": "drive"
-  },
-  "projects/P04/examples/shopping-list-SKILL.md": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "example:P04 example shopping-list-SKILL.md",
-    "document_id": "1pbP0u0fXTzmKh5W9f-BNe7KP8Jzdsu8j",
-    "document_name": "P04 example shopping-list-SKILL.md",
-    "modified_time": "2026-10-06T06:45:48.767Z",
-    "published_at": "2026-10-06T06:47:03Z",
     "source": "drive"
   },
   "projects/P04/examples/transcript.md": {
@@ -379,7 +343,7 @@
       "projects/P04/starter/score.py",
       "projects/P04/starter/skills/coding-loop/SKILL.md"
     ],
-    "published_at": "2026-10-13T01:06:58Z",
+    "published_at": "2026-10-13T01:08:37Z",
     "source": "derived"
   },
   "projects/P04/starter/README.md": {
@@ -414,8 +378,8 @@
     "artifact_id": "starter:P04 starter score.py",
     "document_id": "14lmqHvGHx1eCz3rRmV_ftaUsb2_Al_My",
     "document_name": "P04 starter score.py",
-    "modified_time": "2026-10-12T23:30:51.268Z",
-    "published_at": "2026-10-13T01:06:50Z",
+    "modified_time": "2026-10-13T01:07:45.512Z",
+    "published_at": "2026-10-13T01:08:33Z",
     "source": "drive"
   },
   "projects/P04/starter/skills/coding-loop/SKILL.md": {
