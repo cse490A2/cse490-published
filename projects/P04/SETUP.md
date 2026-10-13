@@ -1,6 +1,6 @@
 ---
 title: "P04 setup"
-parent: "P04"
+parent: "P04: Driving a Coding Agent"
 grand_parent: "Projects"
 nav_order: 1
 permalink: "/projects/P04/setup/"

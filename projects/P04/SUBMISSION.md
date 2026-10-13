@@ -1,6 +1,6 @@
 ---
 title: "P04 submission"
-parent: "P04"
+parent: "P04: Driving a Coding Agent"
 grand_parent: "Projects"
 nav_order: 2
 permalink: "/projects/P04/submission/"

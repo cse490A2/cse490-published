@@ -298,13 +298,22 @@
     "published_at": "2026-09-29T08:52:39Z",
     "source": "drive"
   },
+  "projects/P04/README.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-student-p04",
+    "document_id": "1rprSPRvew_GUPVlEkvONEpBpHdYLNknpqSCobMCjo0c",
+    "document_name": "P04 Handout",
+    "modified_time": "2026-10-13T01:12:04.165Z",
+    "published_at": "2026-10-13T01:12:22Z",
+    "source": "drive"
+  },
   "projects/P04/SETUP.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "project-prereq-p04",
     "document_id": "1TWIdR3e6AoNpjrkphQzCycH-6R-na-X06HrzSfD4I_k",
     "document_name": "P04 Prereq Instructions",
     "modified_time": "2026-10-12T21:40:40.624Z",
-    "published_at": "2026-10-13T01:06:44Z",
+    "published_at": "2026-10-13T01:12:24Z",
     "source": "drive"
   },
   "projects/P04/SUBMISSION.md": {
@@ -313,7 +322,7 @@
     "document_id": "1d7K1UKWm_lFMTJRJ1DYY7PsLWL7HV54qKBOvB6i63uE",
     "document_name": "P04 Submission",
     "modified_time": "2026-10-12T23:31:54.401Z",
-    "published_at": "2026-10-13T01:06:45Z",
+    "published_at": "2026-10-13T01:12:25Z",
     "source": "drive"
   },
   "projects/P04/examples/HARNESS.md": {
