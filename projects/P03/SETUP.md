@@ -74,7 +74,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette) and open your project folder; the status bar reads "Chat log: 0 turns" when the extension is running.
 
 ### **6\. Project files**
 
@@ -132,7 +132,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette) and open your project folder; the status bar reads "Chat log: 0 turns" when the extension is running.
 
 ### **6\. Project files**
 
@@ -190,7 +190,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette) and open your project folder; the status bar reads "Chat log: 0 turns" when the extension is running.
 
 ### **6\. Project files**
 
