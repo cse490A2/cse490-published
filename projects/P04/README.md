@@ -16,9 +16,8 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 
 ### Part 1: the files
 
-1. Write your agent's standing rules in a file of its own. Make HARNESS.md in your harness repo: what the agent edits without asking and what it asks you before doing, written the way [Claude Code's example CLAUDE.md in the Best practices reading](https://code.claude.com/docs/en/best-practices#write-an-effective-claude-md) is. The AGENTS.md already in the repo governs the chat in VS Code; leave it alone. Then ask the LiteLLM chat to load yours in place of the built-in system prompt with the following prompt:  
-   1. "Read harness.py. Replace SYSTEM\_PROMPT with the text of HARNESS.md, read once when the program starts. Change nothing else."  
-   2. Check it: start the harness and ask what its rules are. The reply quotes HARNESS.md.  
+1. Rewrite your agent's standing rules. Project 3 gave your harness systemprompt.md, read once at startup as its first message: four lines that keep it inside the repo and asking before anything destructive. Rewrite it for a coding agent in the five parts of [Mastering System Prompts for AI Agents](https://pguso.medium.com/mastering-system-prompts-for-ai-agents-3492bf4a986b): the objective, the tone, the constraints (what it never does and what it asks you first), the step-by-step instructions, and one example exchange. [The published example systemprompt.md](https://github.com/cse490A2/cse490-published/blob/main/projects/P04/examples/systemprompt.md) follows that shape. The AGENTS.md in the repo governs the chat in VS Code; leave it alone.  
+   1. Check it: restart the harness and ask what its rules are. The reply quotes systemprompt.md.  
 2. Add a plan mode. Ask the LiteLLM chat for it with the following prompt:  
    1. "Read harness.py. Add a plan mode. When my message starts with /plan, the model may call read\_file and ask me questions, but the harness refuses write\_file and execute\_file and says so. The model ends the plan by writing its steps to PLAN.md. The harness allows write\_file and execute\_file again only after I type approve. Change nothing else."  
    2. Check it: send "/plan: add a comment line to hello\_world.py". The harness refuses the write and says so, and PLAN.md appears. Type approve. The edit lands.  
@@ -35,10 +34,10 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 
 By Tuesday 11:59 pm:
 
-* Push your harness repo with harness.py, HARNESS.md, PLAN.md, the skills/ folder, the task code, and transcript.md. Leave out your .env file.  
+* Push your harness repo with harness.py, systemprompt.md, PLAN.md, the skills/ folder, the task code, and transcript.md. Leave out your .env file.  
 * Submit the repository link to the Project 4 assignment in Canvas. Compare your files with [the examples](https://github.com/cse490A2/cse490-published/tree/main/projects/P04/examples) first.  
 * Fill out the feedback form.
 
 ## Grading
 
-A model will autograde your submission. It reads your repository and checks that each step was properly followed. Every check is pass or fail. It does not judge code style or prompt wording. It checks five behaviors, and that the files the Turnin list names are present and clean. HARNESS.md enters the context before the loop, in place of the built-in system prompt. Plan mode refuses edits until approve and writes PLAN.md first. The skill's full text enters the context only on a matching message. The validation passes on [the starter](https://github.com/cse490A2/cse490-published/tree/main/projects/P04/starter)'s public cases and on a second set you cannot see. transcript.md shows the skill's steps in order: plan, approve, change, validation. The three check it lines in Part 1 are these same checks, read from harness.py and transcript.md. Code that memorizes the public cases loses on the hidden ones. Hand-written task code costs the delegation checks.  
+A model will autograde your submission. It reads your repository and checks that each step was properly followed. Every check is pass or fail. It does not judge code style or prompt wording. It checks five behaviors, and that the files the Turnin list names are present and clean. systemprompt.md holds the coding agent's rules and enters the context before the loop, as in Project 3\. Plan mode refuses edits until approve and writes PLAN.md first. The skill's full text enters the context only on a matching message. The validation passes on [the starter](https://github.com/cse490A2/cse490-published/tree/main/projects/P04/starter)'s public cases and on a second set you cannot see. transcript.md shows the skill's steps in order: plan, approve, change, validation. The three check it lines in Part 1 are these same checks, read from harness.py and transcript.md. Code that memorizes the public cases loses on the hidden ones. Hand-written task code costs the delegation checks.  

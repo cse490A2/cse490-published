@@ -13,7 +13,7 @@ Push your harness repository to GitHub and submit its link to the Project 4 assi
 ## What the repository holds
 
 * harness.py  
-* HARNESS.md  
+* systemprompt.md  
 * PLAN.md  
 * skills/coding-loop/SKILL.md  
 * the task code from the starter: inbox.jsonl, detector.py, score.py  
@@ -22,7 +22,7 @@ Push your harness repository to GitHub and submit its link to the Project 4 assi
 ## What each file is
 
 * harness.py: your Project 3 harness after the three changes the handout's Part 1 asks of the LiteLLM chat extension.  
-* HARNESS.md: your agent's standing rules, the file it reads in place of its built-in system prompt.  
+* systemprompt.md: your agent's standing rules from Project 3, rewritten for a coding agent; the harness reads it at startup as its first message.  
 * PLAN.md: the plan your agent wrote in plan mode for the job, before you typed approve.  
 * skills/coding-loop/SKILL.md: the course's skill, copied from the starter, unchanged.  
 * detector.py: the task code after your agent's change; inbox.jsonl and score.py as the starter shipped them.  
@@ -38,4 +38,4 @@ Push the repository with git push. Open it on GitHub and check that the six item
 
 ## The examples
 
-The [published examples](https://github.com/cse490A2/cse490-published/tree/main/projects/P04/examples) hold a HARNESS.md written the way Claude Code's own example is, and a transcript.md from one run of the coding-loop skill on the starter.  
+The published examples hold a systemprompt.md grown from Project 3's four lines into a coding agent's rules, and a transcript.md from one run of the coding-loop skill on the starter.  
