@@ -6,8 +6,6 @@ has_children: true
 permalink: "/projects/P04/"
 ---
 
-# Rewrite draft 2026-10-12
-
 # Project 4: Driving a Coding Agent
 
 Due: Tuesday 11:59 pm  
