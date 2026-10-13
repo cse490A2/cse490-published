@@ -6,58 +6,36 @@ nav_order: 2
 permalink: "/projects/P04/submission/"
 ---
 
-\# Project 4 Submission
+# Project 4 Submission
 
-Zip \`harness.py\`, \`AGENTS.md\`, and your \`skills/\` folder as \`P04-submission.zip\`. Compare the zip with the tree below. Upload it to the Project 4 assignment in Canvas by Tuesday 11:59 pm.
+Push your harness repository to GitHub and submit its link to the Project 4 assignment in Canvas. Compare the repository with the tree below first. Leave out your .env file.
 
-\#\# What the zip holds
+## What the repository holds
 
-\`\`\`  
-P04-submission.zip  
-    harness.py  
-    AGENTS.md  
-    skills/  
-        \<your-skill\>/  
-            SKILL.md  
-            memory.md  
-            transcript.md  
-            \<your-subskill\>/  
-                SKILL.md  
-\`\`\`
+* harness.py  
+* HARNESS.md  
+* PLAN.md  
+* skills/coding-loop/SKILL.md  
+* the task code from the starter: inbox.jsonl, detector.py, score.py  
+* transcript.md
 
-\`\<your-skill\>\` and \`\<your-subskill\>\` are the folder names you chose. Name the skill folder for your skill, the same name your \`SKILL.md\` gives it, and name the subskill folder with the name the parent skill's step uses for it. Everything else is named as written here.
+## What each file is
 
-| File | What it is |  
-|---|---|  
-| \`harness.py\` | Your Project 3 harness after the changes the handout's Instructions ask of the LiteLLM chat extension. |  
-| \`AGENTS.md\` | Your agent's standing rules: what it may do on its own and what it asks you first. |  
-| \`skills/\<your-skill\>/SKILL.md\` | The skill's name, one line saying when to use it, and its steps, as the handout describes them. |  
-| \`skills/\<your-skill\>/\<your-subskill\>/SKILL.md\` | The step you moved out of the parent skill, with its own steps. |  
-| \`skills/\<your-skill\>/memory.md\` | What your agent wrote after each of the two uses. |  
-| \`skills/\<your-skill\>/transcript.md\` | One real session of your own work, saved by your agent. |
+* harness.py: your Project 3 harness after the three changes the handout's Part 1 asks of the LiteLLM chat extension.  
+* HARNESS.md: your agent's standing rules, the file it reads in place of its built-in system prompt.  
+* PLAN.md: the plan your agent wrote in plan mode for the job, before you typed approve.  
+* skills/coding-loop/SKILL.md: the course's skill, copied from the starter, unchanged.  
+* detector.py: the task code after your agent's change; inbox.jsonl and score.py as the starter shipped them.  
+* transcript.md: the session your agent saved: the job, the plan, approve, every file it wrote, every validation run, the report.
 
-\#\# What to leave out
+## What to leave out
 
-Leave out your \`.env\` file and the \`logs/\` folder that VS Code wrote in Project 3\. The commands below name only \`harness.py\`, \`AGENTS.md\`, and \`skills\`, so both stay out on their own. Check that no key sits inside \`harness.py\` or your skill's folder: your course LiteLLM gateway key lives in \`.env\` and nowhere else.
+Leave out your .env file and the logs/ folder VS Code wrote in Project 3\. A .env file or a key in the repository costs the clean-repo check and is reported to you by name.
 
-\#\# How to make the zip
+## How to submit
 
-Open a terminal in the folder that holds \`harness.py\` (in VS Code: Terminal, then New Terminal) and run the line for your machine.
+Push the repository with git push. Open it on GitHub and check that the six items above are there. Paste the repository's address into the Project 4 assignment in Canvas and submit. Fill out the feedback form.
 
-macOS:
+## The examples
 
-\`\`\`  
-zip \-r P04-submission.zip harness.py AGENTS.md skills \-x '\*.DS\_Store'  
-\`\`\`
-
-Windows, in PowerShell:
-
-\`\`\`  
-Compress-Archive \-Path harness.py, AGENTS.md, skills \-DestinationPath P04-submission.zip  
-\`\`\`
-
-Before you upload, open the zip and compare it with the tree above. On macOS, \`unzip \-l P04-submission.zip\` lists what is inside. On Windows, double-click the zip in File Explorer.
-
-\#\# The examples
-
-The published examples at https://github.com/cse490A2/cse490-published/tree/main/projects/P04/examples are the weekly meal plan skill, published as five files in one folder. The example's files map onto the tree above like this. \`AGENTS.md\` sits at the top next to \`harness.py\`. \`SKILL.md\`, \`memory.md\`, and \`transcript.md\` sit in \`skills/meal-plan/\`. \`shopping-list-SKILL.md\` is the subskill and sits at \`skills/meal-plan/shopping-list/SKILL.md\`. The examples hold no \`harness.py\`. Yours is the one you built in Project 3\.  
+The [published examples](https://github.com/cse490A2/cse490-published/tree/main/projects/P04/examples) hold a HARNESS.md written the way Claude Code's own example is, and a transcript.md from one run of the coding-loop skill on the starter.  

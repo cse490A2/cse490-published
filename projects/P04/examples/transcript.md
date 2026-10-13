@@ -1,62 +1,71 @@
-# Transcript: meal-plan skill, 2026-10-05
+# transcript.md
 
-Written by the agent at the end of the session, on the user's request.
-Saved at `skills/meal-plan/transcript.md`.
+Written by the agent at the end of the coding-loop skill. The job, the plan, the approval, every file written, every validation run, and the report.
 
-## Loaded this session
+## The job
 
-- `AGENTS.md` at startup.
-- `skills/meal-plan/SKILL.md` on the message "plan my dinners this week"
-  (matched the when-to-use line).
-- `skills/meal-plan/shopping-list/SKILL.md` at step 7, named by the
-  parent skill.
+User: /plan make detector.py beat the target in score.py on inbox.jsonl without memorizing senders or subject lines
 
-## Session
+## Plan mode
 
-**User:** plan my dinners this week
+Agent: I read detector.py, score.py and inbox.jsonl. Before I plan: may I use the sender's domain and the domains of links in the body as evidence, and treat any domain outside the university's and GitHub's as suspect?
 
-**Agent:** Read `skills/meal-plan/memory.md`. You cook Monday to
-Thursday, you liked the tacos, and the stir fry sauce was too sweet.
-Here is the week:
+User: yes
 
-| Night | Dish | Time | Prep ahead |
-|---|---|---|---|
-| Mon | Lentil soup | 35 min | Chop onion and carrot |
-| Tue | Shrimp tacos | 25 min | Thaw shrimp in the fridge |
-| Wed | Sheet-pan salmon and broccoli | 30 min | None |
-| Thu | Pasta with chickpeas and lemon | 25 min | None |
+Agent: PLAN.md written:
 
-New technique this week: toasting the spices before the soup's liquid
-goes in. Should any night change?
+1. In detector.py, add a set of trusted domains: uw.edu, cs.washington.edu, github.com, canvas.uw.edu, library.uw.edu.
+2. In is_phish, read the sender's domain from the from field. An untrusted domain is a phish.
+3. Find every http link in the body. A link to an untrusted domain is a phish.
+4. Keep no keyword rule, so honest mail that says urgent or password is not flagged by the word alone.
+5. Run python3 score.py and read the score against the target.
 
-**User:** swap Wednesday, I'm out
+Tool calls refused in plan mode: write_file detector.py (before approve).
 
-**Agent:** Wednesday is dropped. The week is now three nights. Moving to
-the shopping list.
+User: approve
 
-Read `skills/meal-plan/shopping-list/SKILL.md`. Ingredients for three
-dishes, pantry items removed:
+## The change
 
-- Produce: 2 carrots, 1 lemon, 1 lime, 1 small cabbage.
-- Meat and fish: 200 g shrimp.
-- Dairy: none.
-- Dry goods: 1 cup red lentils, 1 can chickpeas, 6 small tortillas,
-  1 tsp cumin.
-- Frozen: none.
+write_file detector.py:
 
-Anything already at home?
+    #!/usr/bin/env python3
+    """The phishing detector. is_phish(email) says whether one email is a phish."""
+    import json, re, sys
 
-**User:** I have cumin and tortillas
+    TRUSTED = {"uw.edu", "cs.washington.edu", "github.com", "canvas.uw.edu", "library.uw.edu"}
 
-**Agent:** Removed. I am about to write this week's plan and your two
-notes to `skills/meal-plan/memory.md`, keeping the earlier weeks. Yes?
 
-**User:** yes
+    def domain_of(address):
+        m = re.search(r"@([\w.-]+)", address)
+        return m.group(1).lower() if m else ""
 
-**Agent:** Written. Three lines added under "Week of 2026-10-05".
 
-**User:** save this session as transcript.md
+    def is_phish(email):
+        """True when the sender or any link in the body is outside the trusted domains."""
+        if domain_of(email["from"]) not in TRUSTED:
+            return True
+        for link in re.findall(r"https?://([\w.-]+)", email["body"]):
+            if link.lower() not in TRUSTED:
+                return True
+        return False
 
-**Agent:** About to write `skills/meal-plan/transcript.md`. Yes?
 
-**User:** yes
+    if __name__ == "__main__":
+        path = sys.argv[1] if len(sys.argv) > 1 else "inbox.jsonl"
+        for line in open(path, encoding="utf-8"):
+            e = json.loads(line)
+            print("PHISH " if is_phish(e) else "ok    ", e["subject"])
+
+Agent: detector.py: replaced the keyword rule with a trusted-domain check on the sender and on every link in the body.
+
+## The validation
+
+execute_file score.py:
+
+    score 60 of 60  target 54 of 60  PASS
+
+Before the change the baseline scored: score 32 of 60  target 54 of 60  below target
+
+## Report
+
+The detector passes the target on the public inbox: 60 of 60 against 54. One file written, detector.py. If the hidden set has phish from trusted-looking senders, the next step is to check for credential requests in the body as well.
