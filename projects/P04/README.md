@@ -10,7 +10,7 @@ permalink: "/projects/P04/"
 
 Due: Tuesday 11:59 pm  
 Before class, check that your Project 3 harness runs and read files.  
-Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, a plan mode, and one skill, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-4-5-20251001 through the course gateway.
+Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, a plan mode, and one skill, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-5-5 through the course gateway.
 
 ## Instructions
 
