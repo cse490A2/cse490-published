@@ -16,7 +16,7 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 
 ### Part 1: the files
 
-1. Rewrite your agent's standing rules. Project 3 gave your harness systemprompt.md, read once at startup as its first message: four lines that keep it inside the repo and asking before anything destructive. Rewrite it for a coding agent in the five parts of [Mastering System Prompts for AI Agents](https://pguso.medium.com/mastering-system-prompts-for-ai-agents-3492bf4a986b): the objective, the tone, the constraints (what it never does and what it asks you first), the step-by-step instructions, and one example exchange. [The published example systemprompt.md](https://github.com/cse490A2/cse490-published/blob/main/projects/P04/examples/systemprompt.md) follows that shape. The AGENTS.md in the repo governs the chat in VS Code; leave it alone.  
+1. Give your agent its rules. The starter's systemprompt.md is a coding agent's rules in five parts: the objective, the tone, the constraints (what it never does and what it asks you first), the step-by-step instructions, and one example exchange. Read it, then add at least two rules of your own under Your rules: things your Project 3 session showed the agent needed telling. The AGENTS.md in the repo governs the chat in VS Code; leave it alone.  
    1. Check it: restart the harness and ask what its rules are. The reply quotes systemprompt.md.  
 2. Add a plan mode. Ask the LiteLLM chat for it with the following prompt:  
    1. "Read harness.py. Add a plan mode. When my message starts with /plan, the model may call read\_file and ask me questions, but the harness refuses write\_file and execute\_file and says so. The model ends the plan by writing its steps to PLAN.md. The harness allows write\_file and execute\_file again only after I type approve. Change nothing else."  
@@ -35,8 +35,7 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 By Tuesday 11:59 pm:
 
 * Push your harness repo with harness.py, systemprompt.md, PLAN.md, the skills/ folder, the task code, and transcript.md. Leave out your .env file.  
-* Submit the repository link to the Project 4 assignment in Canvas. Compare your files with [the examples](https://github.com/cse490A2/cse490-published/tree/main/projects/P04/examples) first.  
-* Fill out the feedback form.
+* Submit the repository link to the Project 4 assignment in Canvas. Compare your files with [the examples](https://github.com/cse490A2/cse490-published/tree/main/projects/P04/examples) first.
 
 ## Grading
 

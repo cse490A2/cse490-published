@@ -313,8 +313,8 @@
     "artifact_id": "project-student-p04",
     "document_id": "1rprSPRvew_GUPVlEkvONEpBpHdYLNknpqSCobMCjo0c",
     "document_name": "P04 Handout",
-    "modified_time": "2026-10-13T19:37:30.269Z",
-    "published_at": "2026-10-13T19:38:24Z",
+    "modified_time": "2026-10-13T20:21:03.975Z",
+    "published_at": "2026-10-13T20:23:57Z",
     "source": "drive"
   },
   "projects/P04/SETUP.md": {
@@ -360,9 +360,10 @@
       "projects/P04/starter/detector.py",
       "projects/P04/starter/inbox.jsonl",
       "projects/P04/starter/score.py",
-      "projects/P04/starter/skills/coding-loop/SKILL.md"
+      "projects/P04/starter/skills/coding-loop/SKILL.md",
+      "projects/P04/starter/systemprompt.md"
     ],
-    "published_at": "2026-10-13T01:08:37Z",
+    "published_at": "2026-10-13T20:24:12Z",
     "source": "derived"
   },
   "projects/P04/starter/README.md": {
@@ -408,6 +409,15 @@
     "document_name": "P04 starter skills/coding-loop/SKILL.md",
     "modified_time": "2026-10-12T23:30:57.442Z",
     "published_at": "2026-10-13T01:06:50Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/systemprompt.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter systemprompt.md",
+    "document_id": "1HrhUOzmKV7HXZowVQextHCNnYUcldfID",
+    "document_name": "P04 starter systemprompt.md",
+    "modified_time": "2026-10-13T20:23:40.039Z",
+    "published_at": "2026-10-13T20:24:08Z",
     "source": "drive"
   }
 }
