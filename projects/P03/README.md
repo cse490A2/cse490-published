@@ -15,15 +15,16 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
 ## Instructions
 
 1. In VS Code, open the VS Code LiteLLM chat window and `harness.py.` Your key and gateway address should already be populated in the .env file from setup. Off campus, connect the UW VPN (Husky OnNet) first: the gateway refuses every other connection.  
-2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to https://llmproxy.cs.washington.edu/v1/chat/completions with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list); external/haiku-4-5-20251001 is a good first choice. internal/Qwen3.6-35B-A3B costs nothing but thinks before it answers, and the gateway cuts any reply that takes over a minute, so a harness that uses it must send "extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}} with every request. Once written, run the harness code and ask it to run hello\_world.py. It can only answer in text, so expect it to say it cannot run anything, or to guess at the output. That gap is what the next steps close.  
-3. The model in your custom harness currently can't touch your files; it can only reply with text. Whenever the model needs to touch a file, it asks its harness. We will use JSON as the mutual communication language between the model and your harness, like {"command": "read\_file", "path": "..."}. Prompt LiteLLM to implement this:   
+2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to https://llmproxy.cs.washington.edu/v1/chat/completions with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list); external/haiku-5-5 is a good first choice. internal/Qwen3.6-35B-A3B costs nothing but thinks before it answers, and the gateway cuts any reply that takes over a minute, so a harness that uses it must send "extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}} with every request.  
+3. Once written, run the harness code and ask it to run hello\_world.py. It can only answer in text, so expect it to say it cannot run anything, or to guess at the output. That gap is what the next steps close.  
+4. The model in your custom harness currently can't touch your files; it can only reply with text. Whenever the model needs to touch a file, it asks its harness. We will use JSON as the mutual communication language between the model and your harness, like {"command": "read\_file", "path": "..."}. Prompt LiteLLM to implement this:   
    1. *"Now add the capability to issue tool calls, starting with 'read\_file'. Do this by specifying a json object for each of these commands, and instruct the model to return a call to one of them when it wants to execute that command. Don't yet execute the command, just let me test that the model properly formats the command."*  
-4. Verify the code generated. Ask your custom harness again to read hello\_world.py, and the model should output a JSON-formatted read\_file call. It should also respond with plain text when not passing the tool request. Use the suggested prompt if either fails:  
+5. Verify the code generated. Ask your custom harness again to read hello\_world.py, and the model should output a JSON-formatted read\_file call. It should also respond with plain text when not passing the tool request. Use the suggested prompt if either fails:  
    1. *"Define a JSON schema for tool calls: an object with a required command field whose only allowed value is read\_file and a required path string. Make the harness validate every model reply against this schema. If a reply is not valid JSON or does not match the schema, send the model a message saying so."*  
-5. Your harness can now recognize a read\_file request, but does nothing with it. Prompt LiteLLM Chat to generate code for the harness to act on a read\_file request:  
+6. Your harness can now recognize a read\_file request, but does nothing with it. Prompt LiteLLM Chat to generate code for the harness to act on a read\_file request:  
    1.  *"When the model's reply is a valid read\_file command, open that path, add the file's contents to the context as a message from the harness, and call the model again. Keep looping until the model replies with plain text. Do not add any other command yet."*  
-6. If your agent can read hello\_world.py, then it may have noticed a bug in the program. Add write\_file and execute\_file into your harness, then have it fix the file and execute the code. **IMPORTANT:** the addition of these tools will make your harness more capable and **dangerous**\! When adding these tools, prompt LiteLLM Chat to include guardrails by confirming with the user before executing a write or execute command.  
-7. Open harness\_testbench.md and use your custom harness to address each mini-task. 
+7. If your agent can read hello\_world.py, then it should have noticed a bug in the program. Add write\_file and execute\_file into your harness, then have it fix the file and execute the code. **IMPORTANT:** the addition of these tools will make your harness more capable and **dangerous**\! When adding these tools, prompt LiteLLM Chat to include guardrails by confirming with the user before executing a write or execute command.  
+8. Open harness\_testbench.md and use your custom harness to address each mini-task. 
 
 ## Turnin
 
@@ -45,5 +46,12 @@ while True:
     context.append(user)  
     reply \= call\_model(context)  
     print(reply)  
-    context.append(reply)
+    context.append(reply)  
+Guardrail system prompt   
+SYSTEM \= """You are a coding agent.  
+Work only inside this repo.  
+Use only the tools you are given.  
+Ask before anything destructive.  
+Run the tests before claiming done.  
+Stop when they pass."""
 
