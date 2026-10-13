@@ -16,8 +16,8 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 
 ### Part 1: the files
 
-1. Give your agent its rules. The starter's systemprompt.md is a coding agent's rules in five parts: the objective, the tone, the constraints (what it never does and what it asks you first), the step-by-step instructions, and one example exchange. Read it, then add at least two rules of your own under Your rules: things your Project 3 session showed the agent needed telling. The AGENTS.md in the repo governs the chat in VS Code; leave it alone.  
-   1. Check it: restart the harness and ask what its rules are. The reply quotes systemprompt.md.  
+1. Give your agent its rules. [The starter's systemprompt.md](https://github.com/cse490A2/cse490-published/blob/main/projects/P04/starter/systemprompt.md) is a coding agent's rules in five parts: the objective, the tone, the constraints (what it never does and what it asks you first), the step-by-step instructions, and one example exchange. Read it, then add at least two rules of your own under Your rules: things your Project 3 session showed the agent needed telling. The AGENTS.md in the repo governs the chat in VS Code; leave it alone.  
+   1. Check it: restart the harness and ask what its rules are. The reply quotes your two lines.  
 2. Add a plan mode. Ask the LiteLLM chat for it with the following prompt:  
    1. "Read harness.py. Add a plan mode. When my message starts with /plan, the model may call read\_file and ask me questions, but the harness refuses write\_file and execute\_file and says so. The model ends the plan by writing its steps to PLAN.md. The harness allows write\_file and execute\_file again only after I type approve. Change nothing else."  
    2. Check it: send "/plan: add a comment line to hello\_world.py". The harness refuses the write and says so, and PLAN.md appears. Type approve. The edit lands.  
