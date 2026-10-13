@@ -15,7 +15,7 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
 ## Instructions
 
 1. In VS Code, open the VS Code LiteLLM chat window and `harness.py.` Your key and gateway address should already be populated in the .env file from setup. Off campus, connect the UW VPN (Husky OnNet) first: the gateway refuses every other connection.  
-2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to https://llmproxy.cs.washington.edu/v1/chat/completions with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list). Use external/haiku-5-5.[^1]  
+2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to `https://llmproxy.cs.washington.edu/v1/chat/completions` with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list). Use `external/haiku-5-5`.[^1]  
 3. Once written, run the harness code and ask it to run hello\_world.py. It can only answer in text, so expect it to say it cannot run anything, or to guess at the output.  
 4. The model in your custom harness currently can't touch your files; it can only reply with text. Whenever the model needs to touch a file, it asks its harness. We will use JSON as the mutual communication language between the model and your harness, like {"command": "read\_file", "path": "..."}. Prompt LiteLLM to implement this:   
    1. *"Now add the capability to issue tool calls, starting with 'read\_file'. Do this by specifying a json object for each of these commands, and instruct the model to return a call to one of them when it wants to execute that command. Don't yet execute the command, just let me test that the model properly formats the command."*  
@@ -45,15 +45,16 @@ The course's automated grader reads your submission and checks that each step wa
 
 ## Reference
 
-The chatbot loop from lecture:  
+**The chatbot loop from lecture:**  
 context \= \[\]  
 while True:  
     user \= input("\>\>\> ")  
     context.append(user)  
     reply \= call\_model(context)  
     print(reply)  
-    context.append(reply)  
-systemprompt.md, as shipped:  
+    context.append(reply)
+
+**systemprompt.md,**   
 You are a coding agent.  
 Work only inside this repo.  
 Use only the tools you are given.  
@@ -61,7 +62,7 @@ Ask before anything destructive.
 Run the tests before claiming done.  
 Stop when they pass.
 
-Switching the harness to Qwen  
+**Switching the harness to Qwen**  
 internal/Qwen3.6-35B-A3B costs nothing. Add this field to the JSON body of every request your harness sends, beside "model" and "messages":  
 "extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}}  
 Then set "model" to "internal/Qwen3.6-35B-A3B". 
