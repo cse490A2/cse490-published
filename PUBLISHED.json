@@ -158,8 +158,8 @@
     "artifact_id": "project-student-p03",
     "document_id": "1PF0s6_ehema_qPvKTijQqY-7eMKvUokxEVZLTYnUXHU",
     "document_name": "P03 Handout",
-    "modified_time": "2026-10-13T18:45:36.749Z",
-    "published_at": "2026-10-13T18:46:39Z",
+    "modified_time": "2026-10-13T19:09:29.539Z",
+    "published_at": "2026-10-13T19:11:25Z",
     "source": "drive"
   },
   "projects/P03/SETUP.md": {
@@ -184,10 +184,11 @@
       "projects/P03/starter/logs/_chatlog.json",
       "projects/P03/starter/scores.csv",
       "projects/P03/starter/stats.py",
+      "projects/P03/starter/systemprompt.md",
       "projects/P03/starter/test_utils.py",
       "projects/P03/starter/utils.py"
     ],
-    "published_at": "2026-10-12T21:15:22Z",
+    "published_at": "2026-10-13T19:11:50Z",
     "source": "derived"
   },
   "projects/P03/starter/.gitignore": {
@@ -278,6 +279,15 @@
     "document_name": "P03 starter stats.py",
     "modified_time": "2026-09-29T08:51:26.447Z",
     "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/systemprompt.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter systemprompt.md",
+    "document_id": "1y2pEDEHOBkRpEn_x5DMBtfjUyOItN10I",
+    "document_name": "P03 starter systemprompt.md",
+    "modified_time": "2026-10-13T19:07:28.708Z",
+    "published_at": "2026-10-13T19:11:39Z",
     "source": "drive"
   },
   "projects/P03/starter/test_utils.py": {

@@ -23,8 +23,14 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
    1. *"Define a JSON schema for tool calls: an object with a required command field whose only allowed value is read\_file and a required path string. Make the harness validate every model reply against this schema. If a reply is not valid JSON or does not match the schema, send the model a message saying so."*  
 6. Your harness can now recognize a read\_file request, but does nothing with it. Prompt LiteLLM Chat to generate code for the harness to act on a read\_file request:  
    1.  *"When the model's reply is a valid read\_file command, open that path, add the file's contents to the context as a message from the harness, and call the model again. Keep looping until the model replies with plain text. Do not add any other command yet."*  
-7. If your agent can read hello\_world.py, then it should have noticed a bug in the program. Add write\_file and execute\_file into your harness, then have it fix the file and execute the code. **IMPORTANT:** the addition of these tools will make your harness more capable and **dangerous**\! Add the Gaurdrail system prompt  command.  
-8. Open harness\_testbench.md and use your custom harness to address each mini-task. 
+7. If your agent can read hello\_world.py, then it should have noticed a bug in the program. Add write\_file and execute\_file into your harness, then have it fix the file and execute the code. **IMPORTANT:** the addition of these tools will make your harness more capable and **dangerous**\! Before adding these tools, give your harness its rules. They live in systemprompt.md in the starter. Hook the file up in harness.py:  
+   1\. At the top, read it once:  
+       SYSTEM \= open("systemprompt.md").read()  
+   2\. Start the context with it, before the loop:  
+       context \= \[{"role": "system", "content": SYSTEM}\]  
+   Your harness already sends the whole context on every call, so the rules go with every request. Restart the harness after any change to systemprompt.md.  
+8. Then add write\_file and execute\_file, and make the harness print each command and wait for you to type yes before running it.  
+9. Open harness\_testbench.md and use your custom harness to address each mini-task. 
 
 ## Turnin
 
@@ -47,18 +53,17 @@ while True:
     reply \= call\_model(context)  
     print(reply)  
     context.append(reply)  
-Guardrail system prompt   
-SYSTEM \= """You are a coding agent.  
+systemprompt.md, as shipped:  
+You are a coding agent.  
 Work only inside this repo.  
 Use only the tools you are given.  
 Ask before anything destructive.  
 Run the tests before claiming done.  
-Stop when they pass."""
+Stop when they pass.
 
 Switching the harness to Qwen  
-internal/Qwen3.6-35B-A3B costs nothing. It thinks before it answers, and the gateway drops any reply that takes longer than a minute, so a harness that uses it has to turn the thinking off. Add this field to the JSON body of every request your harness sends, beside "model" and "messages":  
+internal/Qwen3.6-35B-A3B costs nothing. Add this field to the JSON body of every request your harness sends, beside "model" and "messages":  
 "extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}}  
-Then set "model" to "internal/Qwen3.6-35B-A3B". Nothing else in the harness changes.  
-
+Then set "model" to "internal/Qwen3.6-35B-A3B". 
 
 [^1]:  If you run out of credits on Haiku, you can switch to internal/Qwen3.6-35B-A3B. See Reference for instructions. 
