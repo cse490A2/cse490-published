@@ -31,7 +31,7 @@
       "due_source": "course doc",
       "module_id": 3984420,
       "name": "P03: The Agent Harness",
-      "published": false,
+      "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11669941"
     }
   },
@@ -158,8 +158,8 @@
     "artifact_id": "project-student-p03",
     "document_id": "1PF0s6_ehema_qPvKTijQqY-7eMKvUokxEVZLTYnUXHU",
     "document_name": "P03 Handout",
-    "modified_time": "2026-10-15T16:54:05.028Z",
-    "published_at": "2026-10-15T16:55:11Z",
+    "modified_time": "2026-10-15T16:58:58.036Z",
+    "published_at": "2026-10-15T17:00:21Z",
     "source": "drive"
   },
   "projects/P03/SETUP.md": {
@@ -191,7 +191,7 @@
       "projects/P03/starter/untangle/view.py",
       "projects/P03/starter/utils.py"
     ],
-    "published_at": "2026-10-15T16:55:34Z",
+    "published_at": "2026-10-15T17:00:48Z",
     "source": "derived"
   },
   "projects/P03/starter/.gitignore": {
@@ -298,8 +298,8 @@
     "artifact_id": "starter:P03 starter untangle/README.md",
     "document_id": "1PBREmZF1Gil6AJtkzgvSUtzcvjalnFC-",
     "document_name": "P03 starter untangle/README.md",
-    "modified_time": "2026-10-15T16:53:46.325Z",
-    "published_at": "2026-10-15T16:55:26Z",
+    "modified_time": "2026-10-15T16:59:16.162Z",
+    "published_at": "2026-10-15T17:00:39Z",
     "source": "drive"
   },
   "projects/P03/starter/untangle/check.py": {

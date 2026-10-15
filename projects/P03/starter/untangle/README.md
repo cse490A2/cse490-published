@@ -15,7 +15,8 @@ Rules:
 - solve.py uses only Python's standard library. The grader runs it on a
   plain Python with nothing installed.
 
-Your harness writes solve.py. It reads graph.json and writes moves.json:
+Your harness writes solve.py. It takes two arguments, the graph file to
+read and the moves file to write, and writes:
 
     {"moves": [[node, x, y], [node, x, y], ...]}
 
@@ -24,7 +25,7 @@ Your harness writes solve.py. It reads graph.json and writes moves.json:
 Every command runs in the VS Code terminal with the project's .venv selected
 (the Python the setup wizard made), from the project folder:
 
-    python untangle/solve.py                                    your solver writes untangle/moves.json
+    python untangle/solve.py untangle/graph.json untangle/moves.json   your solver writes the move list
     python untangle/check.py untangle/graph.json untangle/moves.json   the judge: crossings and turns
     python untangle/view.py  untangle/graph.json untangle/moves.json   watch it: Play, Step, Restart
 
