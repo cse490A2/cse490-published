@@ -158,8 +158,8 @@
     "artifact_id": "project-student-p03",
     "document_id": "1PF0s6_ehema_qPvKTijQqY-7eMKvUokxEVZLTYnUXHU",
     "document_name": "P03 Handout",
-    "modified_time": "2026-10-15T16:20:08.007Z",
-    "published_at": "2026-10-15T16:38:02Z",
+    "modified_time": "2026-10-15T16:54:05.028Z",
+    "published_at": "2026-10-15T16:55:11Z",
     "source": "drive"
   },
   "projects/P03/SETUP.md": {
@@ -167,8 +167,8 @@
     "artifact_id": "project-prereq-p03",
     "document_id": "1_gnMciBy3g-g1hWvy6y-uOIL9KzV92JsGW8p12IwR5M",
     "document_name": "P03 Prereq Instructions",
-    "modified_time": "2026-10-13T21:08:55.139Z",
-    "published_at": "2026-10-15T16:37:50Z",
+    "modified_time": "2026-10-15T16:51:08.745Z",
+    "published_at": "2026-10-15T16:55:00Z",
     "source": "drive"
   },
   "projects/P03/starter.zip": {
@@ -191,7 +191,7 @@
       "projects/P03/starter/untangle/view.py",
       "projects/P03/starter/utils.py"
     ],
-    "published_at": "2026-10-15T16:38:28Z",
+    "published_at": "2026-10-15T16:55:34Z",
     "source": "derived"
   },
   "projects/P03/starter/.gitignore": {
@@ -298,8 +298,8 @@
     "artifact_id": "starter:P03 starter untangle/README.md",
     "document_id": "1PBREmZF1Gil6AJtkzgvSUtzcvjalnFC-",
     "document_name": "P03 starter untangle/README.md",
-    "modified_time": "2026-10-15T16:20:36.317Z",
-    "published_at": "2026-10-15T16:38:17Z",
+    "modified_time": "2026-10-15T16:53:46.325Z",
+    "published_at": "2026-10-15T16:55:26Z",
     "source": "drive"
   },
   "projects/P03/starter/untangle/check.py": {
@@ -325,8 +325,8 @@
     "artifact_id": "starter:P03 starter untangle/view.py",
     "document_id": "1k4paWbJbMHe3XBbJvLXkEoUT_VjGfYiI",
     "document_name": "P03 starter untangle/view.py",
-    "modified_time": "2026-10-15T16:20:43.594Z",
-    "published_at": "2026-10-15T16:38:17Z",
+    "modified_time": "2026-10-15T16:53:47.788Z",
+    "published_at": "2026-10-15T16:55:26Z",
     "source": "drive"
   },
   "projects/P03/starter/utils.py": {

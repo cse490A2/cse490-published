@@ -12,19 +12,26 @@ Rules:
   node counts as a crossing.
 - The score is the number of turns when the crossings reach zero. Lower wins.
   One move per node is the reference.
+- solve.py uses only Python's standard library. The grader runs it on a
+  plain Python with nothing installed.
 
-Write solve.py. It reads graph.json and writes moves.json:
+Your harness writes solve.py. It reads graph.json and writes moves.json:
 
     {"moves": [[node, x, y], [node, x, y], ...]}
 
-Then:
+## Run it
 
-    python3 check.py graph.json moves.json     the judge: crossings and turns
-    python3 view.py  graph.json moves.json     watch it: Play, Step, Restart
+Every command runs in the VS Code terminal with the project's .venv selected
+(the Python the setup wizard made), from the project folder:
+
+    python untangle/solve.py                                    your solver writes untangle/moves.json
+    python untangle/check.py untangle/graph.json untangle/moves.json   the judge: crossings and turns
+    python untangle/view.py  untangle/graph.json untangle/moves.json   watch it: Play, Step, Restart
+
+The viewer opens a window. If no window opens, or it opens blank, the same
+player opens in your browser instead, by itself (view.py writes view.html
+beside moves.json). To go straight to the browser, add --browser.
 
 The judge is the only scorer. Your solver is graded on graphs you have not
 seen, of the same size, with a time limit; a run that does not reach zero
 crossings ranks below every run that does.
-
-view.py needs Tk 8.6 or newer: python.org and Homebrew Pythons have it;
-Apple's /usr/bin/python3 ships Tk 8.5 and draws a blank window.

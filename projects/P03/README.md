@@ -14,8 +14,8 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
 
 ## Instructions
 
-1. In VS Code, open the VS Code LiteLLM chat window and `harness.py.` Your key and gateway address should already be populated in the .env file from setup. Off campus, connect the UW VPN (Husky OnNet) first: the gateway refuses every other connection.  
-2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to `https://llmproxy.cs.washington.edu/v1/chat/completions` with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list). Use `external/haiku-5-5`.[^1]  
+1. In VS Code, open the VS Code LiteLLM chat window and harness.py. Your key and gateway address should already be populated in the .env file from setup. Off campus, connect the UW VPN (Husky OnNet) first: the gateway refuses every other connection.  
+2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to https://llmproxy.cs.washington.edu/v1/chat/completions with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list). Use external/haiku-5-5.[^1]  
 3. Once written, run the harness code and ask it to solve the puzzle in the untangle folder. It can only answer in text, so expect it to say it cannot open or run anything, or to guess.  
 4. The model in your custom harness currently can't touch your files; it can only reply with text. Whenever the model needs to touch a file, it asks its harness. We will use JSON as the mutual communication language between the model and your harness, like {"command": "read\_file", "path": "..."}. Prompt LiteLLM to implement this:   
    1. *"Now add the capability to issue tool calls, starting with 'read\_file'. Do this by specifying a json object for each of these commands, and instruct the model to return a call to one of them when it wants to execute that command. Don't yet execute the command, just let me test that the model properly formats the command."*  
@@ -29,8 +29,9 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
    2\. Start the context with it, before the loop:  
        context \= \[{"role": "system", "content": SYSTEM}\]  
    Your harness already sends the whole context on every call, so the rules go with every request. Restart the harness after any change to systemprompt.md.  
-8. Then add write\_file and execute\_file, and make the harness print each command and wait for you to type yes before running it. When the judge reports zero crossings, watch the move list it produced: python3 untangle/view.py untangle/graph.json untangle/moves.json (Play, Step, Restart). The score is the number of turns. One move per node is the reference; fewer is better.  
-9. Open harness\_testbench.md and use your custom harness to address each mini-task. 
+8. Then add write\_file and execute\_file, and make the harness print each command and wait for you to type yes before running it.  
+9. Watch your solver work. In the VS Code terminal, with the project's .venv selected, run from the project folder: python untangle/view.py untangle/graph.json untangle/moves.json. A window opens with the tangled graph. Play runs your move list one turn at a time, Step takes one turn, Restart rewinds. If no window opens, or it opens blank, the same player opens in your browser by itself. The score is the number of turns. One move per node is the reference; fewer is better. The judge is the same command with check.py in place of view.py; untangle/README.md has all three commands.  
+10. Open harness\_testbench.md and use your custom harness to address each mini-task. 
 
 ## Turnin
 
