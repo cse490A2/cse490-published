@@ -14,7 +14,8 @@
  "turnin": {
   "required": [
    "harness.py",
-   "hello_world.py"
+   "untangle/solve.py",
+   "untangle/moves.json"
   ],
   "artifacts": false
  }
