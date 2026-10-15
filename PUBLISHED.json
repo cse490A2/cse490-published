@@ -26,10 +26,10 @@
     },
     "P03": {
       "assignment_id": 11669941,
-      "desc_fp": "0f33d543386c8b41",
+      "desc_fp": "19f58aeb71339729",
       "due_at": "2026-10-21T06:59:00Z",
       "due_source": "course doc",
-      "module_id": 3920931,
+      "module_id": 3984420,
       "name": "P03: The Agent Harness",
       "published": false,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11669941"
@@ -158,8 +158,8 @@
     "artifact_id": "project-student-p03",
     "document_id": "1PF0s6_ehema_qPvKTijQqY-7eMKvUokxEVZLTYnUXHU",
     "document_name": "P03 Handout",
-    "modified_time": "2026-10-13T19:18:17.888Z",
-    "published_at": "2026-10-13T19:20:18Z",
+    "modified_time": "2026-10-15T16:20:08.007Z",
+    "published_at": "2026-10-15T16:38:02Z",
     "source": "drive"
   },
   "projects/P03/SETUP.md": {
@@ -167,8 +167,8 @@
     "artifact_id": "project-prereq-p03",
     "document_id": "1_gnMciBy3g-g1hWvy6y-uOIL9KzV92JsGW8p12IwR5M",
     "document_name": "P03 Prereq Instructions",
-    "modified_time": "2026-10-13T19:20:49.626Z",
-    "published_at": "2026-10-13T19:22:19Z",
+    "modified_time": "2026-10-13T21:08:55.139Z",
+    "published_at": "2026-10-15T16:37:50Z",
     "source": "drive"
   },
   "projects/P03/starter.zip": {
@@ -179,16 +179,19 @@
       "projects/P03/starter/CLAUDE.md",
       "projects/P03/starter/harness.py",
       "projects/P03/starter/harness_testbench.md",
-      "projects/P03/starter/hello_world.py",
       "projects/P03/starter/inventory.py",
       "projects/P03/starter/logs/_chatlog.json",
       "projects/P03/starter/scores.csv",
       "projects/P03/starter/stats.py",
       "projects/P03/starter/systemprompt.md",
       "projects/P03/starter/test_utils.py",
+      "projects/P03/starter/untangle/README.md",
+      "projects/P03/starter/untangle/check.py",
+      "projects/P03/starter/untangle/graph.json",
+      "projects/P03/starter/untangle/view.py",
       "projects/P03/starter/utils.py"
     ],
-    "published_at": "2026-10-13T19:11:50Z",
+    "published_at": "2026-10-15T16:38:28Z",
     "source": "derived"
   },
   "projects/P03/starter/.gitignore": {
@@ -232,17 +235,8 @@
     "artifact_id": "starter:P03 starter harness_testbench.md",
     "document_id": "11FpNOMe6cG-o0r-ZXvhC9UbQ6ys3CeHq",
     "document_name": "P03 starter harness_testbench.md",
-    "modified_time": "2026-09-29T08:51:25.075Z",
-    "published_at": "2026-09-29T08:52:39Z",
-    "source": "drive"
-  },
-  "projects/P03/starter/hello_world.py": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P03 starter hello_world.py",
-    "document_id": "1vzg5eyqONUHPRUEUYaNvCwsrUQUkziXh",
-    "document_name": "P03 starter hello_world.py",
-    "modified_time": "2026-09-29T08:51:23.506Z",
-    "published_at": "2026-09-29T08:52:39Z",
+    "modified_time": "2026-10-15T16:20:45.816Z",
+    "published_at": "2026-10-15T16:38:17Z",
     "source": "drive"
   },
   "projects/P03/starter/inventory.py": {
@@ -297,6 +291,42 @@
     "document_name": "P03 starter test_utils.py",
     "modified_time": "2026-09-29T08:51:38.588Z",
     "published_at": "2026-09-29T08:52:39Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/untangle/README.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter untangle/README.md",
+    "document_id": "1PBREmZF1Gil6AJtkzgvSUtzcvjalnFC-",
+    "document_name": "P03 starter untangle/README.md",
+    "modified_time": "2026-10-15T16:20:36.317Z",
+    "published_at": "2026-10-15T16:38:17Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/untangle/check.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter untangle/check.py",
+    "document_id": "1tbNBCu7Ch17Url_vtoqRQ8K9VhWFToyE",
+    "document_name": "P03 starter untangle/check.py",
+    "modified_time": "2026-10-15T16:20:41.147Z",
+    "published_at": "2026-10-15T16:38:17Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/untangle/graph.json": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter untangle/graph.json",
+    "document_id": "1ef1jOct6j7ILdkjleMBywZpXOg8nq2GU",
+    "document_name": "P03 starter untangle/graph.json",
+    "modified_time": "2026-10-15T16:33:38.172Z",
+    "published_at": "2026-10-15T16:38:17Z",
+    "source": "drive"
+  },
+  "projects/P03/starter/untangle/view.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P03 starter untangle/view.py",
+    "document_id": "1k4paWbJbMHe3XBbJvLXkEoUT_VjGfYiI",
+    "document_name": "P03 starter untangle/view.py",
+    "modified_time": "2026-10-15T16:20:43.594Z",
+    "published_at": "2026-10-15T16:38:17Z",
     "source": "drive"
   },
   "projects/P03/starter/utils.py": {

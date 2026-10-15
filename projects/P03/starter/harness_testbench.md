@@ -3,11 +3,13 @@
 Four everyday chores. Give each one to your harness, watch it work, and keep
 the chat log running. Each task leaves a file the grader checks.
 
-## 1. Fix a bug
+## 1. Untangle the graph
 
-Done in step 6: hello_world.py runs now. Nothing to do here but confirm it.
+Done in step 7: untangle/moves.json reaches zero crossings. Nothing to do
+here but confirm it, and note your score.
 
-Check: `python hello_world.py` prints `Hello, World!`
+Check: `python untangle/check.py untangle/graph.json untangle/moves.json`
+prints `"ok": true` and your turns.
 
 ## 2. Port a program to another language
 

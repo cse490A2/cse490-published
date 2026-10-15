@@ -42,21 +42,27 @@ Replace \<your key here\> with your given API key (it starts with sk).
 ### **2\. Python 3.9+**
 
 Open [the Python download page](https://www.python.org/downloads/) and click the Download Python button.  
+act: tap=button  
 Open the downloaded file. Click Continue through the installer, then Install.
 
 ### **3\. VS Code**
 
 Open [code.visualstudio.com](https://code.visualstudio.com) and click the Download button.  
+act: tap=button  
 Open the downloaded file. Drag Visual Studio Code into Applications.  
+act: tap="Visual Studio Code"  
 Open Visual Studio Code from Applications so macOS trusts it. VS Code is installed when it opens to its welcome page.
 
 ### **4\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
+act: tap=icon  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+act: type=search "LiteLLM" · tap=install  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
 Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+act: tap=palette  
 Add this entry inside the outer braces:  
 `"litellm-vscode-chat.servers": [`  
     `{`  
@@ -78,7 +84,7 @@ Download the course extension, cse490-tools.vsix, from https://github.com/cse490
 
 ### **6\. Project files**
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, systemprompt.md (the rules your harness reads, used in step 7 of the handout), and a logs folder for your chat log.  
 Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
 ### **7\. Model gateway**
@@ -100,21 +106,26 @@ Replace \<your key here\> with your given API key (it starts with sk).
 ### **2\. Python 3.9+**
 
 Open [the Python download page](https://www.python.org/downloads/) and click the Download Python button.  
+act: tap=button  
 Open the downloaded file. Check the "Add python.exe to PATH" box at the bottom, then click Install Now.
 
 ### **3\. VS Code**
 
 Open [code.visualstudio.com](https://code.visualstudio.com) and click the Download button.  
+act: tap=button  
 Open the downloaded file. The defaults are fine.  
 Open Visual Studio Code from the Start menu. VS Code is installed when it opens to its welcome page.
 
 ### **4\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+act: tap=icon  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+act: type=search "LiteLLM" · tap=install  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+act: tap=palette  
 Add this entry inside the outer braces:  
 `"litellm-vscode-chat.servers": [`  
     `{`  
@@ -136,7 +147,7 @@ Download the course extension, cse490-tools.vsix, from https://github.com/cse490
 
 ### **6\. Project files**
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, systemprompt.md (the rules your harness reads, used in step 7 of the handout), and a logs folder for your chat log.  
 Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
 ### **7\. Model gateway**
@@ -163,16 +174,21 @@ On Debian or Ubuntu, run this in a terminal:
 ### **3\. VS Code**
 
 Open [the VS Code download page](https://code.visualstudio.com/download). Get the package for your distribution: .deb for Ubuntu.  
+act: tap=button  
 Install the package you downloaded. On Ubuntu, open it, or run apt on it in a terminal.  
+act: tap=code\_amd64.deb  
 Open Visual Studio Code. It is installed when it opens to its welcome page.
 
 ### **4\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+act: tap=icon  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+act: type=search "LiteLLM" · tap=install  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P03/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+act: tap=palette  
 Add this entry inside the outer braces:  
 `"litellm-vscode-chat.servers": [`  
     `{`  
@@ -194,7 +210,7 @@ Download the course extension, cse490-tools.vsix, from https://github.com/cse490
 
 ### **6\. Project files**
 
-Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, and a logs folder for your chat log.  
+Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, hello\_world.py, the harness testbench and its files, systemprompt.md (the rules your harness reads, used in step 7 of the handout), and a logs folder for your chat log.  
 Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
 ### **7\. Model gateway**
