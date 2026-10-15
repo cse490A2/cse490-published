@@ -77,7 +77,7 @@ internal/Qwen3.6-35B-A3B costs nothing. Add this field to the JSON body of every
 "extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}}  
 Then set "model" to "internal/Qwen3.6-35B-A3B".
 
-**If your AI uses the litellm package**  
-The litellm package reads the part of a model name before the slash as a provider, so it refuses external/haiku-5-5. Put litellm\_proxy/ in front of the name, litellm\_proxy/external/haiku-5-5, with api\_base set to the gateway address and api\_key to your key. The openai package needs no prefix: base\_url is the gateway address plus /v1. Through either package, the Qwen thinking-off field is nested once more: extra\_body={"extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}}}. 
+**If your AI reaches for the litellm package instead**  
+Put litellm\_proxy/ in front of the model name: litellm\_proxy/external/haiku-5-5. 
 
 [^1]:  If you run out of credits on Haiku, you can switch to internal/Qwen3.6-35B-A3B. See Reference for instructions. 
