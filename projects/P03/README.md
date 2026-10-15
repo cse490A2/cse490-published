@@ -15,7 +15,7 @@ A model is an input-output machine: text in, text out. Everything an AI tool doe
 ## Instructions
 
 1. In VS Code, open the VS Code LiteLLM chat window and `harness.py.` Your key and gateway address should already be populated in the .env file from setup. Off campus, connect the UW VPN (Husky OnNet) first: the gateway refuses every other connection.  
-2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness sends its requests to `https://llmproxy.cs.washington.edu/v1/chat/completions` with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list). Use `external/haiku-5-5`.[^1]  
+2. Prompt AI to convert the referenced harness pseudo code into python code. Your harness reads the gateway address, your key and the model name from .env (the four lines under Reference) and sends its requests to `https://llmproxy.cs.washington.edu/v1/chat/completions` with the key from .env and a model name exactly as your key's model list prints it (the setup guide's curl command shows the list). Use `external/haiku-5-5`.[^1]  
 3. Once written, run the harness code and ask it to solve the puzzle in the untangle folder. It can only answer in text, so expect it to say it cannot open or run anything, or to guess.  
 4. The model in your custom harness currently can't touch your files; it can only reply with text. Whenever the model needs to touch a file, it asks its harness. We will use JSON as the mutual communication language between the model and your harness, like {"command": "read\_file", "path": "..."}. Prompt LiteLLM to implement this:   
    1. *"Now add the capability to issue tool calls, starting with 'read\_file'. Do this by specifying a json object for each of these commands, and instruct the model to return a call to one of them when it wants to execute that command. Don't yet execute the command, just let me test that the model properly formats the command."*  
@@ -55,6 +55,14 @@ while True:
     reply \= call\_model(context)  
     print(reply)  
     context.append(reply)
+
+**Reading the gateway from .env** (requests and python-dotenv are installed in the project's .venv by setup):  
+from dotenv import load\_dotenv  
+load\_dotenv()  
+URL \= os.environ\["LITELLM\_BASE\_URL"\].rstrip("/") \+ "/v1/chat/completions"  
+KEY \= os.environ\["LITELLM\_API\_KEY"\]  
+MODEL \= "external/haiku-5-5"  
+Then every request is requests.post(URL, headers={"Authorization": "Bearer " \+ KEY}, json={"model": MODEL, "messages": context}).
 
 **systemprompt.md,**   
 You are a coding agent.  
