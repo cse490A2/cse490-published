@@ -80,14 +80,18 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette) and open your project folder; the status bar reads "Chat log: 0 turns" when the extension is running.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 14: version 0.5.3 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
 
 ### **6\. Project files**
 
 Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, the untangle folder (the puzzle your agent solves in step 7: its rules, the graph, the judge and the viewer), the harness testbench and its files, systemprompt.md (the rules your harness reads, used in step 7 of the handout), and a logs folder for your chat log.  
 Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
-### **7\. Model gateway**
+### **7\. Chat log**
+
+Open your project folder in VS Code, then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
+
+### **8\. Model gateway**
 
 Prove the key works. In a terminal in your project folder:  
 `curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
@@ -143,14 +147,18 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette) and open your project folder; the status bar reads "Chat log: 0 turns" when the extension is running.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 14: version 0.5.3 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
 
 ### **6\. Project files**
 
 Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, the untangle folder (the puzzle your agent solves in step 7: its rules, the graph, the judge and the viewer), the harness testbench and its files, systemprompt.md (the rules your harness reads, used in step 7 of the handout), and a logs folder for your chat log.  
 Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
-### **7\. Model gateway**
+### **7\. Chat log**
+
+Open your project folder in VS Code, then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
+
+### **8\. Model gateway**
 
 Prove the key works. In PowerShell in your project folder:  
 `curl.exe -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
@@ -206,14 +214,18 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette) and open your project folder; the status bar reads "Chat log: 0 turns" when the extension is running.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 14: version 0.5.3 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
 
 ### **6\. Project files**
 
 Download the starter files from https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip and unzip them. The unpacked folder, starter, is your project folder for the week: harness.py, the untangle folder (the puzzle your agent solves in step 7: its rules, the graph, the judge and the viewer), the harness testbench and its files, systemprompt.md (the rules your harness reads, used in step 7 of the handout), and a logs folder for your chat log.  
 Then give the project its own Python and the two packages the harness will import: `python3` \-m venv .venv (`py` \-3 on Windows), then .venv/bin/pip install requests python-dotenv (.venv\\Scripts\\pip on Windows), and pick that interpreter in VS Code with "Python: Select Interpreter".
 
-### **7\. Model gateway**
+### **7\. Chat log**
+
+Open your project folder in VS Code, then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
+
+### **8\. Model gateway**
 
 Prove the key works. In a terminal in your project folder:  
 `curl -s -H "Authorization: Bearer <your key>" https://llmproxy.cs.washington.edu/v1/models`  
