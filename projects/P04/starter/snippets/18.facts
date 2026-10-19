@@ -1,0 +1,4 @@
+calls math.sqrt
+function hypotenuse
+import math
+returns

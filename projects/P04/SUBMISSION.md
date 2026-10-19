@@ -8,34 +8,28 @@ permalink: "/projects/P04/submission/"
 
 # Project 4 Submission
 
-Push your harness repository to GitHub and submit its link to the Project 4 assignment in Canvas. Compare the repository with the tree below first. Leave out your .env file.
+In VS Code, open the Command Palette (Cmd+Shift+P on Mac or Ctrl+Shift+P on Windows) and run CSE 490: Package for turn-in. It writes P04-submission.zip in your Project 3 folder. Upload that file to the Project 4 assignment in Canvas. Compare the zip with the tree below first.
 
-## What the repository holds
+## What the zip holds
 
 * harness.py  
 * systemprompt.md  
 * PLAN.md  
-* skills/coding-loop/SKILL.md  
-* the task code from the starter: inbox.jsonl, detector.py, score.py  
-* transcript.md
+* skills/plan-mode/SKILL.md and skills/coding-loop/SKILL.md  
+* explain.py and tests/  
+* transcript.md  
+* logs/, the chat log VS Code kept
 
 ## What each file is
 
-* harness.py: your Project 3 harness after the three changes the handout's Part 1 asks of the LiteLLM chat extension.  
-* systemprompt.md: your agent's standing rules from Project 3, rewritten for a coding agent; the harness reads it at startup as its first message.  
-* PLAN.md: the plan your agent wrote in plan mode for the job, before you typed approve.  
-* skills/coding-loop/SKILL.md: the course's skill, copied from the starter, unchanged.  
-* detector.py: the task code after your agent's change; inbox.jsonl and score.py as the starter shipped them.  
-* transcript.md: the session your agent saved: the job, the plan, approve, every file it wrote, every validation run, the report.
+* harness.py: your Project 3 harness after the three changes the handout's steps 3 and 5 ask of the LiteLLM chat: the skills scan at startup, the match on each message, and the hook that runs the score after every write.  
+* systemprompt.md: the starter's five parts with your two rules under Your rules.  
+* PLAN.md: the plan your agent wrote last, before you typed approve.  
+* skills/: the two skills as the starter shipped them, unchanged.  
+* explain.py and tests/: the product your agent built in step 7, as its last write left them.  
+* transcript.md: the sections your agent appended, one per job: the decision, the questions and answers, the plan, the approve, every file it wrote, every score line, the report.  
+* logs/: the record of your prompts to the LiteLLM chat. Leave it as it is.
 
 ## What to leave out
 
-Leave out your .env file and the logs/ folder VS Code wrote in Project 3\. A .env file or a key in the repository costs the clean-repo check and is reported to you by name.
-
-## How to submit
-
-Push the repository with git push. Open it on GitHub and check that the six items above are there. Paste the repository's address into the Project 4 assignment in Canvas and submit. Fill out the feedback form.
-
-## The examples
-
-The published examples hold a systemprompt.md grown from Project 3's four lines into a coding agent's rules, and a transcript.md from one run of the coding-loop skill on the starter.  
+The package command leaves out .env on its own; snippets/ rides along and is fine. A key anywhere in the zip costs the rules check and is reported to you by name.  

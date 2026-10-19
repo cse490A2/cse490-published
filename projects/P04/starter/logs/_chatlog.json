@@ -1,0 +1,26 @@
+{
+ "project": "p04",
+ "port": 4404,
+ "turnin_name": "the Project 4 assignment",
+ "turnin_url": null,
+ "inlets": {
+  "files": {
+   "readers": [
+    "vscode-chat",
+    "claude-code"
+   ]
+  }
+ },
+ "turnin": {
+  "required": [
+   "harness.py",
+   "systemprompt.md",
+   "PLAN.md",
+   "skills/plan-mode/SKILL.md",
+   "skills/coding-loop/SKILL.md",
+   "explain.py",
+   "transcript.md"
+  ],
+  "artifacts": false
+ }
+}

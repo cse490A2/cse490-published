@@ -352,8 +352,8 @@
     "artifact_id": "project-prereq-p04",
     "document_id": "1TWIdR3e6AoNpjrkphQzCycH-6R-na-X06HrzSfD4I_k",
     "document_name": "P04 Prereq Instructions",
-    "modified_time": "2026-10-12T21:40:40.624Z",
-    "published_at": "2026-10-13T01:12:24Z",
+    "modified_time": "2026-10-19T21:43:08.377Z",
+    "published_at": "2026-10-19T21:51:38Z",
     "source": "drive"
   },
   "projects/P04/SUBMISSION.md": {
@@ -361,75 +361,78 @@
     "artifact_id": "project-template-p04",
     "document_id": "1d7K1UKWm_lFMTJRJ1DYY7PsLWL7HV54qKBOvB6i63uE",
     "document_name": "P04 Submission",
-    "modified_time": "2026-10-13T19:29:57.051Z",
-    "published_at": "2026-10-13T19:33:31Z",
-    "source": "drive"
-  },
-  "projects/P04/examples/systemprompt.md": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "example:P04 example systemprompt.md",
-    "document_id": "1p1d91O8tR1DpSsqbh4egN89wicJemwSI",
-    "document_name": "P04 example systemprompt.md",
-    "modified_time": "2026-10-13T19:32:36.759Z",
-    "published_at": "2026-10-13T19:33:42Z",
-    "source": "drive"
-  },
-  "projects/P04/examples/transcript.md": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "example:P04 example transcript.md",
-    "document_id": "1eMZD-jH-OTdE7CxFmPYgOsy0nRsvZI1T",
-    "document_name": "P04 example transcript.md",
-    "modified_time": "2026-10-12T23:31:15.237Z",
-    "published_at": "2026-10-13T01:07:01Z",
+    "modified_time": "2026-10-19T21:47:17.841Z",
+    "published_at": "2026-10-19T21:51:40Z",
     "source": "drive"
   },
   "projects/P04/starter.zip": {
     "agent": "arian@agent.vibeclass",
     "derived_from": [
-      "projects/P04/starter/README.md",
-      "projects/P04/starter/detector.py",
-      "projects/P04/starter/inbox.jsonl",
-      "projects/P04/starter/score.py",
+      "projects/P04/starter/SPEC.md",
+      "projects/P04/starter/logs/_chatlog.json",
       "projects/P04/starter/skills/coding-loop/SKILL.md",
+      "projects/P04/starter/skills/plan-mode/SKILL.md",
+      "projects/P04/starter/snippets/01.facts",
+      "projects/P04/starter/snippets/01.py",
+      "projects/P04/starter/snippets/02.facts",
+      "projects/P04/starter/snippets/02.py",
+      "projects/P04/starter/snippets/03.facts",
+      "projects/P04/starter/snippets/03.py",
+      "projects/P04/starter/snippets/04.facts",
+      "projects/P04/starter/snippets/04.py",
+      "projects/P04/starter/snippets/05.facts",
+      "projects/P04/starter/snippets/05.py",
+      "projects/P04/starter/snippets/06.facts",
+      "projects/P04/starter/snippets/06.py",
+      "projects/P04/starter/snippets/07.facts",
+      "projects/P04/starter/snippets/07.py",
+      "projects/P04/starter/snippets/08.facts",
+      "projects/P04/starter/snippets/08.py",
+      "projects/P04/starter/snippets/09.facts",
+      "projects/P04/starter/snippets/09.py",
+      "projects/P04/starter/snippets/10.facts",
+      "projects/P04/starter/snippets/10.py",
+      "projects/P04/starter/snippets/11.facts",
+      "projects/P04/starter/snippets/11.py",
+      "projects/P04/starter/snippets/12.facts",
+      "projects/P04/starter/snippets/12.py",
+      "projects/P04/starter/snippets/13.facts",
+      "projects/P04/starter/snippets/13.py",
+      "projects/P04/starter/snippets/14.facts",
+      "projects/P04/starter/snippets/14.py",
+      "projects/P04/starter/snippets/15.facts",
+      "projects/P04/starter/snippets/15.py",
+      "projects/P04/starter/snippets/16.facts",
+      "projects/P04/starter/snippets/16.py",
+      "projects/P04/starter/snippets/17.facts",
+      "projects/P04/starter/snippets/17.py",
+      "projects/P04/starter/snippets/18.facts",
+      "projects/P04/starter/snippets/18.py",
+      "projects/P04/starter/snippets/19.facts",
+      "projects/P04/starter/snippets/19.py",
+      "projects/P04/starter/snippets/20.facts",
+      "projects/P04/starter/snippets/20.py",
       "projects/P04/starter/systemprompt.md"
     ],
-    "published_at": "2026-10-13T20:24:12Z",
+    "published_at": "2026-10-19T21:52:37Z",
     "source": "derived"
   },
-  "projects/P04/starter/README.md": {
+  "projects/P04/starter/SPEC.md": {
     "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P04 starter README.md",
-    "document_id": "1vAfnv9zg41S9vyTenfx76ciJf86kbkAn",
-    "document_name": "P04 starter README.md",
-    "modified_time": "2026-10-12T23:30:54.301Z",
-    "published_at": "2026-10-13T01:06:50Z",
+    "artifact_id": "starter:P04 starter SPEC.md",
+    "document_id": "16JCYtAg969gVhfEKO_aYmrg8OJZ-fzSw",
+    "document_name": "P04 starter SPEC.md",
+    "modified_time": "2026-10-19T21:43:12.317Z",
+    "published_at": "2026-10-19T21:52:15Z",
     "source": "drive"
   },
-  "projects/P04/starter/detector.py": {
+  "projects/P04/starter/logs/_chatlog.json": {
     "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P04 starter detector.py",
-    "document_id": "1OlPJbyruPq57KyOGQ2mJJgdIEAC0mvdb",
-    "document_name": "P04 starter detector.py",
-    "modified_time": "2026-10-12T23:30:45.709Z",
-    "published_at": "2026-10-13T01:06:50Z",
-    "source": "drive"
-  },
-  "projects/P04/starter/inbox.jsonl": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P04 starter inbox.jsonl",
-    "document_id": "1XGgrw9pT2Eo2pW5ffYAInALx4jLc6fDZ",
-    "document_name": "P04 starter inbox.jsonl",
-    "modified_time": "2026-10-12T23:30:43.360Z",
-    "published_at": "2026-10-13T01:06:50Z",
-    "source": "drive"
-  },
-  "projects/P04/starter/score.py": {
-    "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P04 starter score.py",
-    "document_id": "14lmqHvGHx1eCz3rRmV_ftaUsb2_Al_My",
-    "document_name": "P04 starter score.py",
-    "modified_time": "2026-10-13T01:07:45.512Z",
-    "published_at": "2026-10-13T01:08:33Z",
+    "artifact_id": "starter:P04 starter logs/_chatlog.json",
+    "document_id": "1pkbHO_owJO_wh-ZRsUOdO_k99qM-DYyn",
+    "document_name": "P04 starter logs/_chatlog.json",
+    "modified_time": "2026-10-19T21:50:28.330Z",
+    "published_at": "2026-10-19T21:52:15Z",
     "source": "drive"
   },
   "projects/P04/starter/skills/coding-loop/SKILL.md": {
@@ -437,8 +440,377 @@
     "artifact_id": "starter:P04 starter skills/coding-loop/SKILL.md",
     "document_id": "1hQJoqTTlzywL0NhlpbtcSD8RUzE4rsLU",
     "document_name": "P04 starter skills/coding-loop/SKILL.md",
-    "modified_time": "2026-10-12T23:30:57.442Z",
-    "published_at": "2026-10-13T01:06:50Z",
+    "modified_time": "2026-10-19T21:43:13.505Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/skills/plan-mode/SKILL.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter skills/plan-mode/SKILL.md",
+    "document_id": "1WabxonzXBTBL8TjJ9M-46l8M9ssQG63B",
+    "document_name": "P04 starter skills/plan-mode/SKILL.md",
+    "modified_time": "2026-10-19T21:43:14.879Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/01.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/01.facts",
+    "document_id": "11CaoDy9IPGZo6ba1vF56hL6ELRSTGC_5",
+    "document_name": "P04 starter snippets/01.facts",
+    "modified_time": "2026-10-19T21:43:16.055Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/01.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/01.py",
+    "document_id": "15GLbtcPKC6ZQWxTZspe5BGRNbxS3VUlD",
+    "document_name": "P04 starter snippets/01.py",
+    "modified_time": "2026-10-19T21:43:17.088Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/02.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/02.facts",
+    "document_id": "11D6rpTGcui5SHLO80MpdVzlHud7G-uYZ",
+    "document_name": "P04 starter snippets/02.facts",
+    "modified_time": "2026-10-19T21:43:18.266Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/02.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/02.py",
+    "document_id": "1k9wsCqzBubmsv65PibzSIk6ZQddVTh0h",
+    "document_name": "P04 starter snippets/02.py",
+    "modified_time": "2026-10-19T21:43:19.537Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/03.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/03.facts",
+    "document_id": "1JZDsfMcYbpvG6Tn2MX6SMQR3JHh9bj24",
+    "document_name": "P04 starter snippets/03.facts",
+    "modified_time": "2026-10-19T21:43:20.560Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/03.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/03.py",
+    "document_id": "1m4ZhIdO0HmGzJEMt4psQcjvW5Y6eMcuJ",
+    "document_name": "P04 starter snippets/03.py",
+    "modified_time": "2026-10-19T21:43:21.644Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/04.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/04.facts",
+    "document_id": "1iR1yhEZVCeRdl_QDwgMI1_YZ06qOBjuv",
+    "document_name": "P04 starter snippets/04.facts",
+    "modified_time": "2026-10-19T21:43:23.052Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/04.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/04.py",
+    "document_id": "12Cy-fWi7-afPa6nYWWjF388W6BUYrejD",
+    "document_name": "P04 starter snippets/04.py",
+    "modified_time": "2026-10-19T21:43:24.140Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/05.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/05.facts",
+    "document_id": "13mCHUz6QihSaPELyW31XEYwSVirzFUcA",
+    "document_name": "P04 starter snippets/05.facts",
+    "modified_time": "2026-10-19T21:43:25.312Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/05.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/05.py",
+    "document_id": "14bCdpS3XXvCVQ3_c4-83xObKJRp2PFcE",
+    "document_name": "P04 starter snippets/05.py",
+    "modified_time": "2026-10-19T21:43:26.589Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/06.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/06.facts",
+    "document_id": "1rmKOwZBiNSrXCtTHzDnpupsu93eNa1F_",
+    "document_name": "P04 starter snippets/06.facts",
+    "modified_time": "2026-10-19T21:43:27.722Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/06.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/06.py",
+    "document_id": "1nNYaDviqq0TLJlQ-0oiPLfegBPFCW3X3",
+    "document_name": "P04 starter snippets/06.py",
+    "modified_time": "2026-10-19T21:43:28.832Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/07.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/07.facts",
+    "document_id": "1NZNmGWUPiXNtFTnd5sIuDEm9eL4m9ICs",
+    "document_name": "P04 starter snippets/07.facts",
+    "modified_time": "2026-10-19T21:43:29.883Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/07.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/07.py",
+    "document_id": "1JamAMCk8JF0h_KyFZUSFlBdYvkBG1Xf4",
+    "document_name": "P04 starter snippets/07.py",
+    "modified_time": "2026-10-19T21:43:31.396Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/08.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/08.facts",
+    "document_id": "1cmnjeihmTi0ob5lEMoFv9lVQFYQf4qzt",
+    "document_name": "P04 starter snippets/08.facts",
+    "modified_time": "2026-10-19T21:43:32.404Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/08.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/08.py",
+    "document_id": "1JqehEHfPWBSE-_DRpfF40cqKYB7_eiYV",
+    "document_name": "P04 starter snippets/08.py",
+    "modified_time": "2026-10-19T21:43:33.581Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/09.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/09.facts",
+    "document_id": "1MPD8evrDoylzHR3Jh_DXGwbKdC4DdvZw",
+    "document_name": "P04 starter snippets/09.facts",
+    "modified_time": "2026-10-19T21:43:34.618Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/09.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/09.py",
+    "document_id": "19IeSnVCJiMp-8kXyeMHOMcFZAZdVYVjZ",
+    "document_name": "P04 starter snippets/09.py",
+    "modified_time": "2026-10-19T21:43:35.714Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/10.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/10.facts",
+    "document_id": "1vGNvhkZCQr8sbdhnWCJivhNc1C4uDS4s",
+    "document_name": "P04 starter snippets/10.facts",
+    "modified_time": "2026-10-19T21:43:36.844Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/10.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/10.py",
+    "document_id": "1qx6JmReongv-RZ8EgdWacuh-W5GGI5HM",
+    "document_name": "P04 starter snippets/10.py",
+    "modified_time": "2026-10-19T21:43:38.089Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/11.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/11.facts",
+    "document_id": "1TfWqJY_fRdPkF7Ta1T8O2XskMdxMok42",
+    "document_name": "P04 starter snippets/11.facts",
+    "modified_time": "2026-10-19T21:43:39.256Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/11.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/11.py",
+    "document_id": "1Hex9it9Y9lEx2NySz84-Kv5hMDWTRBv5",
+    "document_name": "P04 starter snippets/11.py",
+    "modified_time": "2026-10-19T21:43:40.564Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/12.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/12.facts",
+    "document_id": "1reCsbmlGz5XErNgwYYYnDxdSdM641BAi",
+    "document_name": "P04 starter snippets/12.facts",
+    "modified_time": "2026-10-19T21:43:41.670Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/12.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/12.py",
+    "document_id": "1sgn9o6CmLh6lfnv8oCCjIOM2TsLpd4Nd",
+    "document_name": "P04 starter snippets/12.py",
+    "modified_time": "2026-10-19T21:43:42.787Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/13.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/13.facts",
+    "document_id": "1vuJf0iUQLHG7GWnRnoqoh6DbVNqiuRnY",
+    "document_name": "P04 starter snippets/13.facts",
+    "modified_time": "2026-10-19T21:43:43.967Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/13.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/13.py",
+    "document_id": "1o-BZFRE1THccI6rtVUEe-_jtAIWWYqE8",
+    "document_name": "P04 starter snippets/13.py",
+    "modified_time": "2026-10-19T21:43:45.114Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/14.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/14.facts",
+    "document_id": "1WPzVonvmofudEenS055fAnnpvfBWJvYT",
+    "document_name": "P04 starter snippets/14.facts",
+    "modified_time": "2026-10-19T21:43:46.219Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/14.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/14.py",
+    "document_id": "1bH4_wAnWdpfg8N3f4mIt0tBuZzhqjz7v",
+    "document_name": "P04 starter snippets/14.py",
+    "modified_time": "2026-10-19T21:43:47.302Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/15.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/15.facts",
+    "document_id": "1mROAzZDq6NOeuZVGFpyZWNvkVUfPGvNG",
+    "document_name": "P04 starter snippets/15.facts",
+    "modified_time": "2026-10-19T21:43:48.409Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/15.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/15.py",
+    "document_id": "19B2aSFuKNUKJUWOTACfsd73mMuhKJo7O",
+    "document_name": "P04 starter snippets/15.py",
+    "modified_time": "2026-10-19T21:43:49.453Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/16.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/16.facts",
+    "document_id": "13kDb_WWTwlg0Rj9-lbveeU7YNiYv5PKY",
+    "document_name": "P04 starter snippets/16.facts",
+    "modified_time": "2026-10-19T21:43:50.627Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/16.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/16.py",
+    "document_id": "1YvKpyLAnpsGvt-GVOvetsBNLh5cDPmkQ",
+    "document_name": "P04 starter snippets/16.py",
+    "modified_time": "2026-10-19T21:43:51.798Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/17.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/17.facts",
+    "document_id": "18z1vBFi1Mv9EGijYBDmrdUJtcTClTFbr",
+    "document_name": "P04 starter snippets/17.facts",
+    "modified_time": "2026-10-19T21:43:52.954Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/17.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/17.py",
+    "document_id": "1jN6UPhHVduVY_G-kLJnl83BeMBjE88oE",
+    "document_name": "P04 starter snippets/17.py",
+    "modified_time": "2026-10-19T21:43:54.199Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/18.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/18.facts",
+    "document_id": "13soy62BuHFcQElJMsnlyY2gl7vztE9C8",
+    "document_name": "P04 starter snippets/18.facts",
+    "modified_time": "2026-10-19T21:43:55.313Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/18.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/18.py",
+    "document_id": "1e06Ns14-5upeDy6K6HdGNHh9xqMWcd3s",
+    "document_name": "P04 starter snippets/18.py",
+    "modified_time": "2026-10-19T21:43:56.559Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/19.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/19.facts",
+    "document_id": "1LZSsTGjkbYpzKtMwKS_6ZqgDag1Pjvno",
+    "document_name": "P04 starter snippets/19.facts",
+    "modified_time": "2026-10-19T21:43:57.807Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/19.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/19.py",
+    "document_id": "1CFXzxzr6vtQuvG7KPGdphQLw-BQeBEu6",
+    "document_name": "P04 starter snippets/19.py",
+    "modified_time": "2026-10-19T21:43:58.872Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/20.facts": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/20.facts",
+    "document_id": "1dQdvQ80hdLVo59jVUvBHWqlIrPPAvYvj",
+    "document_name": "P04 starter snippets/20.facts",
+    "modified_time": "2026-10-19T21:43:59.974Z",
+    "published_at": "2026-10-19T21:52:15Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/snippets/20.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter snippets/20.py",
+    "document_id": "1riPEEL74ASCBoaIHpXZiQgZAZ6DlhUvb",
+    "document_name": "P04 starter snippets/20.py",
+    "modified_time": "2026-10-19T21:44:01.072Z",
+    "published_at": "2026-10-19T21:52:15Z",
     "source": "drive"
   },
   "projects/P04/starter/systemprompt.md": {
@@ -446,8 +818,8 @@
     "artifact_id": "starter:P04 starter systemprompt.md",
     "document_id": "1HrhUOzmKV7HXZowVQextHCNnYUcldfID",
     "document_name": "P04 starter systemprompt.md",
-    "modified_time": "2026-10-13T20:23:40.039Z",
-    "published_at": "2026-10-13T20:24:08Z",
+    "modified_time": "2026-10-19T21:44:02.154Z",
+    "published_at": "2026-10-19T21:52:15Z",
     "source": "drive"
   }
 }

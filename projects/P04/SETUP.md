@@ -33,7 +33,8 @@ Read the section for your computer below (Mac, Windows or Linux) and do each ste
 
 ### **1\. Project 3 folder**
 
-The folder holds harness.py and hello\_world.py from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py and hello\_world.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
+The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
+act: tap=harness.py
 
 ### **2\. Course key**
 
@@ -45,10 +46,13 @@ with your key in place of \<your key here\> (it starts with sk). If the file is 
 ### **3\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
+act: tap=icon  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+act: type=search "LiteLLM" · tap=install  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
 Open the Command Palette with Cmd+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+act: tap=palette  
 Add this entry inside the outer braces:  
 `"litellm-vscode-chat.servers": [`  
     `{`  
@@ -67,6 +71,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
 ### **4\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+act: tap=item  
 Run:  
 `python3 harness.py`  
 It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
@@ -77,7 +82,8 @@ Type read hello\_world.py and tell me what it says, and press Enter. A reply tha
 
 ### **1\. Project 3 folder**
 
-The folder holds harness.py and hello\_world.py from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py and hello\_world.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
+The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
+act: tap=harness.py
 
 ### **2\. Course key**
 
@@ -89,10 +95,13 @@ with your key in place of \<your key here\> (it starts with sk). If the file is 
 ### **3\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+act: tap=icon  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+act: type=search "LiteLLM" · tap=install  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+act: tap=palette  
 Add this entry inside the outer braces:  
 `"litellm-vscode-chat.servers": [`  
     `{`  
@@ -111,6 +120,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 ### **4\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+act: tap=item  
 Run:  
 `python harness.py`  
 It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
@@ -121,7 +131,8 @@ Type read hello\_world.py and tell me what it says, and press Enter. A reply tha
 
 ### **1\. Project 3 folder**
 
-The folder holds harness.py and hello\_world.py from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py and hello\_world.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
+The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
+act: tap=harness.py
 
 ### **2\. Course key**
 
@@ -133,10 +144,13 @@ with your key in place of \<your key here\> (it starts with sk). If the file is 
 ### **3\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
+act: tap=icon  
 Search for LiteLLM. Install "LiteLLM Provider for GitHub Copilot Chat" by Vivswan.  
+act: type=search "LiteLLM" · tap=install  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-1.png)  
 Open the Command Palette with Ctrl+Shift+P. Run "Preferences: Open User Settings (JSON)".  
+act: tap=palette  
 Add this entry inside the outer braces:  
 `"litellm-vscode-chat.servers": [`  
     `{`  
@@ -155,6 +169,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 ### **4\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+act: tap=item  
 Run:  
 `python3 harness.py`  
 It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
