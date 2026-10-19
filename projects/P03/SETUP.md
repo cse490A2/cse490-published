@@ -89,7 +89,7 @@ Then give the project its own Python and the two packages the harness will impor
 
 ### **7\. Chat log**
 
-Open your project folder in VS Code, then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
+In VS Code, open your project folder itself (File, then Open Folder, then p03), not the folder above it: the Explorer's top entry must read P03. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
 
 ### **8\. Model gateway**
 
@@ -156,7 +156,7 @@ Then give the project its own Python and the two packages the harness will impor
 
 ### **7\. Chat log**
 
-Open your project folder in VS Code, then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
+In VS Code, open your project folder itself (File, then Open Folder, then p03), not the folder above it: the Explorer's top entry must read P03. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
 
 ### **8\. Model gateway**
 
@@ -223,7 +223,7 @@ Then give the project its own Python and the two packages the harness will impor
 
 ### **7\. Chat log**
 
-Open your project folder in VS Code, then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
+In VS Code, open your project folder itself (File, then Open Folder, then p03), not the folder above it: the Explorer's top entry must read P03. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running; every chat with the course models is then saved to logs/\_chatlog.md in your project folder.
 
 ### **8\. Model gateway**
 
