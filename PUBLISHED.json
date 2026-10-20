@@ -33,6 +33,16 @@
       "name": "P03: The Agent Harness",
       "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11669941"
+    },
+    "P04": {
+      "assignment_id": 11858811,
+      "desc_fp": "3dc6e50270c1dd10",
+      "due_at": null,
+      "due_source": "handout has no due weekday",
+      "module_id": 3986557,
+      "name": "P04: Driving a Coding Agent",
+      "published": false,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11858811"
     }
   },
   "lectures/L01/slides.pdf": {
