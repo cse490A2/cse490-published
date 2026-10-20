@@ -177,8 +177,8 @@
     "artifact_id": "project-prereq-p03",
     "document_id": "1_gnMciBy3g-g1hWvy6y-uOIL9KzV92JsGW8p12IwR5M",
     "document_name": "P03 Prereq Instructions",
-    "modified_time": "2026-10-19T04:13:04.608Z",
-    "published_at": "2026-10-19T04:59:34Z",
+    "modified_time": "2026-10-20T21:04:52.568Z",
+    "published_at": "2026-10-20T21:23:37Z",
     "source": "drive"
   },
   "projects/P03/starter.zip": {
@@ -201,7 +201,7 @@
       "projects/P03/starter/untangle/view.py",
       "projects/P03/starter/utils.py"
     ],
-    "published_at": "2026-10-18T20:35:47Z",
+    "published_at": "2026-10-20T21:24:10Z",
     "source": "derived"
   },
   "projects/P03/starter/.gitignore": {
@@ -218,8 +218,8 @@
     "artifact_id": "starter:P03 starter AGENTS.md",
     "document_id": "161pYEddq4O24XxCTARmuZAsK1S3dONvF",
     "document_name": "P03 starter AGENTS.md",
-    "modified_time": "2026-10-18T20:34:51.661Z",
-    "published_at": "2026-10-18T20:35:37Z",
+    "modified_time": "2026-10-20T21:23:21.162Z",
+    "published_at": "2026-10-20T21:24:03Z",
     "source": "drive"
   },
   "projects/P03/starter/CLAUDE.md": {
