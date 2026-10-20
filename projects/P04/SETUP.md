@@ -31,18 +31,17 @@ Read the section for your computer below (Mac, Windows or Linux) and do each ste
 
 ## **Mac**
 
-### **1\. Project 3 folder**
+### **1\. Project 4 folder**
 
-The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
-act: tap=harness.py
+Make your Project 4 folder as a copy of your Project 3 folder: copy the folder that holds harness.py and systemprompt.md, name the copy p04, and open the copy in VS Code (File, then Open Folder). Project 4 goes on in the copy, so this week's files replace copies and your Project 3 work stays as it was. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the new folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
 
 ### **2\. Project 4 files**
 
-Download starter.zip from the Project 4 folder of the course GitHub, unzip it, and move everything inside into your Project 3 folder, replacing systemprompt.md and the logs switch file when asked.
+Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs switch file when asked: they are the copies from Project 3, and Project 3's own stay in its folder.
 
 ### **3\. Course key**
 
-Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
+Your Project 4 folder holds `.env` with your course key, copied from Project 3\. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
@@ -74,7 +73,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
 
 ### **5\. Harness check**
 
-In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  
 Run:  
 `python3 harness.py`  
@@ -84,18 +83,17 @@ Type read SPEC.md and tell me what it says, and press Enter. A reply that quotes
 
 ## **Windows**
 
-### **1\. Project 3 folder**
+### **1\. Project 4 folder**
 
-The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
-act: tap=harness.py
+Make your Project 4 folder as a copy of your Project 3 folder: copy the folder that holds harness.py and systemprompt.md, name the copy p04, and open the copy in VS Code (File, then Open Folder). Project 4 goes on in the copy, so this week's files replace copies and your Project 3 work stays as it was. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the new folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
 
 ### **2\. Project 4 files**
 
-Download starter.zip from the Project 4 folder of the course GitHub, unzip it, and move everything inside into your Project 3 folder, replacing systemprompt.md and the logs switch file when asked.
+Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs switch file when asked: they are the copies from Project 3, and Project 3's own stay in its folder.
 
 ### **3\. Course key**
 
-Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
+Your Project 4 folder holds `.env` with your course key, copied from Project 3\. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
@@ -127,7 +125,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Harness check**
 
-In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  
 Run:  
 `python harness.py`  
@@ -137,18 +135,17 @@ Type read SPEC.md and tell me what it says, and press Enter. A reply that quotes
 
 ## **Linux**
 
-### **1\. Project 3 folder**
+### **1\. Project 4 folder**
 
-The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
-act: tap=harness.py
+Make your Project 4 folder as a copy of your Project 3 folder: copy the folder that holds harness.py and systemprompt.md, name the copy p04, and open the copy in VS Code (File, then Open Folder). Project 4 goes on in the copy, so this week's files replace copies and your Project 3 work stays as it was. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the new folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.
 
 ### **2\. Project 4 files**
 
-Download starter.zip from the Project 4 folder of the course GitHub, unzip it, and move everything inside into your Project 3 folder, replacing systemprompt.md and the logs switch file when asked.
+Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs switch file when asked: they are the copies from Project 3, and Project 3's own stay in its folder.
 
 ### **3\. Course key**
 
-Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
+Your Project 4 folder holds `.env` with your course key, copied from Project 3\. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
@@ -180,7 +177,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Harness check**
 
-In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
+In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  
 Run:  
 `python3 harness.py`  

@@ -9,7 +9,7 @@ permalink: "/projects/P04/"
 # Project 4: Driving a Coding Agent
 
 Due: Tuesday 11:59 pm  
-Before class, run the setup wizard or the setup guide: it puts this week's files in your Project 3 folder. Check that your Project 3 harness runs and reads files.  
+Before class, run the setup wizard or the setup guide: it makes your Project 4 folder, a copy of your Project 3 folder with this week's files placed over it. Check that your harness runs and reads files.  
 Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, two skills, and a hook, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-5-5 through the course gateway.
 
 ## Instructions
