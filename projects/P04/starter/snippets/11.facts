@@ -1,5 +1,0 @@
-calls os.listdir
-comprehension
-function list_py
-import os
-returns

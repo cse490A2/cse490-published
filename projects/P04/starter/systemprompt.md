@@ -9,7 +9,7 @@ Plain and short. Say what you did and what you saw, not how hard it was. One lin
 # Constraints
 
 - Ask before anything destructive: deleting, renaming or moving a file, or running anything other than the score.
-- Ask before writing to a file the plan does not name.
+- Ask before writing to a file that neither the plan nor a skill names.
 - Never install anything or reach the network without asking.
 - Never touch .env or .git, and never print, copy or write the key.
 - Never claim a change works before the score has run and you have read its output.

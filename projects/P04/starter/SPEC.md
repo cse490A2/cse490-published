@@ -1,50 +1,48 @@
-# explain.py
+# pedia.py
 
-A program that explains a piece of Python from its structure. No model is
-involved: it parses the code with Python's ast module, recognizes constructs,
-and assembles sentences. The same input always gives the same output.
+A search over about a thousand Wikipedia articles, offline, shaped to its reader.
+No model is involved; standard library only. The same query with the same
+profile always gives the same output.
 
 ## Commands
 
-    python explain.py <file.py>           the explanation
-    python explain.py --facts <file.py>   the facts it found, one per line
-    python explain.py score               facts covered over snippets/
+    python pedia.py search "<query>"   the top articles, best first, shaped by
+                                       profile.json
+    python pedia.py score              right first answers over questions.csv
 
-score reads every snippets/NN.py, runs the same fact finder on it, compares
-with snippets/NN.facts, and prints three things: facts covered, facts total,
-and PASS or below target. Exit 0 on PASS, 1 otherwise.
+score reads questions.csv (question, answer title), runs search for each question
+with the profile's subject preference switched off, and counts the questions whose
+first result is the answer. For every miss it prints one line: the question, the
+answer, and the title that came first instead. Then it prints covered, total, and
+PASS or below target. Exit 0 on PASS, 1 below it. If an index is needed, every
+command builds it when it is missing.
 
-Target: 71 of the 79 public facts.
+Target: 27 of the 30 public questions.
 
-## Facts
+## articles/
 
-One per line, in this vocabulary and no other. Order does not matter. A
-fact that is true of the file appears once, however many times the code
-does it.
+    articles/all.jsonl    one article per line, a JSON object with the keys id,
+                          title, subject, en (the English text) and simple (the
+                          Simple English text, or null); each text about 1,200
+                          words
+    articles/README.md    where the articles came from and their license
 
-    function <name>            defines a function
-    class <name>               defines a class
-    import <module>            imports a module (the name after import or
-                               from)
-    for                        uses a for loop
-    while                      uses a while loop
-    comprehension              builds a list, dict or set in one expression
-    recursive <name>           a function that calls itself
-    catches <Error>            a try that catches that error
-    raises <Error>             raises that error
-    returns                    a function returns a value
-    file-io                    opens, reads or writes a file
-    calls <module>.<name>      calls a function from an imported module
+Subjects: People, History, Geography, Arts, Philosophy and religion, Everyday
+life, Society and social sciences, Biological and health sciences, Physical
+sciences, Technology, Mathematics.
+
+## profile.json
+
+The reader's answers from plan mode, read by search. Two keys:
+
+    subjects    the subjects that win when two articles tie
+    results     how many results search shows
 
 ## Rules
 
-- Standard library only. No network.
-- Deterministic: the same file gives the same output every time.
-- The explanation's style, order, depth and voice are decided with the
-  person who will read it. The score never reads the explanation; it reads
-  --facts.
-
-## snippets/
-
-snippets/01.py through snippets/20.py, each with its NN.facts beside it.
-More of the same shape are held back and run after submission.
+- Standard library only. No network. pedia.py never downloads anything.
+- Deterministic: the same query and the same profile give the same output.
+- questions.csv is read only by score. A program that reads it anywhere else, or
+  special-cases its questions, fails the hidden questions and is flagged.
+- More questions of the same shape, with answers from the same articles, are held
+  back and run after submission.

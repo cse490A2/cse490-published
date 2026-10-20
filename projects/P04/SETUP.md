@@ -36,14 +36,18 @@ Read the section for your computer below (Mac, Windows or Linux) and do each ste
 The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
 act: tap=harness.py
 
-### **2\. Course key**
+### **2\. Project 4 files**
+
+Download starter.zip from the Project 4 folder of the course GitHub, unzip it, and move everything inside into your Project 3 folder, replacing systemprompt.md and the logs switch file when asked.
+
+### **3\. Course key**
 
 Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
-### **3\. AI chat in VS Code**
+### **4\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
 act: tap=icon  
@@ -68,7 +72,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **4\. Harness check**
+### **5\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
 act: tap=item  
@@ -76,7 +80,7 @@ Run:
 `python3 harness.py`  
 It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
 Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
-Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
+Type read SPEC.md and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
 
 ## **Windows**
 
@@ -85,14 +89,18 @@ Type read hello\_world.py and tell me what it says, and press Enter. A reply tha
 The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
 act: tap=harness.py
 
-### **2\. Course key**
+### **2\. Project 4 files**
+
+Download starter.zip from the Project 4 folder of the course GitHub, unzip it, and move everything inside into your Project 3 folder, replacing systemprompt.md and the logs switch file when asked.
+
+### **3\. Course key**
 
 Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
-### **3\. AI chat in VS Code**
+### **4\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 act: tap=icon  
@@ -117,7 +125,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **4\. Harness check**
+### **5\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
 act: tap=item  
@@ -125,7 +133,7 @@ Run:
 `python harness.py`  
 It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
 Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
-Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
+Type read SPEC.md and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
 
 ## **Linux**
 
@@ -134,14 +142,18 @@ Type read hello\_world.py and tell me what it says, and press Enter. A reply tha
 The folder holds harness.py and systemprompt.md from Project 3\. If harness.py is gone, unzip your P03-submission.zip and move harness.py into the folder. With no submission to go back to, the Project 3 starter ([starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P03/starter.zip)) gives you the pseudocode harness to finish first.  
 act: tap=harness.py
 
-### **2\. Course key**
+### **2\. Project 4 files**
+
+Download starter.zip from the Project 4 folder of the course GitHub, unzip it, and move everything inside into your Project 3 folder, replacing systemprompt.md and the logs switch file when asked.
+
+### **3\. Course key**
 
 Your Project 3 folder already holds `.env` with your course key. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
-### **3\. AI chat in VS Code**
+### **4\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 act: tap=icon  
@@ -166,7 +178,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **4\. Harness check**
+### **5\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 3 folder.  
 act: tap=item  
@@ -174,4 +186,4 @@ Run:
 `python3 harness.py`  
 It waits for your first message. If it stops with an error before that, read the last line of the error: a missing package names itself, and an "invalid key" means `.env` is wrong (the Course key step puts it right).  
 Type my name is Sam and press Enter. Then type spell my name backwards and press Enter. A reply with maS means the harness keeps the conversation between turns. A reply that does not know the name means it sends only the latest message: go back to the chatbot loop in the Reference of the Project 3 handout.  
-Type read hello\_world.py and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.
+Type read SPEC.md and tell me what it says, and press Enter. A reply that quotes the file means the read tool from Project 3 is there. Press Ctrl+C to stop the harness.

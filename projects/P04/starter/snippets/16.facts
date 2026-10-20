@@ -1,6 +1,0 @@
-class Stack
-function __init__
-function pop
-function push
-raises IndexError
-returns

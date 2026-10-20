@@ -1,6 +1,0 @@
-calls sys.exit
-file-io
-for
-function main
-import sys
-returns

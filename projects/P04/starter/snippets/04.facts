@@ -1,3 +1,0 @@
-catches ValueError
-function safe_int
-returns

@@ -16,9 +16,10 @@
    "harness.py",
    "systemprompt.md",
    "PLAN.md",
+   "profile.json",
    "skills/plan-mode/SKILL.md",
    "skills/coding-loop/SKILL.md",
-   "explain.py",
+   "pedia.py",
    "transcript.md"
   ],
   "artifacts": false
