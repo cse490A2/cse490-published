@@ -380,14 +380,14 @@
     "derived_from": [
       "projects/P04/starter/SPEC.md",
       "projects/P04/starter/articles/README.md",
-      "projects/P04/starter/articles/all.jsonl",
+      "projects/P04/starter/articles/all.jsonl.gz",
       "projects/P04/starter/logs/_chatlog.json",
       "projects/P04/starter/questions.csv",
       "projects/P04/starter/skills/coding-loop/SKILL.md",
       "projects/P04/starter/skills/plan-mode/SKILL.md",
       "projects/P04/starter/systemprompt.md"
     ],
-    "published_at": "2026-10-21T00:28:56Z",
+    "published_at": "2026-10-21T00:36:10Z",
     "source": "derived"
   },
   "projects/P04/starter/SPEC.md": {
@@ -395,8 +395,8 @@
     "artifact_id": "starter:P04 starter SPEC.md",
     "document_id": "16JCYtAg969gVhfEKO_aYmrg8OJZ-fzSw",
     "document_name": "P04 starter SPEC.md",
-    "modified_time": "2026-10-20T00:35:33.693Z",
-    "published_at": "2026-10-20T00:43:59Z",
+    "modified_time": "2026-10-21T00:33:33.808Z",
+    "published_at": "2026-10-21T00:36:06Z",
     "source": "drive"
   },
   "projects/P04/starter/articles/README.md": {
@@ -404,17 +404,17 @@
     "artifact_id": "starter:P04 starter articles/README.md",
     "document_id": "1q8NbVzD4j1kjzedaQFD78t8RxqItrV4r",
     "document_name": "P04 starter articles/README.md",
-    "modified_time": "2026-10-21T00:26:32.411Z",
-    "published_at": "2026-10-21T00:28:51Z",
+    "modified_time": "2026-10-21T00:33:35.560Z",
+    "published_at": "2026-10-21T00:36:06Z",
     "source": "drive"
   },
-  "projects/P04/starter/articles/all.jsonl": {
+  "projects/P04/starter/articles/all.jsonl.gz": {
     "agent": "arian@agent.vibeclass",
-    "artifact_id": "starter:P04 starter articles/all.jsonl",
-    "document_id": "14q1f62N5Mv8QrYh-RNwu53A8o5kDBBnE",
-    "document_name": "P04 starter articles/all.jsonl",
-    "modified_time": "2026-10-19T23:50:09.072Z",
-    "published_at": "2026-10-20T00:43:59Z",
+    "artifact_id": "starter:P04 starter articles/all.jsonl.gz",
+    "document_id": "1Pp7xrox4L5ReHrnrzbJRB-o-mDWgerg3",
+    "document_name": "P04 starter articles/all.jsonl.gz",
+    "modified_time": "2026-10-21T00:33:29.982Z",
+    "published_at": "2026-10-21T00:36:06Z",
     "source": "drive"
   },
   "projects/P04/starter/logs/_chatlog.json": {
@@ -440,8 +440,8 @@
     "artifact_id": "starter:P04 starter skills/coding-loop/SKILL.md",
     "document_id": "1hQJoqTTlzywL0NhlpbtcSD8RUzE4rsLU",
     "document_name": "P04 starter skills/coding-loop/SKILL.md",
-    "modified_time": "2026-10-21T00:26:33.978Z",
-    "published_at": "2026-10-21T00:28:51Z",
+    "modified_time": "2026-10-21T00:33:38.146Z",
+    "published_at": "2026-10-21T00:36:06Z",
     "source": "drive"
   },
   "projects/P04/starter/skills/plan-mode/SKILL.md": {

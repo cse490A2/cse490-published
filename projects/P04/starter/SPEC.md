@@ -21,11 +21,15 @@ Target: 27 of the 30 public questions.
 
 ## articles/
 
-    articles/all.jsonl    one article per line, a JSON object with the keys id,
-                          title, subject, en (the English text) and simple (the
-                          Simple English text, or null); each text about 1,200
-                          words
-    articles/README.md    where the articles came from and their license
+    articles/all.jsonl.gz   the articles, gzip-compressed: about 12 MB of text
+                            as one article per line, a JSON object with the keys
+                            id, title, subject, en (the English text) and simple
+                            (the Simple English text, or null); each text about
+                            1,200 words. Read it with gzip.open(path, "rt",
+                            encoding="utf-8") from the standard library, line by
+                            line; never unpack it to disk.
+    articles/README.md      where the articles came from, their license, and one
+                            line of the file, shortened
 
 Subjects: People, History, Geography, Arts, Philosophy and religion, Everyday
 life, Society and social sciences, Biological and health sciences, Physical
