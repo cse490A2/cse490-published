@@ -73,6 +73,11 @@
   "skills/coding-loop/SKILL.md": {
    "older": [
     {
+     "commit": "9da4d35",
+     "published": "2026-10-21",
+     "sha256": "f11b98bcfc2bce8d44bb266a1729979209f94991b3fc47e86334c260bf587225"
+    },
+    {
      "commit": "790da3c",
      "published": "2026-10-21",
      "sha256": "5ef64a2978835ef1f0459ca5028c847171e92c74672f5000f7755bc5a922737e"
@@ -113,7 +118,7 @@
      "sha256": "7211dde215973f0e79deced9a547d6c4d92c68d5e1eb5070d0a4ab555de32209"
     }
    ],
-   "sha256": "f11b98bcfc2bce8d44bb266a1729979209f94991b3fc47e86334c260bf587225",
+   "sha256": "7befb90717757aef40eaebe103fad3cba34819a1818f6c87d28539e6d62be8fb",
    "source_modified": "2026-10-21"
   },
   "skills/plan-mode/SKILL.md": {
@@ -135,6 +140,11 @@
   "systemprompt.md": {
    "older": [
     {
+     "commit": "dbe47e7",
+     "published": "2026-10-19",
+     "sha256": "78254354efde9eff7be91e65799b101b717ab202bc0cb00deaffd3191ba00b45"
+    },
+    {
      "commit": "d80b996",
      "published": "2026-10-19",
      "sha256": "2ecd81d3bf54953b78b14ae044d33380932ade7abc7bd44a80caa33a8ffbe7fb"
@@ -145,8 +155,8 @@
      "sha256": "6c42f724aa04b7dfb3b6ffe6366833a315b0cc4d6635b660a2e22891ac1fb6ee"
     }
    ],
-   "sha256": "78254354efde9eff7be91e65799b101b717ab202bc0cb00deaffd3191ba00b45",
-   "source_modified": "2026-10-20"
+   "sha256": "224d7e15047675470bc9c2c8b69704b90987ed3f74b958afeef34dd343426669",
+   "source_modified": "2026-10-21"
   },
   "tests/README.md": {
    "older": [],

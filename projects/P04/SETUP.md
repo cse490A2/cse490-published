@@ -37,16 +37,20 @@ Make your Project 4 folder as a copy of your Project 3 folder: copy the folder t
 
 ### **2\. Project 4 files**
 
-Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs switch file when asked: they are the copies from Project 3, and Project 3's own stay in its folder.
+Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs folder when asked: they are the copies from Project 3, and Project 3's own stay in its folder. On a Mac, Replace swaps the whole logs folder for the starter's, which holds only the switch file for Project 4; this week's chat log starts fresh there, and your Project 3 log stays in p03. On Windows and Linux only the switch file is replaced.
 
-### **3\. Course key**
+### **3\. Tidy the folder**
+
+Make a folder named project3 inside your Project 4 folder and move Project 3's files into it: inventory.py, utils.py, test\_utils.py and any other tests from Project 3, stats.py, stats.js, scores.csv, harness\_testbench.md and the untangle folder. This week's files stay at the top: harness.py, systemprompt.md, `.env`, AGENTS.md, CLAUDE.md, the logs, skills, tests and articles folders, SPEC.md, CHECK and questions.csv. Delete nothing.
+
+### **4\. Course key**
 
 Your Project 4 folder holds `.env` with your course key, copied from Project 3\. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
-### **4\. AI chat in VS Code**
+### **5\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Cmd+Shift+X.  
 act: tap=icon  
@@ -71,7 +75,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **5\. Harness check**
+### **6\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  
@@ -89,16 +93,20 @@ Make your Project 4 folder as a copy of your Project 3 folder: copy the folder t
 
 ### **2\. Project 4 files**
 
-Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs switch file when asked: they are the copies from Project 3, and Project 3's own stay in its folder.
+Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs folder when asked: they are the copies from Project 3, and Project 3's own stay in its folder. On a Mac, Replace swaps the whole logs folder for the starter's, which holds only the switch file for Project 4; this week's chat log starts fresh there, and your Project 3 log stays in p03. On Windows and Linux only the switch file is replaced.
 
-### **3\. Course key**
+### **3\. Tidy the folder**
+
+Make a folder named project3 inside your Project 4 folder and move Project 3's files into it: inventory.py, utils.py, test\_utils.py and any other tests from Project 3, stats.py, stats.js, scores.csv, harness\_testbench.md and the untangle folder. This week's files stay at the top: harness.py, systemprompt.md, `.env`, AGENTS.md, CLAUDE.md, the logs, skills, tests and articles folders, SPEC.md, CHECK and questions.csv. Delete nothing.
+
+### **4\. Course key**
 
 Your Project 4 folder holds `.env` with your course key, copied from Project 3\. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
-### **4\. AI chat in VS Code**
+### **5\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 act: tap=icon  
@@ -123,7 +131,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **5\. Harness check**
+### **6\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  
@@ -141,16 +149,20 @@ Make your Project 4 folder as a copy of your Project 3 folder: copy the folder t
 
 ### **2\. Project 4 files**
 
-Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs switch file when asked: they are the copies from Project 3, and Project 3's own stay in its folder.
+Download [starter.zip](https://github.com/cse490A2/cse490-published/raw/main/projects/P04/starter.zip) and unzip it. Move everything inside the unpacked starter folder into your Project 4 folder, replacing systemprompt.md and the logs folder when asked: they are the copies from Project 3, and Project 3's own stay in its folder. On a Mac, Replace swaps the whole logs folder for the starter's, which holds only the switch file for Project 4; this week's chat log starts fresh there, and your Project 3 log stays in p03. On Windows and Linux only the switch file is replaced.
 
-### **3\. Course key**
+### **3\. Tidy the folder**
+
+Make a folder named project3 inside your Project 4 folder and move Project 3's files into it: inventory.py, utils.py, test\_utils.py and any other tests from Project 3, stats.py, stats.js, scores.csv, harness\_testbench.md and the untangle folder. This week's files stay at the top: harness.py, systemprompt.md, `.env`, AGENTS.md, CLAUDE.md, the logs, skills, tests and articles folders, SPEC.md, CHECK and questions.csv. Delete nothing.
+
+### **4\. Course key**
 
 Your Project 4 folder holds `.env` with your course key, copied from Project 3\. Open it and check that it still has these two lines:  
 `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
 `LITELLM_API_KEY=<your key here>`  
 with your key in place of \<your key here\> (it starts with sk). If the file is missing or the key line is empty, make the file again: in VS Code, right-click the empty space in the Explorer, choose New File, name it exactly `.env`, and paste the two lines in.
 
-### **4\. AI chat in VS Code**
+### **5\. AI chat in VS Code**
 
 In VS Code, click the Extensions icon in the bar on the far left: four squares. Or press Ctrl+Shift+X.  
 act: tap=icon  
@@ -175,7 +187,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **5\. Harness check**
+### **6\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  

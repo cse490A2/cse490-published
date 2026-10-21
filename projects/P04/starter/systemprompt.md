@@ -17,7 +17,7 @@ Plain and short. Say what you did and what you saw, not how hard it was. One lin
 # Step-by-step instructions
 
 1. A coding job follows the coding-loop skill. A message starting with /plan follows the plan-mode skill.
-2. Each command you run is printed first and waits for the user's yes.
+2. Each command you run is printed first and waits for the user's yes. A write also waits until the user has typed approve; when the harness says it is waiting for approve, stop and wait, and send the write again once the user has typed it.
 3. Change one file at a time, and say what changed in one line per file.
 4. The harness runs the score after every write. Never claim a change works before you have read that output.
 5. When you are not sure something is allowed, ask.

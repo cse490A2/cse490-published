@@ -13,8 +13,6 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 
 ## Instructions
 
-### 
-
 1. Run the setup wizard or the setup guide first.  
    1. systemprompt.md should now have multiple points for your instruction to follow. Change one thing: the two placeholder lines under Your rules, each written like the Constraints, "Never ..." or "Ask before ...", for something that went wrong last week. Feel free to adjust these lines to whatever works best for your agent.   
    2. Similarly to Project 3, the system prompt should be loaded with every user message.
@@ -31,7 +29,8 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 
 4. Now put it all together. Have your agent build pedia.py, a local search engine for Wikipedia articles in articles/.   
    1. Send: "Read SPEC.md and build pedia.py to it. Standard library only." SPEC.md includes a few open-ended questions for the user, which should trigger the harness to execute plan mode. Answer the questions and approve once finished. This then should trigger the coding loop skill.   
-5. Once your agent finishes, try it out: Run python pedia.py search with something you have wondered about this week, then python pedia.py score to perform a search test.  
+   2. Once your agent finishes, try it out: Run pedia.py search with something you have wondered about this week, then pedia.py score to perform a search test.
+
  
 
 
@@ -68,6 +67,6 @@ Run Code Test Hook Pseudocode
   \#         output \= run(open("CHECK").read())  
   \#         context.append("harness: " \+ output)
 
-1. ~~"Read harness.py. After every write\_file the harness runs, run python pedia.py score with the same Python that runs the harness, and add its output to the context as a message from the harness. If pedia.py does not exist yet, add a line saying so. Change nothing else."~~  
-   2. ~~"Read harness.py. Add a plan gate: before the harness runs a write\_file whose path is not PLAN.md or profile.json, it checks that PLAN.md exists and that I have typed approve since the current job began. If not, it does not run the call and adds a message from the harness saying waiting for approve. Change nothing else."~~
+3. ~~"Read harness.py. After every write\_file the harness runs, run python pedia.py score with the same Python that runs the harness, and add its output to the context as a message from the harness. If pedia.py does not exist yet, add a line saying so. Change nothing else."~~  
+   4. ~~"Read harness.py. Add a plan gate: before the harness runs a write\_file whose path is not PLAN.md or profile.json, it checks that PLAN.md exists and that I have typed approve since the current job began. If not, it does not run the call and adds a message from the harness saying waiting for approve. Change nothing else."~~
 

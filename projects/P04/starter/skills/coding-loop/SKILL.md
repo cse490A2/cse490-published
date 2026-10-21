@@ -15,4 +15,4 @@ Spec, decision, change, score, again. Each step leaves something a reader can ch
 6. If the score is below the target, change the ranking for what the missed questions need and go back to step 4. Stop after three rounds and say what is still missing.
 7. Write the tests the job asked for, in the tests folder the starter ships, before you report: one test per command and one per profile key.
 8. Report: the score line, the files you wrote, and what you would try next.
-9. Append a section to transcript.md, headed with the job: the decision from step 2, the questions and answers, PLAN.md if you wrote one, the approve, every write_file call with its full content, every score line, and the report.
+9. Append a section to transcript.md, headed with the job: the decision from step 2, the questions and answers, PLAN.md if you wrote one, the approve, every write_file call, every score line, and the report. A write_file call is listed with its path and the content it wrote; when a content is a whole program that will not fit inside one JSON reply, list that call with its path and the score it got, and say so.

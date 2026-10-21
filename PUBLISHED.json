@@ -376,8 +376,8 @@
     "artifact_id": "project-student-p04",
     "document_id": "1rprSPRvew_GUPVlEkvONEpBpHdYLNknpqSCobMCjo0c",
     "document_name": "P04 Handout",
-    "modified_time": "2026-10-21T19:17:32.644Z",
-    "published_at": "2026-10-21T19:46:22Z",
+    "modified_time": "2026-10-21T20:44:48.575Z",
+    "published_at": "2026-10-21T23:46:25Z",
     "source": "drive"
   },
   "projects/P04/SETUP.md": {
@@ -385,8 +385,8 @@
     "artifact_id": "project-prereq-p04",
     "document_id": "1TWIdR3e6AoNpjrkphQzCycH-6R-na-X06HrzSfD4I_k",
     "document_name": "P04 Prereq Instructions",
-    "modified_time": "2026-10-21T01:03:26.948Z",
-    "published_at": "2026-10-21T05:38:43Z",
+    "modified_time": "2026-10-21T23:14:10.470Z",
+    "published_at": "2026-10-21T23:46:27Z",
     "source": "drive"
   },
   "projects/P04/SUBMISSION.md": {
@@ -412,7 +412,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T20:25:09Z",
+    "published_at": "2026-10-21T23:46:46Z",
     "source": "derived"
   },
   "projects/P04/starter/.starter.json": {
@@ -429,7 +429,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T20:25:09Z",
+    "published_at": "2026-10-21T23:46:45Z",
     "source": "derived"
   },
   "projects/P04/starter/CHECK": {
@@ -491,8 +491,8 @@
     "artifact_id": "starter:P04 starter skills/coding-loop/SKILL.md",
     "document_id": "1hQJoqTTlzywL0NhlpbtcSD8RUzE4rsLU",
     "document_name": "P04 starter skills/coding-loop/SKILL.md",
-    "modified_time": "2026-10-21T20:24:28.366Z",
-    "published_at": "2026-10-21T20:25:03Z",
+    "modified_time": "2026-10-21T23:45:13.922Z",
+    "published_at": "2026-10-21T23:46:40Z",
     "source": "drive"
   },
   "projects/P04/starter/skills/plan-mode/SKILL.md": {
@@ -509,8 +509,8 @@
     "artifact_id": "starter:P04 starter systemprompt.md",
     "document_id": "1HrhUOzmKV7HXZowVQextHCNnYUcldfID",
     "document_name": "P04 starter systemprompt.md",
-    "modified_time": "2026-10-20T00:12:53.945Z",
-    "published_at": "2026-10-20T00:43:59Z",
+    "modified_time": "2026-10-21T23:45:15.497Z",
+    "published_at": "2026-10-21T23:46:40Z",
     "source": "drive"
   },
   "projects/P04/starter/tests/README.md": {
