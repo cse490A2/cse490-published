@@ -412,7 +412,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T20:20:39Z",
+    "published_at": "2026-10-21T20:25:09Z",
     "source": "derived"
   },
   "projects/P04/starter/.starter.json": {
@@ -429,7 +429,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T20:20:39Z",
+    "published_at": "2026-10-21T20:25:09Z",
     "source": "derived"
   },
   "projects/P04/starter/CHECK": {
@@ -437,8 +437,8 @@
     "artifact_id": "starter:P04 starter CHECK",
     "document_id": "1OSmsPQ1MieMFJ-3_ZwTPrULodHuVe4uq",
     "document_name": "P04 starter CHECK",
-    "modified_time": "2026-10-21T19:08:24.307Z",
-    "published_at": "2026-10-21T19:46:39Z",
+    "modified_time": "2026-10-21T20:24:26.658Z",
+    "published_at": "2026-10-21T20:25:03Z",
     "source": "drive"
   },
   "projects/P04/starter/SPEC.md": {
@@ -491,8 +491,8 @@
     "artifact_id": "starter:P04 starter skills/coding-loop/SKILL.md",
     "document_id": "1hQJoqTTlzywL0NhlpbtcSD8RUzE4rsLU",
     "document_name": "P04 starter skills/coding-loop/SKILL.md",
-    "modified_time": "2026-10-21T20:19:22.315Z",
-    "published_at": "2026-10-21T20:20:33Z",
+    "modified_time": "2026-10-21T20:24:28.366Z",
+    "published_at": "2026-10-21T20:25:03Z",
     "source": "drive"
   },
   "projects/P04/starter/skills/plan-mode/SKILL.md": {

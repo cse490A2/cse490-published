@@ -1,1 +1,1 @@
-python pedia.py score
+python3 pedia.py score || python pedia.py score
