@@ -19,8 +19,8 @@ Last week you built the loop. This week you hire it. Keep building the harness y
 1. Give your agent its rules. systemprompt.md is the first message in every request your harness sends. systemprompt.md should now have multiple points for your instruction to follow. Change one thing: the two placeholder lines under Your rules, each written like the Constraints, "Never ..." or "Ask before ...", for something that went wrong last week. Feel free to adjust these lines to whatever works best for your agent.   
    1. Similarly to Project 3, the system prompt should be loaded with every user message.  
 2. Add a skill. Alter your harness to load skills from skills/\<name\>/SKILL.md. Prompt the LiteLLM Chat:  
-   1. "Read harness.py. At startup, have it read every skills/\*/SKILL.md and keep each one's name and when-to-use line in the context. Change nothing else."  
-   2. "Read harness.py. On each user message, if it matches a skill's when-to-use line, add that skill's full text to the context for that turn only. Change nothing else."  
+   1. "Read harness.py. At startup, have it read every skills/\*/SKILL.md and keep each one's name and its description line, the when-to-use line that starts with Use when, in the context. Change nothing else."  
+   2. "Read harness.py. On each user message, if it matches a skill's description line, its when-to-use line, add that skill's full text to the context for that turn only. Change nothing else."  
    3. Check it: restart and ask your harness "what skills do you have". It should respond with plan-mode and coding-loop.  
 3. Manually read the two skills in skills/ once, so you know what your agent will do. plan-mode reads and asks, writes PLAN.md, and changes nothing until you type approve; start a message with /plan to invoke it yourself. coding-loop is the loop from lecture; it decides whether a job needs a plan.  
 4. Add a hook: code the harness runs at a fixed point in the loop without asking the model. Your yes before each command is one; this one runs after every write. Prompt the LiteLLM chat:  
