@@ -409,9 +409,10 @@
       "projects/P04/starter/questions.csv",
       "projects/P04/starter/skills/coding-loop/SKILL.md",
       "projects/P04/starter/skills/plan-mode/SKILL.md",
-      "projects/P04/starter/systemprompt.md"
+      "projects/P04/starter/systemprompt.md",
+      "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T19:46:44Z",
+    "published_at": "2026-10-21T20:20:39Z",
     "source": "derived"
   },
   "projects/P04/starter/.starter.json": {
@@ -425,9 +426,10 @@
       "projects/P04/starter/questions.csv",
       "projects/P04/starter/skills/coding-loop/SKILL.md",
       "projects/P04/starter/skills/plan-mode/SKILL.md",
-      "projects/P04/starter/systemprompt.md"
+      "projects/P04/starter/systemprompt.md",
+      "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T19:46:44Z",
+    "published_at": "2026-10-21T20:20:39Z",
     "source": "derived"
   },
   "projects/P04/starter/CHECK": {
@@ -489,8 +491,8 @@
     "artifact_id": "starter:P04 starter skills/coding-loop/SKILL.md",
     "document_id": "1hQJoqTTlzywL0NhlpbtcSD8RUzE4rsLU",
     "document_name": "P04 starter skills/coding-loop/SKILL.md",
-    "modified_time": "2026-10-21T19:08:26.172Z",
-    "published_at": "2026-10-21T19:46:39Z",
+    "modified_time": "2026-10-21T20:19:22.315Z",
+    "published_at": "2026-10-21T20:20:33Z",
     "source": "drive"
   },
   "projects/P04/starter/skills/plan-mode/SKILL.md": {
@@ -498,8 +500,8 @@
     "artifact_id": "starter:P04 starter skills/plan-mode/SKILL.md",
     "document_id": "1WabxonzXBTBL8TjJ9M-46l8M9ssQG63B",
     "document_name": "P04 starter skills/plan-mode/SKILL.md",
-    "modified_time": "2026-10-20T00:35:35.592Z",
-    "published_at": "2026-10-20T00:43:59Z",
+    "modified_time": "2026-10-21T20:19:24.102Z",
+    "published_at": "2026-10-21T20:20:33Z",
     "source": "drive"
   },
   "projects/P04/starter/systemprompt.md": {
@@ -509,6 +511,15 @@
     "document_name": "P04 starter systemprompt.md",
     "modified_time": "2026-10-20T00:12:53.945Z",
     "published_at": "2026-10-20T00:43:59Z",
+    "source": "drive"
+  },
+  "projects/P04/starter/tests/README.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter tests/README.md",
+    "document_id": "1k5Ta4nlhwab0ih2SBEONPIDum9vZHCs3",
+    "document_name": "P04 starter tests/README.md",
+    "modified_time": "2026-10-21T20:19:25.473Z",
+    "published_at": "2026-10-21T20:20:33Z",
     "source": "drive"
   }
 }
