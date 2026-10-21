@@ -9,30 +9,28 @@ permalink: "/projects/P04/"
 # Project 4: Driving a Coding Agent
 
 Due: Tuesday 11:59 pm  
-Before class, run the setup wizard or the setup guide: it makes your Project 4 folder, a copy of your Project 3 folder with this week's files placed over it. Check that your harness runs and reads files.  
-Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, two skills, and a hook, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-5-5 through the course gateway.
+Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, two skills, and two hooks, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-5-5 through the course gateway.
 
 ## Instructions
 
 ### Part 1: the files
 
-1. Give your agent its rules. systemprompt.md is the first message in every request your harness sends. systemprompt.md should now have multiple points for your instruction to follow. Change one thing: the two placeholder lines under Your rules, each written like the Constraints, "Never ..." or "Ask before ...", for something that went wrong last week. Feel free to adjust these lines to whatever works best for your agent.   
+1. Run the setup wizard or the setup guide first: it makes your Project 4 folder, a copy of your Project 3 folder with this week's files placed over it, and checks that your harness runs and reads files. Then give your agent its rules. systemprompt.md is the first message in every request your harness sends. systemprompt.md should now have multiple points for your instruction to follow. Change one thing: the two placeholder lines under Your rules, each written like the Constraints, "Never ..." or "Ask before ...", for something that went wrong last week. Feel free to adjust these lines to whatever works best for your agent.   
    1. Similarly to Project 3, the system prompt should be loaded with every user message.  
 2. Add a skill. Each SKILL.md opens with two lines: name, and description, which says when to use the skill. Alter your harness to load skills from skills/\<name\>/SKILL.md. Prompt the LiteLLM Chat:  
    1. "Read harness.py. At startup, have it read every skills/\*/SKILL.md and keep each one's name and description lines in the context. Change nothing else."  
    2. "Read harness.py. On each user message, if it matches a skill's description line, add that skill's full text to the context for that turn only. Change nothing else."  
    3. Check it: restart and ask your harness "what skills do you have". It should respond with plan-mode and coding-loop.  
 3. Manually read the two skills in skills/ once, so you know what your agent will do. plan-mode reads and asks, writes PLAN.md, and changes nothing until you type approve; start a message with /plan to invoke it yourself. coding-loop is the loop from lecture; it decides whether a job needs a plan.  
-4. Add two hooks: code the harness runs at a fixed point in the loop without asking the model. Your yes before each command is one. The first runs after every write; the second runs before one, and holds every change until you have approved a plan. Prompt the LiteLLM chat:  
+4. Add two hooks. Two things should happen on their own, with no model deciding them. After every file your agent writes, the score runs and its output lands in the chat, so you both see at once whether the change helped (pedia.py is the program you build in step 6; until it exists, the hook just says so). And no file gets written until you have read a plan and typed approve, so the agent cannot run ahead of you. Code the harness runs at a fixed point in its loop like this is called a hook; the yes it asks before each command is one already. Prompt the LiteLLM chat:  
    1. "Read harness.py. After every write\_file the harness runs, run python pedia.py score with the same Python that runs the harness, and add its output to the context as a message from the harness. If pedia.py does not exist yet, add a line saying so. Change nothing else."  
    2. "Read harness.py. Add a plan gate: before the harness runs a write\_file whose path is not PLAN.md or profile.json, it checks that PLAN.md exists and that I have typed approve since the current job began. If not, it does not run the call and adds a message from the harness saying waiting for approve. Change nothing else."  
 5. Test your harness with two messages:   
-   1. "Delete the articles folder": it asks you first; answer no, and nothing is deleted.   
+   1. "Delete the articles folder": it asks you first; answer no, and nothing is deleted. If it deletes anyway, your rules are not reaching the model: check that the harness sends systemprompt.md with every request (step 1), and get the folder back by unzipping the starter again.   
    2. "what time is it": it answers without naming a skill.   
    3. If a test fails, redo the step that built it, then repeat the test.  
 6. Now put it all together. Have your agent build pedia.py, a search over the thousand Wikipedia articles in articles/, shaped to you. Send: "Read SPEC.md and build pedia.py to it. Standard library only." It says this needs a plan and asks two questions: which subjects win a tie, and how many results to show. Answer, read PLAN.md, type approve; the gate holds every write until you do. Then watch the score after each write until it prints PASS; the misses it lists are what the next write fixes.  
-7. Try it. Run python pedia.py search with something you have wondered about this week, then python pedia.py score.  
-8. \[OPTIONAL\] To make your program awesome, add a read command that shows an article the way you like to read: the first paragraph, the Simple English version, or related articles after it.
+7. Try it. Run python pedia.py search with something you have wondered about this week, then python pedia.py score.
 
 ## Turnin
 
