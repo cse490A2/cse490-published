@@ -213,6 +213,29 @@
     "published_at": "2026-10-12T21:15:15Z",
     "source": "drive"
   },
+  "projects/P03/starter/.starter.json": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P03/starter/.gitignore",
+      "projects/P03/starter/AGENTS.md",
+      "projects/P03/starter/CLAUDE.md",
+      "projects/P03/starter/harness.py",
+      "projects/P03/starter/harness_testbench.md",
+      "projects/P03/starter/inventory.py",
+      "projects/P03/starter/logs/_chatlog.json",
+      "projects/P03/starter/scores.csv",
+      "projects/P03/starter/stats.py",
+      "projects/P03/starter/systemprompt.md",
+      "projects/P03/starter/test_utils.py",
+      "projects/P03/starter/untangle/README.md",
+      "projects/P03/starter/untangle/check.py",
+      "projects/P03/starter/untangle/graph.json",
+      "projects/P03/starter/untangle/view.py",
+      "projects/P03/starter/utils.py"
+    ],
+    "published_at": "2026-10-21T05:27:58Z",
+    "source": "derived"
+  },
   "projects/P03/starter/AGENTS.md": {
     "agent": "arian@agent.vibeclass",
     "artifact_id": "starter:P03 starter AGENTS.md",
@@ -388,6 +411,21 @@
       "projects/P04/starter/systemprompt.md"
     ],
     "published_at": "2026-10-21T00:36:10Z",
+    "source": "derived"
+  },
+  "projects/P04/starter/.starter.json": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P04/starter/SPEC.md",
+      "projects/P04/starter/articles/README.md",
+      "projects/P04/starter/articles/all.jsonl.gz",
+      "projects/P04/starter/logs/_chatlog.json",
+      "projects/P04/starter/questions.csv",
+      "projects/P04/starter/skills/coding-loop/SKILL.md",
+      "projects/P04/starter/skills/plan-mode/SKILL.md",
+      "projects/P04/starter/systemprompt.md"
+    ],
+    "published_at": "2026-10-21T05:27:59Z",
     "source": "derived"
   },
   "projects/P04/starter/SPEC.md": {

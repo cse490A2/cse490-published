@@ -1,0 +1,137 @@
+{
+ "about": "fingerprints of the starter files; the setup wizard compares the files in a project folder with these to say whether each one is current",
+ "files": {
+  ".gitignore": {
+   "older": [
+    {
+     "commit": "2854c4b",
+     "published": "2026-09-29",
+     "sha256": "1105ba4a6e0635db4e5c739459ccb75cd73d586d2ce8c8257602329c6a76a7a8"
+    }
+   ],
+   "sha256": "fddad4f2f9e4794b5e410468b95426d7144c0a8284ec775ae8975c38b9c227c6",
+   "source_modified": "2026-10-12"
+  },
+  "AGENTS.md": {
+   "older": [
+    {
+     "commit": "c3aefcd",
+     "published": "2026-10-18",
+     "sha256": "21418a04784240378183fd4623fc12b2e55a0a20ddc99e9c35ead660f522c11d"
+    },
+    {
+     "commit": "314a78e",
+     "published": "2026-10-12",
+     "sha256": "6b23dca2078340b4b59f38b07914102508ab203d870253a6cbb1605752dac50e"
+    },
+    {
+     "commit": "2854c4b",
+     "published": "2026-09-29",
+     "sha256": "9e5cdaa205106edebfdba632ec45148d90589f88b3740a3ade1bf6d986a6c485"
+    }
+   ],
+   "sha256": "a5cb0b75f1cc556c13bf5e86f2c5fe796cd033628936f9a21649d62cc5ec48c4",
+   "source_modified": "2026-10-20"
+  },
+  "CLAUDE.md": {
+   "older": [],
+   "sha256": "74da74558ab79a987ad2f37e683eb1210b8d6425fa4def475afdaae98f95fdc9",
+   "source_modified": "2026-09-29"
+  },
+  "harness.py": {
+   "older": [],
+   "sha256": "d0ebec4250b64bef75da1feef6274e2498b3726b12259a59a080ce1c0a760dd8",
+   "source_modified": "2026-09-29"
+  },
+  "harness_testbench.md": {
+   "older": [
+    {
+     "commit": "2854c4b",
+     "published": "2026-09-29",
+     "sha256": "b3b9c136b234e961d0fe3e4c2291d9659f99dddf386abc3f3fcc6dc44e1f73c2"
+    }
+   ],
+   "sha256": "461b2e082a6cd18f18d1e8b18b9b35003e571aa2b2a8d72c68029706f1838e8c",
+   "source_modified": "2026-10-15"
+  },
+  "inventory.py": {
+   "older": [],
+   "sha256": "b316b94d270593c06935f2a980a2981443de1ceee3c96b76de86aba2e15a824b",
+   "source_modified": "2026-09-29"
+  },
+  "logs/_chatlog.json": {
+   "older": [
+    {
+     "commit": "2854c4b",
+     "published": "2026-09-29",
+     "sha256": "535c1115a812d11bd5e7fd46feed38a8aadee467b71236d3bed08efa768508c2"
+    }
+   ],
+   "sha256": "dfed114b6ff89c2a9b2dd9ad9b0ffe923adb20b6448677a30fa3c685e075afb3",
+   "source_modified": "2026-10-15"
+  },
+  "scores.csv": {
+   "older": [],
+   "sha256": "624dcf45ba7f0c9d2494e243dcbdfb1269fbad2e2df1b9eadfe83d7e58af624a",
+   "source_modified": "2026-09-29"
+  },
+  "stats.py": {
+   "older": [],
+   "sha256": "78504598ce1247229425851c6e7e01fd00b9a2aa60477973c15285a2b2d6be16",
+   "source_modified": "2026-09-29"
+  },
+  "systemprompt.md": {
+   "older": [],
+   "sha256": "76d9775c01046a4201f7969075537b2427800e45fdab0e5cc9e8f3eecd6362a3",
+   "source_modified": "2026-10-13"
+  },
+  "test_utils.py": {
+   "older": [],
+   "sha256": "d67dda8f511c044ca26f573c2ed6beb38e3f98f5e82e703148a87e9f4100a11b",
+   "source_modified": "2026-09-29"
+  },
+  "untangle/README.md": {
+   "older": [
+    {
+     "commit": "05c481d",
+     "published": "2026-10-15",
+     "sha256": "5897532c01530bef8786ad270ad58512fc44dc6139c4f32b1ef489df7065ff2a"
+    },
+    {
+     "commit": "98794c4",
+     "published": "2026-10-15",
+     "sha256": "58e7398825b8b20e3c39a2bc828097dde7a338d1e68aa678b396acac6f58a007"
+    }
+   ],
+   "sha256": "7f1b6243fa9fc5917c5512d3ec0a39e508fec67aed1510ed82b5bfcce63ace82",
+   "source_modified": "2026-10-15"
+  },
+  "untangle/check.py": {
+   "older": [],
+   "sha256": "9c62b98cec62a24bf464bb2e4cb0dc98b2e069b7092d31e74da84932eed067b7",
+   "source_modified": "2026-10-15"
+  },
+  "untangle/graph.json": {
+   "older": [],
+   "sha256": "53e91d6d3e9d4d0bb9ac81cdd707fd71773232b4979825caea13dbe8de6ed8d4",
+   "source_modified": "2026-10-15"
+  },
+  "untangle/view.py": {
+   "older": [
+    {
+     "commit": "98794c4",
+     "published": "2026-10-15",
+     "sha256": "e5c79320c7c78744cf0e10e684393f2b52c62770f3a26afbe32af0cd13deab41"
+    }
+   ],
+   "sha256": "74637c93eabd3bb6c579881ba7d150cbdf42ff332a6094ea80ae191357ac53cc",
+   "source_modified": "2026-10-15"
+  },
+  "utils.py": {
+   "older": [],
+   "sha256": "c524c02dcb1fa3c07ecbefaeeb6ce99dc7d8b4433af74e1bf606582755483227",
+   "source_modified": "2026-09-29"
+  }
+ },
+ "project": "P03"
+}
