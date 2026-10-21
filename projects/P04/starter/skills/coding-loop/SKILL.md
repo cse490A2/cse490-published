@@ -7,7 +7,7 @@ description: Use when a message asks to fix, add, change, build or improve code,
 
 Spec, decision, change, score, again. Each step leaves something a reader can check.
 
-1. Read the code the job names, SPEC.md, and a few files in articles/.
+1. Read the code the job names, SPEC.md and articles/README.md. Never read articles/all.jsonl: it is about 12 MB, far more than your context holds; SPEC.md and the README give its shape, one article per line.
 2. Decide whether the job needs a plan. A new program, or a change to how code behaves, does. A comment, a rename, or a one-line fix does not. Say which and why in one line.
 3. If it needs a plan: read skills/plan-mode/SKILL.md with read_file and follow it. Continue here after the user types approve.
 4. Make the change one file at a time with write_file. Say what changed and why, one line per file.
