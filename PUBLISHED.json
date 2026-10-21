@@ -376,8 +376,8 @@
     "artifact_id": "project-student-p04",
     "document_id": "1rprSPRvew_GUPVlEkvONEpBpHdYLNknpqSCobMCjo0c",
     "document_name": "P04 Handout",
-    "modified_time": "2026-10-21T05:38:22.705Z",
-    "published_at": "2026-10-21T05:38:42Z",
+    "modified_time": "2026-10-21T19:17:32.644Z",
+    "published_at": "2026-10-21T19:46:22Z",
     "source": "drive"
   },
   "projects/P04/SETUP.md": {
@@ -401,6 +401,7 @@
   "projects/P04/starter.zip": {
     "agent": "arian@agent.vibeclass",
     "derived_from": [
+      "projects/P04/starter/CHECK",
       "projects/P04/starter/SPEC.md",
       "projects/P04/starter/articles/README.md",
       "projects/P04/starter/articles/all.jsonl.gz",
@@ -410,12 +411,13 @@
       "projects/P04/starter/skills/plan-mode/SKILL.md",
       "projects/P04/starter/systemprompt.md"
     ],
-    "published_at": "2026-10-21T00:36:10Z",
+    "published_at": "2026-10-21T19:46:44Z",
     "source": "derived"
   },
   "projects/P04/starter/.starter.json": {
     "agent": "arian@agent.vibeclass",
     "derived_from": [
+      "projects/P04/starter/CHECK",
       "projects/P04/starter/SPEC.md",
       "projects/P04/starter/articles/README.md",
       "projects/P04/starter/articles/all.jsonl.gz",
@@ -425,8 +427,17 @@
       "projects/P04/starter/skills/plan-mode/SKILL.md",
       "projects/P04/starter/systemprompt.md"
     ],
-    "published_at": "2026-10-21T05:27:59Z",
+    "published_at": "2026-10-21T19:46:44Z",
     "source": "derived"
+  },
+  "projects/P04/starter/CHECK": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P04 starter CHECK",
+    "document_id": "1OSmsPQ1MieMFJ-3_ZwTPrULodHuVe4uq",
+    "document_name": "P04 starter CHECK",
+    "modified_time": "2026-10-21T19:08:24.307Z",
+    "published_at": "2026-10-21T19:46:39Z",
+    "source": "drive"
   },
   "projects/P04/starter/SPEC.md": {
     "agent": "arian@agent.vibeclass",
@@ -478,8 +489,8 @@
     "artifact_id": "starter:P04 starter skills/coding-loop/SKILL.md",
     "document_id": "1hQJoqTTlzywL0NhlpbtcSD8RUzE4rsLU",
     "document_name": "P04 starter skills/coding-loop/SKILL.md",
-    "modified_time": "2026-10-21T00:33:38.146Z",
-    "published_at": "2026-10-21T00:36:06Z",
+    "modified_time": "2026-10-21T19:08:26.172Z",
+    "published_at": "2026-10-21T19:46:39Z",
     "source": "drive"
   },
   "projects/P04/starter/skills/plan-mode/SKILL.md": {

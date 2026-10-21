@@ -1,6 +1,11 @@
 {
  "about": "fingerprints of the starter files; the setup wizard compares the files in a project folder with these to say whether each one is current",
  "files": {
+  "CHECK": {
+   "older": [],
+   "sha256": "9754855a565486e31402303aab836dbfba22a7d1a26ad9bb186ceb4921fbbaa0",
+   "source_modified": "2026-10-21"
+  },
   "SPEC.md": {
    "older": [
     {
@@ -62,6 +67,11 @@
   "skills/coding-loop/SKILL.md": {
    "older": [
     {
+     "commit": "12f9488",
+     "published": "2026-10-20",
+     "sha256": "8e377874373041587d4a6684d2762a7a5fd5e316fb31fe8e397d33f0b6336d58"
+    },
+    {
      "commit": "eb773ce",
      "published": "2026-10-20",
      "sha256": "1499dc5355e49a15bcf10fe3020375e6b8a8d727a2b31f3c75b3785e4bad2ca2"
@@ -87,7 +97,7 @@
      "sha256": "7211dde215973f0e79deced9a547d6c4d92c68d5e1eb5070d0a4ab555de32209"
     }
    ],
-   "sha256": "8e377874373041587d4a6684d2762a7a5fd5e316fb31fe8e397d33f0b6336d58",
+   "sha256": "c46c71a3993802b0606519c353e99aa84bd05140feaa23bfda6dd9350cb1f604",
    "source_modified": "2026-10-21"
   },
   "skills/plan-mode/SKILL.md": {

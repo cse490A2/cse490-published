@@ -9,35 +9,38 @@ permalink: "/projects/P04/"
 # Project 4: Driving a Coding Agent
 
 Due: Tuesday 11:59 pm  
-Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, two skills, and two hooks, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-5-5 through the course gateway.
+Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, skills, and hooks, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-5-5 through the course gateway.
 
 ## Instructions
 
-### Part 1: the files
+### 
 
-1. Run the setup wizard or the setup guide first: it makes your Project 4 folder, a copy of your Project 3 folder with this week's files placed over it, and checks that your harness runs and reads files. Then give your agent its rules. systemprompt.md is the first message in every request your harness sends. systemprompt.md should now have multiple points for your instruction to follow. Change one thing: the two placeholder lines under Your rules, each written like the Constraints, "Never ..." or "Ask before ...", for something that went wrong last week. Feel free to adjust these lines to whatever works best for your agent.   
-   1. Similarly to Project 3, the system prompt should be loaded with every user message.  
-2. Add a skill. Each SKILL.md opens with two lines: name, and description, which says when to use the skill. Alter your harness to load skills from skills/\<name\>/SKILL.md. Prompt the LiteLLM Chat:  
+1. Run the setup wizard or the setup guide first.  
+   1. systemprompt.md should now have multiple points for your instruction to follow. Change one thing: the two placeholder lines under Your rules, each written like the Constraints, "Never ..." or "Ask before ...", for something that went wrong last week. Feel free to adjust these lines to whatever works best for your agent.   
+   2. Similarly to Project 3, the system prompt should be loaded with every user message.
+
+2. Wire in the provided skill files. Each SKILL.md opens with two lines: name, and description, which says when to use the skill. Manually reach each skill file, then alter your harness to load skills from skills/\<name\>/SKILL.md. Prompt the LiteLLM Chat:  
    1. "Read harness.py. At startup, have it read every skills/\*/SKILL.md and keep each one's name and description lines in the context. Change nothing else."  
    2. "Read harness.py. On each user message, if it matches a skill's description line, add that skill's full text to the context for that turn only. Change nothing else."  
-   3. Check it: restart and ask your harness "what skills do you have". It should respond with plan-mode and coding-loop.  
-3. Manually read the two skills in skills/ once, so you know what your agent will do. plan-mode reads and asks, writes PLAN.md, and changes nothing until you type approve; start a message with /plan to invoke it yourself. coding-loop is the loop from lecture; it decides whether a job needs a plan.  
-4. Add two hooks. Two things should happen on their own, with no model deciding them. After every file your agent writes, the score runs and its output lands in the chat, so you both see at once whether the change helped (pedia.py is the program you build in step 6; until it exists, the hook just says so). And no file gets written until you have read a plan and typed approve, so the agent cannot run ahead of you. Code the harness runs at a fixed point in its loop like this is called a hook; the yes it asks before each command is one already. Prompt the LiteLLM chat:  
-   1. "Read harness.py. After every write\_file the harness runs, run python pedia.py score with the same Python that runs the harness, and add its output to the context as a message from the harness. If pedia.py does not exist yet, add a line saying so. Change nothing else."  
-   2. "Read harness.py. Add a plan gate: before the harness runs a write\_file whose path is not PLAN.md or profile.json, it checks that PLAN.md exists and that I have typed approve since the current job began. If not, it does not run the call and adds a message from the harness saying waiting for approve. Change nothing else."  
-5. Test your harness with two messages:   
-   1. "Delete the articles folder": it asks you first; answer no, and nothing is deleted. If it deletes anyway, your rules are not reaching the model: check that the harness sends systemprompt.md with every request (step 1), and get the folder back by unzipping the starter again.   
-   2. "what time is it": it answers without naming a skill.   
-   3. If a test fails, redo the step that built it, then repeat the test.  
-6. Now put it all together. Have your agent build pedia.py, a search over the thousand Wikipedia articles in articles/, shaped to you. Send: "Read SPEC.md and build pedia.py to it. Standard library only." It says this needs a plan and asks two questions: which subjects win a tie, and how many results to show. Answer, read PLAN.md, type approve; the gate holds every write until you do. Then watch the score after each write until it prints PASS; the misses it lists are what the next write fixes.  
-7. Try it. Run python pedia.py search with something you have wondered about this week, then python pedia.py score.
+   3. Check it: restart and ask your harness "what skills do you have". It should respond with plan-mode and coding-loop.
+
+3. In Project 3, we introduced user confirmation before the agent executes a file – that’s a hook\! Hooks are like breakpoints, and can be used deterministically to trigger processes. This is especially useful when something should happen every time, whether or not your model thinks of it\!  
+   1. Add the ‘PreToolUse’ to your harness from the referenced pseudocode. This allows your harness to check for user approval before using a tool. We can specify which tools this hook will apply to; in the pseudocode, PreToolUse will be applied to the “write\_file” tool. When the agent wants to write a file, the harness lets it only if you typed approve as your last message, except that writing PLAN.md or profile.json is always allowed.  
+   2. Validate your hook: ask your harness to create a temporary new file. It says "waiting for approval" and creates nothing; type approve, and the file appears.   
+   3.  Add a second hook, PostToolUse, to give the coding-loop skill a way to test what it writes. Refer to the pseudocode: after a write\_file, if the project provides a CHECK file, the hook runs the command in it and puts the output in the context. The pseudocode's if statement matters: the tests runs only after a write, and only when the project says what the test is; the model never decides whether to test. In Project 4, CHECK holds python pedia.py score.
+
+4. Now put it all together. Have your agent build pedia.py, a local search engine for Wikipedia articles in articles/.   
+   1. Send: "Read SPEC.md and build pedia.py to it. Standard library only." SPEC.md includes a few open-ended questions for the user, which should trigger the harness to execute plan mode. Answer the questions and approve once finished. This then should trigger the coding loop skill.   
+5. Once your agent finishes, try it out: Run python pedia.py search with something you have wondered about this week, then python pedia.py score to perform a search test.  
+ 
+
 
 ## Turnin
 
 By Tuesday 11:59 pm:
 
-* Push your harness repo with harness.py, systemprompt.md, PLAN.md, profile.json, the skills/ folder, pedia.py, tests/, and transcript.md. Leave out your .env file and the articles folder.  
-* Submit the repository link to the Project 4 assignment in Canvas.
+* In VS Code, open the Command Palette (Cmd+Shift+P on Mac or Ctrl+Shift+P on Windows) and run CSE 490: Package for turn-in. The zip carries harness.py, systemprompt.md, PLAN.md, profile.json, the skills/ folder, pedia.py, tests/, transcript.md and your logs, and leaves out .env.  
+* Upload P04-submission.zip to the Project 4 assignment in Canvas and submit.
 
 ## Grading
 
@@ -45,4 +48,26 @@ A model will autograde your submission. It reads your repository and checks that
 
 ## Reference
 
-Switching the harness to Qwen: internal/Qwen3.6-35B-A3B costs nothing. Add this field to the JSON body of every request your harness sends, beside "model" and "messages": "extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}}. Then set "model" to "internal/Qwen3.6-35B-A3B". If you run out of credits on Haiku, this is the switch.
+If you run out of model usage, use Qwen3.6 as a fallback: internal/Qwen3.6-35B-A3B costs nothing. Add this field to the JSON body of every request your harness sends, beside "model" and "messages": "extra\_body": {"chat\_template\_kwargs": {"enable\_thinking": false}}. Then set "model" to "internal/Qwen3.6-35B-A3B". 
+
+User Approve Write Hook Pseudocode   
+  \# approved \= False  
+  \#  
+  \# after:  user \= input("\>\>\> ")  
+  \#     approved \= (user \== "approve")  
+  \#  
+  \# before: result \= run\_tool(command, args)  
+  \#     if command \== "write\_file" and args\["path"\] not in ("PLAN.md", "profile.json"):  
+  \#         if not approved:  
+  \#             context.append("harness: waiting for approve")  
+  \#             continue
+
+Run Code Test Hook Pseudocode  
+  \# after:  result \= run\_tool(command, args)  
+  \#     if command \== "write\_file" and os.path.exists("CHECK"):  
+  \#         output \= run(open("CHECK").read())  
+  \#         context.append("harness: " \+ output)
+
+1. ~~"Read harness.py. After every write\_file the harness runs, run python pedia.py score with the same Python that runs the harness, and add its output to the context as a message from the harness. If pedia.py does not exist yet, add a line saying so. Change nothing else."~~  
+   2. ~~"Read harness.py. Add a plan gate: before the harness runs a write\_file whose path is not PLAN.md or profile.json, it checks that PLAN.md exists and that I have typed approve since the current job began. If not, it does not run the call and adds a message from the harness saying waiting for approve. Change nothing else."~~
+
