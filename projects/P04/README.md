@@ -67,6 +67,3 @@ Run Code Test Hook Pseudocode
   \#         output \= run(open("CHECK").read())  
   \#         context.append("harness: " \+ output)
 
-3. ~~"Read harness.py. After every write\_file the harness runs, run python pedia.py score with the same Python that runs the harness, and add its output to the context as a message from the harness. If pedia.py does not exist yet, add a line saying so. Change nothing else."~~  
-   4. ~~"Read harness.py. Add a plan gate: before the harness runs a write\_file whose path is not PLAN.md or profile.json, it checks that PLAN.md exists and that I have typed approve since the current job began. If not, it does not run the call and adds a message from the harness saying waiting for approve. Change nothing else."~~
-
