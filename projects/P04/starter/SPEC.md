@@ -6,9 +6,18 @@ profile always gives the same output.
 
 ## Commands
 
-    python pedia.py search "<query>"   the top articles, best first, shaped by
-                                       profile.json
+    python pedia.py search "<query>"   the top articles, best first, numbered,
+                                       shaped by profile.json; then it asks which
+                                       one to read and prints that article's summary
     python pedia.py score              right first answers over questions.csv
+
+search prints its results as a numbered list, one title per line with its subject,
+then asks "Read which? [1-N, Enter for none]". A number prints that article's
+summary: the first paragraph of its Simple English text when the article has one,
+else the first paragraph of its English text, then the article's title and subject
+on a last line. Enter, or any other input, prints nothing more. When search's
+input is not a terminal it never asks. score runs search's ranking directly and
+never its prompt.
 
 score reads questions.csv (question, answer title), runs search for each question
 with the profile's subject preference switched off, and counts the questions whose

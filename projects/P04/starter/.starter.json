@@ -15,6 +15,11 @@
   "SPEC.md": {
    "older": [
     {
+     "commit": "12f9488",
+     "published": "2026-10-20",
+     "sha256": "a8ab4082d5585369ad045d370a6129f7e20a3dda171062eb403eb617fa506366"
+    },
+    {
      "commit": "dbe47e7",
      "published": "2026-10-19",
      "sha256": "a07d4ac09cc2d4b93228176315764eb2712d7eddf897410007d18f251f0a4632"
@@ -25,8 +30,8 @@
      "sha256": "0cf36d996718b499e520b3d9875e9ee699aa12fd06af8f428e37e2d93582acca"
     }
    ],
-   "sha256": "a8ab4082d5585369ad045d370a6129f7e20a3dda171062eb403eb617fa506366",
-   "source_modified": "2026-10-21"
+   "sha256": "7cd75b043e30a039f48a648fd90de11af78d5effcf6e22fbd6337ed77cf1c6a9",
+   "source_modified": "2026-10-22"
   },
   "articles/README.md": {
    "older": [

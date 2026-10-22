@@ -412,7 +412,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T23:46:46Z",
+    "published_at": "2026-10-22T00:03:38Z",
     "source": "derived"
   },
   "projects/P04/starter/.starter.json": {
@@ -429,7 +429,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-21T23:46:45Z",
+    "published_at": "2026-10-22T00:03:38Z",
     "source": "derived"
   },
   "projects/P04/starter/CHECK": {
@@ -446,8 +446,8 @@
     "artifact_id": "starter:P04 starter SPEC.md",
     "document_id": "16JCYtAg969gVhfEKO_aYmrg8OJZ-fzSw",
     "document_name": "P04 starter SPEC.md",
-    "modified_time": "2026-10-21T00:33:33.808Z",
-    "published_at": "2026-10-21T00:36:06Z",
+    "modified_time": "2026-10-22T00:02:58.041Z",
+    "published_at": "2026-10-22T00:03:31Z",
     "source": "drive"
   },
   "projects/P04/starter/articles/README.md": {
