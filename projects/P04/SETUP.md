@@ -71,7 +71,7 @@ Add this entry inside the outer braces:
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 `"chat.agent.enabled": false`  
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose, and the course models are not on its first screen: type the model's name in the search box at the top of the picker, haiku for example, and pick the entry marked CSE 490\. If nothing appears, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the models.  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. The model picker at the bottom of the chat box reads Auto. Leave it on Auto: that is the mode this project uses. Do not pick a model from the list. If the picker asks you to sign in to GitHub first, sign in.  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
@@ -127,7 +127,7 @@ Add this entry inside the outer braces:
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 `"chat.agent.enabled": false`  
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose, and the course models are not on its first screen: type the model's name in the search box at the top of the picker, haiku for example, and pick the entry marked CSE 490\. If nothing appears, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the models.  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. The model picker at the bottom of the chat box reads Auto. Leave it on Auto: that is the mode this project uses. Do not pick a model from the list. If the picker asks you to sign in to GitHub first, sign in.  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
@@ -183,7 +183,7 @@ Add this entry inside the outer braces:
 Replace \<your key here\> with your API key. Save the file.  
 This week the AI answers in chat and you type every change yourself. Add this line beside the entry, with a comma between them, and save:  
 `"chat.agent.enabled": false`  
-Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the model picker at the bottom of the chat box. It reads Auto until you choose, and the course models are not on its first screen: type the model's name in the search box at the top of the picker, haiku for example, and pick the entry marked CSE 490\. If nothing appears, click "Manage Models...", then "Add Models", then "LiteLLM", choose the CSE 490 server, and tick the models.  
+Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. The model picker at the bottom of the chat box reads Auto. Leave it on Auto: that is the mode this project uses. Do not pick a model from the list. If the picker asks you to sign in to GitHub first, sign in.  
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
