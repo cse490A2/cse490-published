@@ -8,7 +8,7 @@ permalink: "/projects/P04/"
 
 # Project 4: Driving a Coding Agent
 
-Due: Tuesday 11:59 pm  
+**Due: Tuesday 11:59 pm**  
 Last week you built the loop. This week you hire it. Keep building the harness you wrote in Project 3 and turn it into a coding agent: give it standing rules, skills, and hooks, then hand it a coding job and steer. You write no harness code yourself. Every change to harness.py is a prompt to the LiteLLM chat in VS Code, as in Project 3, and your agent runs on external/haiku-5-5 through the course gateway.
 
 ## Instructions

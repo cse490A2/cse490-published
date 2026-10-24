@@ -36,12 +36,12 @@
     },
     "P04": {
       "assignment_id": 11858811,
-      "desc_fp": "6fc774955b965ef8",
-      "due_at": null,
-      "due_source": "handout has no due weekday",
+      "desc_fp": "a74c95db4328df91",
+      "due_at": "2026-10-28T06:59:00Z",
+      "due_source": "course doc",
       "module_id": 3986557,
       "name": "P04: Driving a Coding Agent",
-      "published": false,
+      "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11858811"
     }
   },
@@ -376,8 +376,8 @@
     "artifact_id": "project-student-p04",
     "document_id": "1rprSPRvew_GUPVlEkvONEpBpHdYLNknpqSCobMCjo0c",
     "document_name": "P04 Handout",
-    "modified_time": "2026-10-22T00:38:03.679Z",
-    "published_at": "2026-10-22T00:38:22Z",
+    "modified_time": "2026-10-24T23:58:52.531Z",
+    "published_at": "2026-10-24T23:59:17Z",
     "source": "drive"
   },
   "projects/P04/SETUP.md": {
