@@ -6,7 +6,7 @@
     },
     "P01": {
       "assignment_id": 11686232,
-      "desc_fp": "6f1444175106fe0c",
+      "desc_fp": "632a5a8d7eb5a49a",
       "due_at": "2026-10-07T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3927113,
@@ -16,17 +16,17 @@
     },
     "P02": {
       "assignment_id": 11743630,
-      "desc_fp": "c6bec51571440f94",
+      "desc_fp": "cb2157eae790cdf1",
       "due_at": "2026-10-14T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3977788,
       "name": "P02: Insert Prompt to Play",
-      "published": false,
+      "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11743630"
     },
     "P03": {
       "assignment_id": 11669941,
-      "desc_fp": "19f58aeb71339729",
+      "desc_fp": "e315f8f61b001a9b",
       "due_at": "2026-10-21T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3984420,
@@ -36,7 +36,7 @@
     },
     "P04": {
       "assignment_id": 11858811,
-      "desc_fp": "a74c95db4328df91",
+      "desc_fp": "a6df59fcf795b3b9",
       "due_at": "2026-10-28T06:59:00Z",
       "due_source": "course doc",
       "module_id": 3986557,
