@@ -80,7 +80,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 14: version 0.5.3 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 21: version 0.5.4 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
 
 ### **6\. Project files**
 
@@ -147,7 +147,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 14: version 0.5.3 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 21: version 0.5.4 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
 
 ### **6\. Project files**
 
@@ -214,7 +214,7 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. Click the
 
 ### **5\. Course extension**
 
-Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 14: version 0.5.3 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 21: version 0.5.4 or newer reads where VS Code 1.141 keeps your chats). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
 
 ### **6\. Project files**
 
