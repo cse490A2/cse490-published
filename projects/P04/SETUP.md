@@ -75,7 +75,15 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Cmd+I. The model
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **6\. Harness check**
+### **6\. Course extension**
+
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 26: version 0.5.5 or newer can say why a chat log stays empty). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
+
+### **7\. Chat log**
+
+In VS Code, open your project folder itself (File, then Open Folder, then p04), not the folder above it: the Explorer's top entry must read P04. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running. Send the model one message in the chat panel and wait half a minute: the status bar should read "Chat log: 1 turn", and every chat with the course models is then saved to logs/\_chatlog.md in your project folder. If it stays at 0 turns, run "CSE 490: Why is my chat log empty?" from the Command Palette: it writes logs/\_chatlog-doctor.txt and says what it found; post that file on Ed and go on with the project, since the grader also reads your chats from the course gateway's record of your key.
+
+### **8\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  
@@ -131,7 +139,15 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. The model
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **6\. Harness check**
+### **6\. Course extension**
+
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 26: version 0.5.5 or newer can say why a chat log stays empty). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
+
+### **7\. Chat log**
+
+In VS Code, open your project folder itself (File, then Open Folder, then p04), not the folder above it: the Explorer's top entry must read P04. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running. Send the model one message in the chat panel and wait half a minute: the status bar should read "Chat log: 1 turn", and every chat with the course models is then saved to logs/\_chatlog.md in your project folder. If it stays at 0 turns, run "CSE 490: Why is my chat log empty?" from the Command Palette: it writes logs/\_chatlog-doctor.txt and says what it found; post that file on Ed and go on with the project, since the grader also reads your chats from the course gateway's record of your key.
+
+### **8\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  
@@ -187,7 +203,15 @@ Open the chat panel: the speech-bubble icon at the top, or Ctrl+Alt+I. The model
    
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P04/images/setup-2.png)
 
-### **6\. Harness check**
+### **6\. Course extension**
+
+Download the course extension, cse490-tools.vsix, from https://github.com/cse490A2/cse490-published/releases/latest/download/cse490-tools.vsix (download it again if you installed it before October 26: version 0.5.5 or newer can say why a chat log stays empty). In VS Code, open the Extensions panel, open the three-dots menu at the top, choose "Install from VSIX...", and pick the downloaded file. It starts once your project files are in place; the chat log step covers that.
+
+### **7\. Chat log**
+
+In VS Code, open your project folder itself (File, then Open Folder, then p04), not the folder above it: the Explorer's top entry must read P04. Then restart VS Code's extensions (the "Restart Extensions" button at the top of the Extensions panel, or "Developer: Reload Window" from the Command Palette). The status bar reads "Chat log: 0 turns" when the extension is running. Send the model one message in the chat panel and wait half a minute: the status bar should read "Chat log: 1 turn", and every chat with the course models is then saved to logs/\_chatlog.md in your project folder. If it stays at 0 turns, run "CSE 490: Why is my chat log empty?" from the Command Palette: it writes logs/\_chatlog-doctor.txt and says what it found; post that file on Ed and go on with the project, since the grader also reads your chats from the course gateway's record of your key.
+
+### **8\. Harness check**
 
 In VS Code, choose Terminal, then New Terminal. It opens in your Project 4 folder.  
 act: tap=item  

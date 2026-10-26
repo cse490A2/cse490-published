@@ -385,8 +385,8 @@
     "artifact_id": "project-prereq-p04",
     "document_id": "1TWIdR3e6AoNpjrkphQzCycH-6R-na-X06HrzSfD4I_k",
     "document_name": "P04 Prereq Instructions",
-    "modified_time": "2026-10-22T04:20:55.798Z",
-    "published_at": "2026-10-22T04:25:06Z",
+    "modified_time": "2026-10-26T20:15:42.374Z",
+    "published_at": "2026-10-26T21:34:33Z",
     "source": "drive"
   },
   "projects/P04/SUBMISSION.md": {
@@ -412,7 +412,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-22T00:03:38Z",
+    "published_at": "2026-10-26T21:34:52Z",
     "source": "derived"
   },
   "projects/P04/starter/.starter.json": {
@@ -429,7 +429,7 @@
       "projects/P04/starter/systemprompt.md",
       "projects/P04/starter/tests/README.md"
     ],
-    "published_at": "2026-10-22T00:03:38Z",
+    "published_at": "2026-10-26T21:34:52Z",
     "source": "derived"
   },
   "projects/P04/starter/CHECK": {
@@ -473,8 +473,8 @@
     "artifact_id": "starter:P04 starter logs/_chatlog.json",
     "document_id": "1pkbHO_owJO_wh-ZRsUOdO_k99qM-DYyn",
     "document_name": "P04 starter logs/_chatlog.json",
-    "modified_time": "2026-10-20T00:45:41.669Z",
-    "published_at": "2026-10-20T00:46:12Z",
+    "modified_time": "2026-10-26T21:31:50.057Z",
+    "published_at": "2026-10-26T21:34:45Z",
     "source": "drive"
   },
   "projects/P04/starter/questions.csv": {

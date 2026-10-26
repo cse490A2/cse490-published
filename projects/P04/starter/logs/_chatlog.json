@@ -19,9 +19,11 @@
    "profile.json",
    "skills/plan-mode/SKILL.md",
    "skills/coding-loop/SKILL.md",
-   "pedia.py",
-   "transcript.md"
+   "pedia.py"
   ],
-  "artifacts": false
+  "artifacts": false,
+  "wanted": {
+   "transcript.md": "the coding-loop skill writes it at the end of each job."
+  }
  }
 }
