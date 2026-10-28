@@ -2,7 +2,7 @@
 title: "P05: Building an Animation with MCP"
 parent: "Projects"
 nav_order: 5
-has_children: false
+has_children: true
 permalink: "/projects/P05/"
 ---
 
