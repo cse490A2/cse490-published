@@ -43,6 +43,16 @@
       "name": "P04: Driving a Coding Agent",
       "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11858811"
+    },
+    "P05": {
+      "assignment_id": 11703669,
+      "desc_fp": "0ea5d96bd936d198",
+      "due_at": "2026-11-04T07:59:00Z",
+      "due_source": "course doc",
+      "module_id": 3992127,
+      "name": "P05: Building an Animation with MCP",
+      "published": false,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11703669"
     }
   },
   "lectures/L01/slides.pdf": {
