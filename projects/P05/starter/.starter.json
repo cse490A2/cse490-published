@@ -1,0 +1,36 @@
+{
+ "about": "fingerprints of the starter files; the setup wizard compares the files in a project folder with these to say whether each one is current",
+ "files": {
+  "RULES.md": {
+   "older": [],
+   "sha256": "049268a6ed750930ae08425520df16e842b2d0b6c88fc28dfa989bc2f7bafba0",
+   "source_modified": "2026-10-29"
+  },
+  "checker.py": {
+   "older": [],
+   "sha256": "c53e45aff74ee920dee5db58a228dbed8cf942ce749da020f4c9906fc691faee",
+   "source_modified": "2026-10-29"
+  },
+  "checker_blend.py": {
+   "older": [],
+   "sha256": "8ffeb959d1bbda833c6c366cb64f5e07d9bb93cb1854eea1f6f0937c1282860b",
+   "source_modified": "2026-10-29"
+  },
+  "fixtures/scene_brief.md": {
+   "older": [],
+   "sha256": "68b4669dc2f9b09a3a067689cdae46fb3bdcc65067df1386d34648637a849271",
+   "source_modified": "2026-10-29"
+  },
+  "requirements.txt": {
+   "older": [],
+   "sha256": "8705d5c814397cedd4b037372e922bb6e68124d499e4eb4c6adbc638cd34eb0e",
+   "source_modified": "2026-10-29"
+  },
+  "skills/blender-scene/SKILL.md": {
+   "older": [],
+   "sha256": "bcdbae6bea5ed099739131ae2c2baf84405b23fd6be6b338cf6c7067bef9ef70",
+   "source_modified": "2026-10-29"
+  }
+ },
+ "project": "P05"
+}

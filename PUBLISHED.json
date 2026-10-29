@@ -549,5 +549,85 @@
     "modified_time": "2026-10-28T09:29:54.650Z",
     "published_at": "2026-10-28T09:48:04Z",
     "source": "drive"
+  },
+  "projects/P05/starter.zip": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P05/starter/RULES.md",
+      "projects/P05/starter/checker.py",
+      "projects/P05/starter/checker_blend.py",
+      "projects/P05/starter/fixtures/scene_brief.md",
+      "projects/P05/starter/requirements.txt",
+      "projects/P05/starter/skills/blender-scene/SKILL.md"
+    ],
+    "published_at": "2026-10-29T21:05:04Z",
+    "source": "derived"
+  },
+  "projects/P05/starter/.starter.json": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P05/starter/RULES.md",
+      "projects/P05/starter/checker.py",
+      "projects/P05/starter/checker_blend.py",
+      "projects/P05/starter/fixtures/scene_brief.md",
+      "projects/P05/starter/requirements.txt",
+      "projects/P05/starter/skills/blender-scene/SKILL.md"
+    ],
+    "published_at": "2026-10-29T21:05:04Z",
+    "source": "derived"
+  },
+  "projects/P05/starter/RULES.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P05 starter RULES.md",
+    "document_id": "1KeuNsHfjmKClvUC7C8cHuCQIMpSoTTz0",
+    "document_name": "P05 starter RULES.md",
+    "modified_time": "2026-10-29T21:04:33.224Z",
+    "published_at": "2026-10-29T21:05:00Z",
+    "source": "drive"
+  },
+  "projects/P05/starter/checker.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P05 starter checker.py",
+    "document_id": "1Viov7zSF7BMWSMQzEo-79fooOpVivjIB",
+    "document_name": "P05 starter checker.py",
+    "modified_time": "2026-10-29T21:04:34.405Z",
+    "published_at": "2026-10-29T21:05:00Z",
+    "source": "drive"
+  },
+  "projects/P05/starter/checker_blend.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P05 starter checker_blend.py",
+    "document_id": "1eT83HZPxe9lYr8jwxJJJ9OfYZy8Efe7k",
+    "document_name": "P05 starter checker_blend.py",
+    "modified_time": "2026-10-29T21:04:35.585Z",
+    "published_at": "2026-10-29T21:05:00Z",
+    "source": "drive"
+  },
+  "projects/P05/starter/fixtures/scene_brief.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P05 starter fixtures/scene_brief.md",
+    "document_id": "1MYjUrGnVNBnt-nDrHuneJtQmyEhiZuN3",
+    "document_name": "P05 starter fixtures/scene_brief.md",
+    "modified_time": "2026-10-29T21:04:39.251Z",
+    "published_at": "2026-10-29T21:05:00Z",
+    "source": "drive"
+  },
+  "projects/P05/starter/requirements.txt": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P05 starter requirements.txt",
+    "document_id": "1dTxYWOi5Q3efrSN4zxhwF9FbWp-FdQil",
+    "document_name": "P05 starter requirements.txt",
+    "modified_time": "2026-10-29T21:04:36.781Z",
+    "published_at": "2026-10-29T21:05:00Z",
+    "source": "drive"
+  },
+  "projects/P05/starter/skills/blender-scene/SKILL.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P05 starter skills/blender-scene/SKILL.md",
+    "document_id": "1BGu8qnsGIxcKhnReXvbb8BuSKbW_sv8I",
+    "document_name": "P05 starter skills/blender-scene/SKILL.md",
+    "modified_time": "2026-10-29T21:04:38.014Z",
+    "published_at": "2026-10-29T21:05:00Z",
+    "source": "drive"
   }
 }
