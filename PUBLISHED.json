@@ -53,6 +53,16 @@
       "name": "P05: Building an Animation with MCP",
       "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11703669"
+    },
+    "P06": {
+      "assignment_id": 11882266,
+      "desc_fp": "39eaf7d5421967e4",
+      "due_at": "2026-11-11T07:59:00Z",
+      "due_source": "course doc",
+      "module_id": 3995381,
+      "name": "P06: Fixing Code You Did Not Write",
+      "published": false,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11882266"
     }
   },
   "lectures/L01/slides.pdf": {
@@ -645,7 +655,7 @@
     "document_id": "1x624MNT0kMthoA75qEhx0iYJerYphhX7NUQaziT6rCA",
     "document_name": "P06 Prereq Instructions",
     "modified_time": "2026-11-02T23:20:47.049Z",
-    "published_at": "2026-11-02T23:20:59Z",
+    "published_at": "2026-11-02T23:21:53Z",
     "source": "drive"
   },
   "projects/P06/starter.zip": {

@@ -1,6 +1,6 @@
 ---
 title: "P06 setup"
-parent: "P06"
+parent: "P06: Fixing Code You Did Not Write"
 grand_parent: "Projects"
 nav_order: 1
 permalink: "/projects/P06/setup/"
