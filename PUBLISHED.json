@@ -629,5 +629,147 @@
     "modified_time": "2026-10-29T21:04:38.014Z",
     "published_at": "2026-10-29T21:05:00Z",
     "source": "drive"
+  },
+  "projects/P06/README.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-student-p06",
+    "document_id": "13mU_8OOpH_5mGLSLG9KxQXnSpQUXtZCcxjm2Bkcgp38",
+    "document_name": "P06 Handout",
+    "modified_time": "2026-11-02T23:20:46.338Z",
+    "published_at": "2026-11-02T23:21:06Z",
+    "source": "drive"
+  },
+  "projects/P06/SETUP.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-prereq-p06",
+    "document_id": "1x624MNT0kMthoA75qEhx0iYJerYphhX7NUQaziT6rCA",
+    "document_name": "P06 Prereq Instructions",
+    "modified_time": "2026-11-02T23:20:47.049Z",
+    "published_at": "2026-11-02T23:20:59Z",
+    "source": "drive"
+  },
+  "projects/P06/starter.zip": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P06/starter/.github/workflows/checks.yml",
+      "projects/P06/starter/AGENTS.md",
+      "projects/P06/starter/course/images/940x2.png",
+      "projects/P06/starter/course/images/example.jpg",
+      "projects/P06/starter/course/images/hills.png",
+      "projects/P06/starter/course/images/rainbow.png",
+      "projects/P06/starter/course/images/small.png",
+      "projects/P06/starter/course/images/sticker.gif",
+      "projects/P06/starter/course/issues.json",
+      "projects/P06/starter/course/thumbor.conf"
+    ],
+    "published_at": "2026-11-02T23:21:21Z",
+    "source": "derived"
+  },
+  "projects/P06/starter/.github/workflows/checks.yml": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter .github/workflows/checks.yml",
+    "document_id": "101lM14516OyKthGu2niqQTp3IW2_NoFT",
+    "document_name": "P06 starter .github/workflows/checks.yml",
+    "modified_time": "2026-10-30T02:57:38.881Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/.starter.json": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P06/starter/.github/workflows/checks.yml",
+      "projects/P06/starter/AGENTS.md",
+      "projects/P06/starter/course/images/940x2.png",
+      "projects/P06/starter/course/images/example.jpg",
+      "projects/P06/starter/course/images/hills.png",
+      "projects/P06/starter/course/images/rainbow.png",
+      "projects/P06/starter/course/images/small.png",
+      "projects/P06/starter/course/images/sticker.gif",
+      "projects/P06/starter/course/issues.json",
+      "projects/P06/starter/course/thumbor.conf"
+    ],
+    "published_at": "2026-11-02T23:21:21Z",
+    "source": "derived"
+  },
+  "projects/P06/starter/AGENTS.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter AGENTS.md",
+    "document_id": "1wMjitvnBX2R4cSQ5OxayTy18nUfjsJP0",
+    "document_name": "P06 starter AGENTS.md",
+    "modified_time": "2026-10-30T02:57:34.442Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/images/940x2.png": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/images/940x2.png",
+    "document_id": "1BKa0vnTyYWA_OEHAPqGWvxDK0YvyCbbw",
+    "document_name": "P06 starter course/images/940x2.png",
+    "modified_time": "2026-10-30T02:57:40.233Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/images/example.jpg": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/images/example.jpg",
+    "document_id": "1K1fTb86MFg0PmTvdPidxH6C9Hxrv5HWE",
+    "document_name": "P06 starter course/images/example.jpg",
+    "modified_time": "2026-10-30T02:57:42.626Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/images/hills.png": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/images/hills.png",
+    "document_id": "1_tilcMNmfhfp9HbEUcHteiLA0mqjsyVy",
+    "document_name": "P06 starter course/images/hills.png",
+    "modified_time": "2026-10-30T02:57:45.137Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/images/rainbow.png": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/images/rainbow.png",
+    "document_id": "1EzhUVN69ZWf-k_D_VezcVnaNK7eD8JiW",
+    "document_name": "P06 starter course/images/rainbow.png",
+    "modified_time": "2026-10-30T02:57:48.207Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/images/small.png": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/images/small.png",
+    "document_id": "1WZGNApcB0X51YNeAykKhwG5ZcQOK18n3",
+    "document_name": "P06 starter course/images/small.png",
+    "modified_time": "2026-10-30T02:57:50.693Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/images/sticker.gif": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/images/sticker.gif",
+    "document_id": "1N6Q0KCFmYVtxRDSnckeIzt7afR9f-jEQ",
+    "document_name": "P06 starter course/images/sticker.gif",
+    "modified_time": "2026-10-30T02:57:54.322Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/issues.json": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/issues.json",
+    "document_id": "1UWXVwX0Q_fZ09gxYBYQ6MeZAAtfie6O_",
+    "document_name": "P06 starter course/issues.json",
+    "modified_time": "2026-10-30T02:57:37.515Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
+  },
+  "projects/P06/starter/course/thumbor.conf": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P06 starter course/thumbor.conf",
+    "document_id": "1J9S-HB5_hdha7d9LN71LBk26NKIg0Wl_",
+    "document_name": "P06 starter course/thumbor.conf",
+    "modified_time": "2026-10-30T02:57:36.060Z",
+    "published_at": "2026-11-02T23:21:15Z",
+    "source": "drive"
   }
 }

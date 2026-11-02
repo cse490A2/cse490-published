@@ -1,0 +1,56 @@
+{
+ "about": "fingerprints of the starter files; the setup wizard compares the files in a project folder with these to say whether each one is current",
+ "files": {
+  ".github/workflows/checks.yml": {
+   "older": [],
+   "sha256": "7a95c8d2c038286971628390ca083a45d1d4a152550a99c54bd924f35659b87c",
+   "source_modified": "2026-10-30"
+  },
+  "AGENTS.md": {
+   "older": [],
+   "sha256": "6b82db5010b57f14fd650fc8d14efcf4f2b836a99583a5a22f8200896d2e7fec",
+   "source_modified": "2026-10-30"
+  },
+  "course/images/940x2.png": {
+   "older": [],
+   "sha256": "44b65ef7418871d22327be924fe33082ad0f5d983179b4e3964182c389c86c63",
+   "source_modified": "2026-10-30"
+  },
+  "course/images/example.jpg": {
+   "older": [],
+   "sha256": "c7ba629fe133a0cf155cfdd10ceb4da1923cce097dcd18e8867c8b107b157ee6",
+   "source_modified": "2026-10-30"
+  },
+  "course/images/hills.png": {
+   "older": [],
+   "sha256": "36f65379cf93061a63b303e18ac775f61c2aade119a5dee9c5b6dc6494ed0757",
+   "source_modified": "2026-10-30"
+  },
+  "course/images/rainbow.png": {
+   "older": [],
+   "sha256": "7a40a443b5ebfe3fb1c12b33b811d09a00e7216e9da45b319ddf8d968de90476",
+   "source_modified": "2026-10-30"
+  },
+  "course/images/small.png": {
+   "older": [],
+   "sha256": "becaf6ff285393fdde475f1c074c193ee9ae1d07f0e79b7659732f17595e72fe",
+   "source_modified": "2026-10-30"
+  },
+  "course/images/sticker.gif": {
+   "older": [],
+   "sha256": "7f38db744155096fa7ab12954f8e588cf0c3b231078608a55edb272866debe81",
+   "source_modified": "2026-10-30"
+  },
+  "course/issues.json": {
+   "older": [],
+   "sha256": "74777bbd1522aa4bd4346ac16f42c87977b367914ded80737f6aab19b2f37745",
+   "source_modified": "2026-10-30"
+  },
+  "course/thumbor.conf": {
+   "older": [],
+   "sha256": "5eecaf6639797385bbd39fe3f066a6aea0a3ccfb70452b52e34ebc56996f6730",
+   "source_modified": "2026-10-30"
+  }
+ },
+ "project": "P06"
+}
