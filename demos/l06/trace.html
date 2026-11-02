@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GIF Delay Trace</title>
+<style>
+:root{--bg:#faf8f3;--fg:#222;--muted:#666;--card:#fff;--line:#ddd;--ok:#1f7a4c;--okbg:#e6f3ec;--bad:#c82828;--badbg:#fbe9e9;--codebg:#f3f1ea}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17171a;--fg:#eee;--muted:#aaa;--card:#222226;--line:#3a3a40;--okbg:#17301f;--badbg:#3a1f1f;--codebg:#1b1b1f;--ok:#5fc48f;--bad:#ff6b6b}}
+:root[data-theme="dark"]{--bg:#17171a;--fg:#eee;--muted:#aaa;--card:#222226;--line:#3a3a40;--okbg:#17301f;--badbg:#3a1f1f;--codebg:#1b1b1f;--ok:#5fc48f;--bad:#ff6b6b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,sans-serif}
+main{max-width:900px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.8rem;margin:0 0 4px}h2{font-size:1.25rem;margin:36px 0 10px}
+p{max-width:70ch}.muted{color:var(--muted)}
+code{font:.88em ui-monospace,Menlo,monospace}
+.lost-box{border:2px solid var(--bad);background:var(--badbg);border-radius:10px;padding:14px 16px}
+.steps{list-style:none;padding:0;margin:0;position:relative}
+.steps:before{content:"";position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.step{position:relative;padding-left:52px;margin-bottom:18px}
+.dot{position:absolute;left:4px;top:4px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.9rem;background:var(--card);border:2px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.step.lost .card{border:2px solid var(--bad)}
+.step.lost .dot{border-color:var(--bad);color:var(--bad)}
+.where{font:.85rem ui-monospace,Menlo,monospace;color:var(--muted)}
+.val{display:inline-block;font:.85rem ui-monospace,Menlo,monospace;padding:1px 8px;border-radius:999px;background:var(--okbg);color:var(--ok);margin-top:6px}
+.val.bad{background:var(--badbg);color:var(--bad)}
+pre{background:var(--codebg);border-radius:6px;padding:8px 0;overflow-x:auto;margin:8px 0 0;font:13px/1.5 ui-monospace,Menlo,monospace}
+pre span{display:block;padding:0 12px;white-space:pre}
+pre span.hl{background:var(--badbg);box-shadow:inset 3px 0 var(--bad)}
+pre i{font-style:normal;color:var(--muted);display:inline-block;width:3.2em;user-select:none}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+td,th{text-align:left;padding:5px 8px;border-bottom:1px solid var(--line)}
+.tblwrap{overflow-x:auto}
+</style>
+</head>
+<body>
+<main>
+<h1>Where tick.gif loses its delays</h1>
+<p class="muted">This traces one frame's delay, 1 second, from the moment thumbor reads <code>demo/tick.gif</code> to the moment it writes the 300×300 copy. Line numbers are from this repository, with Pillow 12.3.0 in <code>venv/</code>.</p>
+
+<div class="lost-box">
+  <b>The delay is lost at <code>thumbor/engines/pil.py:467</code>.</b>
+  Pillow reports frame delays in milliseconds and expects milliseconds back. Thumbor divides by 1000 before saving, so the 1000 ms delay goes in as 1.0 ms. Pillow rounds 1.0 ms down to 0 hundredths of a second. A GIF with a 0 delay needs no timing block, so Pillow leaves the block out.
+  <pre><span class="hl"><i>467</i>                duration=[im.info.get("duration", 80) / 1000 for im in images],</span></pre>
+</div>
+
+<h2>The path</h2>
+<ol class="steps">
+  <li class="step"><div class="dot">1</div><div class="card">
+    <b>Pillow decodes the delay</b>
+    <div class="where">venv/…/PIL/GifImagePlugin.py:234</div>
+    <p>The file stores the delay as 100 hundredths of a second. Pillow multiplies by 10 and puts the result in milliseconds in each frame's <code>info</code>.</p>
+    <pre><span><i>234</i>                    info["duration"] = i16(block, 1) * 10</span></pre>
+    <span class="val">info["duration"] = 1000</span>
+  </div></li>
+
+  <li class="step"><div class="dot">2</div><div class="card">
+    <b>Thumbor splits the GIF into frames</b>
+    <div class="where">thumbor/engines/__init__.py:196 → thumbor/engines/pil.py:132–137</div>
+    <p><code>load</code> calls <code>create_image</code>. For a GIF, that walks every frame and converts each one to palette mode. <code>convert</code> copies <code>info</code>, so each frame keeps its delay.</p>
+    <pre><span><i>132</i>            for frame in ImageSequence.Iterator(img):</span><span><i>133</i>                frames.append(frame.convert("P"))</span></pre>
+    <span class="val">12 frames, each 1000</span>
+  </div></li>
+
+  <li class="step"><div class="dot">3</div><div class="card">
+    <b>Each frame gets its own engine</b>
+    <div class="where">thumbor/engines/__init__.py:209–214, 67–74</div>
+    <p><code>MultipleEngine.add_frame</code> wraps each Pillow frame in a copy of the engine. The frame object is stored as is.</p>
+    <pre><span><i>72</i>        frame_engine.image = frame</span></pre>
+    <span class="val">still 1000</span>
+  </div></li>
+
+  <li class="step"><div class="dot">4</div><div class="card">
+    <b>Every frame is resized</b>
+    <div class="where">thumbor/engines/__init__.py:85–92 → thumbor/engines/pil.py:211</div>
+    <p><code>do_many</code> runs <code>resize</code> on each frame engine. Pillow's <code>resize</code> returns a new image but copies <code>info</code>, so the delay survives.</p>
+    <pre><span><i>211</i>        self.image = self.image.resize(size, resample)</span></pre>
+    <span class="val">still 1000</span>
+  </div></li>
+
+  <li class="step"><div class="dot">5</div><div class="card">
+    <b>The frames are gathered to be written</b>
+    <div class="where">thumbor/engines/__init__.py:76–80</div>
+    <pre><span><i>77</i>        return self.source_engine.read_multiple(</span><span><i>78</i>            [frame_engine.image for frame_engine in self.frame_engines],</span></pre>
+    <span class="val">still 1000</span>
+  </div></li>
+
+  <li class="step lost"><div class="dot">6</div><div class="card">
+    <b>The delay is divided by 1000. This is where it's lost.</b>
+    <div class="where">thumbor/engines/pil.py:457–470</div>
+    <p><code>read_multiple</code> hands Pillow a list of delays. Pillow's <code>duration</code> argument is in milliseconds, the same unit it read in step 1. Dividing by 1000 turns 1 second into 1 millisecond. The default of 80 for frames with no delay becomes 0.08 ms and is wrong the same way.</p>
+    <pre><span><i>462</i>            images[0].save(</span><span><i>463</i>                img_buffer,</span><span><i>464</i>                self.image.format,</span><span><i>465</i>                save_all=True,</span><span><i>466</i>                append_images=images[1:],</span><span class="hl"><i>467</i>                duration=[im.info.get("duration", 80) / 1000 for im in images],</span><span><i>468</i>                loop=int(self.image.info.get("loop", 1)),</span><span><i>469</i>            )</span></pre>
+    <span class="val bad">duration = 1.0 (ms)</span>
+  </div></li>
+
+  <li class="step"><div class="dot">7</div><div class="card">
+    <b>Pillow writes no timing block</b>
+    <div class="where">venv/…/PIL/GifImagePlugin.py:834–840</div>
+    <p>Pillow converts back to hundredths: <code>int(1.0 / 10)</code> is 0. It writes the timing block only when there is a delay, a transparent color or a disposal method. Frames 1–3 and 5–12 have none, so they get no block. Frame 4 gets one only because it has a transparent color, and its delay is 0.</p>
+    <pre><span><i>834</i>    if "duration" in im.encoderinfo:</span><span class="hl"><i>835</i>        duration = int(im.encoderinfo["duration"] / 10)</span><span><i>  …</i></span><span><i>840</i>    if transparency is not None or duration != 0 or disposal:</span></pre>
+    <span class="val bad">written delay: none (0 on frame 4)</span>
+  </div></li>
+</ol>
+
+<h2>Checked by running it</h2>
+<p>I loaded <code>demo/tick.gif</code> into thumbor's Pillow engine, resized it to 300×300 and wrote it as a GIF. I printed each frame's delay at each step and caught the arguments passed to Pillow's <code>save</code>.</p>
+<div class="card tblwrap"><table>
+  <thead><tr><th>Point</th><th>Delays of the 12 frames</th></tr></thead>
+  <tbody>
+    <tr><td>After <code>load</code> (step 2)</td><td><code>1000</code> × 12</td></tr>
+    <tr><td>After <code>resize</code> (step 4)</td><td><code>1000</code> × 12</td></tr>
+    <tr><td>Passed to <code>save</code> (step 6)</td><td><code>1.0</code> × 12</td></tr>
+    <tr><td>Read back from the written GIF (step 7)</td><td><code>None</code> × 11, <code>0</code> on frame 4</td></tr>
+  </tbody>
+</table></div>
+<p class="muted">This matches what the server returned in <code>demo/tick-thumbor-300.gif</code>.</p>
+</main>
+</body>
+</html>
