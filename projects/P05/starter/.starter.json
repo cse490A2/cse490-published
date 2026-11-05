@@ -7,9 +7,15 @@
    "source_modified": "2026-10-29"
   },
   "checker.py": {
-   "older": [],
-   "sha256": "c53e45aff74ee920dee5db58a228dbed8cf942ce749da020f4c9906fc691faee",
-   "source_modified": "2026-10-29"
+   "older": [
+    {
+     "commit": "b1d1101",
+     "published": "2026-10-29",
+     "sha256": "c53e45aff74ee920dee5db58a228dbed8cf942ce749da020f4c9906fc691faee"
+    }
+   ],
+   "sha256": "4235cf7b9ae034f43170d1d856e46bdc4a1a50144e7d93ed00823855ca38ec91",
+   "source_modified": "2026-11-05"
   },
   "checker_blend.py": {
    "older": [],

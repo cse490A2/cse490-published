@@ -25,6 +25,12 @@ Double-click the zip in Downloads to get the wizard folder. Then, in Terminal:
 
 Right-click the zip in Downloads, choose "Extract All", open the wizard folder it makes, and double-click SETUP-WINDOWS.bat. If the blue "Windows protected your PC" box appears: "More info", then "Run anyway".
 
+### **Linux**
+
+Unzip it in Downloads to get the wizard folder. Then, in a terminal:  
+`cd ~/Downloads/wizard`  
+`python3 wizard.py`
+
 ## **Option 2: by hand**
 
 Read the section for your computer below (Mac, Windows or Linux) and do each step yourself. The steps are the same ones the wizard walks.  
@@ -82,8 +88,9 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 #### **2\. GitHub sign-in**
 
 Install the GitHub command line: in Terminal, `brew install gh` (or download it from cli.github.com). Then run:  
-`gh auth login -s repo,codespace --web`  
-Press Enter, copy the code it shows, and approve it in the browser.
+`gh auth login -h github.com -s repo,codespace,read:org --web`  
+Press Enter, copy the code it shows, and approve it in the browser. Already signed in, but the check says a scope is missing? Add it to the sign-in you have:  
+`gh auth refresh -h github.com -s repo,codespace,read:org`
 
 #### **3\. VS Code, its Codespaces extension, and the chat**
 
@@ -163,7 +170,7 @@ Press Enter, copy the code it shows, and approve it in the browser.
 #### **5\. Your codespace**
 
 **What it is for.** The codespace is your sandbox for Part 1: a computer in the cloud, built from the Project 5 starter repository. Everything the project needs is already installed: Blender; the Blender MCP server, the program that lets an agent drive Blender; the LiteLLM chat for VS Code; and OpenCode, the command-line agent you use in Part 2\. This step creates the codespace, opens it in VS Code on your laptop, and shows you Blender's window.  
-**How it works.** The starter names an image: a saved copy of a whole computer, with Blender and the rest already installed, so nothing installs while you wait. GitHub starts your codespace from that image, then runs the starter's setup: it copies your two keys from the secrets (step 4\) into the codespace, points OpenCode at Purple, and starts Blender on the codespace's own desktop. That desktop is reachable through a port, a numbered door into the codespace; the desktop's is port 6080, and VS Code can show what is behind it as a tab. On every open, the starter arranges the screen: the assignment on the left, Blender's window beside it, the chat on the right, the terminal below. The codespace keeps running after you close VS Code and stops itself after a while idle; opening it again starts it, and Blender, again.  
+**How it works.** Three words, in the order you meet them. The starter is the Project 5 repository on GitHub that holds the project's files. A codespace is a computer in the cloud that GitHub makes for you from that repository. An image is a saved copy of a whole computer, with Blender and the rest already installed; the starter names one, so your codespace starts from it and nothing installs while you wait. GitHub starts your codespace from that image, then runs the starter's setup: it copies your two keys from the secrets (step 4\) into the codespace, points OpenCode at Purple, and starts Blender on the codespace's own desktop. That desktop is reachable through a port, a numbered door into the codespace; the desktop's is port 6080, and VS Code can show what is behind it as a tab. On every open, the starter arranges the screen: the assignment on the left, Blender's window beside it, the chat on the right, the terminal below. The codespace keeps running after you close VS Code and stops itself after a while idle; opening it again starts it, and Blender, again.  
 **Do this.**
 
 > 1. On github.com open the Project 5 starter repository. Click Code, then Codespaces, then Create codespace on main.  
@@ -190,22 +197,26 @@ Press Enter, copy the code it shows, and approve it in the browser.
 > 2. In VS Code, open the Explorer, the file list at the left (Cmd+Shift+E). Right-click the empty space at its top level, pick New Folder, and name it harness.  
 > 3. Drag harness.py, systemprompt.md and skills/ from Finder into that harness folder. They upload into the codespace.  
 > 4. Copy the starter's skills/blender-scene folder into harness/skills/. Your own skills stay; this adds one more beside them. It is the skill your agent follows to build the scene.  
-> 5. Open harness/harness.py. Find where it sets the address, the key and the model. Change them so they read, in effect:  
+> 5. The copy in step 6 already changed the address, the key and the model when it could (the ready check tells you if it could not). To see or do it by hand, open harness/harness.py, find where it sets them, and make them read, in effect:  
 >    `URL = os.environ["PURPLE_BASE_URL"].rstrip("/") + "/chat/completions"`  
 >    `KEY = os.environ["PURPLE_API_KEY"]`  
->    `MODEL = "DeepSeek-V4.1-Flash"`Your lines may use other names or sit in other places. The three values are what matter.  
-> 6. Find where the request sets its headers. Replace the Authorization header with one named api-key whose value is the key alone.  
+>    `MODEL = "DeepSeek-V4.1-Flash"`
+
+Your lines may use other names or sit in other places. The three values are what matter.
+
+> 6. Likewise the header: the request sends the key in a header named api-key, the key alone, in place of the Authorization header.  
 > 7. If you would rather not edit by hand, open the chat in VS Code and paste: "Point harness/harness.py at the UW Purple API: read the base URL from PURPLE\_BASE\_URL and the key from PURPLE\_API\_KEY, use the model DeepSeek-V4.1-Flash, and send the key in an api-key header instead of Authorization." Read the change it makes before you accept it.
 
 **Common problems.**
 
 > * *I do not have a Project 4 folder.* Use the Project 4 starter's harness.py, systemprompt.md and skills/ as your harness. They work the same way.  
-> * *My harness reads its address and key from a `.env` file.* Keep that, and put the Purple values in it: PURPLE\_BASE\_URL and PURPLE\_API\_KEY are printed by `env | grep PURPLE` in the codespace terminal.  
+> * *My harness reads its address and key from a `.env` file.* Keep that way of reading, but the names have to change in harness.py: it reads PURPLE\_BASE\_URL and PURPLE\_API\_KEY (the codespace exports both; `env | grep PURPLE` shows them) and sends the key in an api-key header. Putting the values in `.env` alone is not enough: the ready check reads harness.py for those names and that header.  
 > * *The drag does nothing.* Right-click the harness folder in the Explorer and pick Upload, then choose the files.  
 > * *Running the harness says No module named requests (or another package).* The codespace has the starter's packages, not your laptop's. In the codespace terminal run `pip install requests`, naming whatever package it asked for.  
 > * *The harness answers with a 401\.* The key is missing from the codespace or sent in the wrong header. Check step 4's secret, restart the codespace, and check step 6 above.  
 > * *The harness answers with a 404\.* The address is missing /chat/completions or has a double slash. Compare it to the line in step 5\.  
-> * *checker.py says no harness.py found.* The files are not in a top-level folder named harness. Move them there.
+> * *checker.py says no harness.py found.* The files are not in a top-level folder named harness. Move them there.  
+> * *A prompt asks for the passphrase of .ssh/id\_rsa.* That is your own SSH key, not your UW password, and the wizard cannot type it for you. Update the wizard (quit and start it again: it fetches the update) and check again; it now talks to the codespace with a key of its own.
 
 #### **7\. Ready check**
 
@@ -223,7 +234,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 | gateway (HTTP 401\) | The course key is wrong. | Paste the key again as the secret (step 4), then restart. |
 | gateway (HTTP 000\) | The gateway is unreachable. | Try again in a minute. If it stays, tell the course staff. |
 | HARNESS\_MODEL | The codespace did not set its environment. | Rebuild the codespace. |
-| LiteLLM chat extension | The chat is not installed in the codespace. | Extensions panel (Cmd+Shift+X), search "LiteLLM", Install in Codespace. |
+| LiteLLM chat extension | The chat is not installed in the codespace itself; the copy on your laptop does not count. | Open the codespace in VS Code (it usually installs on first connect). If it stays, Extensions panel (Cmd+Shift+X), search "LiteLLM", Install in Codespace. |
 | `opencode` | The image is older than the starter. | `bash` .devcontainer/setup.sh. If it stays, rebuild the codespace. |
 | `opencode` config | OpenCode's config file is missing or stale. | `bash` .devcontainer/setup.sh |
 | PURPLE\_API\_KEY secret | The Purple key did not reach the codespace. | Check the secret's name and repository access (step 4). Restart. |
@@ -231,7 +242,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 | Purple API (HTTP 403, quota) | Today's allowance is spent. | It resets at midnight UTC. Nothing to fix. |
 | Purple API (HTTP 404\) | The endpoint is wrong. | Compare your Endpoint to step 4, item 6; fix the PURPLE\_BASE\_URL secret, then restart. |
 | harness.py | Your harness is not in the codespace. | Step 6: a top-level folder named harness with harness.py in it. |
-| harness Purple lines | harness.py still points at the gateway. | Step 6, items 5 and 6\. |
+| harness.py still reads the course gateway, or does not use the Purple values yet | harness.py has to read PURPLE\_BASE\_URL and PURPLE\_API\_KEY and send the key in an api-key header. Putting the values in `.env` is not enough: the check reads harness.py. | Step 6, items 5 and 6, or paste the prompt in item 7\. |
 
 ### **Part 2: a CLI agent builds a second animation**
 
@@ -258,7 +269,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 > 2. Download addon.py from github.com/ahujasid/blender-mcp: it is the file at the top of the repository's main page (open it, then Download raw file). There is no Releases page; 1.9.1 is the server's version, not the addon's. Save it where you can find it.  
 > 3. In Blender: Edit, Preferences, Add-ons. Click the arrow at the top right, then Install from Disk. Pick addon.py and tick its box.  
 > 4. Close Preferences. In the 3D view press N to open the side panel, then open the MCP for Blender tab (older copies of the addon call it BlenderMCP).  
-> 5. Turn Telemetry off. Press Connect to MCP server. The button turns into Disconnect, and the server listens on port 9876\.
+> 5. Turn Telemetry off. Press Connect to MCP server. The button turns into Disconnect, and the server listens on port 9876\. The wizard passes the moment that server is listening.
 
 **Common problems.**
 
@@ -419,8 +430,9 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 #### **2\. GitHub sign-in**
 
 Install the GitHub command line from cli.github.com (or in PowerShell: `winget install --id GitHub.cli`). Then in a new PowerShell:  
-`gh auth login -s repo,codespace --web`  
-Press Enter, copy the code it shows, and approve it in the browser.
+`gh auth login -h github.com -s repo,codespace,read:org --web`  
+Press Enter, copy the code it shows, and approve it in the browser. Already signed in, but the check says a scope is missing? Add it to the sign-in you have:  
+`gh auth refresh -h github.com -s repo,codespace,read:org`
 
 #### **3\. VS Code, its Codespaces extension, and the chat**
 
@@ -500,7 +512,7 @@ Press Enter, copy the code it shows, and approve it in the browser.
 #### **5\. Your codespace**
 
 **What it is for.** The codespace is your sandbox for Part 1: a computer in the cloud, built from the Project 5 starter repository. Everything the project needs is already installed: Blender; the Blender MCP server, the program that lets an agent drive Blender; the LiteLLM chat for VS Code; and OpenCode, the command-line agent you use in Part 2\. This step creates the codespace, opens it in VS Code on your laptop, and shows you Blender's window.  
-**How it works.** The starter names an image: a saved copy of a whole computer, with Blender and the rest already installed, so nothing installs while you wait. GitHub starts your codespace from that image, then runs the starter's setup: it copies your two keys from the secrets (step 4\) into the codespace, points OpenCode at Purple, and starts Blender on the codespace's own desktop. That desktop is reachable through a port, a numbered door into the codespace; the desktop's is port 6080, and VS Code can show what is behind it as a tab. On every open, the starter arranges the screen: the assignment on the left, Blender's window beside it, the chat on the right, the terminal below. The codespace keeps running after you close VS Code and stops itself after a while idle; opening it again starts it, and Blender, again.  
+**How it works.** Three words, in the order you meet them. The starter is the Project 5 repository on GitHub that holds the project's files. A codespace is a computer in the cloud that GitHub makes for you from that repository. An image is a saved copy of a whole computer, with Blender and the rest already installed; the starter names one, so your codespace starts from it and nothing installs while you wait. GitHub starts your codespace from that image, then runs the starter's setup: it copies your two keys from the secrets (step 4\) into the codespace, points OpenCode at Purple, and starts Blender on the codespace's own desktop. That desktop is reachable through a port, a numbered door into the codespace; the desktop's is port 6080, and VS Code can show what is behind it as a tab. On every open, the starter arranges the screen: the assignment on the left, Blender's window beside it, the chat on the right, the terminal below. The codespace keeps running after you close VS Code and stops itself after a while idle; opening it again starts it, and Blender, again.  
 **Do this.**
 
 > 1. On github.com open the Project 5 starter repository. Click Code, then Codespaces, then Create codespace on main.  
@@ -527,22 +539,26 @@ Press Enter, copy the code it shows, and approve it in the browser.
 > 2. In VS Code, open the Explorer, the file list at the left (Ctrl+Shift+E). Right-click the empty space at its top level, pick New Folder, and name it harness.  
 > 3. Drag harness.py, systemprompt.md and skills/ from File Explorer into that harness folder. They upload into the codespace.  
 > 4. Copy the starter's skills/blender-scene folder into harness/skills/. Your own skills stay; this adds one more beside them. It is the skill your agent follows to build the scene.  
-> 5. Open harness/harness.py. Find where it sets the address, the key and the model. Change them so they read, in effect:  
+> 5. The copy in step 6 already changed the address, the key and the model when it could (the ready check tells you if it could not). To see or do it by hand, open harness/harness.py, find where it sets them, and make them read, in effect:  
 >    `URL = os.environ["PURPLE_BASE_URL"].rstrip("/") + "/chat/completions"`  
 >    `KEY = os.environ["PURPLE_API_KEY"]`  
->    `MODEL = "DeepSeek-V4.1-Flash"`Your lines may use other names or sit in other places. The three values are what matter.  
-> 6. Find where the request sets its headers. Replace the Authorization header with one named api-key whose value is the key alone.  
+>    `MODEL = "DeepSeek-V4.1-Flash"`
+
+Your lines may use other names or sit in other places. The three values are what matter.
+
+> 6. Likewise the header: the request sends the key in a header named api-key, the key alone, in place of the Authorization header.  
 > 7. If you would rather not edit by hand, open the chat in VS Code and paste: "Point harness/harness.py at the UW Purple API: read the base URL from PURPLE\_BASE\_URL and the key from PURPLE\_API\_KEY, use the model DeepSeek-V4.1-Flash, and send the key in an api-key header instead of Authorization." Read the change it makes before you accept it.
 
 **Common problems.**
 
 > * *I do not have a Project 4 folder.* Use the Project 4 starter's harness.py, systemprompt.md and skills/ as your harness. They work the same way.  
-> * *My harness reads its address and key from a `.env` file.* Keep that, and put the Purple values in it: PURPLE\_BASE\_URL and PURPLE\_API\_KEY are printed by `env | grep PURPLE` in the codespace terminal.  
+> * *My harness reads its address and key from a `.env` file.* Keep that way of reading, but the names have to change in harness.py: it reads PURPLE\_BASE\_URL and PURPLE\_API\_KEY (the codespace exports both; `env | grep PURPLE` shows them) and sends the key in an api-key header. Putting the values in `.env` alone is not enough: the ready check reads harness.py for those names and that header.  
 > * *The drag does nothing.* Right-click the harness folder in the Explorer and pick Upload, then choose the files.  
 > * *Running the harness says No module named requests (or another package).* The codespace has the starter's packages, not your laptop's. In the codespace terminal run `pip install requests`, naming whatever package it asked for.  
 > * *The harness answers with a 401\.* The key is missing from the codespace or sent in the wrong header. Check step 4's secret, restart the codespace, and check step 6 above.  
 > * *The harness answers with a 404\.* The address is missing /chat/completions or has a double slash. Compare it to the line in step 5\.  
-> * *checker.py says no harness.py found.* The files are not in a top-level folder named harness. Move them there.
+> * *checker.py says no harness.py found.* The files are not in a top-level folder named harness. Move them there.  
+> * *A prompt asks for the passphrase of .ssh/id\_rsa.* That is your own SSH key, not your UW password, and the wizard cannot type it for you. Update the wizard (quit and start it again: it fetches the update) and check again; it now talks to the codespace with a key of its own.
 
 #### **7\. Ready check**
 
@@ -560,7 +576,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 | gateway (HTTP 401\) | The course key is wrong. | Paste the key again as the secret (step 4), then restart. |
 | gateway (HTTP 000\) | The gateway is unreachable. | Try again in a minute. If it stays, tell the course staff. |
 | HARNESS\_MODEL | The codespace did not set its environment. | Rebuild the codespace. |
-| LiteLLM chat extension | The chat is not installed in the codespace. | Extensions panel (Ctrl+Shift+X), search "LiteLLM", Install in Codespace. |
+| LiteLLM chat extension | The chat is not installed in the codespace itself; the copy on your laptop does not count. | Open the codespace in VS Code (it usually installs on first connect). If it stays, Extensions panel (Ctrl+Shift+X), search "LiteLLM", Install in Codespace. |
 | `opencode` | The image is older than the starter. | `bash` .devcontainer/setup.sh. If it stays, rebuild the codespace. |
 | `opencode` config | OpenCode's config file is missing or stale. | `bash` .devcontainer/setup.sh |
 | PURPLE\_API\_KEY secret | The Purple key did not reach the codespace. | Check the secret's name and repository access (step 4). Restart. |
@@ -568,7 +584,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 | Purple API (HTTP 403, quota) | Today's allowance is spent. | It resets at midnight UTC. Nothing to fix. |
 | Purple API (HTTP 404\) | The endpoint is wrong. | Compare your Endpoint to step 4, item 6; fix the PURPLE\_BASE\_URL secret, then restart. |
 | harness.py | Your harness is not in the codespace. | Step 6: a top-level folder named harness with harness.py in it. |
-| harness Purple lines | harness.py still points at the gateway. | Step 6, items 5 and 6\. |
+| harness.py still reads the course gateway, or does not use the Purple values yet | harness.py has to read PURPLE\_BASE\_URL and PURPLE\_API\_KEY and send the key in an api-key header. Putting the values in `.env` is not enough: the check reads harness.py. | Step 6, items 5 and 6, or paste the prompt in item 7\. |
 
 ### **Part 2: a CLI agent builds a second animation**
 
@@ -595,10 +611,11 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 > 2. Download addon.py from github.com/ahujasid/blender-mcp: it is the file at the top of the repository's main page (open it, then Download raw file). There is no Releases page; 1.9.1 is the server's version, not the addon's. Save it where you can find it.  
 > 3. In Blender: Edit, Preferences, Add-ons. Click the arrow at the top right, then Install from Disk. Pick addon.py and tick its box.  
 > 4. Close Preferences. In the 3D view press N to open the side panel, then open the MCP for Blender tab (older copies of the addon call it BlenderMCP).  
-> 5. Turn Telemetry off. Press Connect to MCP server. The button turns into Disconnect, and the server listens on port 9876\.
+> 5. Turn Telemetry off. Press Connect to MCP server. The button turns into Disconnect, and the server listens on port 9876\. The wizard passes the moment that server is listening.
 
 **Common problems.**
 
+> * *I installed Blender from the Microsoft Store or Steam.* That counts. Open it once so its folders exist, then check again. The wizard looks for the Store build's addons folder under AppData\\Local\\Packages.  
 > * *I cannot find Install from Disk.* It is under the small arrow at the top right of the Add-ons page, not on the page itself. Blender 4.2 and later moved it there.  
 > * *The addon does not appear after installing.* Type "mcp" in the Add-ons search box. If it is listed but unticked, tick it. If it is not listed, the file you picked was not addon.py from the release.  
 > * *There is no MCP for Blender tab in the side panel.* The addon is not ticked, or the mouse is not over the 3D view when you press N. Hover the 3D view and press N again.  
@@ -756,8 +773,9 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 #### **2\. GitHub sign-in**
 
 Install gh from cli.github.com for your distribution. Then run:  
-`gh auth login -s repo,codespace --web`  
-Press Enter, copy the code it shows, and approve it in the browser.
+`gh auth login -h github.com -s repo,codespace,read:org --web`  
+Press Enter, copy the code it shows, and approve it in the browser. Already signed in, but the check says a scope is missing? Add it to the sign-in you have:  
+`gh auth refresh -h github.com -s repo,codespace,read:org`
 
 #### **3\. VS Code, its Codespaces extension, and the chat**
 
@@ -837,7 +855,7 @@ Press Enter, copy the code it shows, and approve it in the browser.
 #### **5\. Your codespace**
 
 **What it is for.** The codespace is your sandbox for Part 1: a computer in the cloud, built from the Project 5 starter repository. Everything the project needs is already installed: Blender; the Blender MCP server, the program that lets an agent drive Blender; the LiteLLM chat for VS Code; and OpenCode, the command-line agent you use in Part 2\. This step creates the codespace, opens it in VS Code on your laptop, and shows you Blender's window.  
-**How it works.** The starter names an image: a saved copy of a whole computer, with Blender and the rest already installed, so nothing installs while you wait. GitHub starts your codespace from that image, then runs the starter's setup: it copies your two keys from the secrets (step 4\) into the codespace, points OpenCode at Purple, and starts Blender on the codespace's own desktop. That desktop is reachable through a port, a numbered door into the codespace; the desktop's is port 6080, and VS Code can show what is behind it as a tab. On every open, the starter arranges the screen: the assignment on the left, Blender's window beside it, the chat on the right, the terminal below. The codespace keeps running after you close VS Code and stops itself after a while idle; opening it again starts it, and Blender, again.  
+**How it works.** Three words, in the order you meet them. The starter is the Project 5 repository on GitHub that holds the project's files. A codespace is a computer in the cloud that GitHub makes for you from that repository. An image is a saved copy of a whole computer, with Blender and the rest already installed; the starter names one, so your codespace starts from it and nothing installs while you wait. GitHub starts your codespace from that image, then runs the starter's setup: it copies your two keys from the secrets (step 4\) into the codespace, points OpenCode at Purple, and starts Blender on the codespace's own desktop. That desktop is reachable through a port, a numbered door into the codespace; the desktop's is port 6080, and VS Code can show what is behind it as a tab. On every open, the starter arranges the screen: the assignment on the left, Blender's window beside it, the chat on the right, the terminal below. The codespace keeps running after you close VS Code and stops itself after a while idle; opening it again starts it, and Blender, again.  
 **Do this.**
 
 > 1. On github.com open the Project 5 starter repository. Click Code, then Codespaces, then Create codespace on main.  
@@ -864,22 +882,26 @@ Press Enter, copy the code it shows, and approve it in the browser.
 > 2. In VS Code, open the Explorer, the file list at the left (Ctrl+Shift+E). Right-click the empty space at its top level, pick New Folder, and name it harness.  
 > 3. Drag harness.py, systemprompt.md and skills/ from your file manager into that harness folder. They upload into the codespace.  
 > 4. Copy the starter's skills/blender-scene folder into harness/skills/. Your own skills stay; this adds one more beside them. It is the skill your agent follows to build the scene.  
-> 5. Open harness/harness.py. Find where it sets the address, the key and the model. Change them so they read, in effect:  
+> 5. The copy in step 6 already changed the address, the key and the model when it could (the ready check tells you if it could not). To see or do it by hand, open harness/harness.py, find where it sets them, and make them read, in effect:  
 >    `URL = os.environ["PURPLE_BASE_URL"].rstrip("/") + "/chat/completions"`  
 >    `KEY = os.environ["PURPLE_API_KEY"]`  
->    `MODEL = "DeepSeek-V4.1-Flash"`Your lines may use other names or sit in other places. The three values are what matter.  
-> 6. Find where the request sets its headers. Replace the Authorization header with one named api-key whose value is the key alone.  
+>    `MODEL = "DeepSeek-V4.1-Flash"`
+
+Your lines may use other names or sit in other places. The three values are what matter.
+
+> 6. Likewise the header: the request sends the key in a header named api-key, the key alone, in place of the Authorization header.  
 > 7. If you would rather not edit by hand, open the chat in VS Code and paste: "Point harness/harness.py at the UW Purple API: read the base URL from PURPLE\_BASE\_URL and the key from PURPLE\_API\_KEY, use the model DeepSeek-V4.1-Flash, and send the key in an api-key header instead of Authorization." Read the change it makes before you accept it.
 
 **Common problems.**
 
 > * *I do not have a Project 4 folder.* Use the Project 4 starter's harness.py, systemprompt.md and skills/ as your harness. They work the same way.  
-> * *My harness reads its address and key from a `.env` file.* Keep that, and put the Purple values in it: PURPLE\_BASE\_URL and PURPLE\_API\_KEY are printed by `env | grep PURPLE` in the codespace terminal.  
+> * *My harness reads its address and key from a `.env` file.* Keep that way of reading, but the names have to change in harness.py: it reads PURPLE\_BASE\_URL and PURPLE\_API\_KEY (the codespace exports both; `env | grep PURPLE` shows them) and sends the key in an api-key header. Putting the values in `.env` alone is not enough: the ready check reads harness.py for those names and that header.  
 > * *The drag does nothing.* Right-click the harness folder in the Explorer and pick Upload, then choose the files.  
 > * *Running the harness says No module named requests (or another package).* The codespace has the starter's packages, not your laptop's. In the codespace terminal run `pip install requests`, naming whatever package it asked for.  
 > * *The harness answers with a 401\.* The key is missing from the codespace or sent in the wrong header. Check step 4's secret, restart the codespace, and check step 6 above.  
 > * *The harness answers with a 404\.* The address is missing /chat/completions or has a double slash. Compare it to the line in step 5\.  
-> * *checker.py says no harness.py found.* The files are not in a top-level folder named harness. Move them there.
+> * *checker.py says no harness.py found.* The files are not in a top-level folder named harness. Move them there.  
+> * *A prompt asks for the passphrase of .ssh/id\_rsa.* That is your own SSH key, not your UW password, and the wizard cannot type it for you. Update the wizard (quit and start it again: it fetches the update) and check again; it now talks to the codespace with a key of its own.
 
 #### **7\. Ready check**
 
@@ -897,7 +919,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 | gateway (HTTP 401\) | The course key is wrong. | Paste the key again as the secret (step 4), then restart. |
 | gateway (HTTP 000\) | The gateway is unreachable. | Try again in a minute. If it stays, tell the course staff. |
 | HARNESS\_MODEL | The codespace did not set its environment. | Rebuild the codespace. |
-| LiteLLM chat extension | The chat is not installed in the codespace. | Extensions panel (Ctrl+Shift+X), search "LiteLLM", Install in Codespace. |
+| LiteLLM chat extension | The chat is not installed in the codespace itself; the copy on your laptop does not count. | Open the codespace in VS Code (it usually installs on first connect). If it stays, Extensions panel (Ctrl+Shift+X), search "LiteLLM", Install in Codespace. |
 | `opencode` | The image is older than the starter. | `bash` .devcontainer/setup.sh. If it stays, rebuild the codespace. |
 | `opencode` config | OpenCode's config file is missing or stale. | `bash` .devcontainer/setup.sh |
 | PURPLE\_API\_KEY secret | The Purple key did not reach the codespace. | Check the secret's name and repository access (step 4). Restart. |
@@ -905,7 +927,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 | Purple API (HTTP 403, quota) | Today's allowance is spent. | It resets at midnight UTC. Nothing to fix. |
 | Purple API (HTTP 404\) | The endpoint is wrong. | Compare your Endpoint to step 4, item 6; fix the PURPLE\_BASE\_URL secret, then restart. |
 | harness.py | Your harness is not in the codespace. | Step 6: a top-level folder named harness with harness.py in it. |
-| harness Purple lines | harness.py still points at the gateway. | Step 6, items 5 and 6\. |
+| harness.py still reads the course gateway, or does not use the Purple values yet | harness.py has to read PURPLE\_BASE\_URL and PURPLE\_API\_KEY and send the key in an api-key header. Putting the values in `.env` is not enough: the check reads harness.py. | Step 6, items 5 and 6, or paste the prompt in item 7\. |
 
 ### **Part 2: a CLI agent builds a second animation**
 
@@ -932,7 +954,7 @@ Open your codespace in VS Code. In its terminal run `bash` smoke.sh. Every line 
 > 2. Download addon.py from github.com/ahujasid/blender-mcp: it is the file at the top of the repository's main page (open it, then Download raw file). There is no Releases page; 1.9.1 is the server's version, not the addon's. Save it where you can find it.  
 > 3. In Blender: Edit, Preferences, Add-ons. Click the arrow at the top right, then Install from Disk. Pick addon.py and tick its box.  
 > 4. Close Preferences. In the 3D view press N to open the side panel, then open the MCP for Blender tab (older copies of the addon call it BlenderMCP).  
-> 5. Turn Telemetry off. Press Connect to MCP server. The button turns into Disconnect, and the server listens on port 9876\.
+> 5. Turn Telemetry off. Press Connect to MCP server. The button turns into Disconnect, and the server listens on port 9876\. The wizard passes the moment that server is listening.
 
 **Common problems.**
 
