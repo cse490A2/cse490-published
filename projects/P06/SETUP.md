@@ -212,9 +212,10 @@ Project 6 runs in a folder of its own on this computer, `p06`, with the harness 
 
 `RULES.md` may come along; leave it, the handout replaces it.
 
-> 4. Make a file named `.env` in `p06`, your course key from Project 3 in place of \<your course key\>:  
+> 4. Make a file named `.env` in `p06` with any text editor (in VS Code: `code .env`), your course key from Project 3 in place of \<your course key\>:  
 >    `LITELLM_BASE_URL=https://llmproxy.cs.washington.edu`  
->    `LITELLM_API_KEY=<your course key>`
+>    `LITELLM_API_KEY=<your course key>`  
+>    `HARNESS_MODEL=external/haiku-5-5`
 
 **What am I typing?**
 
@@ -228,6 +229,12 @@ Project 6 runs in a folder of its own on this computer, `p06`, with the harness 
 | `LITELLM_API_KEY` | the key the gateway accepts, sent as the Authorization: Bearer header |  |
 | \= | sets it to |  |
 | \<your course key\> | the course gateway key you were given in Project 3 |  |
+| `HARNESS_MODEL=external/haiku-5-5` | A line of the `.env` file: a name and its value. |  |
+| HARNESS\_MODEL | the model name the harness asks the gateway for |  |
+| \= | sets it to |  |
+| external/haiku-5-5 | the value |  |
+
+The third line names the course gateway's model; the Project 5 default, qwen-3.8, is not on it.
 
 > 5. Give the harness its own Python environment, 3.10 or newer (the Mac's built-in `python3` is 3.9):  
 >    `# Mac`  
@@ -262,15 +269,34 @@ Project 6 runs in a folder of its own on this computer, `p06`, with the harness 
 
 From here on, run the harness with `.venv-harness`/bin/python harness.py.
 
-> 6. If your Project 5 harness was pointed at Purple, ask the LiteLLM chat in VS Code: "Point `harness.py` at the course gateway: at startup load `.env` beside it, read `LITELLM_BASE_URL` and `LITELLM_API_KEY` from it, send the key as an Authorization: Bearer header, and use the model external/haiku-5-5. Change nothing else." Read the change before you accept it.
+> 6. If your Project 5 harness was pointed at Purple, or names its model in the code instead of reading HARNESS\_MODEL, ask the LiteLLM chat in VS Code: "Point `harness.py` at the course gateway: at startup load `.env` beside it, read `LITELLM_BASE_URL` and `LITELLM_API_KEY` from it, send the key as an Authorization: Bearer header, and use the model external/haiku-5-5. Change nothing else." Read the change before you accept it.
 
-**Check.** Off campus, connect the UW VPN (Husky OnNet) first. Run `.venv-harness/bin/python harness.py` and type: Say hello in five words. You should get a short reply from the model. Ctrl+C stops it.  
+**Check.** Off campus, connect the UW VPN (Husky OnNet) first. Run the harness, one line:  
+`.venv-harness/bin/python harness.py`  
+**What am I typing?**
+
+| What you type | What it means | From |
+| :---- | :---- | :---- |
+| `.venv-harness/bin/python harness.py` | an interpreted, interactive, object-oriented programming language. |  |
+| `.venv-harness`/bin/python | an interpreted, interactive, object-oriented programming language. | [man `python3`](https://docs.python.org/3/using/cmdline.html) |
+| `harness.py` | what the command works on |  |
+
+Type: Say hello in five words. You should get a short reply from the model. Ctrl+C stops it.  
 **Troubleshooting**
 
+> * *can't open file '`harness.py`': No such file or directory.* The harness is not in `p06` yet: step 3 did not run. Do steps 3 and 4, then the check.  
+> * *A \>\>\> prompt, then NameError: name 'harness' is not defined.* The command was typed as two. `.venv-harness`/bin/python alone opens Python. Type exit(), then the whole line, python and `harness.py` together.  
+> * *HTTP Error 400: Bad Request.* The gateway does not know the model the harness names; the Project 5 default was qwen-3.8. Put HARNESS\_MODEL=external/haiku-5-5 in `.env`, or change the model name in `harness.py` to external/haiku-5-5.  
+> * *Several codespaces on the list.* Take the row whose repository is cse490A2/cse490-p05-starter. With two, the one used most recently.  
+> * *BlenderMCPServer: Connection refused, at startup.* Blender is not open. The Project 5 harness starts its Blender server and goes on without it; harmless for this check.  
 > * *Could not resolve host, or it hangs.* You are off campus without the VPN. Connect Husky OnNet and try again.  
 > * *401\.* The key in `.env` is wrong or has a stray space, or the harness still sends it the Purple way (an api-key header). The gateway wants Authorization: Bearer.  
 > * *`gh` says there is no codespace, or the copy prints nothing for minutes.* Start the codespace once at https://github.com/codespaces and run the copy again. If it fails twice, download `harness.py`, `systemprompt.md` and the skills folder from the codespace's Explorer (right-click, Download) into p06. A `gh` signed in before Project 5 may need `gh auth refresh -s codespace` first.  
-> * *The harness looks for pedia.py or SPEC.md.* `systemprompt.md` still carries Project 3 and 4 lines. Remove them; keep your own rules.
+> * *The harness looks for pedia.py or SPEC.md.* `systemprompt.md` still carries Project 3 and 4 lines. Remove them; keep your own rules.  
+> * *Which name the copy line wants for the codespace.* The codespaces page shows two words, orange yodel; the command wants the full name with its code. `gh codespace list` prints it in the first column. In the browser, click the codespace and read the address up to .github.dev: orange-yodel-576g7xq5rpj344r.github.dev is the codespace orange-yodel-576g7xq5rpj344r.  
+> * *The copy pours out frame\_0001.png, frame\_0002.png, scene.mp4 for minutes.* Your Project 5 renders sit in the codespace's harness folder, and \-r brings the whole folder, about 100 MB. Let it finish, then throw the renders away before the move, so they never land in your repository: rm \-f harness/frame\_\*.png harness/scene.mp4 harness/trace.jsonl. Project 6 needs only `harness.py`, `systemprompt.md` and the skills folder.  
+> * *zsh: command not found: `python3.12` (Mac).* The name on the step is an example; a Mac has only the Homebrew Pythons it installed. `ls /opt/homebrew/bin/python3.*` lists yours; use the newest in place of `python3.12` (`python3.14` is fine). Nothing listed: `brew install python`, then look again. Plain `python3` is Apple's 3.9 and too old.  
+> * *`python3` \-m venv says ensurepip is not available (Ubuntu, WSL).* Ubuntu ships Python without venv. `sudo apt-get install -y python3-venv`, then run the step's line again.
 
 #### **2\. Your repository**
 
@@ -572,4 +598,7 @@ Open http://localhost:8888/unsafe/300x200/example.jpg in your browser. A picture
 > * *`pip` stops building cairocffi or cairosvg.* Cairo is missing (step 2). Install it and run the line that stopped again.  
 > * *`pip` says the Python is too old.* `thumbor` needs 3.12 or newer. Install one and make `.venv` again with it.  
 > * *The server says the port is in use.* Start on another port and change only the port in the URL.  
-> * *No picture.* The server was started outside the clone, or without \-c course/thumbor.conf. Start it from the clone's top folder with the line above.
+> * *No picture.* The server was started outside the clone, or without \-c course/thumbor.conf. Start it from the clone's top folder with the line above.  
+> * *zsh: command not found: `python3.12` (Mac).* No Homebrew Python of that version is installed. `brew install python@3.12`, about a minute, then run the five lines of step 3 again from the first. The newer `python3.14` from step 1 of Part 1 works too; `thumbor` is tested on 3.12.  
+> * *`pip` says the folder does not appear to be a Python project.* The lines ran in `p06`, not in the clone. Go into the clone from step 1, the folder named p06- and your login, and run step 3 again from the first line.  
+> * *source: no such file or directory: `.venv`/bin/activate, then command not found: python.* The first line of step 3 failed, so there is no `.venv`; the lines after it ran outside one. Fix the first line (the two bullets above), then run the five again.
