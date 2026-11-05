@@ -469,23 +469,24 @@ You should see Version: 2.0.2 among the first lines, then `settings.json` ok. Th
 
 #### **5\. Your copy of the code**
 
-The code your harness edits and tests is a clone of your repository inside `p06`, with its own Python environment, `.venv`, and `thumbor`'s C filters compiled into it. You do this step in class, so the first time you see `thumbor` the staff are in the room.
+The code your harness edits and tests is a clone of your repository inside `p06`, with its own Python environment, `.venv`, and `thumbor`'s C filters compiled into it. Two folders, on purpose: `p06` holds your harness, the MCP server and your keys, and is never committed; the clone inside it, p06-thumbor, holds the code the harness fixes. The harness stays outside the repository so none of its files ride into your pull requests. You do this step in class, so the first time you see `thumbor` the staff are in the room.
 
 > 1. In `p06`, clone your repository and go in:  
->    `gh repo clone <your login>/p06-<your login>`  
->    `cd p06-<your login>`
+>    `gh repo clone <your login>/p06-<your login> p06-thumbor`  
+>    `cd p06-thumbor`
 
 **What am I typing?**
 
 | What you type | What it means | From |
 | :---- | :---- | :---- |
-| `gh repo clone <your login>/p06-<your login>` | Clone a repository locally. |  |
+| `gh repo clone <your login>/p06-<your login> p06-thumbor` | Clone a repository locally. |  |
 | `gh` | GitHub CLI: work seamlessly with GitHub from the command line. | [`gh` \--help](https://cli.github.com/manual/gh) |
 | repo clone | Clone a repository locally. | [`gh` repo clone \--help](https://cli.github.com/manual/gh_repo_clone) |
 | \<your login\>/p06-\<your login\> | the repository, as OWNER/REPO (\<your login\>: your GitHub user name) |  |
-| `cd p06-<your login>` | Change the current directory to dir. |  |
+| p06-thumbor | the folder to clone into; p06-thumbor names the clone for the code it holds |  |
+| `cd p06-thumbor` | Change the current directory to dir. |  |
 | `cd` | Change the current directory to dir. | [man bash (builtins)](https://man7.org/linux/man-pages/man1/bash.1.html#SHELL_BUILTIN_COMMANDS) |
-| p06-\<your login\> | dir (\<your login\>: your GitHub user name) |  |
+| p06-thumbor | dir |  |
 
 > 2. A C compiler and the Cairo library, once:  
 >    `# Mac`  
@@ -600,5 +601,5 @@ Open http://localhost:8888/unsafe/300x200/example.jpg in your browser. A picture
 > * *The server says the port is in use.* Start on another port and change only the port in the URL.  
 > * *No picture.* The server was started outside the clone, or without \-c course/thumbor.conf. Start it from the clone's top folder with the line above.  
 > * *zsh: command not found: `python3.12` (Mac).* No Homebrew Python of that version is installed. `brew install python@3.12`, about a minute, then run the five lines of step 3 again from the first. The newer `python3.14` from step 1 of Part 1 works too; `thumbor` is tested on 3.12.  
-> * *`pip` says the folder does not appear to be a Python project.* The lines ran in `p06`, not in the clone. Go into the clone from step 1, the folder named p06- and your login, and run step 3 again from the first line.  
+> * *`pip` says the folder does not appear to be a Python project.* The lines ran in `p06`, not in the clone. Go into the clone from step 1, p06-thumbor, and run step 3 again from the first line.  
 > * *source: no such file or directory: `.venv`/bin/activate, then command not found: python.* The first line of step 3 failed, so there is no `.venv`; the lines after it ran outside one. Fix the first line (the two bullets above), then run the five again.
