@@ -9,7 +9,7 @@ permalink: "/projects/P06/"
 # Project 6: Fixing Code You Did Not Write
 
 **Due: Tuesday 11:59 pm**  
-Prerequisites: run the course setup wizard during class.  
+Prerequisites: run the course setup wizard during class. On Windows the project runs inside Ubuntu under WSL, which the wizard sets up; every command below then runs in the Ubuntu terminal.  
 In this project, you’ll fix errors in a real production system – [thumbor](https://www.thumbor.org), via GitHub (working in your own branch).  You’ll start by equipping your harness with the ability to interact with GitHub. You’ll use your harness to pull a repository, identify issues, and develop strategies to fix bugs while manually reviewing changes made. The intent of this project is to demonstrate common software engineering practices for working in a shared repository using agents. 
 
 ## Instructions
