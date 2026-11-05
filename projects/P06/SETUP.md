@@ -236,7 +236,41 @@ Project 6 runs in a folder of its own on this computer, `p06`, with the harness 
 
 The third line names the course gateway's model; the Project 5 default, qwen-3.8, is not on it.
 
-> 5. Give the harness its own Python environment, 3.10 or newer (the Mac's built-in `python3` is 3.9):  
+> 5. The harness, and `thumbor` in a later step, need Python 3.12 or newer. See what you have:  
+>    `python3 --version`
+
+**What am I typing?**
+
+| What you type | What it means | From |
+| :---- | :---- | :---- |
+| `python3 --version` | an interpreted, interactive, object-oriented programming language. |  |
+| `python3` | an interpreted, interactive, object-oriented programming language. | [man `python3`](https://docs.python.org/3/using/cmdline.html) |
+| \--version | Prints the Python version number of the executable and exits. |  |
+
+3.12 or newer: go on to step 6 and use `python3` there. Less than 3.12 (the Mac's built-in is 3.9), or command not found: install one, about a minute:  
+`# Mac`  
+`brew install python@3.12`  
+`# Linux, and Windows inside Ubuntu`  
+`sudo apt-get install -y python3 python3-venv`  
+**What am I typing?**
+
+| What you type | What it means | From |
+| :---- | :---- | :---- |
+| `brew install python@3.12` | Install a formula or cask. |  |
+| `brew` | The Missing Package Manager for macOS. | [man `brew`](https://docs.brew.sh/Manpage) |
+| install | Install a formula or cask. |  |
+| python@3.12 | Interpreted, interactive, object-oriented programming language | [formulae.brew.sh](https://formulae.brew.sh/formula/python@3.12) |
+| `sudo apt-get install -y python3 python3-venv` | install is followed by one or more packages desired for installation or upgrading. |  |
+| sudo | execute a command as another user. | [man sudo](https://www.sudo.ws/docs/man/sudo.man/) |
+| `apt-get` | APT package handling utility. | [man `apt-get`](https://manpages.ubuntu.com/manpages/noble/man8/apt-get.8.html) |
+| install | install is followed by one or more packages desired for installation or upgrading. |  |
+| \-y | (--yes, \--assume-yes) Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively. |  |
+| `python3` | interactive high-level object-oriented language (default `python3` version) | [packages.ubuntu.com](https://packages.ubuntu.com/noble/python3) |
+| python3-venv | venv module for `python3` (default `python3` version) | [packages.ubuntu.com](https://packages.ubuntu.com/noble/python3-venv) |
+
+After it a Mac has python3.12. Ubuntu 24.04 and newer, and Windows inside it, already have `python3` at 3.12; an older Ubuntu is in Troubleshooting.
+
+> 6. Give the harness its own environment with that Python, `python3` in place of `python3.12` if yours was already new enough:  
 >    `# Mac`  
 >    `python3.12 -m venv .venv-harness && .venv-harness/bin/pip install python-dotenv mcp requests`  
 >    `# Linux, and Windows inside Ubuntu`  
@@ -269,7 +303,7 @@ The third line names the course gateway's model; the Project 5 default, qwen-3.8
 
 From here on, run the harness with `.venv-harness`/bin/python harness.py.
 
-> 6. If your Project 5 harness was pointed at Purple, or names its model in the code instead of reading HARNESS\_MODEL, ask the LiteLLM chat in VS Code: "Point `harness.py` at the course gateway: at startup load `.env` beside it, read `LITELLM_BASE_URL` and `LITELLM_API_KEY` from it, send the key as an Authorization: Bearer header, and use the model external/haiku-5-5. Change nothing else." Read the change before you accept it.
+> 7. If your Project 5 harness was pointed at Purple, or names its model in the code instead of reading HARNESS\_MODEL, ask the LiteLLM chat in VS Code: "Point `harness.py` at the course gateway: at startup load `.env` beside it, read `LITELLM_BASE_URL` and `LITELLM_API_KEY` from it, send the key as an Authorization: Bearer header, and use the model external/haiku-5-5. Change nothing else." Read the change before you accept it.
 
 **Check.** Off campus, connect the UW VPN (Husky OnNet) first. Run the harness, one line:  
 `.venv-harness/bin/python harness.py`  
@@ -295,8 +329,9 @@ Type: Say hello in five words. You should get a short reply from the model. Ctrl
 > * *The harness looks for pedia.py or SPEC.md.* `systemprompt.md` still carries Project 3 and 4 lines. Remove them; keep your own rules.  
 > * *Which name the copy line wants for the codespace.* The codespaces page shows two words, orange yodel; the command wants the full name with its code. `gh codespace list` prints it in the first column. In the browser, click the codespace and read the address up to .github.dev: orange-yodel-576g7xq5rpj344r.github.dev is the codespace orange-yodel-576g7xq5rpj344r.  
 > * *The copy pours out frame\_0001.png, frame\_0002.png, scene.mp4 for minutes.* Your Project 5 renders sit in the codespace's harness folder, and \-r brings the whole folder, about 100 MB. Let it finish, then throw the renders away before the move, so they never land in your repository: rm \-f harness/frame\_\*.png harness/scene.mp4 harness/trace.jsonl. Project 6 needs only `harness.py`, `systemprompt.md` and the skills folder.  
-> * *zsh: command not found: `python3.12` (Mac).* The name on the step is an example; a Mac has only the Homebrew Pythons it installed. `ls /opt/homebrew/bin/python3.*` lists yours; use the newest in place of `python3.12` (`python3.14` is fine). Nothing listed: `brew install python`, then look again. Plain `python3` is Apple's 3.9 and too old.  
-> * *`python3` \-m venv says ensurepip is not available (Ubuntu, WSL).* Ubuntu ships Python without venv. `sudo apt-get install -y python3-venv`, then run the step's line again.
+> * *zsh: command not found: `python3.12` (Mac).* Step 5's install did not run, or Homebrew is missing: `brew --version` says command not found. Install Homebrew with the one line at https://brew.sh, then run step 5's install line and step 6 again.  
+> * *`python3 --version` says 3.10 or 3.11 on Ubuntu 22.04 or older (Linux, WSL).* The system Python is too old for thumbor. `sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3.12 python3.12-venv`, then `python3.12` in place of `python3` in step 6\.  
+> * *`python3` \-m venv says ensurepip is not available (Ubuntu, WSL).* Ubuntu ships Python without venv. `sudo apt-get install -y python3-venv`, then run step 6's line again.
 
 #### **2\. Your repository**
 
@@ -514,7 +549,7 @@ The code your harness edits and tests is a clone of your repository inside `p06`
 | python3-dev | header files and a static library for Python (default) | [packages.ubuntu.com](https://packages.ubuntu.com/noble/python3-dev) |
 | libcairo2 | Cairo 2D vector graphics library | [packages.ubuntu.com](https://packages.ubuntu.com/noble/libcairo2) |
 
-> 3. Make the environment and install `thumbor` into it. It needs Python 3.12 or newer; a few minutes, the install compiles `thumbor`'s filters:  
+> 3. Make the environment and install `thumbor` into it, with the Python 3.12 or newer from the harness step (`python3` in place of `python3.12` if yours was already new enough); a few minutes, the install compiles `thumbor`'s filters:  
 >    `# Mac`  
 >    `python3.12 -m venv .venv`  
 >    `# Linux, and Windows inside Ubuntu`  
@@ -597,7 +632,7 @@ Open http://localhost:8888/unsafe/300x200/example.jpg in your browser. A picture
 **Troubleshooting**
 
 > * *`pip` stops building cairocffi or cairosvg.* Cairo is missing (step 2). Install it and run the line that stopped again.  
-> * *`pip` says the Python is too old.* `thumbor` needs 3.12 or newer. Install one and make `.venv` again with it.  
+> * *`pip` says the Python is too old.* `thumbor` needs 3.12 or newer. Install one as in the harness step's step 5, then run the five lines of step 3 again from the first, with that Python.  
 > * *The server says the port is in use.* Start on another port and change only the port in the URL.  
 > * *No picture.* The server was started outside the clone, or without \-c course/thumbor.conf. Start it from the clone's top folder with the line above.  
 > * *zsh: command not found: `python3.12` (Mac).* No Homebrew Python of that version is installed. `brew install python@3.12`, about a minute, then run the five lines of step 3 again from the first. The newer `python3.14` from step 1 of Part 1 works too; `thumbor` is tested on 3.12.  
