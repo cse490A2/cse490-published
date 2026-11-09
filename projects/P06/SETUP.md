@@ -92,7 +92,7 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 > 1. Open PowerShell from the Start menu and run `wsl` \--install \-d Ubuntu-24.04. If it asks to restart, restart.  
 > 2. Open "Ubuntu 24.04" from the Start menu. It asks once for a user name (short, lowercase letters) and a password. This window is your Ubuntu terminal from now on.  
 > 3. In it, install what `thumbor` needs, one line, a few minutes:  
->    `sudo apt-get update && sudo apt-get install -y python3 python3-venv python3-dev build-essential libcurl4-openssl-dev libssl-dev libcairo2 libjpeg-turbo-progs gifsicle ffmpeg redis-server git gh curl unzip ca-certificates wslu xdg-utils`
+>    `sudo apt-get update && sudo apt-get install -y python3 python3-venv python3-dev build-essential libcurl4-openssl-dev libssl-dev libcairo2 libjpeg-turbo-progs gifsicle ffmpeg redis-server git gh curl unzip ca-certificates xdg-utils`
 
 **What am I typing?**
 
@@ -121,7 +121,6 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 | `curl` | command line tool for transferring data with URL syntax | [packages.ubuntu.com](https://packages.ubuntu.com/noble/curl) |
 | unzip | De-archiver for .zip files | [packages.ubuntu.com](https://packages.ubuntu.com/noble/unzip) |
 | ca-certificates | Common CA certificates | [packages.ubuntu.com](https://packages.ubuntu.com/noble/ca-certificates) |
-| wslu | collection of utilities for Windows Subsystem for Linux | [packages.ubuntu.com](https://packages.ubuntu.com/noble/wslu) |
 | xdg-utils | desktop integration utilities from freedesktop.org | [packages.ubuntu.com](https://packages.ubuntu.com/noble/xdg-utils) |
 
 > 4. Copy the wizard folder into Ubuntu's home, your Windows user name in place of \<you\>:  
@@ -326,6 +325,7 @@ Type: Say hello in five words. You should get a short reply from the model. Ctrl
 > * *Could not resolve host, or it hangs.* You are off campus without the VPN. Connect Husky OnNet and try again.  
 > * *401\.* The key in `.env` is wrong or has a stray space, or the harness still sends it the Purple way (an api-key header). The gateway wants Authorization: Bearer.  
 > * *`gh` says there is no codespace, or the copy prints nothing for minutes.* Start the codespace once at https://github.com/codespaces and run the copy again. If it fails twice, download `harness.py`, `systemprompt.md` and the skills folder from the codespace's Explorer (right-click, Download) into p06. A `gh` signed in before Project 5 may need `gh auth refresh -s codespace` first.  
+> * *The codespace is gone from https://github.com/codespaces, or GitHub mailed "You have codespaces that will soon be deleted".* GitHub deletes a stopped codespace at the end of its retention period. Your harness is also in your Project 5 submission on Canvas: download p05-bundle.zip from the assignment page, unzip it, and copy `harness.py`, `systemprompt.md` and the skills folder into p06. To keep a codespace you still need, open it once from that page before the date in the mail, and under Settings, Codespaces, set Default retention period to 30 days.  
 > * *The harness looks for pedia.py or SPEC.md.* `systemprompt.md` still carries Project 3 and 4 lines. Remove them; keep your own rules.  
 > * *Which name the copy line wants for the codespace.* The codespaces page shows two words, orange yodel; the command wants the full name with its code. `gh codespace list` prints it in the first column. In the browser, click the codespace and read the address up to .github.dev: orange-yodel-576g7xq5rpj344r.github.dev is the codespace orange-yodel-576g7xq5rpj344r.  
 > * *The copy pours out frame\_0001.png, frame\_0002.png, scene.mp4 for minutes.* Your Project 5 renders sit in the codespace's harness folder, and \-r brings the whole folder, about 100 MB. Let it finish, then throw the renders away before the move, so they never land in your repository: rm \-f harness/frame\_\*.png harness/scene.mp4 harness/trace.jsonl. Project 6 needs only `harness.py`, `systemprompt.md` and the skills folder.  
@@ -335,25 +335,25 @@ Type: Say hello in five words. You should get a short reply from the model. Ctrl
 
 #### **2\. Your repository**
 
-Project 6 happens in a repository of your own: a private copy of `thumbor` named p06-\<your login\> under your GitHub account, as `thumbor` was in September 2026, with its full history and five issues filed (four real reports with their conversations, one planted feature). A copy made from a template has no link back to the course starter, so your pull requests stay in your repository and nothing needs the course organisation's approval.
+Project 6 happens in a repository of your own: a public copy of `thumbor` named p06-\<your login\> under your GitHub account, as `thumbor` was in September 2026, with its full history and five issues filed (four real reports with their conversations, one planted feature). A copy made from a template has no link back to the course starter, so your pull requests stay in your repository and nothing needs the course organisation's approval.
 
 > 1. Make the repository from the course template, your GitHub login in place of \<your login\>:  
->    `gh repo create p06-<your login> --private --template cse490A2/cse490-p06-starter`
+>    `gh repo create p06-<your login> --public --template cse490A2/cse490-p06-starter`
 
 **What am I typing?**
 
 | What you type | What it means | From |
 | :---- | :---- | :---- |
-| `gh` **repo create p06-\<your login\> \--private \--template cs…** | Create a new repository on GitHub. |  |
+| `gh` **repo create p06-\<your login\> \--public \--template cse…** | Create a new repository on GitHub. |  |
 | `gh` | GitHub CLI: work seamlessly with GitHub from the command line. | [`gh` \--help](https://cli.github.com/manual/gh) |
 | repo create | Create a new repository on GitHub. | [`gh` repo create \--help](https://cli.github.com/manual/gh_repo_create) |
 | p06-\<your login\> | the name of the new repository (\<your login\>: your GitHub user name) |  |
-| \--private | Make the new repository private. |  |
+| \--public | Make the new repository public. |  |
 | \--template | (--template=) Make the new repository based on a template repository. |  |
 | cse490A2/cse490-p06-starter | the value for \--template |  |
 
 > 2. Wait until https://github.com/\<your login\>/p06-\<your login\> shows files. GitHub copies the template in the background, about a minute.  
-> 3. Run the course script that pushes `thumbor`'s history, files the five issues and invites the grader. It is in the wizard folder, which fetches the `p06` pack the first time the wizard runs with Project 6 open (`python3 wizard.py`, pick Project 6, quit):  
+> 3. Run the course script that pushes `thumbor`'s history and files the five issues (the grader reads a public repository without an invitation). It is in the wizard folder, which fetches the `p06` pack the first time the wizard runs with Project 6 open (`python3 wizard.py`, pick Project 6, quit):  
 >    `# Mac and Linux`  
 >    `python3 ~/Downloads/wizard/packs/p06/10-repo/make_repo.py`  
 >    `# Windows inside Ubuntu`  
@@ -401,7 +401,7 @@ Your harness needs a key of its own to the repository: a fine-grained personal a
 | \<your token\> | the fine-grained token GitHub showed you once |  |
 
 **Check.** In `p06`:  
-`curl -s -H "Authorization: Bearer $(grep GITHUB_PERSONAL_ACCESS_TOKEN .env | cut -d= -f2)" https://api.github.com/user/repos | grep full_name`  
+`curl -s -H "Authorization: Bearer $(grep GITHUB_PERSONAL_ACCESS_TOKEN .env | cut -d= -f2)" "https://api.github.com/user/repos?visibility=private" | grep full_name`  
 **What am I typing?**
 
 | What you type | What it means | From |
@@ -411,16 +411,16 @@ Your harness needs a key of its own to the repository: a fine-grained personal a
 | \-s | (--silent) Silent or quiet mode. Do not show progress meter or error messages. |  |
 | \-H | (--header=) Extra header to include in the request when sending HTTP to a server. |  |
 | "Authorization: Bearer \$(grep `GITHUB_PERSONAL_ACCESS_TOKEN` `.env` ¦ cut \-d= \-f2)" | the header value: the word Bearer, then your key; the \$( ) part reads the key out of `.env` |  |
-| https://api.github.com/user/repos | the URL to transfer |  |
+| "https://api.github.com/user/repos?visibility=private" | the URL to transfer |  |
 | ¦ | The vertical bar (shown in this table as ¦): The standard output of command1 is connected via a pipe to the standard input of command2. | [man bash](https://man7.org/linux/man-pages/man1/bash.1.html) |
 | grep | file pattern searcher. | [man grep](https://man7.org/linux/man-pages/man1/grep.1.html) |
 | full\_name | the pattern |  |
 
-You should see exactly one line, and it names \<your login\>/p06-\<your login\>. No line means the token is wrong; two or more means it reaches other repositories.  
+You should see exactly one line, and it names \<your login\>/p06-\<your login\>. No line means the token is wrong; two or more means it reaches other private repositories. Your public repositories are not on this list, and every token can read those anyway.  
 **Troubleshooting**
 
 > * *No line.* A character was lost when pasting, or the page was closed before copying (the token cannot be shown again). Make a new token and paste it whole.  
-> * *More than one line.* "All repositories" or several were picked. Delete that token on github.com and make one with only p06-\<your login\>.  
+> * *More than one line.* "All repositories" or several were picked. On github.com open the token, set Repository access to Only select repositories with p06-\<your login\> alone, and save; the token's value stays the same.  
 > * *You used `gh auth token` instead.* That token reaches everything you have. Make the fine-grained one above.  
 > * *The resource owner list shows cse490A2.* Pick your own account anyway. The repository is yours.
 
@@ -632,6 +632,7 @@ Open http://localhost:8888/unsafe/300x200/example.jpg in your browser. A picture
 **Troubleshooting**
 
 > * *`pip` stops building cairocffi or cairosvg.* Cairo is missing (step 2). Install it and run the line that stopped again.  
+> * *pytest says cannot load library 'libcairo.so.2' (Mac), or hundreds of tests fail at once.* Cairo is installed, but your Python does not look in Homebrew's folder; the Python from python.org never does. In the terminal run `export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib"`, then the pytest line again. Add the same line to the end of the file .zprofile in your home folder so every new terminal has it; your harness runs pytest from that terminal.  
 > * *`pip` says the Python is too old.* `thumbor` needs 3.12 or newer. Install one as in the harness step's step 5, then run the five lines of step 3 again from the first, with that Python.  
 > * *The server says the port is in use.* Start on another port and change only the port in the URL.  
 > * *No picture.* The server was started outside the clone, or without \-c course/thumbor.conf. Start it from the clone's top folder with the line above.  

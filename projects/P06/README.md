@@ -38,7 +38,7 @@ In this project, you’ll fix errors in a real production system – [thumbor](h
 
 | Tool Name | Purpose | Spec |
 | :---- | :---- | :---- |
-| GitHub Working folder | Point the harness at a GitHub repository | The harness takes a folder as its command-line argument and treats it as the repository. Every file path and every command is relative to that folder. |
+| GitHub Working folder | Point the harness at your local clone of the repository | The harness takes a folder as its command-line argument and treats it as the repository. Every file path and every command is relative to that folder. |
 | Repository instructions | Let the model read the repository's own instructions for running and testing it | At startup, if the working folder has an AGENTS.md, put its contents into the context before the first turn. |
 | `edit_file` | Change one passage without rewriting the file | Add `edit_file`. It takes a file path, an exact old passage and a new passage. It replaces the one occurrence and fails if the passage occurs zero times or more than once. |
 
