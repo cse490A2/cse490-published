@@ -24,4 +24,43 @@ check(
     "Earlier lines are kept, in order.",
     lines,
 )
+
+# The read half: the harness gives the notes back to the model at startup.
+import harness  # noqa: E402  (toolcheck has put the harness folder on the path)
+
+check(
+    callable(getattr(harness, "memory_notes", None)),
+    "harness.py has a function memory_notes() that returns the notes for the system prompt.",
+)
+notes = harness.memory_notes()
+check(
+    "the build uses ruff" in notes and "tests live in tests/" in notes,
+    "memory_notes() returns the lines that remember wrote.",
+    notes,
+)
+source = Path(harness.__file__).read_text(encoding="utf-8")
+check(
+    source.count("memory_notes(") >= 2,
+    "memory_notes() is called where the system prompt is built, not only defined.",
+)
+
+# A long file: the newest lines are kept, the oldest are left out, and the notes say so.
+Path("MEMORY.md").write_text(
+    "".join(f"note {n} " + "x" * 90 + "\n" for n in range(2000)), encoding="utf-8"
+)
+long_notes = harness.memory_notes()
+check(
+    len(long_notes) < 100_000,
+    "memory_notes() does not return all of a long MEMORY.md.",
+    len(long_notes),
+)
+check("note 1999 " in long_notes, "The newest line of a long file is kept.")
+check("note 0 " not in long_notes, "The oldest line of a long file is left out.")
+check(
+    "MEMORY.md" in long_notes,
+    "When lines are left out, the notes name MEMORY.md so the model can read the rest.",
+    long_notes[:200],
+)
+Path("MEMORY.md").unlink()
+check(harness.memory_notes() == "", "With no MEMORY.md, memory_notes() returns an empty string.")
 print("ok")

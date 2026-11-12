@@ -39,10 +39,17 @@ argument with no line under `Args:` is described by its name alone.
 | cost | none | A table of model calls, tokens and cost per agent and per model, summed from the `model_call` lines of trace.jsonl. A line with tokens and no cost still counts. |
 | summarize | path | The file's content in five lines, from the model. |
 
-Three of these need more than a new function:
+Four of these need more than a new function:
 
 - undo and diff read a copy that nothing keeps yet. Change `write_file` so it copies the
   file to `.undo/<the same path>` before it writes. A file that did not exist has no copy.
+- remember only writes. The harness has to read the notes back, or a later session never
+  sees them. Add a function `memory_notes()` that returns the text of MEMORY.md under the
+  line `Notes from earlier sessions:`, or an empty string when there is no file. Add it to
+  the system prompt where `skills_index()` is added, so every agent starts with the notes.
+  A long file is not loaded whole. `memory_notes()` returns the newest lines that fit in
+  `tools.max_memory_chars` of settings.json, 4,000 when the setting is missing. When older
+  lines are left out it says how many, and that `read_file` on MEMORY.md shows them all.
 - cost reads trace.jsonl, so trace.py has to be beside harness.py. Without a trace it
   returns `Error: no trace.jsonl yet`.
 - summarize asks the model through the harness's own `call_model`, with one message and no
@@ -66,16 +73,44 @@ Every tool is in the same file, and `write_file` replaces a whole file. Two agen
 change harness.py at the same moment lose one agent's work. Add the tools one after
 another, or give each agent a turn.
 
+## Change harness.py in small pieces
+
+harness.py is longer than one reply can hold. A reply stops at about 4,000 tokens, which is
+near 16,000 characters, and a `write_file` call is part of the reply. A call that carries
+all of harness.py is cut short. It fails with
+`write_file() missing 1 required positional argument: 'content'`. That error means the reply
+was too long. It does not mean the tool is broken, and sending the call again fails the same
+way.
+
+Never send all of harness.py to `write_file`. Add each function with a short script:
+
+1. Write the function in its own file, `new_tools/<tool name>.py`, with `write_file`.
+2. Write a script of about 20 lines, `new_tools/add_<tool name>.py`, with `write_file`. The
+   script reads harness.py and the function's file from disk. It puts the function above
+   the line that starts with `LOCAL_TOOLS =`. It adds the function's name to that list, and
+   it adds any import that harness.py lacks at the top. Then it writes harness.py back.
+3. Run the script with `execute`. The script does nothing when the function is already in
+   harness.py, so a second run is safe.
+4. Run the tool's test.
+
+A change inside a function that harness.py already has is made the same way. The script
+replaces the exact old lines with the new lines. It stops with a message when it cannot find
+the old lines.
+
+The harness has no tool that deletes a file. Leave the `add_` scripts where they are, and
+name each one in your report. The person who ran `/spawn` deletes them.
+
 ## Tests
 
-Each tool has its own test, already written: `tests/test_<tool_name>.py`. The tests folder
-comes in p07/. Move it beside harness.py, because the `execute` tool only runs a file inside
-the working folder.
+Each tool has its own test, already written: `tests/test_<tool_name>.py`. The `tests`
+folder is beside harness.py, in the working folder. Read and run a test by that path, for
+example `tests/test_todo.py`. A path that starts with `p07/` or `../` is refused or not
+found.
 
 | File | What it checks |
 |---|---|
 | tests/test_fetch_url.py | Tags, style and script are gone. The text is cut at 8,000 characters. |
-| tests/test_remember.py | One line per call in MEMORY.md, and the line count returned. |
+| tests/test_remember.py | One line per call in MEMORY.md, and the line count returned. `memory_notes()` gives the notes back, keeps the newest of a long file, and is used in harness.py. |
 | tests/test_todo.py | todo.md as a checklist, with done and open items. |
 | tests/test_find_text.py | The `path:line: text` form, the skipped files and the two limits. |
 | tests/test_undo.py | `write_file` keeps the copy, and undo puts it back. |

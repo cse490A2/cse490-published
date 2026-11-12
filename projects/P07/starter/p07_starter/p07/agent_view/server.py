@@ -34,9 +34,17 @@ def trace_folder(argument: str | None) -> Path:
     """Return the folder to read traces from."""
     if argument:
         return Path(argument).resolve()
-    candidates = [Path.cwd(), HERE.parent.parent / "harness", HERE.parent]
-    for folder in candidates:
+    near = [
+        Path.cwd(),
+        HERE.parent.parent / "harness",
+        Path.cwd().parent / "harness",
+        HERE.parent,
+    ]
+    for folder in near:  # a folder that already holds a trace
         if any(folder.glob("*.jsonl")):
+            return folder.resolve()
+    for folder in near:  # no trace yet: the harness will write it here
+        if (folder / "harness.py").is_file():
             return folder.resolve()
     return Path.cwd().resolve()
 
@@ -53,6 +61,7 @@ class Handler(BaseHTTPRequestHandler):
     """Serve the page and the two read-only trace endpoints."""
 
     folder: Path = Path.cwd()
+    named = False  # True when the folder was given on the command line
 
     def log_message(self, format: str, *args: object) -> None:  # noqa: A002
         """Stay quiet: the page asks for new lines every second."""
@@ -86,6 +95,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def files(self) -> dict:
         """List the .jsonl files in the trace folder."""
+        if not self.named and not any(self.folder.glob("*.jsonl")):
+            Handler.folder = trace_folder(None)  # look again: a trace may exist now
         listing: dict = {"dir": str(self.folder), "files": []}
         if not self.folder.is_dir():
             listing["error"] = "that folder does not exist"
@@ -119,7 +130,8 @@ def main() -> None:
     """Start the server and say where it is."""
     arguments = sys.argv[1:]
     port = whole_number(arguments[0], DEFAULT_PORT) if arguments else DEFAULT_PORT
-    Handler.folder = trace_folder(arguments[1] if len(arguments) > 1 else None)
+    Handler.named = len(arguments) > 1
+    Handler.folder = trace_folder(arguments[1] if Handler.named else None)
     try:
         server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
     except OSError as error:

@@ -103,14 +103,14 @@ In the Ubuntu terminal, `whoami` prints your Ubuntu user name, and the folder is
 
 #### **2\. Your harness**
 
-The starter files provides a harness to use. You can also continue to use your already-built harness.
+The starter files provide a harness to use. You can also continue to use your already-built harness.
 
 ## **Choose one:**
 
 ##### **A. Use the given starter harness**
 
 > 1. From your Project 6 folder, copy `.env` into `~/p07_starter/harness/.env`, and `github-mcp-server` into `~/p07_starter/harness/mcp/github-mcp-server`.  
-> 2. The harness needs Python 3.12 or newer, the one you installed in Project 6\. See what `python3` is: `python3 --version`. If it says less than 3.12 (the Mac's built-in is 3.9), type that newer Python's name in place of `python3` below, for example `python3.12`.  
+> 2. The harness needs Python 3.12 or newer. See what `python3` is: `python3 --version`. If it says 3.12 or more, go on. If it says less (the Mac's built-in is 3.9), install a newer one with Homebrew: `brew install python@3.12`. Then type `python3.12` in place of `python3` in the next line.  
 > 3. From a terminal in `p07_starter/harness`, make its Python environment:  
 >    `python3 -m venv .venv-harness && .venv-harness/bin/pip install python-dotenv mcp requests`
 
@@ -130,8 +130,8 @@ The starter files provides a harness to use. You can also continue to use your a
 This project requires the following components you've built in previous assignments:
 
 * A `settings.json` the harness reads when it starts.  
-* Local tools such as `read_file`, `write_file`, and `execute_file`  
-* Server tools and the tools the GitHub MCP server adds.  
+* Local tools such as `read_file`, `write_file`, and `execute_file`.  
+* Server tools, such as the ones the GitHub MCP server adds.  
 * The six names below in `harness.py`. The Project 7 tests and TOOLS.md use each one by name, so a harness that names them differently fails every test.
 
 | Name in `harness.py` | What it is |
@@ -167,7 +167,7 @@ After the GitHub server's own log lines it shows the `>>>` prompt. Leave with Ct
 **Troubleshooting**
 
 > * *python: command not found.* The environment is not on. Run the `source` line first. An environment stops working when its folder is moved or renamed: delete `.venv-harness` and make it again.  
-> * *No matching distribution found for mcp.* The environment was made with a Python older than 3.10. Delete `.venv-harness` and make it again with a newer one: `ls /opt/homebrew/bin/python3.*` on a Mac shows what you have, and `brew install python@3.12` installs one.  
+> * *No matching distribution found for mcp.* The environment was made with a Python older than 3.10. Delete `.venv-harness`, run `brew install python@3.12`, and make the environment again with `python3.12` in place of `python3`.  
 > * *ModuleNotFoundError: No module named 'mcp' or 'dotenv'.* The environment is missing a package: `.venv-harness/bin/pip install python-dotenv mcp requests`.  
 > * *.env is missing LITELLM\_API\_KEY.* Your key was not copied. Copy .env from your Project 6 folder.
 
@@ -234,7 +234,7 @@ Your `harness` folder should look like:
 `│   ├── test_<tool>.py        one per tool`  
 `│   ├── score_benchmark.py`  
 `│   └── verify_model_structure.py`  
-`├── trace.jsonl               new: written by the prompt you gave`  
+`├── trace.jsonl               file created when you prompt your harness`  
 `├── trace.py`  
 `└── upgrade_spec/`  
     `├── SPAWN.md`  
@@ -249,7 +249,7 @@ Your `harness` folder should look like:
 
 #### **4\. Set up the agent view**
 
-The agent viewer is a graphical way to view what your harness is doing. It provides a real-time chronological view of each agent deploy, and what each are doing. It works by reading 'trace.jsonl' located in `p07_starter/harness`.
+The agent view is a graphical way to see what your harness is doing. It shows each agent the harness starts, in time order and as it happens, and what each one is doing. It works by reading `trace.jsonl`, located in `p07_starter/harness`.
 
 > 1. Open a second terminal in `p07` and start it. Leave it running:  
 >    `python3 agent_view/server.py`
@@ -278,11 +278,11 @@ The agent viewer is a graphical way to view what your harness is doing. It provi
 | `xdg-open http://localhost:<port>/` | Linux: opens a file or URL in the user's preferred application. | [man xdg-open](https://man7.org/linux/man-pages/man1/xdg-open.1.html) |
 | `explorer.exe http://localhost:<port>/` | Windows inside Ubuntu: hands the address to Windows, which opens it in your browser. |  |
 
-**Check.** The page opens. It'll look like some below:
+**Check.** The page opens. It will look something like the picture below:
 
 ![](https://raw.githubusercontent.com/cse490A2/cse490-published/main/projects/P07/images/setup-4.png)
 
-1 current session, 2 harness agent row, 3 some agents worked at this time, 4 zoom functionality, 5 session's total model calls, token, and cost, 6 agent's history.
+1 current session, 2 harness agent row, 3 some agents worked at this time, 4 zoom functionality, 5 session's total model calls, tokens, and cost, 6 agent's history.
 
 **Troubleshooting**
 

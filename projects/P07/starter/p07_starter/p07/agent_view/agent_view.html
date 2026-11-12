@@ -487,9 +487,11 @@ document.addEventListener("keydown", e => { if (e.key === "Escape" && selected &
 /* Zoom keeps one moment in place: the one under the pointer, or the middle
    of the view when a button is used. It glides to its target over a few
    frames, and only the timeline is redrawn while it moves. */
-let zoomTarget = 1, anchor = null, gliding = false;
-function setZoom(z, pointerX) {
+let zoomTarget = 1, anchor = null, gliding = false, direct = false;
+const PINCH_SPEED = 0.03;      // zoom per unit of pinch; raise it for a faster pinch
+function setZoom(z, pointerX, fromPinch = false) {
   const wrap = $("timelineWrap");
+  direct = fromPinch;          // a pinch follows the fingers; a button glides
   zoomTarget = Math.min(400, Math.max(1, z));
   if (scale) {
     const at = Math.max(pointerX ?? scale.LW + (wrap.clientWidth - scale.LW) / 2, scale.LW);   // px from the pane's left edge
@@ -500,7 +502,7 @@ function setZoom(z, pointerX) {
 function glide() {
   const wrap = $("timelineWrap"), ratio = zoomTarget / zoom;
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  zoom = still || Math.abs(ratio - 1) < 0.004 ? zoomTarget : zoom * Math.pow(ratio, 0.28);   // ease out, evenly on a log scale
+  zoom = still || direct || Math.abs(ratio - 1) < 0.004 ? zoomTarget : zoom * Math.pow(ratio, 0.28);   // ease out, evenly on a log scale
   zooming = true; renderTimeline(lastNow); zooming = false;
   if (anchor && scale) wrap.scrollLeft = Math.max(0, (anchor.moment - scale.t0) * scale.pps + scale.LW - anchor.at);
   if (zoom !== zoomTarget) requestAnimationFrame(glide); else gliding = false;
@@ -511,9 +513,16 @@ $("zfit").onclick = () => setZoom(1);
 $("timelineWrap").addEventListener("wheel", e => {
   if (!e.ctrlKey && !e.metaKey) return;          // a trackpad pinch arrives as a wheel event with ctrl held
   e.preventDefault();
-  const factor = Math.min(2, Math.max(0.5, Math.exp(-e.deltaY * 0.01)));   // small moves zoom a little
-  setZoom(zoomTarget * factor, e.clientX - e.currentTarget.getBoundingClientRect().left);
+  const factor = Math.min(3, Math.max(1 / 3, Math.exp(-e.deltaY * PINCH_SPEED)));
+  setZoom(zoomTarget * factor, e.clientX - e.currentTarget.getBoundingClientRect().left, true);
 }, { passive: false });
+// Safari sends a trackpad pinch as gesture events, never as a wheel event.
+let pinchFrom = 1;
+$("timelineWrap").addEventListener("gesturestart", e => { e.preventDefault(); pinchFrom = zoomTarget; });
+$("timelineWrap").addEventListener("gesturechange", e => {
+  e.preventDefault();
+  setZoom(pinchFrom * Math.pow(e.scale, 2), e.clientX - e.currentTarget.getBoundingClientRect().left, true);
+});
 window.addEventListener("resize", () => refresh(true));
 
 /* ---------- the two panes' divider ---------- */

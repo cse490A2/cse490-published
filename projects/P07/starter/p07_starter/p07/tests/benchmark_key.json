@@ -11,8 +11,62 @@
   "9": "d78b64af47fb9a9e7e96df437e65394b95315f0bc30dd9ba85124669495ceecc",
   "10": "3614d82c3cb1174da78463f18b9195f2d214fb0bcfc38baecbef5280d0625885"
  },
+ "parts": {
+  "11": {
+   "answers": {
+    "a": {
+     "is": "5386ce2541da5eb0a69d82ec7c407c145a9c9581ffb98debd164d63a7c395523",
+     "set": true
+    },
+    "b": {
+     "is": "daf683389efe43076f92b97b66f0b2a1b867219b0628ac194eb6151644169f62",
+     "set": true
+    },
+    "c": {
+     "is": "7207f93d3a20ed4ddc9399fcdba1d2e5ae35f9217bdbff4223e40389cb5be31f",
+     "set": false
+    },
+    "d": {
+     "is": "c8ed90c2d3913302e24e385c0e0b777d388231c24fc924e455df5504c51f1f4e",
+     "set": false
+    }
+   },
+   "pages": [
+    "88dd657aba8ac4f6631d5a048dcbacba98658a960df8c61c3920a7e45cfc53fd",
+    "4dc45162a3aebcfaccf5da2112d0695a9bd08423a7e78100ecafffa1db67f5c1",
+    "fd2010e4ebf8ab46266a47cda716c2a9a8217b74db23c06b3743d72a4a4de39e",
+    "b7c034b4484c07ddb50da132ead8b480b94e21d5648ffbf3edef1d8a7bcc05f3",
+    "fd0e826ef37b14ef1615c837b426d363083b8f7922f36c1186495dccf2b2f40e",
+    "c70ab48f7241300b5798fa9e140adf0b7a15c53bc744baf55223b1cea427cdab"
+   ]
+  },
+  "12": {
+   "answers": {
+    "a": {
+     "is": "2476bf041963c99d92c8fcd4d3c0e732eefacf1fa2b8e27fa55d1fdd1b0b6186",
+     "set": false
+    },
+    "b": {
+     "is": "db3c7a262cb6ae7702326b6c799836aecaead5a3ed0fe643389cf36ace20b285",
+     "set": false
+    },
+    "c": {
+     "is": "5cf8cb582d5f1fba8eaef9f3392e84e6f31901252e092eeddf7c0390178d4510",
+     "set": false
+    },
+    "d": {
+     "is": "196df2bc3ddd5557a27c89b3194fe4336e761125d1bfa9debdb80289d84bd356",
+     "set": false
+    }
+   },
+   "pages": [
+    "67bda4eec09666bb3f2f2c88fcead3ee29236937f4e860f14ef0c1bb5e7efcb4",
+    "d9c1b5529697524d0016f5eafc261c3a08c1dcb10f867e8dd1e68241f64735ac"
+   ]
+  }
+ },
  "summary": {
-  "n": "11",
+  "n": "13",
   "rests_on": [
    "2",
    "3",

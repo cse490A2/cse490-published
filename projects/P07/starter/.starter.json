@@ -22,23 +22,47 @@
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/agent_view/agent_view.html": {
-   "older": [],
-   "sha256": "2b464bd2e2569029fe2591e62f3532321413aa3767adcc99177933cfe85cbc5b",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "2b464bd2e2569029fe2591e62f3532321413aa3767adcc99177933cfe85cbc5b"
+    }
+   ],
+   "sha256": "7c4c19723e1effffad72d8cdbe90c4af152c1d38769ba7e18309d5eb2b88f824",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/agent_view/server.py": {
-   "older": [],
-   "sha256": "4a7646ef93ecf9549c79e9b87ce5751b36d44f19853038d4a8bcf65b514015b2",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "4a7646ef93ecf9549c79e9b87ce5751b36d44f19853038d4a8bcf65b514015b2"
+    }
+   ],
+   "sha256": "4c0d96aa0039a39343748479a0c299d95f71530168e6685ace309281a0d1eacb",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/multiagent_benchmark/job_desc/job_1.md": {
-   "older": [],
-   "sha256": "b0eb2f9f23fb4e51974a9403e2d6fd1cbd4d9c86c752c6208b9b572e9aa9c804",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "b0eb2f9f23fb4e51974a9403e2d6fd1cbd4d9c86c752c6208b9b572e9aa9c804"
+    }
+   ],
+   "sha256": "3a2d61ad6616461646ccfba304429b366b4ff277a8dc264ca4349b207d7e35be",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/multiagent_benchmark/job_desc/job_2.md": {
-   "older": [],
-   "sha256": "5b28fe6f27948075467372936edad3e46cf9616bb4731154813107743fa0e8cb",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "5b28fe6f27948075467372936edad3e46cf9616bb4731154813107743fa0e8cb"
+    }
+   ],
+   "sha256": "4fdfdee819222094586bd9eefcf829558d2439a9ffc26c8a1a23f78dbf60929c",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/multiagent_benchmark/pages.zip": {
@@ -47,13 +71,25 @@
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/multiagent_benchmark/questions.md": {
-   "older": [],
-   "sha256": "165757ad4e05918d98694d54598c75ea5759cb7daa367423150377c0339c2057",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "165757ad4e05918d98694d54598c75ea5759cb7daa367423150377c0339c2057"
+    }
+   ],
+   "sha256": "09b886dcafdcff1d212b5c1b37e5e0f01f8c89c5926022f2e675a84e616d5e32",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/multiagent_benchmark/serve.py": {
-   "older": [],
-   "sha256": "944362787c41efbfe0e33cb823bc5e4ecdf8432edb16e64bd035a4f5df6d7d6f",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "944362787c41efbfe0e33cb823bc5e4ecdf8432edb16e64bd035a4f5df6d7d6f"
+    }
+   ],
+   "sha256": "9f6900d651f1e9648acb34d5954d6f239e4b90ccc3f5e49715a71fdb63d7a5f2",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/roles/helper.md": {
@@ -67,13 +103,25 @@
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/tests/benchmark_key.json": {
-   "older": [],
-   "sha256": "dd3296206ccbcf79058e026584cfd3f9da7de654ea663fd7b7103c7764792ba6",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "dd3296206ccbcf79058e026584cfd3f9da7de654ea663fd7b7103c7764792ba6"
+    }
+   ],
+   "sha256": "cf761e51a436a537c9951828036d082a5adfa19f45b413c735d7287f914b16d8",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/tests/score_benchmark.py": {
-   "older": [],
-   "sha256": "2a0d9a84e9d0ecc1430072d161d2f1353a0f509ddf778f18fd6c7261fd1739c6",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "2a0d9a84e9d0ecc1430072d161d2f1353a0f509ddf778f18fd6c7261fd1739c6"
+    }
+   ],
+   "sha256": "0ecd4341ffa4cdff23492988392123b81fe0a34966ee3db68a509550f9d657a8",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/tests/test_cost.py": {
@@ -102,8 +150,14 @@
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/tests/test_remember.py": {
-   "older": [],
-   "sha256": "e24b2bf164941e488a75aa2a80ba6da5aa59f2118f3625a80bb12e31e3252109",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "e24b2bf164941e488a75aa2a80ba6da5aa59f2118f3625a80bb12e31e3252109"
+    }
+   ],
+   "sha256": "b1c730e362787b9a0392aaa0a1ab9481b86f385bd90811703e73214fe7267ebd",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/tests/test_summarize.py": {
@@ -142,8 +196,14 @@
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/upgrade_spec/TOOLS.md": {
-   "older": [],
-   "sha256": "2658d9f9f9486e2c98c430fe153ad37a0a2e45aa179cc89ac7b89867592e8a59",
+   "older": [
+    {
+     "commit": "8a58abf",
+     "published": "2026-11-11",
+     "sha256": "2658d9f9f9486e2c98c430fe153ad37a0a2e45aa179cc89ac7b89867592e8a59"
+    }
+   ],
+   "sha256": "59971c91d55ad0dc05f6a1e728c0cb5033ff66d2dd43b53f1bf57b8f213afb87",
    "source_modified": "2026-11-12"
   },
   "p07_starter/p07/upgrade_spec/TRACE.md": {

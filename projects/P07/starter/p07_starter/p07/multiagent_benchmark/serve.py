@@ -2,7 +2,7 @@
 """Serve the frozen pages on http://localhost:8765/ . Standard library only.
 
     python3 serve.py            # port 8765
-    python3 serve.py 9000       # another port
+    python3 serve.py 9000       # another port; then change 8765 to 9000 in questions.md and job_desc
 
 GET /            an HTML index linking every page, with its group, source URL and fetch date
 GET /<file>.txt  the page as text/plain (UTF-8)
@@ -39,7 +39,8 @@ def pages_dir():
 
 
 PAGES = pages_dir()
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
+DEFAULT_PORT = 8765  # the port questions.md and the job files name
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_PORT
 
 
 def page_meta(fn):
@@ -88,9 +89,46 @@ class Handler(SimpleHTTPRequestHandler):
         sys.stderr.write("%s %s\n" % (self.address_string(), fmt % args))
 
 
+def port_in_use():
+    """Say plainly why the port is taken, and what to do. Then stop."""
+    import urllib.request
+    try:
+        with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/", timeout=3) as reply:
+            ours = b"<title>P07 pages</title>" in reply.read(400)
+    except OSError:
+        ours = False
+    if ours:
+        sys.exit(f"The page server is already running at http://localhost:{PORT}/ "
+                 "(in another terminal). You do not need to start it again.")
+    import subprocess
+    try:  # name the program that holds the port, when the system can say
+        pid = subprocess.run(["lsof", "-ti", f"tcp:{PORT}", "-sTCP:LISTEN"],
+                             capture_output=True, text=True).stdout.split()[0]
+        what = subprocess.run(["ps", "-p", pid, "-o", "command="],
+                              capture_output=True, text=True).stdout.strip()
+    except (OSError, IndexError):
+        pid, what = "", ""
+    if "serve.py" in what:
+        sys.exit(f"An old page server (process {pid}) holds port {PORT} and does not answer.\n"
+                 f"Stop it:  kill {pid}\n"
+                 "Then run serve.py again.")
+    sys.exit(f"Another program is using port {PORT}, and it is not the page server.\n"
+             + (f"It is process {pid}: {what[:80]}\n" if pid else f"See what it is:  lsof -i :{PORT}\n")
+             + "Close that program and run serve.py again. Keep this port: "
+             "questions.md and the job files name it.")
+
+
 if __name__ == "__main__":
-    with ThreadingHTTPServer(("127.0.0.1", PORT), Handler) as srv:
+    try:
+        srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
+    except OSError:
+        port_in_use()
+    with srv:
         print(f"serving {PAGES} at http://localhost:{PORT}/  (Ctrl-C to stop)")
+        if PORT != DEFAULT_PORT:
+            print(f"NOTE: questions.md and the job files name port {DEFAULT_PORT}, so the team "
+                  f"will not find these pages.\nIn your harness folder, change {DEFAULT_PORT} "
+                  f"to {PORT} in questions.md and in each file in job_desc before you run a job.")
         try:
             srv.serve_forever()
         except KeyboardInterrupt:
