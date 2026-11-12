@@ -1,6 +1,6 @@
 ---
 title: "P07 setup"
-parent: "P07"
+parent: "P07: A Team Upgrades Your Agent"
 grand_parent: "Projects"
 nav_order: 1
 permalink: "/projects/P07/setup/"
@@ -90,7 +90,7 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 #### **1\. Download the starter files**
 
 > 1. Download the Starter files at the top of this page, beside Handout and Setup.  
-> 2. Unzip the file. It makes a folder named `p07_starter`, which should contain `harness/` and `p07`.
+> 2. Unzip the file. Inside it is a folder named `p07_starter`, which should contain `harness/` and `p07`.
 
 ###### ***Windows***
 
