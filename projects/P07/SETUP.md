@@ -109,7 +109,7 @@ The starter files provide a harness to use. You can also continue to use your al
 
 ##### **A. Use the given starter harness**
 
-> 1. From your Project 6 folder, copy `.env` into `~/p07_starter/harness/.env`, and `github-mcp-server` into `~/p07_starter/harness/mcp/github-mcp-server`.  
+> 1. From your Project 6 folder, copy `.env` into `~/p07_starter/harness/.env`. Make the folder `~/p07_starter/harness/mcp` (`mkdir -p ~/p07_starter/harness/mcp`), and copy `github-mcp-server` into it.  
 > 2. The harness needs Python 3.12 or newer. See what `python3` is: `python3 --version`. If it says 3.12 or more, go on. If it says less (the Mac's built-in is 3.9), install a newer one with Homebrew: `brew install python@3.12`. Then type `python3.12` in place of `python3` in the next line.  
 > 3. From a terminal in `p07_starter/harness`, make its Python environment:  
 >    `python3 -m venv .venv-harness && .venv-harness/bin/pip install python-dotenv mcp requests`
