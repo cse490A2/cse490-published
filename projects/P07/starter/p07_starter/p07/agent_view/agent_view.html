@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent view</title>
+<style>
+  :root {
+    --bg:#0f1218; --panel:#171b24; --panel2:#1d222d; --line:#2a3040; --text:#dde2ec; --dim:#9aa3b5;
+    --running:#3ddc84; --done:#4c9aff; --failed:#ff6b6b; --stalled:#f5b942; --killed:#ff9a3c; --idle:#6b7488;
+    --spawn:#b48cff; --plan:#5fd3d3; --lw:230px;
+  }
+  * { box-sizing:border-box; }
+  html,body { height:100%; margin:0; }
+  body { background:var(--bg); color:var(--text); font:13px/1.45 system-ui,-apple-system,Segoe UI,sans-serif; display:flex; flex-direction:column; }
+  button, select, input { font:inherit; color:var(--text); background:var(--panel2); border:1px solid var(--line); border-radius:5px; padding:3px 8px; }
+  button { cursor:pointer; } button:hover { border-color:var(--dim); }
+  :focus-visible { outline:2px solid var(--done); outline-offset:1px; }
+  [hidden] { display:none !important; }
+
+  header { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; padding:8px 12px; background:var(--panel); border-bottom:1px solid var(--line); }
+  h1 { font-size:15px; margin:0; font-weight:600; }
+  .group { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .group > span { color:var(--dim); }
+  .chip { border-radius:99px; padding:2px 10px; }
+  .chip[aria-pressed=true] { border-color:var(--text); background:#263042; }
+  .chip b { margin-left:5px; font-weight:600; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:middle; background:var(--idle); flex:none; }
+  .dot.running { background:var(--running); animation:pulse 1.2s infinite; }
+  .dot.done { background:var(--done); } .dot.failed { background:var(--failed); }
+  .dot.killed { background:var(--killed); } .dot.stalled { background:var(--stalled); }
+  @keyframes pulse { 50% { opacity:.35; } }
+  @media (prefers-reduced-motion: reduce) { .dot.running { animation:none; } }
+  .spacer { flex:1; }
+  #totals { color:var(--dim); font-variant-numeric:tabular-nums; }
+  #conn { color:var(--dim); } #conn.live { color:var(--running); } #conn.err { color:var(--failed); }
+
+  #timelineWrap { flex:0 0 auto; max-height:42%; min-height:74px; overflow:auto; position:relative; }
+  #timelineWrap.sized { max-height:none; }
+  #timeline { position:relative; min-width:100%; }
+  .row { display:flex; height:26px; border-bottom:1px solid #1b2029; cursor:pointer; }
+  .row:hover, .row:focus-visible { background:#161a22; } .row.sel { background:#1c2433; }
+  .lbl { position:sticky; left:0; z-index:3; width:var(--lw); min-width:var(--lw); background-color:var(--bg); border-right:1px solid var(--line); padding:3px 8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:flex; align-items:center; }
+  .row:hover .lbl, .row:focus-visible .lbl { background-color:#161a22; } .row.sel .lbl { background-color:#1c2433; }
+  .lbl.child { padding-left:24px; }
+  .lbl small { color:var(--dim); margin-left:6px; overflow:hidden; text-overflow:ellipsis; }
+  .track { position:relative; flex:none; }
+  .seg { position:absolute; top:6px; height:14px; border-radius:3px; opacity:.85; min-width:3px; }
+  .seg.running { background:var(--running); } .seg.done { background:var(--done); } .seg.failed { background:var(--failed); }
+  .seg.killed { background:var(--killed); } .seg.idle { background:var(--idle); }
+  .seg.stalled { background:repeating-linear-gradient(45deg,var(--stalled),var(--stalled) 4px,#8a6a1f 4px,#8a6a1f 8px); }
+  .tick { position:absolute; top:4px; width:2px; height:18px; background:#fff; opacity:.6; }
+  .tick.err { background:#ff2d2d; opacity:1; } .tick.spawn { background:var(--spawn); opacity:1; }
+  .tick.report { background:var(--running); opacity:1; } .tick.report.bad { background:var(--failed); }
+  .tick.plan { background:var(--plan); opacity:1; }
+  .ruler { position:sticky; top:0; z-index:4; display:flex; height:22px; background:var(--panel); border-bottom:1px solid var(--line); }
+  .ruler .lbl { background-color:var(--panel); color:var(--dim); }
+  .ruler .track span { position:absolute; top:3px; padding-left:4px; border-left:1px solid var(--line); height:16px; color:var(--dim); font-size:11px; white-space:nowrap; }
+  .gridline { position:absolute; top:22px; bottom:0; width:1px; background:#1b2029; pointer-events:none; }
+  #nowline { position:absolute; top:22px; bottom:0; width:1px; background:var(--running); opacity:.7; pointer-events:none; z-index:2; }
+  .empty { padding:28px; color:var(--dim); text-align:center; }
+  .empty code { background:var(--panel2); padding:1px 6px; border-radius:4px; color:var(--text); }
+
+  #splitter { flex:none; height:7px; cursor:row-resize; background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  #splitter:hover, #splitter:focus-visible { background:#263042; }
+
+  #detail { flex:1 1 0; min-height:90px; display:flex; flex-direction:column; overflow:hidden; }
+  #dhead { padding:8px 12px; background:var(--panel); border-bottom:1px solid var(--line); }
+  #dhead .title { font-size:14px; font-weight:600; display:flex; align-items:center; gap:4px; }
+  #dhead .meta { color:var(--dim); margin-top:2px; }
+  #dhead .task { margin-top:4px; max-height:4.4em; overflow:auto; white-space:pre-wrap; }
+  .toolcounts span { display:inline-block; background:var(--panel2); border:1px solid var(--line); border-radius:4px; padding:0 6px; margin:4px 4px 0 0; font-size:11px; }
+  #events { flex:1; overflow:auto; padding:6px 12px 14px; }
+  details.ev { border-left:3px solid var(--line); margin:3px 0; padding:2px 8px; background:var(--panel); border-radius:0 4px 4px 0; }
+  details.ev > summary { cursor:pointer; list-style:none; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  details.ev > summary::-webkit-details-marker { display:none; }
+  details.ev[open] > summary { white-space:normal; }
+  details.ev.prompt { border-color:var(--stalled); } details.ev.model { border-color:var(--done); }
+  details.ev.tool { border-color:#6b7488; } details.ev.spawn { border-color:var(--spawn); }
+  details.ev.report { border-color:var(--running); } details.ev.plan { border-color:var(--plan); }
+  details.ev.tools { border-color:#3a4152; } details.ev.bad { border-color:var(--failed); }
+  .k { display:inline-block; min-width:58px; font-size:11px; text-transform:uppercase; letter-spacing:.03em; color:var(--dim); }
+  .tm { color:var(--dim); font-size:11px; margin-right:8px; font-variant-numeric:tabular-nums; }
+  .ag { color:var(--spawn); margin-right:8px; }
+  .facts { color:var(--dim); font-size:11px; margin:2px 0 4px; }
+  pre { margin:4px 0 6px; white-space:pre-wrap; word-break:break-word; background:#0b0e13; padding:6px 8px; border-radius:4px; max-height:340px; overflow:auto; font:12px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; }
+  pre + pre { margin-top:0; }
+  .cap { color:var(--dim); font-size:11px; margin:6px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Agent view</h1>
+  <div class="group"><span>Session</span><select id="session" aria-label="Session"></select></div>
+  <div class="group" id="chips" role="group" aria-label="Filter by status"></div>
+  <input type="search" id="search" placeholder="Filter agents and events" size="22" aria-label="Filter agents and events">
+  <div class="group" title="Pinch, or hold Ctrl or Cmd and scroll, to zoom at the pointer"><span>Zoom</span>
+    <button id="zout" aria-label="Zoom out">−</button><button id="zin" aria-label="Zoom in">+</button><button id="zfit">Fit</button></div>
+  <label class="group"><input type="checkbox" id="follow" checked> Follow newest</label>
+  <label class="group"><input type="checkbox" id="pause"> Pause</label>
+  <span class="spacer"></span>
+  <span id="totals"></span>
+  <span id="conn" role="status">connecting</span>
+  <button id="liveBtn" hidden>Back to live</button>
+  <button id="openBtn" title="Load .jsonl files from disk. No live updates.">Open files</button>
+  <input type="file" id="fileIn" accept=".jsonl" multiple hidden>
+</header>
+
+<div id="timelineWrap"><div id="timeline"></div></div>
+<div id="splitter" role="separator" aria-orientation="horizontal" aria-label="Resize the two panes" tabindex="0"></div>
+<section id="detail">
+  <div id="dhead"></div>
+  <div id="events"></div>
+</section>
+
+<script>
+"use strict";
+/* Reads the harness's trace.jsonl. Every line is one JSON object with a
+   "type", and (from the current harness) a "time", "session", "run" and
+   "agent". Lines from an older harness have no time or session; they are
+   shown under "Older lines" with times taken from their neighbours. */
+
+const ACTIVE_WINDOW = 90;     // seconds of silence before an open agent counts as stalled
+const POLL_MS = 1000;
+const MAX_ITEMS = 1500;       // newest events kept in the list below
+const CHUNK = 4 * 1024 * 1024;
+const OLD = "older";
+const $ = id => document.getElementById(id);
+
+/* ---------- state ---------- */
+let events = [];              // every parsed line, kept sorted by time
+let seq = 0, dirty = true, needSort = false;
+const files = new Map();      // file name -> { offset, lastT, waiting: [] }
+let staticMode = false;
+let zoom = 1;                 // 1 fits the width
+let selected = null;          // an agent's key, or null for every agent
+let filterStatus = null, filterText = "";
+let session = null;           // the session shown: an id, or "*" for all
+let pinned = false;           // true once a session is picked by hand; until then the newest is shown
+let agents = [], items = [], sessions = [];
+
+/* ---------- helpers ---------- */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+const str = v => v == null ? "" : typeof v === "string" ? v : JSON.stringify(v, null, 2);
+const clip = (s, n) => (s = String(s ?? "").replace(/\s+/g, " ").trim()).length > n ? s.slice(0, n - 1) + "…" : s;
+const cut = s => (s = str(s)).length > 20000 ? s.slice(0, 20000) + "\n… (cut: " + s.length.toLocaleString() + " characters)" : s;
+const fmtT = t => new Date(t * 1000).toLocaleTimeString([], { hour12: false });
+const fmtDay = t => new Date(t * 1000).toLocaleString([], { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
+const fmtDur = s => { s = Math.max(0, s); return s < 60 ? (s < 10 ? s.toFixed(1) : s.toFixed(0)) + "s" : s < 3600 ? Math.floor(s / 60) + "m" + String(Math.floor(s % 60)).padStart(2, "0") + "s" : Math.floor(s / 3600) + "h" + String(Math.floor(s % 3600 / 60)).padStart(2, "0") + "m"; };
+const fmtCost = c => "$" + (c < 0.01 ? c.toFixed(4) : c.toFixed(2));
+const nowSec = () => Date.now() / 1000;
+const seconds = iso => { const ms = Date.parse(iso); return Number.isNaN(ms) ? null : ms / 1000; };
+
+/* The text of a tool's reply: a string, or the parts an MCP server sent. */
+function replyText(reply) {
+  if (reply == null || typeof reply === "string") return reply ?? "";
+  if (Array.isArray(reply.content)) {
+    const parts = reply.content.map(p => p.type === "text" ? p.text : p.type === "resource" ? (p.resource || {}).text || "" : p.type === "image" ? "[image]" : JSON.stringify(p));
+    return parts.filter(Boolean).join("\n");
+  }
+  return JSON.stringify(reply, null, 2);
+}
+const looksBad = (text, reply) => (reply && reply.isError === true) || /^\s*(error\b|refused:|exit [1-9]\d*:|traceback)/i.test(text);
+
+/* ---------- reading lines ---------- */
+function ingestLine(file, line) {
+  line = line.trim();
+  if (!line) return;
+  let d;
+  try { d = JSON.parse(line); } catch { return; }
+  if (!d || typeof d.type !== "string") return;
+  const f = files.get(file);
+  const stamps = d.timestamps || {};
+  let t = seconds(d.time) ?? seconds(stamps.end_time);
+  const ev = {
+    seq: seq++, type: d.type, raw: d, file,
+    agent: d.agent || "main",
+    // a line from an older harness has no "time": those are kept together
+    session: typeof d.time !== "string" ? OLD : typeof d.session === "string" ? d.session : (d.session && d.session.session_id) || OLD,
+    run: d.run || "",
+    t0: seconds(stamps.start_time),
+  };
+  if (d.type === "spawn" || d.type === "spawn_report") { ev.about = "manager"; ev.aboutRun = d.spawned_run || ""; }
+  if (d.type === "helper_start" || d.type === "helper_report") { ev.about = d.helper || "helper"; ev.aboutRun = ev.run; }
+  if (t == null) {                       // an older line: borrow the time of its neighbours
+    if (f.lastT == null) { f.waiting.push(ev); return; }
+    t = f.lastT;
+  }
+  ev.t = t; f.lastT = t;
+  for (const w of f.waiting) { w.t = t; push(w); }
+  f.waiting.length = 0;
+  push(ev);
+}
+function push(ev) {
+  if (events.length && ev.t < events[events.length - 1].t) needSort = true;
+  events.push(ev); dirty = true;
+}
+function ingestText(file, text) { for (const l of text.split("\n")) ingestLine(file, l); }
+function fileState(name) { if (!files.has(name)) files.set(name, { offset: 0, lastT: null, waiting: [] }); return files.get(name); }
+function forget(name) { events = events.filter(e => e.file !== name); files.delete(name); dirty = true; }
+function resetAll() { events = []; files.clear(); seq = 0; dirty = true; session = null; pinned = false; selected = null; }
+
+/* ---------- live polling ---------- */
+async function pollOnce() {
+  const res = await fetch("/api/files", { cache: "no-store" });
+  if (!res.ok) throw new Error("files " + res.status);
+  const listing = await res.json();
+  window.traceDir = listing.dir; window.traceError = listing.error || "";
+  for (const name of [...files.keys()]) if (!listing.files.some(f => f.name === name)) forget(name);
+  for (const f of listing.files) {
+    let st = fileState(f.name);
+    if (f.size < st.offset) { forget(f.name); st = fileState(f.name); }     // replaced by a shorter file
+    for (let guard = 0; st.offset < f.size && guard < 50; guard++) {
+      const r = await fetch(`/api/read?file=${encodeURIComponent(f.name)}&offset=${st.offset}`, { cache: "no-store" });
+      if (!r.ok) break;
+      if (+r.headers.get("X-Offset") !== st.offset) { forget(f.name); break; }
+      const buf = new Uint8Array(await r.arrayBuffer());
+      const nl = buf.lastIndexOf(10);
+      if (nl < 0) { if (buf.length >= CHUNK) st.offset += buf.length; break; }   // a line longer than a chunk is skipped
+      ingestText(f.name, new TextDecoder().decode(buf.subarray(0, nl + 1)));
+      st.offset += nl + 1;
+    }
+  }
+  return listing.files.length;
+}
+
+let polling = false;
+async function pollLoop() {
+  const conn = $("conn");
+  if (staticMode) { /* files were opened by hand */ }
+  else if ($("pause").checked) { conn.className = ""; conn.textContent = "paused"; }
+  else if (!polling) {
+    polling = true;
+    try {
+      const n = await pollOnce();
+      conn.className = "live";
+      conn.textContent = "live";
+      conn.title = (window.traceDir || "") + (n ? "" : " (no .jsonl files yet)");
+    } catch (e) {
+      conn.className = "err";
+      conn.textContent = location.protocol === "file:" ? "no server: use Open files" : "server unreachable";
+    }
+    polling = false;
+  }
+  setTimeout(pollLoop, POLL_MS);
+}
+
+/* ---------- working out sessions, agents and the event list ---------- */
+const keyOf = (sess, run, agent) => `${sess}|${run}|${agent}`;
+
+function derive() {
+  if (needSort) { events.sort((a, b) => a.t - b.t || a.seq - b.seq); needSort = false; }
+
+  // sessions, newest first
+  const smap = new Map();
+  for (const e of events) {
+    let s = smap.get(e.session);
+    if (!s) smap.set(e.session, s = { id: e.session, first: e.t, last: e.t, n: 0 });
+    s.last = Math.max(s.last, e.t); s.first = Math.min(s.first, e.t); s.n++;
+  }
+  sessions = [...smap.values()].sort((a, b) => b.last - a.last);
+  if (!pinned || (session !== "*" && !smap.has(session))) {
+    const newest = sessions.length ? sessions[0].id : null;
+    if (newest !== session) { session = newest; selected = null; pinned = false; }
+  }
+  const shown = session === "*" ? events : events.filter(e => e.session === session);
+
+  const map = new Map();
+  const get = (sess, run, name) => {
+    const key = keyOf(sess, run, name);
+    let a = map.get(key);
+    if (!a) map.set(key, a = { key, name, run, session: sess, role: name === "main" ? "main" : name === "manager" ? "manager" : "helper",
+      model: "", task: "", calls: 0, tokens: 0, cost: 0, nTools: 0, nErr: 0, tools: {}, ticks: [], turns: [], open: null,
+      start: null, end: null, exit: undefined, lastOwn: null, firstOwn: null, parent: null, closed: false });
+    return a;
+  };
+  const list = [];                               // the events as shown below
+  const openCalls = new Map();                   // agent key -> tool calls still waiting for a reply
+  const add = (a, kind, t, id, summary, body, bad, about) => {
+    const it = { id, kind, t, agent: a.name, key: a.key, about: about || null, summary, body, bad: !!bad };
+    list.push(it); return it;
+  };
+
+  for (const e of shown) {
+    const r = e.raw, a = get(e.session, e.run, e.agent);
+    a.lastOwn = e.t; if (a.firstOwn == null) a.firstOwn = e.t0 ?? e.t;
+    switch (e.type) {
+      case "model_call": {
+        const turn = r.turn || {}, tok = r.tokens || {}, model = (r.model || {}).model_group || "";
+        const began = e.t0 ?? e.t, failed = r.status === "failure";
+        a.calls++; a.tokens += tok.total || 0; a.cost += r.spend || 0; if (model) a.model = model;
+        if (turn.origin === "user") {
+          if (!a.task) a.task = turn.user_prompt || "";
+          if (a.open) a.turns.push({ start: a.open, end: began, status: "done" });
+          a.open = began;
+          add(a, "prompt", began, "p" + e.seq, clip(turn.user_prompt, 240), `<pre>${esc(cut(turn.user_prompt))}</pre>`);
+        }
+        const names = r.tool_names || [];
+        const facts = [model, r.timestamps ? fmtDur((r.timestamps.request_duration_ms || 0) / 1000) : "",
+          tok.total != null ? `${(tok.prompt ?? 0).toLocaleString()} in / ${(tok.completion ?? 0).toLocaleString()} out tokens` : "",
+          r.spend ? fmtCost(r.spend) : "", r.finish_reason ? "finish: " + r.finish_reason : ""].filter(Boolean).join(" · ");
+        const summary = failed ? "failed: " + clip(r.error_message, 220) : names.length ? "calls " + names.join(", ") + (r.response_text ? " — " + clip(r.response_text, 120) : "") : clip(r.response_text, 240) || "(empty reply)";
+        const text = failed ? r.error_message : r.response_text;
+        add(a, "model", e.t, "m" + e.seq, summary, `<div class="facts">${esc(facts)}</div>${text ? `<pre>${esc(cut(text))}</pre>` : ""}`, failed);
+        if (failed) { a.ticks.push({ t: e.t, cls: "err", tip: "model call failed" }); a.nErr++; }
+        if (failed || !names.length) { if (a.open != null) a.turns.push({ start: a.open, end: e.t, status: failed ? "failed" : "done" }); a.open = null; }
+        else if (a.open == null) a.open = began;
+        break;
+      }
+      case "tool_call": {
+        a.nTools++; a.tools[r.name] = (a.tools[r.name] || 0) + 1;
+        if (a.open == null) a.open = e.t;          // a tool is running: the agent is at work
+        const it = add(a, "tool", e.t, "t" + e.seq, "", "");
+        it.name = r.name; it.args = r.arguments; it.waiting = true;
+        if (!openCalls.has(a.key)) openCalls.set(a.key, []);
+        openCalls.get(a.key).push(it);
+        break;
+      }
+      case "tool_reply": {
+        const queue = openCalls.get(a.key) || [];
+        const at = queue.findIndex(x => x.name === r.name);
+        const it = at >= 0 ? queue.splice(at, 1)[0] : Object.assign(add(a, "tool", e.t, "t" + e.seq, "", ""), { name: r.name, args: undefined });
+        it.waiting = false; it.result = replyText(r.reply); it.took = e.t - it.t;
+        it.bad = looksBad(it.result, r.reply);
+        if (it.bad) a.nErr++;
+        break;
+      }
+      case "server_tools":
+        add(a, "tools", e.t, "s" + e.seq, `${(r.tools || []).length} tools from the ${r.server || "MCP"} server`, `<pre>${esc((r.tools || []).join(", "))}</pre>`);
+        break;
+      case "helper_start": case "spawn": {
+        const c = get(e.session, e.aboutRun, e.about);
+        c.start = e.t; c.task = r.task || r.goal || c.task; c.parent = a.key;
+        const what = e.type === "spawn" ? `/spawn: ${clip(r.goal, 220)}` : `started ${e.about}: ${clip(r.task, 200)}`;
+        add(a, "spawn", e.t, "w" + e.seq, what, `<pre>${esc(cut(r.task || r.goal))}</pre>`, false, c.key);
+        a.ticks.push({ t: e.t, cls: "spawn", tip: e.type === "spawn" ? "/spawn started the manager" : "started " + e.about });
+        break;
+      }
+      case "helper_report": case "spawn_report": {
+        const c = get(e.session, e.aboutRun, e.about), text = str(r.report);
+        const stopped = /stopped at the time limit/.test(text) || typeof r.exit_code === "string";
+        const bad = stopped || (typeof r.exit_code === "number" && r.exit_code !== 0) || /^\(no report/.test(text);
+        c.end = e.t; c.closed = true; c.exit = r.exit_code; c.status = stopped ? "killed" : bad ? "failed" : "done";
+        if (c.start == null) c.start = c.firstOwn ?? e.t;
+        add(a, "report", e.t, "r" + e.seq, `${e.about} reported${typeof r.exit_code === "number" ? ` (exit ${r.exit_code})` : ""}: ${clip(text, 200)}`, `<pre>${esc(cut(text))}</pre>`, bad, c.key);
+        a.ticks.push({ t: e.t, cls: "report" + (bad ? " bad" : ""), tip: `${e.about} reported` });
+        break;
+      }
+      case "plan_start": case "plan_approved": case "plan_cancelled": {
+        const label = { plan_start: "plan mode on: " + clip(r.goal, 200), plan_approved: "plan approved", plan_cancelled: "plan cancelled" }[e.type];
+        add(a, "plan", e.t, "n" + e.seq, label, r.plan || r.goal ? `<pre>${esc(cut(r.plan || r.goal))}</pre>` : "");
+        a.ticks.push({ t: e.t, cls: "plan", tip: label });
+        break;
+      }
+      default:
+        add(a, "other", e.t, "o" + e.seq, `${e.type}: ${clip(JSON.stringify(r), 200)}`, `<pre>${esc(cut(r))}</pre>`);
+    }
+  }
+
+  // tool items: their text is known once the reply (if any) has been read
+  for (const it of list) if (it.kind === "tool") {
+    const args = it.args === undefined ? "" : clip(str(it.args), 110);
+    it.summary = `${it.name}(${args})` + (it.waiting ? " … running" : " → " + clip(it.result, 110));
+    it.body = (it.args === undefined ? "" : `<div class="cap">arguments</div><pre>${esc(cut(it.args))}</pre>`) +
+      (it.waiting ? `<div class="cap">no reply yet</div>` : `<div class="cap">result${it.took >= 0.05 ? " · " + fmtDur(it.took) : ""}</div><pre>${esc(cut(it.result))}</pre>`);
+    const a = map.get(it.key);
+    a.ticks.push({ t: it.t, cls: it.bad ? "err" : "", tip: it.name + (it.bad ? " (failed)" : "") });
+  }
+
+  // each agent's bars and status
+  const now = Math.max(nowSec(), events.length ? events[events.length - 1].t : 0);
+  const all = [...map.values()].filter(a => a.firstOwn != null || a.start != null);
+  const lastSeen = a => Math.max(a.lastOwn ?? a.start ?? 0, ...all.filter(c => c.parent === a.key).map(c => lastSeen(c)));
+  for (const a of all) {
+    a.segs = [];
+    const live = !staticMode && now - lastSeen(a) <= ACTIVE_WINDOW;
+    if (a.role === "main") {
+      a.segs = a.turns.slice();
+      if (a.open != null) a.segs.push(live ? { start: a.open, end: now, status: "running" } : { start: a.open, end: lastSeen(a), status: "stalled" });
+      a.status = a.segs.length ? a.segs[a.segs.length - 1].status : "idle";
+      if (a.status === "done" || a.status === "failed") a.status = a.status === "failed" ? "failed" : "idle";   // waiting at its prompt
+      a.start = a.firstOwn; a.end = a.status === "running" ? now : lastSeen(a);
+      if (!a.segs.length) a.segs.push({ start: a.start, end: Math.max(a.end, a.start), status: "idle" });
+    } else {
+      if (a.start == null) a.start = a.firstOwn;
+      if (!a.closed) { a.status = live ? "running" : "stalled"; a.end = live ? now : lastSeen(a); }
+      a.segs.push({ start: a.start, end: Math.max(a.end, a.start), status: a.status });
+    }
+  }
+  const order = a => a.role === "main" ? 0 : a.role === "manager" ? 1 : 2;
+  const runStart = a => { const m = all.find(x => x.role === "manager" && x.session === a.session && x.run === a.run); return m ? m.start : a.start; };
+  all.sort((a, b) => (a.role === "main" ? a.start : runStart(a)) - (b.role === "main" ? b.start : runStart(b)) || order(a) - order(b) || a.start - b.start || a.name.localeCompare(b.name, undefined, { numeric: true }));
+  agents = all; items = list;
+  if (selected && !map.has(selected)) selected = null;
+  return now;
+}
+
+/* ---------- header ---------- */
+const STATUSES = ["running", "idle", "done", "failed", "killed", "stalled"];
+function renderHeader() {
+  const sel = $("session"), want = session || "";
+  const opts = sessions.map(s => `<option value="${esc(s.id)}">${esc(s.id === OLD ? "Older lines" : fmtDay(s.first))} · ${s.n} lines</option>`).join("") +
+    (sessions.length > 1 ? `<option value="*">All sessions</option>` : "");
+  if (sel.dataset.opts !== opts) { sel.innerHTML = opts; sel.dataset.opts = opts; }
+  sel.value = want; sel.disabled = !sessions.length;
+
+  const counts = {}; agents.forEach(a => counts[a.status] = (counts[a.status] || 0) + 1);
+  let html = `<button class="chip" aria-pressed="${filterStatus === null}" data-s="">all<b>${agents.length}</b></button>`;
+  for (const s of STATUSES) if (counts[s] || filterStatus === s)
+    html += `<button class="chip" aria-pressed="${filterStatus === s}" data-s="${s}"><span class="dot ${s}"></span>${s}<b>${counts[s] || 0}</b></button>`;
+  if ($("chips").dataset.html !== html) { $("chips").innerHTML = html; $("chips").dataset.html = html; }
+
+  const tok = agents.reduce((n, a) => n + a.tokens, 0), cost = agents.reduce((n, a) => n + a.cost, 0), calls = agents.reduce((n, a) => n + a.calls, 0);
+  $("totals").textContent = calls ? `${calls} model call${calls === 1 ? "" : "s"}${tok ? " · " + tok.toLocaleString() + " tokens" : ""}${cost ? " · " + fmtCost(cost) : ""}` : "";
+}
+$("chips").onclick = e => { const c = e.target.closest(".chip"); if (c) { filterStatus = c.dataset.s || null; refresh(true); } };
+$("search").oninput = e => { filterText = e.target.value.trim().toLowerCase(); refresh(true); };
+$("session").onchange = e => { session = e.target.value; pinned = sessions.length > 0 && session !== sessions[0].id; selected = null; zoom = zoomTarget = 1; refresh(true); };
+
+/* ---------- timeline ---------- */
+function niceStep(pps) {
+  const steps = [1, 2, 5, 10, 15, 30, 60, 120, 300, 600, 900, 1800, 3600, 7200, 14400, 43200, 86400];
+  return steps.find(s => s * pps >= 90) || 86400;   // labels at least 90 px apart
+}
+const matches = a => !filterText || (a.name + " " + a.task + " " + a.model).toLowerCase().includes(filterText);
+function visibleAgents() {
+  const anyByName = agents.some(matches);
+  return agents.filter(a => (!filterStatus || a.status === filterStatus) && (!filterText || !anyByName || matches(a)));
+}
+
+let scale = null;             // the timeline as last drawn: { t0, pps, LW }
+let zooming = false;          // true while a zoom is being drawn, so Follow does not move the view
+let lastNow = 0;              // the clock time the timeline was last drawn for
+
+function renderTimeline(now) {
+  const list = visibleAgents(), wrap = $("timelineWrap"), LW = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--lw"));
+  if (!list.length) {
+    const why = !events.length
+      ? (window.traceError ? `The trace folder ${esc(window.traceDir)}: ${esc(window.traceError)}.`
+        : `Waiting for trace lines${window.traceDir ? " in <code>" + esc(window.traceDir) + "</code>" : ""}. Start the harness and send it a prompt.`)
+      : "No agent matches the filter.";
+    $("timeline").style.width = ""; $("timeline").innerHTML = `<div class="empty">${why}</div>`; return;
+  }
+  const anyRunning = agents.some(a => a.status === "running");
+  const t0 = Math.min(...agents.map(a => a.start));
+  const t1 = Math.max(...agents.map(a => a.end), t0 + 1);
+  const span = t1 - t0;
+  const avail = Math.max(wrap.clientWidth - LW - 24, 200);
+  const pps = (avail / span) * zoom;
+  const W = Math.ceil(span * pps) + 16;
+  const x = t => ((t - t0) * pps).toFixed(1);
+  scale = { t0, pps, LW };
+
+  const step = niceStep(pps), longSpan = span > 86400;
+  let ruler = "", grid = "";
+  for (let t = Math.ceil(t0 / step) * step; t <= t1; t += step) {
+    ruler += `<span style="left:${x(t)}px">${longSpan ? fmtDay(t) : fmtT(t)}</span>`;
+    grid += `<div class="gridline" style="left:${LW + +x(t)}px"></div>`;
+  }
+  let html = `<div class="ruler"><div class="lbl">${list.length} agent${list.length > 1 ? "s" : ""} · ${fmtDur(span)}</div><div class="track" style="width:${W}px">${ruler}</div></div>${grid}`;
+  for (const a of list) {
+    let inner = "";
+    for (const s of a.segs)
+      inner += `<div class="seg ${s.status}" style="left:${x(s.start)}px;width:${Math.max((s.end - s.start) * pps, 3).toFixed(1)}px" title="${esc(`${a.name}: ${s.status} · ${fmtT(s.start)} to ${fmtT(s.end)} (${fmtDur(s.end - s.start)})`)}"></div>`;
+    for (const k of a.ticks) inner += `<div class="tick ${k.cls}" style="left:${x(k.t)}px" title="${esc(fmtT(k.t) + " " + k.tip)}"></div>`;
+    const tip = `${a.name}: ${a.status}\n${clip(a.task, 300)}`;
+    html += `<div class="row ${selected === a.key ? "sel" : ""}" data-key="${esc(a.key)}" role="button" tabindex="0" aria-pressed="${selected === a.key}" aria-label="${esc(a.name + ", " + a.status)}">` +
+      `<div class="lbl ${a.role === "helper" ? "child" : ""}" title="${esc(tip)}"><span class="dot ${a.status}"></span>${esc(a.name)}<small>${esc(clip(a.task, 60))}</small></div>` +
+      `<div class="track" style="width:${W}px">${inner}</div></div>`;
+  }
+  if (anyRunning) html += `<div id="nowline" style="left:${LW + +x(now)}px"></div>`;
+  const tl = $("timeline"), sl = wrap.scrollLeft, st = wrap.scrollTop, focused = document.activeElement && document.activeElement.dataset && document.activeElement.dataset.key;
+  tl.style.width = (LW + W) + "px";
+  tl.innerHTML = html;
+  wrap.scrollLeft = sl; wrap.scrollTop = st;
+  if (focused) { const el = tl.querySelector(`.row[data-key="${CSS.escape(focused)}"]`); if (el) el.focus({ preventScroll: true }); }
+  if ($("follow").checked && anyRunning && zoom > 1 && !zooming) wrap.scrollLeft = wrap.scrollWidth;
+}
+function pick(key) { selected = selected === key ? null : key; refresh(true); }
+$("timeline").onclick = e => { const r = e.target.closest(".row"); if (r) pick(r.dataset.key); };
+$("timeline").onkeydown = e => {
+  const r = e.target.closest(".row"); if (!r) return;
+  if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(r.dataset.key); }
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); const n = e.key === "ArrowDown" ? r.nextElementSibling : r.previousElementSibling; if (n && n.classList.contains("row")) n.focus(); }
+};
+document.addEventListener("keydown", e => { if (e.key === "Escape" && selected && e.target.tagName !== "INPUT") { selected = null; refresh(true); } });
+/* Zoom keeps one moment in place: the one under the pointer, or the middle
+   of the view when a button is used. It glides to its target over a few
+   frames, and only the timeline is redrawn while it moves. */
+let zoomTarget = 1, anchor = null, gliding = false;
+function setZoom(z, pointerX) {
+  const wrap = $("timelineWrap");
+  zoomTarget = Math.min(400, Math.max(1, z));
+  if (scale) {
+    const at = Math.max(pointerX ?? scale.LW + (wrap.clientWidth - scale.LW) / 2, scale.LW);   // px from the pane's left edge
+    anchor = { at, moment: scale.t0 + (wrap.scrollLeft + at - scale.LW) / scale.pps };
+  }
+  if (!gliding) { gliding = true; requestAnimationFrame(glide); }
+}
+function glide() {
+  const wrap = $("timelineWrap"), ratio = zoomTarget / zoom;
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  zoom = still || Math.abs(ratio - 1) < 0.004 ? zoomTarget : zoom * Math.pow(ratio, 0.28);   // ease out, evenly on a log scale
+  zooming = true; renderTimeline(lastNow); zooming = false;
+  if (anchor && scale) wrap.scrollLeft = Math.max(0, (anchor.moment - scale.t0) * scale.pps + scale.LW - anchor.at);
+  if (zoom !== zoomTarget) requestAnimationFrame(glide); else gliding = false;
+}
+$("zin").onclick = () => setZoom(zoomTarget * 1.6);
+$("zout").onclick = () => setZoom(zoomTarget / 1.6);
+$("zfit").onclick = () => setZoom(1);
+$("timelineWrap").addEventListener("wheel", e => {
+  if (!e.ctrlKey && !e.metaKey) return;          // a trackpad pinch arrives as a wheel event with ctrl held
+  e.preventDefault();
+  const factor = Math.min(2, Math.max(0.5, Math.exp(-e.deltaY * 0.01)));   // small moves zoom a little
+  setZoom(zoomTarget * factor, e.clientX - e.currentTarget.getBoundingClientRect().left);
+}, { passive: false });
+window.addEventListener("resize", () => refresh(true));
+
+/* ---------- the two panes' divider ---------- */
+(function () {
+  const wrap = $("timelineWrap"), bar = $("splitter");
+  const set = px => { const h = Math.min(Math.max(px, 74), window.innerHeight - 220); wrap.classList.add("sized"); wrap.style.height = h + "px"; try { localStorage.setItem("agentViewSplit", h); } catch {} };
+  try { const saved = +localStorage.getItem("agentViewSplit"); if (saved) set(saved); } catch {}
+  bar.onpointerdown = e => { bar.setPointerCapture(e.pointerId); const top = wrap.getBoundingClientRect().top; bar.onpointermove = m => set(m.clientY - top); };
+  bar.onpointerup = bar.onpointercancel = () => { bar.onpointermove = null; };
+  bar.ondblclick = () => { wrap.classList.remove("sized"); wrap.style.height = ""; try { localStorage.removeItem("agentViewSplit"); } catch {} };
+  bar.title = "Drag to resize. Double-click to fit the rows.";
+  bar.onkeydown = e => { if (e.key === "ArrowUp" || e.key === "ArrowDown") { e.preventDefault(); set(wrap.offsetHeight + (e.key === "ArrowDown" ? 24 : -24)); } };
+})();
+
+/* ---------- the event list ---------- */
+let renderedView = null;
+function itemHtml(it, showAgent) {
+  const who = showAgent ? `<span class="ag">${esc(it.agent)}</span>` : "";
+  return `<details class="ev ${it.kind}${it.bad ? " bad" : ""}" data-id="${it.id}" data-ver="${esc(it.summary.length + ":" + it.body.length)}"><summary><span class="tm">${fmtT(it.t)}</span><span class="k">${it.kind}</span>${who}${esc(it.summary)}</summary>${it.body}</details>`;
+}
+
+function renderDetail() {
+  const box = $("events"), a = selected ? agents.find(x => x.key === selected) : null;
+  let list = a ? items.filter(it => it.key === a.key || it.about === a.key) : items;
+  if (filterText) list = list.filter(it => (it.agent + " " + it.kind + " " + it.summary).toLowerCase().includes(filterText));
+  const hiddenCount = Math.max(0, list.length - MAX_ITEMS);
+  if (hiddenCount) list = list.slice(-MAX_ITEMS);
+  const view = (a ? a.key : "*") + "|" + filterText + "|" + session + "|" + (hiddenCount > 0);
+
+  if (a) {
+    const top = Object.entries(a.tools).sort((x, y) => y[1] - x[1]).slice(0, 12).map(([n, c]) => `<span>${esc(n)} ×${c}</span>`).join("");
+    const exit = typeof a.exit === "number" ? ` (exit ${a.exit})` : "";
+    const parent = a.parent ? agents.find(x => x.key === a.parent) : null;
+    $("dhead").innerHTML =
+      `<div class="title"><span class="dot ${a.status}"></span>${esc(a.name)} — ${a.status}${exit}<span class="spacer"></span><button id="clearSel">Show all agents</button></div>
+       <div class="meta">${esc(a.model || "no model call yet")} · ${fmtT(a.start)} to ${fmtT(a.end)} (${fmtDur(a.end - a.start)}) · ${a.calls} model call${a.calls === 1 ? "" : "s"} · ${a.nTools} tool call${a.nTools === 1 ? "" : "s"}${a.nErr ? ` · ${a.nErr} failed` : ""} · ${a.tokens.toLocaleString()} tokens${a.cost ? " · " + fmtCost(a.cost) : ""}${parent ? " · started by " + esc(parent.name) : ""}</div>
+       ${a.task ? `<div class="task">${esc(clip(a.task, 1200))}</div>` : ""}<div class="toolcounts">${top}</div>`;
+    $("clearSel").onclick = () => { selected = null; refresh(true); };
+  } else {
+    const run = agents.filter(x => x.status === "running").map(x => x.name);
+    $("dhead").innerHTML =
+      `<div class="title">All agents</div>
+       <div class="meta">${items.length} events · ${agents.length} agent${agents.length === 1 ? "" : "s"} · ${run.length ? "running: " + esc(run.join(", ")) : "nothing running"} · select a row above to see one agent (Esc to return)</div>`;
+  }
+
+  const nearBottom = box.scrollHeight - box.scrollTop - box.clientHeight < 80;
+  if (renderedView !== view) { box.innerHTML = ""; renderedView = view; }
+  // keep what is already on screen (so opened entries stay open); change only what differs
+  const kids = box.querySelectorAll("details.ev");
+  let i = 0;
+  for (; i < list.length && i < kids.length; i++) {
+    const it = list[i], el = kids[i];
+    if (el.dataset.id !== it.id) break;
+    const ver = it.summary.length + ":" + it.body.length;
+    if (el.dataset.ver !== ver) { const open = el.open; el.outerHTML = itemHtml(it, !a || !!it.about); if (open) box.querySelectorAll("details.ev")[i].open = true; }
+  }
+  const fresh = box.querySelectorAll("details.ev");
+  for (let j = fresh.length - 1; j >= i; j--) fresh[j].remove();
+  let html = "";
+  for (let j = i; j < list.length; j++) html += itemHtml(list[j], !a || !!list[j].about);
+  const note = box.querySelector(".empty"); if (note) note.remove();
+  if (html) box.insertAdjacentHTML("beforeend", html);
+  if (!list.length) box.insertAdjacentHTML("afterbegin", `<div class="empty">${items.length ? "No event matches the filter." : "No events yet."}</div>`);
+  else if (hiddenCount) box.insertAdjacentHTML("afterbegin", `<div class="empty">Showing the newest ${MAX_ITEMS} events. ${hiddenCount} older ones are hidden; filter or select an agent to narrow down.</div>`);
+  if (html && (kids.length === 0 || ($("follow").checked && nearBottom))) box.scrollTop = box.scrollHeight;
+}
+
+/* ---------- refresh ---------- */
+function refresh(force) {
+  if (!dirty && !force) return;
+  const now = lastNow = derive();
+  dirty = false;
+  renderHeader();
+  renderTimeline(now);
+  renderDetail();
+}
+setInterval(() => refresh(false), 300);
+// a running bar grows with the clock even when no new line arrives
+setInterval(() => { if (!staticMode && agents.some(a => a.status === "running")) refresh(true); }, 1000);
+
+/* ---------- opening files by hand ---------- */
+async function loadFiles(list) {
+  list = list.filter(f => /\.jsonl$/i.test(f.name));
+  if (!list.length) return;
+  staticMode = true; resetAll();
+  for (const f of list) { fileState(f.name); ingestText(f.name, await f.text()); }
+  $("conn").className = ""; $("conn").textContent = `${list.length} file${list.length > 1 ? "s" : ""} opened by hand`;
+  $("liveBtn").hidden = false;
+  refresh(true);
+}
+$("openBtn").onclick = () => $("fileIn").click();
+$("fileIn").onchange = e => { loadFiles([...e.target.files]); e.target.value = ""; };
+document.addEventListener("dragover", e => e.preventDefault());
+document.addEventListener("drop", e => { e.preventDefault(); if (e.dataTransfer.files.length) loadFiles([...e.dataTransfer.files]); });
+$("liveBtn").onclick = () => { staticMode = false; resetAll(); $("liveBtn").hidden = true; $("conn").textContent = "connecting"; refresh(true); };
+
+refresh(true);
+pollLoop();
+</script>
+</body>
+</html>

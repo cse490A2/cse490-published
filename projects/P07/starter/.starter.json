@@ -1,0 +1,156 @@
+{
+ "about": "fingerprints of the starter files; the setup wizard compares the files in a project folder with these to say whether each one is current",
+ "files": {
+  "p07_starter/harness/harness.py": {
+   "older": [],
+   "sha256": "c69c3e47388fd9d8e9464a942398ad18651e96ee71c0ef974ecf4ad84db54f7e",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/harness/settings.json": {
+   "older": [],
+   "sha256": "c51447f37a9f4dfbc2a92336ef1b52d18592cac0bce9fb913a3009cae9ec12f5",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/harness/skills/blender-scene/SKILL.md": {
+   "older": [],
+   "sha256": "52269cce9b744ae9d6b7651e58c2299f5903a019ba80d2ec8708ca2247ae92f5",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/harness/systemprompt.md": {
+   "older": [],
+   "sha256": "8f1c1d72a079e62c23962685ddb2d318c10424fdb82e7dfcbb01be7b28cfeaa1",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/agent_view/agent_view.html": {
+   "older": [],
+   "sha256": "2b464bd2e2569029fe2591e62f3532321413aa3767adcc99177933cfe85cbc5b",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/agent_view/server.py": {
+   "older": [],
+   "sha256": "4a7646ef93ecf9549c79e9b87ce5751b36d44f19853038d4a8bcf65b514015b2",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/multiagent_benchmark/job_desc/job_1.md": {
+   "older": [],
+   "sha256": "b0eb2f9f23fb4e51974a9403e2d6fd1cbd4d9c86c752c6208b9b572e9aa9c804",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/multiagent_benchmark/job_desc/job_2.md": {
+   "older": [],
+   "sha256": "5b28fe6f27948075467372936edad3e46cf9616bb4731154813107743fa0e8cb",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/multiagent_benchmark/pages.zip": {
+   "older": [],
+   "sha256": "75eca577e734780fc02aab56d9f6cd098072abd87aa5d8a7533c28d12cb0b430",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/multiagent_benchmark/questions.md": {
+   "older": [],
+   "sha256": "165757ad4e05918d98694d54598c75ea5759cb7daa367423150377c0339c2057",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/multiagent_benchmark/serve.py": {
+   "older": [],
+   "sha256": "944362787c41efbfe0e33cb823bc5e4ecdf8432edb16e64bd035a4f5df6d7d6f",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/roles/helper.md": {
+   "older": [],
+   "sha256": "21b84afdcb626f8867a91d643a2de7da058980e49eb2e90506d9a11d88303235",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/roles/manager.md": {
+   "older": [],
+   "sha256": "8baddb1370c592fd3891eac19a95fd2eb574977e6e8ae188e240326f7ba3d32e",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/benchmark_key.json": {
+   "older": [],
+   "sha256": "dd3296206ccbcf79058e026584cfd3f9da7de654ea663fd7b7103c7764792ba6",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/score_benchmark.py": {
+   "older": [],
+   "sha256": "2a0d9a84e9d0ecc1430072d161d2f1353a0f509ddf778f18fd6c7261fd1739c6",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_cost.py": {
+   "older": [],
+   "sha256": "ff83775671968daa991ac955094dc06e3df9903db1db51904b6c4f720c3d928f",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_diff.py": {
+   "older": [],
+   "sha256": "469434632c6a7a9ae1cf26f508b4874c78900c31f7fb817ff64f4f9d2ebe2e4b",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_fetch_url.py": {
+   "older": [],
+   "sha256": "5bf31c870d127594ddc922ecc15a40b4496a40d261910dbf2b3769630b0f3bdf",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_find_text.py": {
+   "older": [],
+   "sha256": "89067e5d2b186fbc0fa1468d110df4d741139583d10a69dd83d627481c36ed6b",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_multiagent.py": {
+   "older": [],
+   "sha256": "b8bb6f3e71db3d64bea921452f2848d552ca48d874e01cd69a19f762ab61f9ab",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_remember.py": {
+   "older": [],
+   "sha256": "e24b2bf164941e488a75aa2a80ba6da5aa59f2118f3625a80bb12e31e3252109",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_summarize.py": {
+   "older": [],
+   "sha256": "5ceac262c293c6130463ee60e5190da35ac9f0ef7d0ad8f9cd0d1bf4b96d03e0",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_todo.py": {
+   "older": [],
+   "sha256": "6be8e5c9782cfadb06046a9eeca562aacc782354b6a1747963286b6aa3192a88",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/test_undo.py": {
+   "older": [],
+   "sha256": "771df515afe5604241b0f09fa42c223a200b0fe0a0fa066bf70d53c70034cb20",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/toolcheck.py": {
+   "older": [],
+   "sha256": "cfd9f9fce8b9764a6dff541924712a91c877755fbca116ba77c5006decacf2d3",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/tests/verify_model_structure.py": {
+   "older": [],
+   "sha256": "7845965ba5b30f91df7bd1d07ee92dc0760f680032c3aef612963de63653e613",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/trace.py": {
+   "older": [],
+   "sha256": "26a9fa42b4d3c05b90154e9e5ed546f6c10c16685c53c483e72e2ad43fa1ec0f",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/upgrade_spec/SPAWN.md": {
+   "older": [],
+   "sha256": "811e8a0761b4e76811915e69aa2663d6fa106992889eae6dbdb85f47daa8d098",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/upgrade_spec/TOOLS.md": {
+   "older": [],
+   "sha256": "2658d9f9f9486e2c98c430fe153ad37a0a2e45aa179cc89ac7b89867592e8a59",
+   "source_modified": "2026-11-12"
+  },
+  "p07_starter/p07/upgrade_spec/TRACE.md": {
+   "older": [],
+   "sha256": "583260b1cd6a3a3b3921e0b7281bd8c5b2ac78527079776ca8f197c01ef9ae80",
+   "source_modified": "2026-11-12"
+  }
+ },
+ "project": "P07"
+}

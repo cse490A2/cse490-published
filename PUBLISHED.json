@@ -781,5 +781,367 @@
     "modified_time": "2026-10-30T02:57:36.060Z",
     "published_at": "2026-11-02T23:21:15Z",
     "source": "drive"
+  },
+  "projects/P07/README.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-student-p07",
+    "document_id": "19BZHwehDjdpNCALQLb8wW-JFZK7Ilz-T7-dYSM-8Cjs",
+    "document_name": "P07 Handout",
+    "modified_time": "2026-11-12T01:24:54.750Z",
+    "published_at": "2026-11-12T01:26:29Z",
+    "source": "drive"
+  },
+  "projects/P07/SETUP.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-prereq-p07",
+    "document_id": "1-YKwotZo6d_eTTTKvVUT2b9-DTNAHCwuHp1VKl8nHBs",
+    "document_name": "P07 Prereq Instructions",
+    "modified_time": "2026-11-12T01:24:55.394Z",
+    "published_at": "2026-11-12T01:26:10Z",
+    "source": "drive"
+  },
+  "projects/P07/starter.zip": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P07/starter/p07_starter/harness/harness.py",
+      "projects/P07/starter/p07_starter/harness/settings.json",
+      "projects/P07/starter/p07_starter/harness/skills/blender-scene/SKILL.md",
+      "projects/P07/starter/p07_starter/harness/systemprompt.md",
+      "projects/P07/starter/p07_starter/p07/agent_view/agent_view.html",
+      "projects/P07/starter/p07_starter/p07/agent_view/server.py",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/job_desc/job_1.md",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/job_desc/job_2.md",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/pages.zip",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/questions.md",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/serve.py",
+      "projects/P07/starter/p07_starter/p07/roles/helper.md",
+      "projects/P07/starter/p07_starter/p07/roles/manager.md",
+      "projects/P07/starter/p07_starter/p07/tests/benchmark_key.json",
+      "projects/P07/starter/p07_starter/p07/tests/score_benchmark.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_cost.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_diff.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_fetch_url.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_find_text.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_multiagent.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_remember.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_summarize.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_todo.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_undo.py",
+      "projects/P07/starter/p07_starter/p07/tests/toolcheck.py",
+      "projects/P07/starter/p07_starter/p07/tests/verify_model_structure.py",
+      "projects/P07/starter/p07_starter/p07/trace.py",
+      "projects/P07/starter/p07_starter/p07/upgrade_spec/SPAWN.md",
+      "projects/P07/starter/p07_starter/p07/upgrade_spec/TOOLS.md",
+      "projects/P07/starter/p07_starter/p07/upgrade_spec/TRACE.md"
+    ],
+    "published_at": "2026-11-12T01:27:10Z",
+    "source": "derived"
+  },
+  "projects/P07/starter/.starter.json": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P07/starter/p07_starter/harness/harness.py",
+      "projects/P07/starter/p07_starter/harness/settings.json",
+      "projects/P07/starter/p07_starter/harness/skills/blender-scene/SKILL.md",
+      "projects/P07/starter/p07_starter/harness/systemprompt.md",
+      "projects/P07/starter/p07_starter/p07/agent_view/agent_view.html",
+      "projects/P07/starter/p07_starter/p07/agent_view/server.py",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/job_desc/job_1.md",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/job_desc/job_2.md",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/pages.zip",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/questions.md",
+      "projects/P07/starter/p07_starter/p07/multiagent_benchmark/serve.py",
+      "projects/P07/starter/p07_starter/p07/roles/helper.md",
+      "projects/P07/starter/p07_starter/p07/roles/manager.md",
+      "projects/P07/starter/p07_starter/p07/tests/benchmark_key.json",
+      "projects/P07/starter/p07_starter/p07/tests/score_benchmark.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_cost.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_diff.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_fetch_url.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_find_text.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_multiagent.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_remember.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_summarize.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_todo.py",
+      "projects/P07/starter/p07_starter/p07/tests/test_undo.py",
+      "projects/P07/starter/p07_starter/p07/tests/toolcheck.py",
+      "projects/P07/starter/p07_starter/p07/tests/verify_model_structure.py",
+      "projects/P07/starter/p07_starter/p07/trace.py",
+      "projects/P07/starter/p07_starter/p07/upgrade_spec/SPAWN.md",
+      "projects/P07/starter/p07_starter/p07/upgrade_spec/TOOLS.md",
+      "projects/P07/starter/p07_starter/p07/upgrade_spec/TRACE.md"
+    ],
+    "published_at": "2026-11-12T01:27:10Z",
+    "source": "derived"
+  },
+  "projects/P07/starter/p07_starter/harness/harness.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/harness/harness.py",
+    "document_id": "1QfTiiJ01fQpV2wgRgQltGKQZsJ7co_u8",
+    "document_name": "P07 starter p07_starter/harness/harness.py",
+    "modified_time": "2026-11-12T01:23:29.865Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/harness/settings.json": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/harness/settings.json",
+    "document_id": "1Zx6lHNL54A_ddlKVpZp0q7mWXcmkA-xk",
+    "document_name": "P07 starter p07_starter/harness/settings.json",
+    "modified_time": "2026-11-12T01:23:30.802Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/harness/skills/blender-scene/SKILL.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/harness/skills/blender-scene/SKILL.md",
+    "document_id": "1YBpTqLxWC6QccdiYsVSWCx-j2RmPDdUd",
+    "document_name": "P07 starter p07_starter/harness/skills/blender-scene/SKILL.md",
+    "modified_time": "2026-11-12T01:23:32.068Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/harness/systemprompt.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/harness/systemprompt.md",
+    "document_id": "10W780G4TrI4z7LRcX8eG5yqBAsp09q-x",
+    "document_name": "P07 starter p07_starter/harness/systemprompt.md",
+    "modified_time": "2026-11-12T01:23:33.179Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/agent_view/agent_view.html": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/agent_view/agent_view.html",
+    "document_id": "1vH0yOUscdAds5dq1ApxLfAqOUcxuZaUc",
+    "document_name": "P07 starter p07_starter/p07/agent_view/agent_view.html",
+    "modified_time": "2026-11-12T01:23:34.245Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/agent_view/server.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/agent_view/server.py",
+    "document_id": "1Td6ckWMxx3Q-xFoSnrnMCcGvbMPR0rfN",
+    "document_name": "P07 starter p07_starter/p07/agent_view/server.py",
+    "modified_time": "2026-11-12T01:23:36.008Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/multiagent_benchmark/job_desc/job_1.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/multiagent_benchmark/job_desc/job_1.md",
+    "document_id": "1cfC8O3caqWVAFDrkBzOFQxp71631Gb3B",
+    "document_name": "P07 starter p07_starter/p07/multiagent_benchmark/job_desc/job_1.md",
+    "modified_time": "2026-11-12T01:23:37.100Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/multiagent_benchmark/job_desc/job_2.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/multiagent_benchmark/job_desc/job_2.md",
+    "document_id": "1rR1-y_EqVleUHoGyZqUnLZEVeQLRdQRh",
+    "document_name": "P07 starter p07_starter/p07/multiagent_benchmark/job_desc/job_2.md",
+    "modified_time": "2026-11-12T01:23:38.151Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/multiagent_benchmark/pages.zip": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/multiagent_benchmark/pages.zip",
+    "document_id": "1B3pgOmp_lS8oePn2SbMv1h0oNoJsP9gV",
+    "document_name": "P07 starter p07_starter/p07/multiagent_benchmark/pages.zip",
+    "modified_time": "2026-11-12T01:23:39.245Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/multiagent_benchmark/questions.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/multiagent_benchmark/questions.md",
+    "document_id": "1FA30lvb_yHY9uiPHAZLLhrWmsLx3Sqro",
+    "document_name": "P07 starter p07_starter/p07/multiagent_benchmark/questions.md",
+    "modified_time": "2026-11-12T01:23:40.248Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/multiagent_benchmark/serve.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/multiagent_benchmark/serve.py",
+    "document_id": "1hABqPRucZEzB1u2eZ6RcYqZ39mEW2mjU",
+    "document_name": "P07 starter p07_starter/p07/multiagent_benchmark/serve.py",
+    "modified_time": "2026-11-12T01:23:41.435Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/roles/helper.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/roles/helper.md",
+    "document_id": "1J4DVEldwY40xhAqF7aNZoEEcZMWX0guE",
+    "document_name": "P07 starter p07_starter/p07/roles/helper.md",
+    "modified_time": "2026-11-12T01:23:42.657Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/roles/manager.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/roles/manager.md",
+    "document_id": "1EIleD5w5gaoj8WAzFYqfwWi8KWttN03M",
+    "document_name": "P07 starter p07_starter/p07/roles/manager.md",
+    "modified_time": "2026-11-12T01:23:43.574Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/benchmark_key.json": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/benchmark_key.json",
+    "document_id": "1fD8N6bssPAlVEIz3j2TPeH_aDWtP5nEg",
+    "document_name": "P07 starter p07_starter/p07/tests/benchmark_key.json",
+    "modified_time": "2026-11-12T01:23:44.826Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/score_benchmark.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/score_benchmark.py",
+    "document_id": "1jt29gZ2l0M2e8tdYsaW6Anchsw554Yhk",
+    "document_name": "P07 starter p07_starter/p07/tests/score_benchmark.py",
+    "modified_time": "2026-11-12T01:23:45.920Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_cost.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_cost.py",
+    "document_id": "1ZIp4xRf_QanxQ5L3xyoQNMxVNjxQQj6c",
+    "document_name": "P07 starter p07_starter/p07/tests/test_cost.py",
+    "modified_time": "2026-11-12T01:23:46.976Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_diff.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_diff.py",
+    "document_id": "1TUUCoVUFp4-hAbWRuIEBRONjAI35IORa",
+    "document_name": "P07 starter p07_starter/p07/tests/test_diff.py",
+    "modified_time": "2026-11-12T01:23:48.175Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_fetch_url.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_fetch_url.py",
+    "document_id": "1_yU8VHMEZ9cP99Kk3ozO-wxKg87YfpOC",
+    "document_name": "P07 starter p07_starter/p07/tests/test_fetch_url.py",
+    "modified_time": "2026-11-12T01:23:49.252Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_find_text.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_find_text.py",
+    "document_id": "1XHUEj_z59BDga9642cZlfms4-IE6jG2R",
+    "document_name": "P07 starter p07_starter/p07/tests/test_find_text.py",
+    "modified_time": "2026-11-12T01:23:50.410Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_multiagent.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_multiagent.py",
+    "document_id": "1XA33LAutOd4Z0GJbxj_YYz9AOOIggJFA",
+    "document_name": "P07 starter p07_starter/p07/tests/test_multiagent.py",
+    "modified_time": "2026-11-12T01:23:51.594Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_remember.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_remember.py",
+    "document_id": "1nPl208U8eoemYRcRAvEULC-Gs5GVOWQI",
+    "document_name": "P07 starter p07_starter/p07/tests/test_remember.py",
+    "modified_time": "2026-11-12T01:23:52.645Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_summarize.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_summarize.py",
+    "document_id": "1ioJxYcJac8aFmjP1yEh6fDWYIUm8a6TN",
+    "document_name": "P07 starter p07_starter/p07/tests/test_summarize.py",
+    "modified_time": "2026-11-12T01:23:54.044Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_todo.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_todo.py",
+    "document_id": "1kBR8Fa49ip90dN4P-Gddp7nLyGE8oym9",
+    "document_name": "P07 starter p07_starter/p07/tests/test_todo.py",
+    "modified_time": "2026-11-12T01:23:55.145Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/test_undo.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/test_undo.py",
+    "document_id": "1U2ReRedk5i8dKceQLMywaHMFleuiFzY4",
+    "document_name": "P07 starter p07_starter/p07/tests/test_undo.py",
+    "modified_time": "2026-11-12T01:23:56.816Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/toolcheck.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/toolcheck.py",
+    "document_id": "1YNQuncn0Iat2zCOVsn4PuypP__A3Sd9P",
+    "document_name": "P07 starter p07_starter/p07/tests/toolcheck.py",
+    "modified_time": "2026-11-12T01:23:57.991Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/tests/verify_model_structure.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/tests/verify_model_structure.py",
+    "document_id": "19wUgLI5ZwBAxLUsJKD-ZFMG06jgyE80c",
+    "document_name": "P07 starter p07_starter/p07/tests/verify_model_structure.py",
+    "modified_time": "2026-11-12T01:23:59.036Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/trace.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/trace.py",
+    "document_id": "1dSqIFc7mTZtk-zFLU_60sU41j1JLTDgi",
+    "document_name": "P07 starter p07_starter/p07/trace.py",
+    "modified_time": "2026-11-12T01:24:00.123Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/upgrade_spec/SPAWN.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/upgrade_spec/SPAWN.md",
+    "document_id": "14VLsPKxk3RdXNJsPOqDdh0BIOtUh6sPF",
+    "document_name": "P07 starter p07_starter/p07/upgrade_spec/SPAWN.md",
+    "modified_time": "2026-11-12T01:24:01.209Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/upgrade_spec/TOOLS.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/upgrade_spec/TOOLS.md",
+    "document_id": "1Mgv5Q6g7R0aKWOjsLoHdMDWnM_ZHPVrw",
+    "document_name": "P07 starter p07_starter/p07/upgrade_spec/TOOLS.md",
+    "modified_time": "2026-11-12T01:24:02.456Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
+  },
+  "projects/P07/starter/p07_starter/p07/upgrade_spec/TRACE.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P07 starter p07_starter/p07/upgrade_spec/TRACE.md",
+    "document_id": "1Th7KdGsa8A7UWUMJt_8TfEm5qJvFbVcR",
+    "document_name": "P07 starter p07_starter/p07/upgrade_spec/TRACE.md",
+    "modified_time": "2026-11-12T01:24:03.534Z",
+    "published_at": "2026-11-12T01:26:54Z",
+    "source": "drive"
   }
 }

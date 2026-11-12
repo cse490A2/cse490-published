@@ -1,0 +1,28 @@
+{
+  "model": {
+    "default": "external/haiku-5-5",
+    "timeout_seconds": 120,
+    "max_tool_rounds": 25
+  },
+  "tools": {
+    "execute_timeout_seconds": 10,
+    "max_output_chars": 60000
+  },
+  "mcpServers": {
+    "github": {
+      "command": "./mcp/github-mcp-server",
+      "args": [
+        "stdio",
+        "--tools",
+        "get_file_contents,search_code,list_issues,issue_read,add_issue_comment,create_branch,create_pull_request,pull_request_read"
+      ],
+      "env": {"GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"}
+    }
+  },
+  "permissions": {
+    "deny": [
+      "git push origin main", "git push --force", "git push -f",
+      "create_or_update_file", "push_files", "delete_file"
+    ]
+  }
+}
