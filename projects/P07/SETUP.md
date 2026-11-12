@@ -90,7 +90,7 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 #### **1\. Download the starter files**
 
 > 1. Download the Starter files at the top of this page, beside Handout and Setup.  
-> 2. Unzip the file. Inside it is a folder named `p07_starter`, which should contain `harness/` and `p07`.
+> 2. Unzip the file. Inside it is a folder named `p07_starter`, which should contain `harness` and `p07`.
 
 ###### ***Windows***
 
@@ -110,7 +110,8 @@ The starter files provides a harness to use. You can also continue to use your a
 ##### **A. Use the given starter harness**
 
 > 1. From your Project 6 folder, copy `.env` into `~/p07_starter/harness/.env`, and `github-mcp-server` into `~/p07_starter/harness/mcp/github-mcp-server`.  
-> 2. From a terminal in `p07_starter/harness`, make its Python environment:  
+> 2. The harness needs Python 3.12 or newer, the one you installed in Project 6\. See what `python3` is: `python3 --version`. If it says less than 3.12 (the Mac's built-in is 3.9), type that newer Python's name in place of `python3` below, for example `python3.12`.  
+> 3. From a terminal in `p07_starter/harness`, make its Python environment:  
 >    `python3 -m venv .venv-harness && .venv-harness/bin/pip install python-dotenv mcp requests`
 
 **What am I typing?**
@@ -166,6 +167,7 @@ After the GitHub server's own log lines it shows the `>>>` prompt. Leave with Ct
 **Troubleshooting**
 
 > * *python: command not found.* The environment is not on. Run the `source` line first. An environment stops working when its folder is moved or renamed: delete `.venv-harness` and make it again.  
+> * *No matching distribution found for mcp.* The environment was made with a Python older than 3.10. Delete `.venv-harness` and make it again with a newer one: `ls /opt/homebrew/bin/python3.*` on a Mac shows what you have, and `brew install python@3.12` installs one.  
 > * *ModuleNotFoundError: No module named 'mcp' or 'dotenv'.* The environment is missing a package: `.venv-harness/bin/pip install python-dotenv mcp requests`.  
 > * *.env is missing LITELLM\_API\_KEY.* Your key was not copied. Copy .env from your Project 6 folder.
 
