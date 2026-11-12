@@ -63,6 +63,16 @@
       "name": "P06: Fixing Code You Did Not Write",
       "published": false,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11882266"
+    },
+    "P07": {
+      "assignment_id": 11896582,
+      "desc_fp": "a3a6cab54e095e09",
+      "due_at": "2026-11-18T07:59:00Z",
+      "due_source": "course doc",
+      "module_id": 3999727,
+      "name": "P07: A Team Upgrades Your Agent",
+      "published": true,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11896582"
     }
   },
   "lectures/L01/slides.pdf": {
