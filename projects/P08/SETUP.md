@@ -12,8 +12,6 @@ This document sets up your computer for CSE490’s in-class projects. There are 
 
 ## **Option 1: the wizard (recommended)**
 
-Project 8 is set up by hand this week: follow Option 2 below. The wizard still marks your attendance.
-
 A small program that walks you through each step, with a picture of where to click, and checks each one on your computer. Download it once; every week it fetches that week’s project by itself. Requires Python 3.9+.  
 Download [wizard-cse490.zip](https://github.com/cse490A2/cse490-published/releases/download/wizard/wizard-cse490.zip). It lands in your Downloads folder.
 
@@ -32,6 +30,10 @@ Right-click the zip in Downloads, choose "Extract All", open the wizard folder i
 Unzip it in Downloads to get the wizard folder. Then, in a terminal:  
 `cd ~/Downloads/wizard`  
 `python3 wizard.py`
+
+### **Lab computer**
+
+Set up by hand here. Follow Option 2 below.
 
 ## **Option 2: by hand**
 
@@ -87,11 +89,13 @@ Your in-person attendance is worth 2 points of your assignment grade. There are 
 
 ### **Setup:**
 
-This week your harness gets a second model that runs on your own computer: the strands decider, a 2-billion-parameter decision model. It reads your agent’s answer before you see it and says how likely the answer is to be good. When it says no, the harness asks a stronger model instead. Setup installs the decider and starts it. The handout hooks it to `harness.py`.
+This week your harness gets a second model that runs on your own computer: the strands decider, a 2-billion-parameter decision model. It reads your agent’s answer before you see it and says how likely the answer is to be good. When it says no, the harness asks a stronger model instead. Setup installs the decider, starts it, and checks that your harness asks it about every answer.
 
 You need about 6 GB of free disk space: about 1 GB for the Python packages and 4.5 GB for the model, which downloads the first time you start it. Do steps 1 to 4 before class if you can, so the download happens on your own network.
 
 The decider also needs memory while it runs: about 6 GB on a Mac, and about 8 GB, up to 12 GB on long answers, on Windows and Linux, where it runs on the processor. Close other programs before you start it. Windows gives Ubuntu half the laptop's memory unless you raise it, which step 3 does.
+
+If your computer cannot run the decider, use a lab computer. The five GPU computers in CSE 003 hold the decider's model already: caraxes, vhagar, balerion, sunfyre and syrax. Other students share them. On a lab computer, follow the lines headed Lab computer in each step.
 
 You will use two terminals. Terminal 1 runs the harness. Terminal 2 runs the decider server.
 
@@ -100,7 +104,11 @@ You will use two terminals. Terminal 1 runs the harness. Terminal 2 runs the dec
 > 1. Download the Starter files at the top of this page, beside Handout and Setup.  
 > 2. Unzip it so the folder `p08_starter`, which holds `harness` and `p08`.
 
-###### ***Mac and Linux***
+###### ***Mac***
+
+Unzip it in Downloads and leave the folder there. You work inside `~/Downloads/p08_starter`.
+
+###### ***Linux***
 
 Unzip it in Downloads and leave the folder there. You work inside `~/Downloads/p08_starter`.
 
@@ -111,11 +119,27 @@ Your work is inside Ubuntu, so unzip straight into it. Right-click starter.zip a
 
 In the Ubuntu terminal, `whoami` prints your Ubuntu user name. If Windows cannot find that folder, run `wsl -l` in PowerShell: it lists the name to use in place of `Ubuntu-24.04`.
 
+###### ***Lab computer***
+
+> 1. Go to the lab in CSE 003, in the basement of the Paul G. Allen Center. Sit at one of its five GPU computers: caraxes, vhagar, balerion, sunfyre or syrax.  
+> 2. Download the Starter files there. Unzip them in Downloads and leave the folder there. You work inside `~/Downloads/p08_starter`.
+
+##### **Either way**
+
 **Check:** `ls ~/Downloads/p08_starter` prints `harness  p08`.
 
 #### **2\. Your harness**
 
-The starter files provide a harness to use. You can also keep using the harness you finished in Project 7\. Neither has the router yet: you add it in step 6\. Both use your Project 7 key file `.env` and GitHub server, from your Project 7 `harness` folder. If either folder is somewhere else, use its path in place of `~/Downloads/p08_starter` or `~/Downloads/p07_starter`.
+The starter files provide a harness to use. It has the router already. You can also keep using the harness you finished in Project 7\. It has no router yet: your coding agent adds it in step 6\. Both use your Project 7 key file `.env` and GitHub server, from your Project 7 `harness` folder. If either folder is somewhere else, use its path in place of `~/Downloads/p08_starter` or `~/Downloads/p07_starter`.
+
+###### ***Lab computer***
+
+Your Project 7 folder is on your own computer.
+
+> 1. Copy your key file `.env` from your Project 7 `harness` folder into `~/Downloads/p08_starter/harness` here.  
+> 2. Skip the two `cp` lines of option A. You do not need the GitHub server: Project 8 does not use the GitHub tools.
+
+Option B needs your whole Project 7 `harness` folder copied here.
 
 ## **Choose one:**
 
@@ -166,15 +190,17 @@ Your agent cannot reach a file outside its own folder, so the benchmark and the 
 | :---- | :---- | :---- |
 | `mv ../p08/bench .` | move files. Renames the file named by the source operand to the destination path named by the target operand. |  |
 | mv | move files. Renames the file named by the source operand to the destination path named by the target operand. | [man mv](https://man7.org/linux/man-pages/man1/mv.1.html) |
-| ../`p08`/bench | source: the prompts and the script for the handout's step 4 |  |
-| ../`p08`/upgrade\_spec/`ROUTER.md` | source: the router spec, which your coding agent reads in step 6 |  |
+| ../`p08`/bench | source: the saved responses and the script for the handout's step 3, and the router check for step 6 |  |
+| ../`p08`/upgrade\_spec/`ROUTER.md` | source: the router spec. With your own harness, your coding agent reads it in step 6 |  |
 | . | the folder you are in |  |
 
 **Check:** In terminal 1, turn on the environment and start the harness:  
 `source .venv-harness/bin/activate`  
 `python harness.py`
 
-It prints `[mcp] github: 8 tools`, then the `>>>` prompt. Leave with Ctrl+D.
+It prints a line that starts with `[mcp] github:`, then the `>>>` prompt. Leave with Ctrl+D.
+
+A line that says `[mcp] github: did not start` is fine. Project 8 does not use the GitHub tools.
 
 **What am I typing?**
 
@@ -187,7 +213,7 @@ It prints `[mcp] github: 8 tools`, then the `>>>` prompt. Leave with Ctrl+D.
 
 > * *cd: no such file or directory.* `p08_starter` is not in your Downloads folder. Use its path in place of `~/Downloads/p08_starter`, then run all three lines of line 1 again. If a folder named `mcp` appeared in the folder you were in, delete it: it was made in the wrong place.  
 > * *cp: No such file or directory.* Your Project 7 folder is not at `~/Downloads/p07_starter`. Find it with `find ~ -maxdepth 3 -name p07_starter`, and use the path it prints in place of `~/Downloads/p07_starter`.  
-> * *\[mcp\] github: did not start.* The GitHub server is not in `mcp/`. `ls mcp` should show `github-mcp-server`; run the copy line of step 2 again.  
+> * *\[mcp\] github: did not start.* This is fine for Project 8, which does not use the GitHub tools. The GitHub server is not in `mcp/`. To get the tools back, run the copy line of step 2 again.  
 > * *python: command not found.* The environment is not on. Run the `source` line first.  
 > * *No matching distribution found for mcp.* The environment was made with a Python older than 3.10. Delete `.venv-harness` and make it again with `python3.12` in place of `python3`.  
 > * *.env is missing LITELLM\_API\_KEY.* Your key was not copied. Run the `cp` line for `.env` again.  
@@ -195,11 +221,11 @@ It prints `[mcp] github: 8 tools`, then the `>>>` prompt. Leave with Ctrl+D.
 
 #### **3\. Install the strands decider**
 
-Strands decider is a small model capable of making fast decisions. It should run well on most comptuers. You can find the system requirments [here](#appendix-a-strands-decider-system-requirements). If your computer cannot run it, or you don't want to install locally, use the lab computers to complete this project.
+Strands decider is a small model capable of making fast decisions. It should run well on most comptuers. You can find the system requirments [here](#appendix-a-strands-decider-system-requirements). If your computer cannot run it, or you don't want to install locally, use a lab computer in CSE 003 to complete this project.
 
-## **Choose one:**
+###### ***Mac***
 
-##### **A. Install it on your own computer**
+No extra step here. Install the decider below.
 
 ###### ***Windows***
 
@@ -236,6 +262,10 @@ Give Ubuntu enough memory first:
 | :---- | :---- | :---- |
 | `.venv-harness/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu` | Install PyTorch from PyTorch's own server, in the build that runs on the processor alone. | [PyTorch: start locally](https://pytorch.org/get-started/locally/) |
 
+###### ***Lab computer***
+
+This computer has a graphics card and holds the decider's model already. It needs no extra step. Install the decider below.
+
 ###### ***Install the decider***
 
 > 1. Inside `p08_starter/harness`:  
@@ -246,21 +276,6 @@ Give Ubuntu enough memory first:
 | What you type | What it means | From |
 | :---- | :---- | :---- |
 | `.venv-harness/bin/pip install strands-decider` | Install the decider, with PyTorch and the Hugging Face libraries it needs, into the harness's environment. | [strands-decider on PyPI](https://pypi.org/project/strands-decider/) |
-
-##### **B. Use a lab computer**
-
-The lab computers in room 003 already hold the decider's model, so nothing is downloaded. Do steps 1 and 2 on the lab computer first.
-
-> 1. Inside `p08_starter/harness`:  
->    `.venv-harness/bin/pip install strands-decider`
-
-**What am I typing?**
-
-| What you type | What it means | From |
-| :---- | :---- | :---- |
-| `.venv-harness/bin/pip install strands-decider` | Install the decider, with PyTorch and the Hugging Face libraries it needs, into the harness's environment. | [strands-decider on PyPI](https://pypi.org/project/strands-decider/) |
-
-##### **Either way**
 
 **Check:**  
 `.venv-harness/bin/strands-decider --help`  
@@ -275,9 +290,7 @@ It prints a list of commands with `serve` and `ask`.
 
 The decider runs as a small server on your computer. Loading the model takes about 10 seconds and several GB of memory. The server loads it once and keeps it ready, so each question from your harness is answered in a fraction of a second. Without a server, every check would load the model again. The harness sends it a question at `http://127.0.0.1:8000` every time the agent finishes an answer. It listens on your computer alone and has no password, so nothing outside your computer can reach it.
 
-## **Choose one:**
-
-##### **A. On your own computer**
+###### ***Mac***
 
 > 1. Open a new terminal. Inside `p08_starter/harness`, turn on the environment and start the server. Leave it running:  
 >    `source .venv-harness/bin/activate`  
@@ -294,27 +307,57 @@ The decider runs as a small server on your computer. Loading the model takes abo
 
 The first start spends most of its time on the download. Later starts take about 10 seconds.
 
-##### **B. On a lab computer**
+###### ***Windows***
 
-> 1. Choose your port: a number from 8000 to 8999\. Other students share the computer, so each server needs its own.  
-> 2. Open a new terminal. Inside `p08_starter/harness`, turn on the environment, point the decider at the lab's copy of the model, and start the server with your port in place of \<port\>. Leave it running:  
+> 1. Open a new terminal. Inside `p08_starter/harness`, turn on the environment and start the server. Leave it running:  
 >    `source .venv-harness/bin/activate`  
->    `export HF_HUB_CACHE=/data/cse490/strands/hub`  
->    `export HF_HUB_OFFLINE=1`  
->    `strands-decider serve /data/cse490/strands/decider-hobson-v21 --port <port>`
+>    `strands-decider serve StrandsAgents/strands-decider-2B-hobson-v21 --no-warmup`
 
 **What am I typing?**
 
 | What you type | What it means | From |
 | :---- | :---- | :---- |
 | `source .venv-harness/bin/activate` | Turn on the harness's Python environment in this terminal. | [man bash](https://man7.org/linux/man-pages/man1/bash.1.html) |
-| `export HF_HUB_CACHE=/data/cse490/strands/hub` | Read models from the lab's shared folder, not from your own. | [Hugging Face: environment variables](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables) |
-| `export HF_HUB_OFFLINE=1` | Use what is on disk and download nothing. |  |
-| `strands-decider serve` | Start the decider as a server on `127.0.0.1`. | `strands-decider serve --help` |
-| `/data/cse490/strands/decider-hobson-v21` | The model to serve, by its folder on the lab's disk. Nothing is downloaded. |  |
-| `--port <port>` | Listen on your port, not 8000\. |  |
+| `strands-decider serve` | Start the decider as a server on `127.0.0.1`, port 8000\. | `strands-decider serve --help` |
+| `StrandsAgents/strands-decider-2B-hobson-v21` | The model to serve, by its name on Hugging Face. The first start downloads it with its base model, Qwen3.5-2B, about 4.5 GB, into `~/.cache/huggingface`. Later starts read it from there. | [the model card](https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v21) |
+| `--no-warmup` | Start serving right away. Without it, the server first runs every request size once, which takes several minutes on a computer without a graphics card. |  |
 
-Use your port in place of 8000 everywhere below: in the `curl` line, and in `decider_url` in `settings.json`.
+The first start spends most of its time on the download. Later starts take about 10 seconds.
+
+###### ***Linux***
+
+> 1. Open a new terminal. Inside `p08_starter/harness`, turn on the environment and start the server. Leave it running:  
+>    `source .venv-harness/bin/activate`  
+>    `strands-decider serve StrandsAgents/strands-decider-2B-hobson-v21 --no-warmup`
+
+**What am I typing?**
+
+| What you type | What it means | From |
+| :---- | :---- | :---- |
+| `source .venv-harness/bin/activate` | Turn on the harness's Python environment in this terminal. | [man bash](https://man7.org/linux/man-pages/man1/bash.1.html) |
+| `strands-decider serve` | Start the decider as a server on `127.0.0.1`, port 8000\. | `strands-decider serve --help` |
+| `StrandsAgents/strands-decider-2B-hobson-v21` | The model to serve, by its name on Hugging Face. The first start downloads it with its base model, Qwen3.5-2B, about 4.5 GB, into `~/.cache/huggingface`. Later starts read it from there. | [the model card](https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v21) |
+| `--no-warmup` | Start serving right away. Without it, the server first runs every request size once, which takes several minutes on a computer without a graphics card. |  |
+
+The first start spends most of its time on the download. Later starts take about 10 seconds.
+
+###### ***Lab computer***
+
+> 1. Open a new terminal. Inside `p08_starter/harness`, turn on the environment, point the decider at the model on disk, and start the server. Leave it running:  
+>    `source .venv-harness/bin/activate`  
+>    `export HF_HUB_CACHE=/data/cse490/strands/hub`  
+>    `export HF_HUB_OFFLINE=1`  
+>    `strands-decider serve /data/cse490/strands/decider-hobson-v21`
+
+**What am I typing?**
+
+| What you type | What it means | From |
+| :---- | :---- | :---- |
+| `source .venv-harness/bin/activate` | Turn on the harness's Python environment in this terminal. | [man bash](https://man7.org/linux/man-pages/man1/bash.1.html) |
+| `export HF_HUB_CACHE=/data/cse490/strands/hub` | Read models from the shared folder, not from your own. | [Hugging Face: environment variables](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables) |
+| `export HF_HUB_OFFLINE=1` | Use what is on disk and download nothing. |  |
+| `strands-decider serve` | Start the decider as a server on `127.0.0.1`, port 8000\. | `strands-decider serve --help` |
+| `/data/cse490/strands/decider-hobson-v21` | The model to serve, by its folder on disk. Nothing is downloaded. |  |
 
 ##### **Either way**
 
@@ -402,7 +445,7 @@ The decider takes two things: a text to read, called the `state`, and one or mor
 
 This step follows the decider's own getting-started guide, [How to start using strands-decider](https://github.com/strands-labs/strands-decider#how-to-start-using-strands-decider). The message about payouts, its question, and the shape of the request come from its section [Running as a server](https://github.com/strands-labs/strands-decider#running-as-a-server).
 
-In step 4 you asked whether "Help\! My payouts have been failing for 3 days\!" conveys urgency, and the answer was 0.8751: yes. The five requests below change one thing at a time. Keep the server from step 4 running: it already holds the model, so each request is answered at once. The decider's other command, `strands-decider ask`, loads the model, answers one question and exits, which is too slow for a harness that checks every reply. On a lab computer, use your port in place of 8000\.
+In step 4 you asked whether "Help\! My payouts have been failing for 3 days\!" conveys urgency, and the answer was 0.8751: yes. The five requests below change one thing at a time. Keep the server from step 4 running: it already holds the model, so each request is answered at once. The decider's other command, `strands-decider ask`, loads the model, answers one question and exits, which is too slow for a harness that checks every reply.
 
 > 1. Change the text. Ask the same question about a calm message:  
 >    `curl -s http://127.0.0.1:8000/v1/systemone \`  
@@ -481,16 +524,39 @@ The decider also answers choice and score questions: see [the decider's README](
 
 #### **6\. Hook up Strands in the router**
 
-The router is the part of your harness that asks the decider about every reply. Neither harness has it yet. Your coding agent builds it from `ROUTER.md`, the spec you moved into your harness folder.
+The router is the part of your harness that asks the decider about every reply. `ROUTER.md`, in your harness folder, is its spec.
+
+## **Choose one:**
+
+##### **A. You use the starter harness**
+
+The starter's harness has the router already. Go to "Either way".
+
+##### **B. You use your own harness**
+
+Your harness has no router yet. Your coding agent builds it from `ROUTER.md`.
 
 > 1. Keep the decider server running in its terminal.  
 > 2. Open the folder `p08_starter/harness` in VS Code. Ask the coding agent:  
 >    "Read `ROUTER.md` and follow it. The harness's Python is `.venv-harness/bin/python`."  
->    If your decider server is not on port 8000, add this sentence with your port in place of \<port\>: "The decider server is on port \<port\>."  
-> 3. Open a new terminal. Inside `p08_starter/harness`, turn on the environment and start the harness:  
+>    If your decider server is not on port 8000, add this sentence with your port in place of \<port\>: "The decider server is on port \<port\>."
+
+##### **Either way**
+
+> 1. Open a new terminal. Inside `p08_starter/harness`, turn on the environment and run the router check:  
 >    `source .venv-harness/bin/activate`  
+>    `python bench/check_router.py`
+
+**Check:** It ends with a line such as:  
+`Passed. One decider call answered both questions: detection 0.08, quality 0.91.`
+
+The handout adds a second question to the router by editing `settings.json` alone. This check tries that for one run: it adds a second question, asks the harness one short prompt, and puts `settings.json` back as it was. It needs the decider server running and the course gateway: off campus, connect the UW VPN first.
+
+If it ends with `Not passed`, it says why. With your own harness, it prints a sentence for your coding agent: give it that sentence, then run the check again. If it still does not pass after two tries, switch to the starter's harness: option A of step 2\.
+
+> 2. Start the harness:  
 >    `python harness.py`  
-> 4. Ask the harness:  
+> 3. Ask the harness:  
 >    "Read `settings.json` and tell me which model is the default."
 
 **Check:** Before the reply, the harness prints a line such as:  
@@ -512,7 +578,7 @@ If the line does not print, Appendix C lists the fixes.
 | **Python** | 3.12 or newer (3) | 3.12 or newer (3) | 3.12 or newer (3) |
 | **Time for one check** | 0.2 to 1.5 seconds (4) | 20 seconds or more for a long answer (5) | 20 seconds or more for a long answer (5) |
 
-If your computer falls short, use a lab computer: option B of step 3\.
+If your computer falls short, use one of the five lab computers in CSE 003: caraxes, vhagar, balerion, sunfyre or syrax. Follow the lines headed Lab computer in each step.
 
 **Sources**
 
@@ -530,27 +596,41 @@ To exit, press Ctrl+D in the harness and Ctrl+C in the decider server.
 
 To start up again, inside `p08_starter/harness`:
 
-> 1. Start the decider server. Wait for `Uvicorn running`:  
->    `source .venv-harness/bin/activate`  
->    `strands-decider serve StrandsAgents/strands-decider-2B-hobson-v21 --no-warmup`  
+> 1. Start the decider server with the lines of step 4 for your computer. Wait for `Uvicorn running`.  
 > 2. In another terminal, start the harness:  
 >    `source .venv-harness/bin/activate`  
 >    `python harness.py`
 
-On a lab computer, start the decider server with option B of step 4\.
-
 Start the decider server first. If the harness starts first, every answer prints `decider unreachable` and goes unchecked.
+
+###### ***Lab computer***
+
+This computer is shared. Do these two things when you finish.
+
+> 1. Stop your decider server with Ctrl+C in its terminal. If that terminal is gone, stop it by name. This stops your own servers and no one else's:  
+>    `pkill -u $USER -f "strands-decider serve"`  
+> 2. Delete the environment once you have submitted the project. It frees the shared disk, and steps 2 and 3 make it again:  
+>    `rm -rf ~/Downloads/p08_starter/harness/.venv-harness`
+
+**What am I typing?**
+
+| What you type | What it means | From |
+| :---- | :---- | :---- |
+| `pkill -u $USER -f "strands-decider serve"` | Stop every program of yours whose command line holds `strands-decider serve`. `-u $USER` limits it to your own. | [man pkill](https://man7.org/linux/man-pages/man1/pkill.1.html) |
+| `rm -rf .venv-harness` | Delete the environment folder and everything in it. |  |
 
 #### **Appendix C: the router's settings and fixes**
 
-The harness finds the decider through the `router` section of `settings.json`. Once the router is added, it reads:
+The harness finds the decider through the `router` section of `settings.json`. It reads:
 
 `"router": {`  
   `"enabled": true,`  
   `"decider_url": "http://127.0.0.1:8000/v1/systemone",`  
   `"fallback_model": "external/haiku-5-5",`  
   `"threshold": 0.5,`  
-  `"question": "Does the response correctly and completely answer the user's question?",`  
+  `"questions": {`  
+    `"quality": {"question": "Does the response correctly and completely answer the user's question?"}`  
+  `},`  
   `"timeout_seconds": 60,`  
   `"max_state_chars": 12000`  
 `}`
@@ -561,9 +641,9 @@ The harness finds the decider through the `router` section of `settings.json`. O
 | `decider_url` | Where the decider server listens. Change the port here if you used `--port`. |
 | `fallback_model` | The model that answers again when the decider says no. |
 | `threshold` | The decider's probability below which an answer is dropped. |
-| `question` | The yes/no question the decider is asked about every answer. |
+| `questions` | The yes/no questions the decider is asked about every answer. Each has a name and the question in plain words. Setup has one, named `quality`. |
 | `timeout_seconds` | How long to wait for the decider before keeping the reply unchecked. |
-| `max_state_chars` | How much text the decider reads in all: up to a sixth of it for your question, half for the tool results, and a third for the answer. A tool result is cut at 600 characters and marked `[cut]`. |
+| `max_state_chars` | How much text the decider reads in all: up to a sixth of it for your question, half for the tool results, and a third for the answer, plus any room the tool results left. A long answer keeps its end, where the code usually is. A tool result is cut at 600 characters and marked `[cut]`. |
 
 The default model, `internal/Qwen3.6-35B-A3B`, is the one under `model` at the top of `settings.json`. Both models go through the course gateway: off campus, connect the UW VPN first.
 
@@ -571,9 +651,11 @@ With the router on, the harness prints a line such as this before each reply:
 `[router] judged 0.85: keeping the reply.`  
 That number is the decider's probability that the answer is good. A number below the threshold prints `asking external/haiku-5-5 instead`, and the fallback model answers. Each judgment is also written to `trace.jsonl` as a `router_judge` record.
 
+The handout adds a second question, named `detection`, under `questions`. With it, the same request to the decider carries both questions, and the line reads `[router] judged detection 0.36, quality 0.31: keeping the reply.`
+
 **Troubleshooting**
 
 > * *\[router\] decider unreachable.* The decider server is not running, or it is on another port than `decider_url` says. The harness keeps the default model's reply, so it still works, just without the check.  
-> * *No `[router]` line at all.* The router is off: `enabled` is `false`, or `settings.json` has no `router` section. The router has not been added yet.  
+> * *No `[router]` line at all.* The router is off: `enabled` is `false`, or `settings.json` has no `router` section. With your own harness, the router has not been added yet: step 6\.  
 > * *No `router_judge` record in `trace.jsonl`, with your own harness.* Your harness is not writing its log: it printed `[trace] off` when it started. Copy the trace file in and ask the harness a prompt again: `cp ~/Downloads/p07_starter/p07/trace.py ~/Downloads/p08_starter/harness/`  
-> * *Every answer is judged far below 0.5.* Check the `question` in `settings.json`. The decider reads the question less closely than the answer, so a question it can misread turns every answer down.
+> * *Every answer is judged far below 0.5.* Check the wording of the `quality` question in `settings.json`. The decider reads the question less closely than the answer, so a question it can misread turns every answer down.

@@ -61,6 +61,18 @@ DEFAULT_SKILLS_FOLDER = "skills"
 DEFAULT_HELPER_MODEL = "external/haiku-5-5"
 DEFAULT_MAX_HELPERS = 8
 DEFAULT_SPAWN_MINUTES = 5
+DEFAULT_ROUTER_DECIDER_URL = "http://127.0.0.1:8000/v1/systemone"
+DEFAULT_ROUTER_FALLBACK_MODEL = "external/haiku-5-5"
+DEFAULT_ROUTER_THRESHOLD = 0.5
+DEFAULT_ROUTER_QUESTIONS = {
+    "quality": {
+        "question": "Does the response correctly and completely answer the user's question?"
+    }
+}
+DEFAULT_ROUTER_TIMEOUT_SECONDS = 60
+DEFAULT_ROUTER_MAX_STATE_CHARS = 12000
+ROUTER_DETECTION_CUT = 0.5  # detection at or above this: the reply holds program code
+ROUTER_RESULT_CHARS = 600  # how much of one tool result the decider is shown
 
 # Who this process is. A plain start is the chat, "main". /spawn starts a
 # manager, and the manager starts helpers: each is a copy of this program.
@@ -341,15 +353,22 @@ def send(request: urllib.request.Request) -> tuple[dict, dict]:
         raise GatewayError(f"unreadable reply: {error!r}", hint) from error
 
 
-def chat_request(context: list[dict], tools: list[dict]) -> urllib.request.Request:
-    """Build the request that sends the conversation to the gateway."""
+def chat_request(
+    context: list[dict], tools: list[dict], model: str | None = None
+) -> urllib.request.Request:
+    """Build the request that sends the conversation to the gateway.
+
+    A model given here is sent in place of the agent's model for this request.
+    """
     base = os.environ["LITELLM_BASE_URL"].rstrip("/")
     path = "/chat/completions" if base.endswith("/v1") else "/v1/chat/completions"
     return urllib.request.Request(
         base + path,
         data=json.dumps(
             {
-                "model": AGENT["model"] or setting("model", "default", DEFAULT_MODEL),
+                "model": model
+                or AGENT["model"]
+                or setting("model", "default", DEFAULT_MODEL),
                 "messages": context,
                 "tools": tools,
             }
@@ -362,19 +381,128 @@ def chat_request(context: list[dict], tools: list[dict]) -> urllib.request.Reque
     )
 
 
-def call_model(context: list[dict], tools: list[dict]) -> dict:
+def call_model(context: list[dict], tools: list[dict], model: str | None = None) -> dict:
     """Send the conversation to the gateway and return the model's message.
 
     Every call, answered or failed, is recorded in trace.jsonl.
     """
     started = time.time()
     try:
-        body, headers = send(chat_request(context, tools))
+        body, headers = send(chat_request(context, tools, model))
     except GatewayError as error:
         trace_model_call(context, started, error=error)
         raise
     trace_model_call(context, started, body, headers)
     return body["choices"][0]["message"]
+
+
+# ------------------------------------------------------------------- router
+#
+#   default model replies  ->  judge() asks the decider every question under
+#   router.questions in settings.json, in one call, and gets one number per name
+#        quality alone:      quality below router.threshold -> the fallback model answers
+#        quality and detection: detection at least 0.5 and quality below
+#                               router.threshold -> the fallback model answers
+#        otherwise, or the decider cannot be reached: the reply is kept
+
+
+def tool_lines(steps: list[dict]) -> str:
+    """Write a turn's tool calls as numbered lines, each with its result."""
+    results = {
+        step.get("tool_call_id"): step.get("content")
+        for step in steps
+        if step.get("role") == "tool"
+    }
+    lines = []
+    for step in steps:
+        for call in step.get("tool_calls") or []:
+            result = results.get(call.get("id"), "")
+            if not isinstance(result, str):
+                result = json.dumps(result)
+            result = " ".join(result.split())
+            if len(result) > ROUTER_RESULT_CHARS:
+                result = result[:ROUTER_RESULT_CHARS] + " [cut]"
+            function = call["function"]
+            lines.append(
+                f"{len(lines) + 1}. {function['name']}({function['arguments']})"
+                f" -> {result}"
+            )
+    return "\n".join(lines) or "(no tools used)"
+
+
+def judge(question: str, response: str, steps: list[dict]) -> dict | None:
+    """Ask the decider about the reply. Return None when it fails.
+
+    One call carries every question under router.questions in settings.json:
+    the one named quality and, when the settings hold one, the one named
+    detection. Each goes to the decider under its own name as a yes/no question.
+    Return the decider's number for each name, such as {"quality": 0.87} or
+    {"quality": 0.31, "detection": 0.92}.
+    Every judgment, made or failed, is recorded in trace.jsonl.
+    """
+    asked = setting("router", "questions", DEFAULT_ROUTER_QUESTIONS)
+    if not isinstance(asked, dict) or "quality" not in asked:
+        print("[router] settings.json has no question named quality; keeping the reply.")
+        append_trace(
+            "router_judge", status="failure", error_message="no question named quality"
+        )
+        return None
+    # The decider's own form: a yes/no question is {"type": "noul", "instructions": ...}.
+    questions = {
+        name: {"type": "noul", "instructions": entry["question"]}
+        for name, entry in asked.items()
+        if isinstance(entry, dict) and isinstance(entry.get("question"), str)
+    }
+    limit = setting("router", "max_state_chars", DEFAULT_ROUTER_MAX_STATE_CHARS)
+    lines = tool_lines(steps)
+    tools = lines[: limit // 2]
+    # The response keeps its end, where the code usually is, and may use the room
+    # the tool lines left of their half.
+    room = limit // 3 + (limit // 2 - len(tools))
+    timeout = setting("router", "timeout_seconds", DEFAULT_ROUTER_TIMEOUT_SECONDS)
+
+    def ask(room: int) -> dict:
+        """Send the decider the state, with at most `room` characters of the response."""
+        kept = response if len(response) <= room else "[cut] " + response[-room:]
+        state = "\n\n".join(
+            [
+                "User question:\n" + question[: limit // 6],
+                "Tools the model used, with their results:\n" + tools,
+                "Model response:\n" + kept,
+            ]
+        )
+        request = urllib.request.Request(
+            setting("router", "decider_url", DEFAULT_ROUTER_DECIDER_URL),
+            data=json.dumps({"state": state, "questions": questions}).encode(),
+            headers={"Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(request, timeout=timeout) as reply:
+            return json.loads(reply.read())["answers"]
+
+    started = time.time()
+    try:
+        try:
+            answers = ask(room)
+        except urllib.error.HTTPError as error:
+            if error.code != 422:
+                raise
+            # The decider reads at most 4096 tokens and refuses more: send half as much.
+            answers = ask(room // 2)
+        numbers = {name: float(answers[name]["noul"]) for name in questions}
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        print(f"[router] decider unreachable ({error}); keeping the reply.")
+        append_trace("router_judge", status="failure", error_message=str(error))
+        return None
+    fields = {
+        **numbers,  # one field for each question's name: quality, and detection when asked
+        "status": "success",
+        "question": question,
+        "tools_used": lines,
+        "response": response,
+        "duration_ms": round((time.time() - started) * 1000),
+    }
+    append_trace("router_judge", **fields)
+    return numbers
 
 
 # -------------------------------------------------------------- local tools
@@ -1007,6 +1135,7 @@ async def answer(
     tools: list[dict],
     sessions: dict[str, ClientSession],
     deny: set[str],
+    model: str | None = None,
 ) -> str:
     """Call the model until it replies in plain text, running tools between.
 
@@ -1022,7 +1151,7 @@ async def answer(
         if seconds_left() == 0:
             return say("[harness] stopped at the time limit of this /spawn run.")
         try:
-            reply = await in_background(call_model, context, tools)
+            reply = await in_background(call_model, context, tools, model)
         except GatewayError as error:
             del context[turn_start:]
             hint = f"\n[harness] {error.hint}" if error.hint else ""
@@ -1030,6 +1159,32 @@ async def answer(
 
         context.append(reply)
         if not reply.get("tool_calls"):
+            fallback = setting(
+                "router", "fallback_model", DEFAULT_ROUTER_FALLBACK_MODEL
+            )
+            if model is None and setting("router", "enabled", False) and fallback:
+                numbers = await in_background(
+                    judge,
+                    context[turn_start]["content"],
+                    reply.get("content") or "",
+                    context[turn_start + 1 : -1],
+                )
+                threshold = setting("router", "threshold", DEFAULT_ROUTER_THRESHOLD)
+                if numbers is not None:
+                    detection, quality = numbers.get("detection"), numbers["quality"]
+                    shown = f"[router] judged {quality:.2f}"
+                    if len(numbers) > 1:  # every number, quality last
+                        others = [f"{name} {numbers[name]:.2f}" for name in numbers if name != "quality"]
+                        shown = "[router] judged " + ", ".join(others + [f"quality {quality:.2f}"])
+                    # With a question named detection, only a reply that holds code can be sent on.
+                    holds_code = detection is None or detection >= ROUTER_DETECTION_CUT
+                    if holds_code and quality < threshold:
+                        print(f"{shown} < {threshold}: asking {fallback} instead.")
+                        del context[turn_start + 1 :]
+                        return await answer(
+                            context, tools, sessions, deny, model=fallback
+                        )
+                    print(f"{shown}: keeping the reply.")
             return say(reply.get("content") or "")
 
         for tool_call in reply["tool_calls"]:

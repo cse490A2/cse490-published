@@ -1,8 +1,21 @@
 {
   "model": {
-    "default": "external/haiku-5-5",
+    "default": "internal/Qwen3.6-35B-A3B",
     "timeout_seconds": 120,
     "max_tool_rounds": 25
+  },
+  "router": {
+    "enabled": true,
+    "decider_url": "http://127.0.0.1:8000/v1/systemone",
+    "fallback_model": "external/haiku-5-5",
+    "threshold": 0.5,
+    "questions": {
+      "quality": {
+        "question": "Does the response correctly and completely answer the user's question?"
+      }
+    },
+    "timeout_seconds": 60,
+    "max_state_chars": 12000
   },
   "tools": {
     "execute_timeout_seconds": 10,
