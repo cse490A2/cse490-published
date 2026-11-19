@@ -1,14 +1,16 @@
 ---
-title: "**Project 8: Model Routing**"
+title: "P08: Model Routing"
 parent: "Projects"
 nav_order: 8
 has_children: true
 permalink: "/projects/P08/"
 ---
 
-# **Project 8: Model Routing**
+# Project 8: Model Routing
 
-**Due: Tuesday 11:59 pm** Prerequisites: Complete the setup guide during class.
+**Due: Tuesday 11:59 pm**
+
+Prerequisites: Complete the setup guide during class.
 
 Decision models are LLMs built to pick between given options and provide an answer much faster than a normal model. This is done by removing the part of the LLM that generates text and replacing it with a small head that scores each option. In this project, you'll use a decision model to check every response from one model and decide whether to route the prompt to another. Your harness has a router from the setup guide that asks the decider one question. You'll change it to ask two questions in one call: 1\) does the response contain code, and 2\) is the response high quality? High quality means backed by the files the model read. A response goes to the stronger model only when it has code and is low quality. Then you'll set the router's threshold from a benchmark.
 

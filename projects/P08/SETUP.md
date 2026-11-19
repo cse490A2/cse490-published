@@ -1,6 +1,6 @@
 ---
 title: "P08 setup"
-parent: "P08"
+parent: "**Project 8: Model Routing**"
 grand_parent: "Projects"
 nav_order: 1
 permalink: "/projects/P08/setup/"
