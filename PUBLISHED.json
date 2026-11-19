@@ -73,6 +73,16 @@
       "name": "P07: A Team Upgrades Your Agent",
       "published": true,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11896582"
+    },
+    "P08": {
+      "assignment_id": 11908441,
+      "desc_fp": "77bb6a8b087fb0a4",
+      "due_at": "2026-11-25T07:59:00Z",
+      "due_source": "course doc",
+      "module_id": 4003322,
+      "name": "P08: Model Routing",
+      "published": false,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11908441"
     }
   },
   "lectures/L01/slides.pdf": {
@@ -1159,8 +1169,8 @@
     "artifact_id": "project-student-p08",
     "document_id": "1Us8W7rw0-DEBcTfLJSi1SqpHY1QqDNG92hjSbUhO0Ik",
     "document_name": "P08 Handout",
-    "modified_time": "2026-11-19T00:42:08.176Z",
-    "published_at": "2026-11-19T00:42:30Z",
+    "modified_time": "2026-11-19T00:43:06.868Z",
+    "published_at": "2026-11-19T00:44:35Z",
     "source": "drive"
   },
   "projects/P08/SETUP.md": {
@@ -1169,7 +1179,7 @@
     "document_id": "1oPY9Fd68m6smqOuDPqnibUU05MepRAiM0pc30f1QUoQ",
     "document_name": "P08 Prereq Instructions",
     "modified_time": "2026-11-19T00:40:12.092Z",
-    "published_at": "2026-11-19T00:42:25Z",
+    "published_at": "2026-11-19T00:44:24Z",
     "source": "drive"
   },
   "projects/P08/starter.zip": {

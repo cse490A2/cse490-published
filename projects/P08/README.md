@@ -12,7 +12,7 @@ permalink: "/projects/P08/"
 
 Prerequisites: Complete the setup guide during class.
 
-Decision models are LLMs built to pick between given options and provide an answer much faster than a normal model. This is done by removing the part of the LLM that generates text and replacing it with a small head that scores each option. In this project, you'll use a decision model to check every response from one model and decide whether to route the prompt to another. Your harness has a router from the setup guide that asks the decider one question. You'll change it to ask two questions in one call: 1\) does the response contain code, and 2\) is the response high quality? High quality means backed by the files the model read. A response goes to the stronger model only when it has code and is low quality. Then you'll set the router's threshold from a benchmark.
+Decision models are LLMs built to pick between given options and provide an answer much faster than a normal model. This is done by removing the part of the LLM that generates text and replacing it with a small layer that scores each option. In this project, you'll use a decision model to check every response from one model and decide whether to route the prompt to another. Your harness has a router from the setup guide that asks the decider one question. You'll change it to ask two questions in one call: 1\) does the response contain code, and 2\) is the response high quality? High quality means backed by the files the model read. A response goes to the stronger model only when it has code and is low quality. Then you'll set the router's threshold from a benchmark.
 
 We will use Qwen 3.6 as the model that responds to all requests, and Haiku 5.5 as the stronger model.
 
@@ -47,4 +47,10 @@ A model will autograde your submission. It checks that the decider is asked both
 
 ## Reference
 
-The decider is a small model that compares a response against the text it is shown. It cannot run code or check a calculation; it can tell whether the names and values in the code appear in the files the agent read. The setup guide's step 5 shows what the router sends the decider and what comes back. Its Appendix C lists the router's settings and fixes. Out of bounds: removing the decider call, and hand-editing `trace.jsonl` or `bench/sweep.txt`. If the decider server won't start, pair with a neighbour and submit your own harness and their trace. If your gateway key fails, submit what ran and rerun the Haiku side by the deadline.
+The decider is a small model that compares a response against the text it is shown. It cannot run code or check a calculation; it can tell whether the names and values in the code appear in the files the agent read.
+
+The setup guide's step 5 shows what the router sends the decider and what comes back. Its Appendix C lists the router's settings and fixes.
+
+Out of bounds: removing the decider call, and hand-editing `trace.jsonl` or `bench/sweep.txt`.
+
+If the decider server won't start, pair with a neighbour and submit your own harness and their trace. If your gateway key fails, submit what ran and rerun the Haiku side by the deadline.
