@@ -1153,5 +1153,114 @@
     "modified_time": "2026-11-12T09:43:36.844Z",
     "published_at": "2026-11-12T09:45:33Z",
     "source": "drive"
+  },
+  "projects/P08/README.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-student-p08",
+    "document_id": "1Us8W7rw0-DEBcTfLJSi1SqpHY1QqDNG92hjSbUhO0Ik",
+    "document_name": "P08 Handout",
+    "modified_time": "2026-11-19T00:40:11.672Z",
+    "published_at": "2026-11-19T00:41:13Z",
+    "source": "drive"
+  },
+  "projects/P08/SETUP.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-prereq-p08",
+    "document_id": "1oPY9Fd68m6smqOuDPqnibUU05MepRAiM0pc30f1QUoQ",
+    "document_name": "P08 Prereq Instructions",
+    "modified_time": "2026-11-19T00:40:12.092Z",
+    "published_at": "2026-11-19T00:41:07Z",
+    "source": "drive"
+  },
+  "projects/P08/starter.zip": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P08/starter/p08_starter/harness/harness.py",
+      "projects/P08/starter/p08_starter/harness/settings.json",
+      "projects/P08/starter/p08_starter/harness/skills/blender-scene/SKILL.md",
+      "projects/P08/starter/p08_starter/harness/systemprompt.md",
+      "projects/P08/starter/p08_starter/p08/bench/prompts.jsonl",
+      "projects/P08/starter/p08_starter/p08/bench/sweep.py",
+      "projects/P08/starter/p08_starter/p08/upgrade_spec/ROUTER.md"
+    ],
+    "published_at": "2026-11-19T00:41:24Z",
+    "source": "derived"
+  },
+  "projects/P08/starter/.starter.json": {
+    "agent": "arian@agent.vibeclass",
+    "derived_from": [
+      "projects/P08/starter/p08_starter/harness/harness.py",
+      "projects/P08/starter/p08_starter/harness/settings.json",
+      "projects/P08/starter/p08_starter/harness/skills/blender-scene/SKILL.md",
+      "projects/P08/starter/p08_starter/harness/systemprompt.md",
+      "projects/P08/starter/p08_starter/p08/bench/prompts.jsonl",
+      "projects/P08/starter/p08_starter/p08/bench/sweep.py",
+      "projects/P08/starter/p08_starter/p08/upgrade_spec/ROUTER.md"
+    ],
+    "published_at": "2026-11-19T00:41:24Z",
+    "source": "derived"
+  },
+  "projects/P08/starter/p08_starter/harness/harness.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P08 starter p08_starter/harness/harness.py",
+    "document_id": "1ZBQWieN8VGDOwgD61nPoSyrGNabfsgBR",
+    "document_name": "P08 starter p08_starter/harness/harness.py",
+    "modified_time": "2026-11-18T20:32:35.970Z",
+    "published_at": "2026-11-19T00:41:20Z",
+    "source": "drive"
+  },
+  "projects/P08/starter/p08_starter/harness/settings.json": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P08 starter p08_starter/harness/settings.json",
+    "document_id": "1JILU75-ENuUqaeIUB8gh-sp8x-LDEbWo",
+    "document_name": "P08 starter p08_starter/harness/settings.json",
+    "modified_time": "2026-11-18T20:32:37.945Z",
+    "published_at": "2026-11-19T00:41:20Z",
+    "source": "drive"
+  },
+  "projects/P08/starter/p08_starter/harness/skills/blender-scene/SKILL.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P08 starter p08_starter/harness/skills/blender-scene/SKILL.md",
+    "document_id": "10jivfZTFtEFWpD9-kDnaTHDj58lG-afI",
+    "document_name": "P08 starter p08_starter/harness/skills/blender-scene/SKILL.md",
+    "modified_time": "2026-11-16T20:04:22.238Z",
+    "published_at": "2026-11-19T00:41:20Z",
+    "source": "drive"
+  },
+  "projects/P08/starter/p08_starter/harness/systemprompt.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P08 starter p08_starter/harness/systemprompt.md",
+    "document_id": "1vqJy9-zdYdBYjiNIjXNKQ8s4keTOmduq",
+    "document_name": "P08 starter p08_starter/harness/systemprompt.md",
+    "modified_time": "2026-11-16T20:04:24.109Z",
+    "published_at": "2026-11-19T00:41:20Z",
+    "source": "drive"
+  },
+  "projects/P08/starter/p08_starter/p08/bench/prompts.jsonl": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P08 starter p08_starter/p08/bench/prompts.jsonl",
+    "document_id": "1ufFqgAeg1WeIICfj39uT9s6lquM_h7aq",
+    "document_name": "P08 starter p08_starter/p08/bench/prompts.jsonl",
+    "modified_time": "2026-11-18T20:32:39.788Z",
+    "published_at": "2026-11-19T00:41:20Z",
+    "source": "drive"
+  },
+  "projects/P08/starter/p08_starter/p08/bench/sweep.py": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P08 starter p08_starter/p08/bench/sweep.py",
+    "document_id": "1YQvw1jt2PS0tSHOyfac1UgBZF6m64wWF",
+    "document_name": "P08 starter p08_starter/p08/bench/sweep.py",
+    "modified_time": "2026-11-18T20:32:41.824Z",
+    "published_at": "2026-11-19T00:41:20Z",
+    "source": "drive"
+  },
+  "projects/P08/starter/p08_starter/p08/upgrade_spec/ROUTER.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "starter:P08 starter p08_starter/p08/upgrade_spec/ROUTER.md",
+    "document_id": "1x2RZeDRKtSMkRUrumBrpYHCtJxmd8pTd",
+    "document_name": "P08 starter p08_starter/p08/upgrade_spec/ROUTER.md",
+    "modified_time": "2026-11-18T20:32:43.788Z",
+    "published_at": "2026-11-19T00:41:20Z",
+    "source": "drive"
   }
 }

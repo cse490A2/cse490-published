@@ -1,0 +1,18 @@
+{"id": 1, "label": "keep", "prompt": "Read settings.json and tell me which model is the default."}
+{"id": 2, "label": "keep", "prompt": "Read systemprompt.md and summarize it in one sentence."}
+{"id": 3, "label": "keep", "prompt": "What fallback model does the router use? Check settings.json."}
+{"id": 4, "label": "keep", "prompt": "What is the difference between TCP and UDP?"}
+{"id": 5, "label": "keep", "prompt": "Explain what a hash table is in two sentences."}
+{"id": 6, "label": "keep", "prompt": "What is the capital of France?"}
+{"id": 7, "label": "keep", "prompt": "Read settings.json. Then write Python that loads it with json and prints the fallback model. Show the code in your reply. Do not write a file."}
+{"id": 8, "label": "keep", "prompt": "Read settings.json. Then write Python that prints every key in its router section. Show the code in your reply. Do not write a file."}
+{"id": 9, "label": "keep", "prompt": "Read settings.json. Then write Python that prints the router threshold as a percentage. Show the code in your reply. Do not write a file."}
+{"id": 10, "label": "keep", "prompt": "Read systemprompt.md. Then write Python that prints how many words it has. Show the code in your reply. Do not write a file."}
+{"id": 11, "label": "keep", "prompt": "Read settings.json. Then write Python that prints the name of every server under mcpServers. Show the code in your reply. Do not write a file."}
+{"id": 12, "label": "keep", "prompt": "Read settings.json. Then write Python that prints each entry of permissions.deny on its own line. Show the code in your reply. Do not write a file."}
+{"id": 13, "label": "send", "prompt": "Without reading any files, write Python that calls harness.get_router_stats() and prints the average score. Show the code in your reply. Do not write a file."}
+{"id": 14, "label": "send", "prompt": "Without reading any files, write Python that uses harness.RouterClient to send one question to the decider. Show the code in your reply. Do not write a file."}
+{"id": 15, "label": "send", "prompt": "Without reading any files, write Python that calls harness.export_trace_csv('trace.csv'). Show the code in your reply. Do not write a file."}
+{"id": 16, "label": "send", "prompt": "Without reading any files, write Python that calls harness.reset_trace(keep_last=10). Show the code in your reply. Do not write a file."}
+{"id": 17, "label": "send", "prompt": "Without reading any files, write Python that imports decider_utils from this folder and calls its warm_up() function. Show the code in your reply. Do not write a file."}
+{"id": 18, "label": "send", "prompt": "Without reading any files, write Python that calls harness.set_threshold(0.7) and then harness.save_settings(). Show the code in your reply. Do not write a file."}

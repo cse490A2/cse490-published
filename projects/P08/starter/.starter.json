@@ -1,0 +1,41 @@
+{
+ "about": "fingerprints of the starter files; the setup wizard compares the files in a project folder with these to say whether each one is current",
+ "files": {
+  "p08_starter/harness/harness.py": {
+   "older": [],
+   "sha256": "64516a62abe278cbd44375741de8a744ec50fdbdd33546accb0dd15ae693b3d5",
+   "source_modified": "2026-11-18"
+  },
+  "p08_starter/harness/settings.json": {
+   "older": [],
+   "sha256": "384723189ce7f72f697b2b9307db4d300f6d51319e2a5453aaddce664b1a3def",
+   "source_modified": "2026-11-18"
+  },
+  "p08_starter/harness/skills/blender-scene/SKILL.md": {
+   "older": [],
+   "sha256": "52269cce9b744ae9d6b7651e58c2299f5903a019ba80d2ec8708ca2247ae92f5",
+   "source_modified": "2026-11-16"
+  },
+  "p08_starter/harness/systemprompt.md": {
+   "older": [],
+   "sha256": "8f1c1d72a079e62c23962685ddb2d318c10424fdb82e7dfcbb01be7b28cfeaa1",
+   "source_modified": "2026-11-16"
+  },
+  "p08_starter/p08/bench/prompts.jsonl": {
+   "older": [],
+   "sha256": "bcf674024d75c285af627de090e412848fae200550cd706e25337741391d0a8e",
+   "source_modified": "2026-11-18"
+  },
+  "p08_starter/p08/bench/sweep.py": {
+   "older": [],
+   "sha256": "2e7d3cf6f0c9f9e0c85ce8f03e8ef03f4bb41f59c2d6a237b6f17557fbaf3bb0",
+   "source_modified": "2026-11-18"
+  },
+  "p08_starter/p08/upgrade_spec/ROUTER.md": {
+   "older": [],
+   "sha256": "e3f03a4ea9cb85cc04413b171653250b6b29370774fa92e7b162613eac7f7c42",
+   "source_modified": "2026-11-18"
+  }
+ },
+ "project": "P08"
+}
