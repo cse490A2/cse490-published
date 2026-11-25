@@ -1283,5 +1283,14 @@
     "modified_time": "2026-11-19T10:38:20.440Z",
     "published_at": "2026-11-19T10:39:35Z",
     "source": "drive"
+  },
+  "projects/P10/README.md": {
+    "agent": "arian@agent.vibeclass",
+    "artifact_id": "project-student-p10",
+    "document_id": "1wttpvfIsNlAYH-Ub8hMc8OFhSGvZqyMJxWh7W_VQYrA",
+    "document_name": "P10 Handout",
+    "modified_time": "2026-11-25T01:37:22.119Z",
+    "published_at": "2026-11-25T01:37:45Z",
+    "source": "drive"
   }
 }
