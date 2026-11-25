@@ -83,6 +83,16 @@
       "name": "P08: Model Routing",
       "published": false,
       "url": "https://canvas.uw.edu/courses/1916846/assignments/11908441"
+    },
+    "P10": {
+      "assignment_id": 11920306,
+      "desc_fp": "c14390c4e09e5759",
+      "due_at": null,
+      "due_source": "handout has no due weekday",
+      "module_id": 4006941,
+      "name": "P10: Vibe Coding Final Project",
+      "published": false,
+      "url": "https://canvas.uw.edu/courses/1916846/assignments/11920306"
     }
   },
   "lectures/L01/slides.pdf": {
