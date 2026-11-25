@@ -1,12 +1,12 @@
 ---
-title: "P10"
+title: "P10: Vibe Coding Final Project"
 parent: "Projects"
 nav_order: 10
 has_children: false
 permalink: "/projects/P10/"
 ---
 
-**Vibe Coding Final Project**
+# Project 10: Vibe Coding Final Project
 
 So far in this class we’ve focused on *coding* agents.  For this project you’ll develop an agent that can do something else – of your choosing (e.g., create games, help you cook, fitness coach, etc.).  First you’ll write a short proposal for an idea.  Then you’ll build it and measure how well it works.
 
